@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+html{OVERFLOW:SCROLL;OVERFLOW:hidden; overflow-Y:scroll;overflow-X:scroll}
+body,div,ul,li,h1,h2,h3,h4,h5,h6,form,pre,input,textarea,td,th,dd,dl,dt,hr,p{ margin:0; padding:0;}
+img{ border:none;}
+body,botton,input,select,textarea{ font:12px/1.5 tahoma,Helvetica, Arial, sans-serif,"宋体";margin:0; padding:0;}
+li,dd dt{ list-style:none;}
+.hackbox{ clear:both;}
+
+
+
+
+.cor_g { color:#128311;}
+.cor_f00 { color:#f00;}
+
+
+
+
+
+
+.page{ height:29px; line-height:29px; border-bottom:1px solid #ccc; background:#fbfbfb; padding-right:5px; padding-left:5px;}
+.page .floatrightdiv{ width:100px; float:left; padding-left:8px;}
+.page ul li{ width:280px; float:right;}
+.page ul li span{ margin-right:10px; float:left;}
+.page .first{ width:13px; height:13px; background:url(../images/fiest.gif) no-repeat; display:inline-block; cursor:pointer; float:left; margin-top:8px;}
+.page .first{ display:block;}
+.page .first:hover{ background:url(../images/fiestover.gif) no-repeat;}
+.page .pre{ width:13px; height:13px; background:url(../images/pre.gif) no-repeat; display:inline-block; cursor:pointer; float:left; margin-top:8px;}
+.page .pre{ display:block;}
+.page .pre:hover{ background:url(../images/preover.gif) no-repeat;}
+
+.page .next{ width:13px; height:13px; background:url(../images/next.gif) no-repeat; display:inline-block; cursor:pointer; float:left; margin-top:8px;}
+.page .next{ display:block;}
+.page .next:hover{ background:url(../images/nextover.gif) no-repeat;}
+.page .last{ width:13px; height:13px; background:url(../images/last.gif) no-repeat; display:inline-block; cursor:pointer; float:left; margin-top:8px;}
+.page .last{ display:block;}
+.page .last:hover{ background:url(../images/lastover.gif) no-repeat;}
+.page .select{ _margin-top:5px;}
+.page .input{ position:relative; top:4px;}
+*+html .page .input{ position:relative; top:0px;}
+.page .inputbtn{ border:1px solid #ccc; width:30px; height:16px; text-align:center;}
+
+
+.tips { border:1px solid #eef0c8; background:#ffffcd; color:#333; margin:10px; padding:7px 15px; line-height:1.6;}
+
+.feeList { margin:0 25px; padding:10px 0;}
+.feeList .feeLi {padding:14px 0; border-bottom:1px solid #e0e0e0;}
+.feeList strong { padding:0 5px;}
+
+.feeDetail { padding-left:70px; margin-top:-50px;}
+.feeDetail dt { color:#333; font-weight:bold; font-size:14px;}
+.feeDetail .about {  color:#999;}
+.feeDetail .feeResult { font-size:14px; color:#333; padding:5px 0 0;}
+
+.feeList .btn { float:right; margin-top:-20px; margin-right:30px;}
+
+
+.feeDeList { padding:0px 0 5px 70px; overflow:hidden; zoom:1;}
+.feeDeList li { border-bottom:1px dashed #666666; color:#666; float:left; padding:4px 4px 0px 0; clear:both;}
+
+
+
+
+
+
+

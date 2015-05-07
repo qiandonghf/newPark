@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.oa.entity.Schedule">
+    	<meta attribute="class-description">日程</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="title" type="java.lang.String" not-null="true" length="255">
+			<column name="title" not-null="true">
+				<comment>主题</comment>
+			</column>
+		</property>
+		<property name="startTime" type="java.util.Date" not-null="true">
+			<column name="start_time" not-null="true">
+				<comment>开始时间</comment>
+			</column>
+		</property>
+		<property name="endTime" type="java.util.Date">
+			<column name="end_time">
+				<comment>结束时间</comment>
+			</column>
+		</property>
+		<property name="wholeDay">
+			<column name="whole_day" sql-type="varchar(50)">
+				<comment>是否全天</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+		<property name="setEndTime">
+			<column name="set_end_time" sql-type="varchar(50)">
+				<comment>是否设置结束时间</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+		<property name="repeatType">
+			<column name="repeat_type" sql-type="varchar(50)">
+				<comment>重复</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.oa.preferences.enums.RepeatEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+		<property name="promot">
+			<column name="promot" sql-type="varchar(50)">
+				<comment>提醒方式</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.oa.preferences.enums.PromotEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+		<property name="promotDetail" type="java.lang.String">
+			<column name="promot_detail">
+				<comment>提醒详情</comment>
+			</column>
+		</property>
+		<property name="promotTime" type="java.util.Date">
+			<column name="promot_time">
+				<comment>提醒时间</comment>
+			</column>
+		</property>
+		<property name="defaultEmailId" type="java.lang.Long" column="default_email_id"></property>
+		<property name="defaultEmail">
+			<column name="default_email" sql-type="varchar(50)">
+				<comment>默认邮件(内部)</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+		<property name="emailId" type="java.lang.Long" column="email_id"></property>
+		<property name="email">
+			<column name="email" sql-type="varchar(50)">
+				<comment>外部邮件</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+		<property name="smsId" type="java.lang.Long" column="sms_id"></property>
+		<property name="sms">
+			<column name="sms" sql-type="varchar(50)">
+				<comment>短信</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+		<property name="deleted">
+			<column name="deleted" sql-type="varchar(50)">
+				<comment>是否仅删除当天</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+		<property name="memo" type="java.lang.String">
+            <column name="memo" sql-type="text">
+                <comment>备注</comment>
+            </column>
+        </property>
+		<property name="ownerId" type="java.lang.Long">
+			<column name="owner_id">
+				<comment>拥有者ID</comment>
+			</column>
+		</property>
+		<property name="parentId" type="java.lang.Long">
+			<column name="parent_id">
+				<comment>父日程ID</comment>
+			</column>
+		</property>
+		
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

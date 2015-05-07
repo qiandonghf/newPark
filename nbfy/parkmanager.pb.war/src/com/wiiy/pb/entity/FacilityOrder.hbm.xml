@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.pb.entity.FacilityOrder">
+    	<meta attribute="class-description">公共设施使用申请</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="customerId" type="java.lang.Long"  not-null="true">
+			<column name="customer_id">
+				<comment>企业外键</comment>
+			</column>
+		</property>
+        <many-to-one name="customer" class="com.wiiy.crm.entity.Customer" foreign-key="fk_facilityorder_customer" insert="false" update="false" fetch="join">
+            <column name="customer_id" not-null="true">
+                <comment>企业</comment>
+            </column>
+        </many-to-one>
+        <property name="facilityId" type="java.lang.Long"  not-null="true">
+			<column name="facility_id">
+				<comment>公共设施外键</comment>
+			</column>
+		</property>
+        <many-to-one name="facility" class="com.wiiy.pb.entity.Facility" foreign-key="fk_facilityorder_facility" insert="false" update="false" fetch="join">
+            <column name="facility_id" not-null="true">
+                <comment>公共设施实体</comment>
+            </column>
+        </many-to-one>
+		<property name="startTime" type="java.util.Date">
+			<column name="start_time" not-null="true">
+                <comment>使用开始时间</comment>
+            </column>
+		</property>
+        <property name="endTime" type="java.util.Date">
+			<column name="end_time" not-null="true">
+                <comment>使用结束时间</comment>
+            </column>
+		</property>
+		<property name="contractPath" type="java.lang.String">
+        	<column name="contract_path">
+				<comment>合同</comment>
+			</column>
+		</property>
+		<property name="contractId" type="java.lang.Long">
+        	<column name="contract_id">
+				<comment>合同ID</comment>
+			</column>
+		</property>
+        <property name="memo" type="java.lang.String">
+        	<column name="memo" length="512">
+				<comment>备注</comment>
+			</column>
+		</property>
+		<property name="status">
+        	<column name="status">
+				<comment>状态</comment>
+			</column>
+            <type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.pb.preferences.enums.FacilityOrderStatusEnum</param>
+				<param name="type">12</param>
+			</type>
+        </property>
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

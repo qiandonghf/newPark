@@ -1,0 +1,31 @@
+/* CSS Document */
+.tree-folder-open {
+    background: url(../images/card_holder.png) no-repeat scroll 0 0 transparent;
+}
+.tree-folder {
+    background: url(../images/card_holder.png) no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 18px;
+    vertical-align: middle;
+    width: 16px;
+}
+
+.tree-file {
+    background: url(../images/cardfolder.gif) no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 18px;
+    vertical-align: middle;
+    width: 16px;
+}
+.icon-group{
+	background:url(../images/card_holder.png) no-repeat;
+}
+.icon-folder{
+	background:url(../images/cardfolder.gif) no-repeat;
+}
+.icon-card{
+	background:url(../images/card.gif) no-repeat;
+}
+.icon-my{
+	background:url(../images/card_holder_my.png) no-repeat;
+}

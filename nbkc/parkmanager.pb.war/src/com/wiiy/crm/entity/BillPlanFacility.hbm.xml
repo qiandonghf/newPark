@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+ 
+    <class name="com.wiiy.crm.entity.BillPlanFacility">
+        <meta attribute="class-description">公共设施资金计划</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="contractId" type="java.lang.Long">
+			<column name="contract_id">
+				<comment>合同外键</comment>
+			</column>
+		</property>
+        <many-to-one name="contract" class="com.wiiy.crm.entity.Contract" foreign-key="fk_BillPlanFacility_contract" insert="false" update="false" fetch="join">
+            <column name="contract_id">
+                <comment>合同</comment>
+            </column>
+        </many-to-one>
+		<property name="customerId" type="java.lang.Long">
+			<column name="customer_id">
+				<comment>企业外键</comment>
+			</column>
+		</property>
+        <many-to-one name="customer" class="com.wiiy.crm.entity.Customer" foreign-key="fk_BillPlanFacility_customer" insert="false" update="false" fetch="join">
+            <column name="customer_id">
+                <comment>企业</comment>
+            </column>
+        </many-to-one>
+        <property name="facilityId" type="java.lang.Long">
+			<column name="facility_id">
+				<comment>公共设施外键</comment>
+			</column>
+		</property>
+        <many-to-one name="facility" class="com.wiiy.pb.entity.Facility" foreign-key="fk_BillPlanFacility_facility" insert="false" update="false" fetch="join">
+            <column name="facility_id">
+                <comment>公共设施</comment>
+            </column>
+        </many-to-one>
+        <property name="subjectId" type="java.lang.Long">
+			<column name="subject_id">
+				<comment>标的外键</comment>
+			</column>
+		</property>
+        <many-to-one name="subject" class="com.wiiy.crm.entity.SubjectNetwork" foreign-key="fk_BillPlanFacility_subject" insert="false" update="false" fetch="join">
+            <column name="subject_id">
+                <comment>标的</comment>
+            </column>
+        </many-to-one>
+        <property name="facilityOrderId" type="java.lang.Long" >
+			<column name="facilityOrder_id">
+				<comment>公共设施使用申请外键</comment>
+			</column>
+		</property>
+        <many-to-one name="facilityOrder" class="com.wiiy.pb.entity.FacilityOrder" foreign-key="fk_BillPlanFacility_facilityOrder" insert="false" update="false" fetch="join">
+            <column name="facilityOrder_id">
+                <comment>公共设施使用申请</comment>
+            </column>
+        </many-to-one>
+        <property name="price" type="java.lang.String">
+        	<column name="price">
+        		<comment>单价</comment>
+        	</column>
+        </property>
+        <property name="amount" type="java.lang.Double">
+        	<column name="amount">
+        		<comment>数量</comment>
+        	</column>
+        </property>
+		<property name="planFee" type="java.lang.Double">
+			<column name="plan_fee" precision="10" scale="2">
+				<comment>计划金额</comment>
+			</column>
+		</property>
+		<property name="realFee" type="java.lang.Double">
+			<column name="real_fee" precision="10" scale="2">
+				<comment>实际金额</comment>
+			</column>
+		</property>
+		<property name="paidFee" type="java.lang.Double">
+			<column name="paid_fee" precision="10" scale="2">
+				<comment>已付金额</comment>
+			</column>
+		</property>
+        <property name="overdueFee" type="java.lang.Double">
+			<column name="overdue_fee" precision="10" scale="2">
+				<comment>滞纳金</comment>
+			</column>
+		</property>
+        <property name="startDate" type="java.util.Date">
+			<column name="start_date" length="19">
+				<comment>计费开始时间</comment>
+			</column>
+		</property>
+		<property name="endDate" type="java.util.Date">
+			<column name="end_date" length="19">
+				<comment>计费结束时间</comment>
+			</column>
+		</property>
+		<property name="lastPayDate" type="java.util.Date">
+			<column name="last_pay_date" length="19">
+				<comment>最后付费时间</comment>
+			</column>
+		</property>
+		
+		<property name="planPayDate" type="java.util.Date">
+			<column name="plan_pay_date" length="19">
+				<comment>计划付费时间</comment>
+			</column>
+		</property>
+		<property name="status">
+			<column name="status" sql-type="varchar(50)">
+				<comment>状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.crm.preferences.enums.BillPlanStatusEnum</param>
+				<param name="type">12</param>
+			</type>		
+		</property>
+        <property name="autoCheck">
+			<column name="auto_check" sql-type="varchar(50)">
+				<comment>是否自动出账</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>		
+		</property>
+        <property name="intoAccountDate" type="java.util.Date">
+			<column name="into_account_date" length="19">
+				<comment>出账时间</comment>
+			</column>
+		</property>
+		<property name="memo" type="java.lang.String" length="1024">
+            <column name="memo" sql-type="text">
+                <comment>备注</comment>
+            </column>
+        </property>
+        
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+    </class>
+</hibernate-mapping>

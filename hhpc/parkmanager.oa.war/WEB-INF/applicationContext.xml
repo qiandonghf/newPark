@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:osgi="http://www.springframework.org/schema/osgi"
+  xmlns:beans="http://www.springframework.org/schema/beans"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                      http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi-1.2.xsd">
+	
+	<osgi:reference id="sessionService" interface="com.wiiy.hibernate.SessionService"/>
+	<bean id="userNoticeDao" class="com.wiiy.oa.dao.UserNoticeDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="userNoticeService" class="com.wiiy.oa.service.impl.UserNoticeServiceImpl">
+		<property name="userNoticeDao" ref="userNoticeDao"></property>
+	</bean>
+	<bean id="userNoticeAction" class="com.wiiy.oa.action.UserNoticeAction" scope="prototype">
+		<property name="userNoticeService" ref="userNoticeService"></property>
+	</bean>
+	<bean id="contractRecordAttDao" class="com.wiiy.oa.dao.ContractRecordAttDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="contractRecordAttService" class="com.wiiy.oa.service.impl.ContractRecordAttServiceImpl">
+		<property name="contractRecordAttDao" ref="contractRecordAttDao"></property>
+	</bean>
+	<bean id="contractRecordAttAction" class="com.wiiy.oa.action.ContractRecordAttAction" scope="prototype">
+		<property name="contractRecordAttService" ref="contractRecordAttService"></property>
+	</bean>
+	
+	<bean id="contractRecordDao" class="com.wiiy.oa.dao.ContractRecordDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="contractRecordService" class="com.wiiy.oa.service.impl.ContractRecordServiceImpl">
+		<property name="contractRecordDao" ref="contractRecordDao"></property>
+	</bean>
+	<bean id="contractRecordAction" class="com.wiiy.oa.action.ContractRecordAction" scope="prototype">
+		<property name="contractRecordService" ref="contractRecordService"></property>
+	</bean>
+	<bean id="meetingAttDao" class="com.wiiy.oa.dao.MeetingAttDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="meetingAttService" class="com.wiiy.oa.service.impl.MeetingAttServiceImpl">
+		<property name="meetingAttDao" ref="meetingAttDao"></property>
+		<property name="meetingService" ref="meetingService"></property>
+	</bean>
+	<bean id="meetingAttAction" class="com.wiiy.oa.action.MeetingAttAction" scope="prototype">
+		<property name="meetingAttService" ref="meetingAttService"></property>
+	</bean>
+	
+	<bean id="meetingDao" class="com.wiiy.oa.dao.MeetingDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="meetingService" class="com.wiiy.oa.service.impl.MeetingServiceImpl">
+		<property name="meetingDao" ref="meetingDao"></property>
+	</bean>
+	<bean id="meetingAction" class="com.wiiy.oa.action.MeetingAction" scope="prototype">
+		<property name="meetingService" ref="meetingService"></property>
+		<property name="meetingAttService" ref="meetingAttService"></property>
+	</bean>
+	
+	<bean id="supplyPurchaseDao" class="com.wiiy.oa.dao.SupplyPurchaseDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="supplyPurchaseService" class="com.wiiy.oa.service.impl.SupplyPurchaseServiceImpl">
+		<property name="supplyPurchaseDao" ref="supplyPurchaseDao"></property>
+	</bean>
+	<bean id="supplyPurchaseAction" class="com.wiiy.oa.action.SupplyPurchaseAction" scope="prototype">
+		<property name="supplyPurchaseService" ref="supplyPurchaseService"></property>
+	</bean>
+
+	
+	
+	<bean id="dutyDao" class="com.wiiy.oa.dao.DutyDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="dutyService" class="com.wiiy.oa.service.impl.DutyServiceImpl">
+		<property name="dutyDao" ref="dutyDao"></property>
+	</bean>
+	<bean id="dutyAction" class="com.wiiy.oa.action.DutyAction" scope="prototype">
+		<property name="dutyService" ref="dutyService"></property>
+	</bean>
+	<bean id="meetingRoomRentDao" class="com.wiiy.oa.dao.MeetingRoomRentDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="meetingRoomRentService" class="com.wiiy.oa.service.impl.MeetingRoomRentServiceImpl">
+		<property name="meetingRoomRentDao" ref="meetingRoomRentDao"></property>
+	</bean>
+	<bean id="meetingRoomRentAction" class="com.wiiy.oa.action.MeetingRoomRentAction" scope="prototype">
+		<property name="meetingRoomRentService" ref="meetingRoomRentService"></property>
+	</bean>
+	
+	<bean id="sealApprovalDao" class="com.wiiy.oa.dao.SealApprovalDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="sealApprovalService" class="com.wiiy.oa.service.impl.SealApprovalServiceImpl">
+		<property name="sealApprovalDao" ref="sealApprovalDao"></property>
+	</bean>
+	<bean id="sealApprovalAction" class="com.wiiy.oa.action.SealApprovalAction" scope="prototype">
+		<property name="sealApprovalService" ref="sealApprovalService"></property>
+		<property name="sealApplyService" ref="sealApplyService"></property>
+	</bean>
+	
+	<bean id="sealApplyDao" class="com.wiiy.oa.dao.SealApplyDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="sealApplyService" class="com.wiiy.oa.service.impl.SealApplyServiceImpl">
+		<property name="sealApplyDao" ref="sealApplyDao"></property>
+	</bean>
+	<bean id="sealApplyAction" class="com.wiiy.oa.action.SealApplyAction" scope="prototype">
+		<property name="sealApplyService" ref="sealApplyService"></property>
+		<property name="sealApprovalService" ref="sealApprovalService"></property>
+	</bean>
+	
+	<bean id="docShareDao" class="com.wiiy.oa.dao.DocShareDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="docShareService" class="com.wiiy.oa.service.impl.DocShareServiceImpl">
+		<property name="docShareDao" ref="docShareDao"></property>
+	</bean>
+	<bean id="docShareAction" class="com.wiiy.oa.action.DocShareAction" scope="prototype">
+		<property name="docShareService" ref="docShareService"></property>
+	</bean>
+	
+	<bean id="docPublicDao" class="com.wiiy.oa.dao.DocPublicDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="docPublicService" class="com.wiiy.oa.service.impl.DocPublicServiceImpl">
+		<property name="docPublicDao" ref="docPublicDao"></property>
+	</bean>
+	<bean id="docPublicAction" class="com.wiiy.oa.action.DocPublicAction" scope="prototype">
+		<property name="docPublicService" ref="docPublicService"></property>
+	</bean>
+	
+	<bean id="documentDao" class="com.wiiy.oa.dao.DocumentDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="documentService" class="com.wiiy.oa.service.impl.DocumentServiceImpl">
+		<property name="documentDao" ref="documentDao"></property>
+	</bean>
+	<bean id="documentAction" class="com.wiiy.oa.action.DocumentAction" scope="prototype">
+		<property name="documentService" ref="documentService"></property>
+		<property name="docShareService" ref="docShareService"></property>
+		<property name="docPublicService" ref="docPublicService"></property>
+		<property name="cardCategoryService" ref="cardCategoryService"></property>
+		<property name="cardService" ref="cardService"></property>
+	</bean>
+	
+	<bean id="supplyDao" class="com.wiiy.oa.dao.SupplyDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="supplyService" class="com.wiiy.oa.service.impl.SupplyServiceImpl">
+		<property name="supplyDao" ref="supplyDao"></property>
+		<property name="supplyCategoryDao" ref="supplyCategoryDao"></property>
+	</bean>
+	<bean id="supplyAction" class="com.wiiy.oa.action.SupplyAction" scope="prototype">
+		<property name="supplyService" ref="supplyService"></property>
+		<property name="supplyStockInService" ref="supplyStockInService"></property>
+		<property name="supplyApplyService" ref="supplyApplyService"></property>
+		<property name="supplyCategoryService" ref="supplyCategoryService"></property>
+	</bean>
+	
+	<bean id="supplyStockInDao" class="com.wiiy.oa.dao.SupplyStockInDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="supplyStockInService" class="com.wiiy.oa.service.impl.SupplyStockInServiceImpl">
+		<property name="supplyStockInDao" ref="supplyStockInDao"></property>
+	</bean>
+	<bean id="supplyStockInAction" class="com.wiiy.oa.action.SupplyStockInAction" scope="prototype">
+		<property name="supplyStockInService" ref="supplyStockInService"></property>
+	</bean>
+	
+	<bean id="supplyCategoryDao" class="com.wiiy.oa.dao.SupplyCategoryDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="supplyCategoryService" class="com.wiiy.oa.service.impl.SupplyCategoryServiceImpl">
+		<property name="supplyCategoryDao" ref="supplyCategoryDao"></property>
+	</bean>
+	<bean id="supplyCategoryAction" class="com.wiiy.oa.action.SupplyCategoryAction" scope="prototype">
+		<property name="supplyCategoryService" ref="supplyCategoryService"></property>
+	</bean>
+	
+	<bean id="supplyApplyDao" class="com.wiiy.oa.dao.SupplyApplyDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="supplyApplyService" class="com.wiiy.oa.service.impl.SupplyApplyServiceImpl">
+		<property name="supplyApplyDao" ref="supplyApplyDao"></property>
+	</bean>
+	<bean id="supplyApplyAction" class="com.wiiy.oa.action.SupplyApplyAction" scope="prototype">
+		<property name="supplyApplyService" ref="supplyApplyService"></property>
+	</bean>
+			
+	<bean id="cardDao" class="com.wiiy.oa.dao.CardDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="cardService" class="com.wiiy.oa.service.impl.CardServiceImpl">
+		<property name="cardDao" ref="cardDao"></property>
+	</bean>
+	<bean id="cardAction" class="com.wiiy.oa.action.CardAction" scope="prototype">
+		<property name="cardService" ref="cardService"></property>
+		<property name="cardCategoryService" ref="cardCategoryService"></property>
+	</bean>
+	
+	<bean id="cardCategoryDao" class="com.wiiy.oa.dao.CardCategoryDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="cardCategoryService" class="com.wiiy.oa.service.impl.CardCategoryServiceImpl">
+		<property name="cardCategoryDao" ref="cardCategoryDao"></property>
+	</bean>
+	<bean id="cardCategoryAction" class="com.wiiy.oa.action.CardCategoryAction" scope="prototype">
+		<property name="cardCategoryService" ref="cardCategoryService"></property>
+		<property name="cardService" ref="cardService"></property>
+	</bean>
+	
+	<bean id="scheduleDao" class="com.wiiy.oa.dao.ScheduleDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="scheduleService" class="com.wiiy.oa.service.impl.ScheduleServiceImpl">
+		<property name="scheduleDao" ref="scheduleDao"></property>
+	</bean>
+	<bean id="scheduleAction" class="com.wiiy.oa.action.ScheduleAction" scope="prototype">
+		<property name="scheduleService" ref="scheduleService"></property>
+	</bean>
+	
+	<bean id="taskAttDao" class="com.wiiy.oa.dao.TaskAttDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="taskAttService" class="com.wiiy.oa.service.impl.TaskAttServiceImpl">
+		<property name="taskAttDao" ref="taskAttDao"></property>
+	</bean>
+	<bean id="taskAttAction" class="com.wiiy.oa.action.TaskAttAction" scope="prototype">
+		<property name="taskAttService" ref="taskAttService"></property>
+	</bean>
+	
+	<bean id="taskDao" class="com.wiiy.oa.dao.TaskDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="taskService" class="com.wiiy.oa.service.impl.TaskServiceImpl">
+		<property name="taskDao" ref="taskDao"></property>
+	</bean>
+	<bean id="taskAction" class="com.wiiy.oa.action.TaskAction" scope="prototype">
+		<property name="taskService" ref="taskService"></property>
+		<property name="taskDepartService" ref="taskDepartService"></property>
+		<property name="taskProjectService" ref="taskProjectService"></property>
+		<property name="taskLogService" ref="taskLogService"></property>
+		<property name="taskDepartConfigService" ref="taskDepartConfigService"></property>
+		<property name="taskAttService" ref="taskAttService"></property>
+	</bean>
+	
+	
+	<bean id="taskDepartDao" class="com.wiiy.oa.dao.TaskDepartDao">
+		<property name="SessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="taskDepartService" class="com.wiiy.oa.service.impl.TaskDepartServiceImpl">
+		<property name="taskDepartDao" ref="taskDepartDao"></property>
+	</bean>
+	<bean id="taskDepartAction" class="com.wiiy.oa.action.TaskDepartAction" scope="prototype">
+		<property name="taskDepartService" ref="taskDepartService"></property>
+	</bean>
+	
+	<bean id="taskProjectDao" class="com.wiiy.oa.dao.TaskProjectDao">
+		<property name="SessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="taskProjectService" class="com.wiiy.oa.service.impl.TaskProjectServiceImpl">
+		<property name="taskProjectDao" ref="taskProjectDao"></property>
+	</bean>
+	<bean id="taskProjectAction" class="com.wiiy.oa.action.TaskProjectAction" scope="prototype">
+		<property name="taskProjectService" ref="taskProjectService"></property>
+	</bean>
+	
+	<bean id="taskDepartConfigDao" class="com.wiiy.oa.dao.TaskDepartConfigDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="taskDepartConfigService" class="com.wiiy.oa.service.impl.TaskDepartConfigServiceImpl">
+		<property name="taskDepartConfigDao" ref="taskDepartConfigDao"></property>
+	</bean>
+	<bean id="taskDepartConfigAction" class="com.wiiy.oa.action.TaskDepartConfigAction" scope="prototype">
+		<property name="taskDepartConfigService" ref="taskDepartConfigService"></property>
+	</bean>
+	
+	<bean id="taskLogDao" class="com.wiiy.oa.dao.TaskLogDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="taskLogService" class="com.wiiy.oa.service.impl.TaskLogServiceImpl">
+		<property name="taskLogDao" ref="taskLogDao"></property>
+	</bean>
+	<bean id="taskLogAction" class="com.wiiy.oa.action.TaskLogAction" scope="prototype">
+		<property name="taskLogService" ref="taskLogService"></property>
+	</bean>
+	
+
+	
+	<bean id="workReportConfigDao" class="com.wiiy.oa.dao.WorkReportConfigDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="workReportConfigService" class="com.wiiy.oa.service.impl.WorkReportConfigServiceImpl">
+		<property name="workReportConfigDao" ref="workReportConfigDao"></property>
+	</bean>
+	<bean id="workReportConfigAction" class="com.wiiy.oa.action.WorkReportConfigAction" scope="prototype">
+		<property name="workReportConfigService" ref="workReportConfigService"></property>
+	</bean>
+	
+	
+	<bean id="workReportDao" class="com.wiiy.oa.dao.WorkReportDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="workReportService" class="com.wiiy.oa.service.impl.WorkReportServiceImpl">
+		<property name="workReportDao" ref="workReportDao"></property>
+	</bean>
+	<bean id="workReportAction" class="com.wiiy.oa.action.WorkReportAction" scope="prototype">
+		<property name="workReportService" ref="workReportService"></property>
+		<property name="workDayReportService" ref="workDayReportService"></property>
+		<property name="workReportConfigService" ref="workReportConfigService"></property>
+		<property name="taskService" ref="taskService"></property>
+		<property name="departService" ref="taskDepartService"></property>
+	</bean>
+	
+	<bean id="smsDao" class="com.wiiy.oa.dao.SmsDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="smsService" class="com.wiiy.oa.service.impl.SmsServiceImpl">
+		<property name="smsDao" ref="smsDao"></property>
+		<property name="smsReceiverDao" ref="smsReceiverDao"></property>
+	</bean>
+	<bean id="smsAction" class="com.wiiy.oa.action.SmsAction" scope="prototype">
+		<property name="smsService" ref="smsService"></property>
+		<property name="smsReceiverService" ref="smsReceiverService"></property>
+		<property name="cardCategoryService" ref="cardCategoryService"></property>
+		<property name="cardService" ref="cardService"></property>
+	</bean>
+	<bean id="smsReceiverDao" class="com.wiiy.oa.dao.SmsReceiverDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="smsReceiverService" class="com.wiiy.oa.service.impl.SmsReceiverServiceImpl">
+		<property name="smsReceiverDao" ref="smsReceiverDao"></property>
+	</bean>
+	<bean id="smsReceiverAction" class="com.wiiy.oa.action.SmsReceiverAction" scope="prototype">
+		<property name="smsReceiverService" ref="smsReceiverService"></property>
+		<property name="smsService" ref="smsService"></property>
+	</bean>
+	
+	<bean id="smsTemplateDao" class="com.wiiy.oa.dao.SmsTemplateDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="smsTemplateService" class="com.wiiy.oa.service.impl.SmsTemplateServiceImpl">
+		<property name="smsTemplateDao" ref="smsTemplateDao"></property>
+	</bean>
+	<bean id="smsTemplateAction" class="com.wiiy.oa.action.SmsTemplateAction" scope="prototype">
+		<property name="smsTemplateService" ref="smsTemplateService"></property>
+	</bean>
+	
+	<bean id="carDao" class="com.wiiy.oa.dao.CarDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="carService" class="com.wiiy.oa.service.impl.CarServiceImpl">
+		<property name="carDao" ref="carDao"></property>
+	</bean>
+	<bean id="carAction" class="com.wiiy.oa.action.CarAction" scope="prototype">
+		<property name="carService" ref="carService"></property>
+	</bean>
+	
+	<bean id="carFixDao" class="com.wiiy.oa.dao.CarFixDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="carFixService" class="com.wiiy.oa.service.impl.CarFixServiceImpl">
+		<property name="carFixDao" ref="carFixDao"></property>
+	</bean>
+	<bean id="carFixAction" class="com.wiiy.oa.action.CarFixAction" scope="prototype">
+		<property name="carFixService" ref="carFixService"></property>
+	</bean>
+	
+	<bean id="carApplyDao" class="com.wiiy.oa.dao.CarApplyDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="carApplyService" class="com.wiiy.oa.service.impl.CarApplyServiceImpl">
+		<property name="carApplyDao" ref="carApplyDao"></property>
+	</bean>
+	<bean id="carApplyAction" class="com.wiiy.oa.action.CarApplyAction" scope="prototype">
+		<property name="carApplyService" ref="carApplyService"></property>
+	</bean>
+	
+	<bean id="fixedAssetsDao" class="com.wiiy.oa.dao.FixedAssetsDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="fixedAssetsService" class="com.wiiy.oa.service.impl.FixedAssetsServiceImpl">
+		<property name="fixedAssetsDao" ref="fixedAssetsDao"></property>
+		<property name="assetsDepreciationDao" ref="assetsDepreciationDao"></property>
+	</bean>
+	<bean id="fixedAssetsAction" class="com.wiiy.oa.action.FixedAssetsAction" scope="prototype">
+		<property name="fixedAssetsService" ref="fixedAssetsService"></property>
+	</bean>
+	
+	<bean id="assetsDepreciationDao" class="com.wiiy.oa.dao.AssetsDepreciationDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="assetsDepreciationService" class="com.wiiy.oa.service.impl.AssetsDepreciationServiceImpl">
+		<property name="assetsDepreciationDao" ref="assetsDepreciationDao"></property>		
+	</bean>
+	<bean id="assetsDepreciationAction" class="com.wiiy.oa.action.AssetsDepreciationAction" scope="prototype">
+		<property name="assetsDepreciationService" ref="assetsDepreciationService"></property>		
+	</bean>
+	
+	<bean id="positionDao" class="com.wiiy.oa.dao.PositionDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="positionService" class="com.wiiy.oa.service.impl.PositionServiceImpl">
+		<property name="positionDao" ref="positionDao"></property>
+	</bean>
+	<bean id="positionAction" class="com.wiiy.oa.action.PositionAction" scope="prototype">
+		<property name="positionService" ref="positionService"></property>
+	</bean>
+	
+	<bean id="archivesDao" class="com.wiiy.oa.dao.ArchivesDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="archivesService" class="com.wiiy.oa.service.impl.ArchivesServiceImpl">
+		<property name="archivesDao" ref="archivesDao"></property>
+	</bean>
+	<bean id="archivesAction" class="com.wiiy.oa.action.ArchivesAction" scope="prototype">
+		<property name="archivesService" ref="archivesService"></property>
+		<property name="positionService" ref="positionService"></property>
+		<property name="salaryDefineService" ref="salaryDefineService"></property>
+		<property name="salaryDefineCfgService" ref="salaryDefineCfgService"></property>
+		<property name="salaryItemService" ref="salaryItemService"></property>
+	</bean>
+	
+	<bean id="salaryItemDao" class="com.wiiy.oa.dao.SalaryItemDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="salaryItemService" class="com.wiiy.oa.service.impl.SalaryItemServiceImpl">
+		<property name="salaryItemDao" ref="salaryItemDao"></property>
+	</bean>
+	<bean id="salaryItemAction" class="com.wiiy.oa.action.SalaryItemAction" scope="prototype">
+		<property name="salaryItemService" ref="salaryItemService"></property>
+	</bean>
+	
+	<bean id="salaryDefineDao" class="com.wiiy.oa.dao.SalaryDefineDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="salaryDefineService" class="com.wiiy.oa.service.impl.SalaryDefineServiceImpl">
+		<property name="salaryDefineDao" ref="salaryDefineDao"></property>
+	</bean>
+	<bean id="salaryDefineAction" class="com.wiiy.oa.action.SalaryDefineAction" scope="prototype">
+		<property name="salaryDefineService" ref="salaryDefineService"></property>
+	</bean>
+	
+	<bean id="salaryDefineCfgDao" class="com.wiiy.oa.dao.SalaryDefineCfgDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="salaryDefineCfgService" class="com.wiiy.oa.service.impl.SalaryDefineCfgServiceImpl">
+		<property name="salaryDefineCfgDao" ref="salaryDefineCfgDao"></property>
+	</bean>
+	<bean id="salaryDefineCfgAction" class="com.wiiy.oa.action.SalaryDefineCfgAction" scope="prototype">
+		<property name="salaryDefineCfgService" ref="salaryDefineCfgService"></property>
+	</bean>
+	
+	<bean id="workArrangeDao" class="com.wiiy.oa.dao.WorkArrangeDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="workArrangeService" class="com.wiiy.oa.service.impl.WorkArrangeServiceImpl">
+		<property name="workArrangeDao" ref="workArrangeDao"></property>
+	</bean>
+	<bean id="workArrangeAction" class="com.wiiy.oa.action.WorkArrangeAction" scope="prototype">
+		<property name="workArrangeService" ref="workArrangeService"></property>
+		<property name="workScheduleService" ref="workScheduleService"></property>
+		<property name="workClassService" ref="workClassService"></property>
+		<property name="userSignService" ref="userSignService"></property>
+	</bean>
+	
+	<bean id="workClassDao" class="com.wiiy.oa.dao.WorkClassDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="workClassService" class="com.wiiy.oa.service.impl.WorkClassServiceImpl">
+		<property name="workClassDao" ref="workClassDao"></property>
+	</bean>
+	<bean id="workClassAction" class="com.wiiy.oa.action.WorkClassAction" scope="prototype">
+		<property name="workClassService" ref="workClassService"></property>
+		<property name="workScheduleService" ref="workScheduleService"></property>
+	</bean>
+	
+	<bean id="workScheduleDao" class="com.wiiy.oa.dao.WorkScheduleDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="workScheduleService" class="com.wiiy.oa.service.impl.WorkScheduleServiceImpl">
+		<property name="workScheduleDao" ref="workScheduleDao"></property>
+	</bean>
+	<bean id="workScheduleAction" class="com.wiiy.oa.action.WorkScheduleAction" scope="prototype">
+		<property name="workScheduleService" ref="workScheduleService"></property>
+		<property name="workClassService" ref="workClassService"></property>
+	</bean>
+
+	<bean id="userSignDao" class="com.wiiy.oa.dao.UserSignDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="userSignService" class="com.wiiy.oa.service.impl.UserSignServiceImpl">
+		<property name="userSignDao" ref="userSignDao"></property>
+	</bean>
+	<bean id="userSignAction" class="com.wiiy.oa.action.UserSignAction">
+		<property name="userSignService" ref="userSignService"></property>
+		<property name="workClassService" ref="workClassService"></property>
+		<property name="workScheduleService" ref="workScheduleService"></property>
+		<property name="workArrangeService" ref="workArrangeService"></property>
+	</bean>
+	
+	<bean id="mailService" class="com.wiiy.oa.service.impl.MailServiceImpl">
+	</bean>
+	<bean id="mailAction" class="com.wiiy.oa.action.MailAction" scope="prototype">
+		<property name="mailService" ref="mailService"></property>
+	</bean>
+	
+	<bean id="outRegisterDao" class="com.wiiy.oa.dao.OutRegisterDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="outRegisterService" class="com.wiiy.oa.service.impl.OutRegisterServiceImpl">
+		<property name="outRegisterDao" ref="outRegisterDao"></property>
+	</bean>
+	<bean id="outRegisterAction" class="com.wiiy.oa.action.OutRegisterAction" scope="prototype">
+		<property name="outRegisterService" ref="outRegisterService"></property>
+	</bean>
+	
+	<bean id="leaveRegisterDao" class="com.wiiy.oa.dao.LeaveRegisterDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="leaveRegisterService" class="com.wiiy.oa.service.impl.LeaveRegisterServiceImpl">
+		<property name="leaveRegisterDao" ref="leaveRegisterDao"></property>
+	</bean>
+	<bean id="leaveRegisterAction" class="com.wiiy.oa.action.LeaveRegisterAction" scope="prototype">
+		<property name="leaveApprovalService" ref="leaveApprovalService"></property>
+		<property name="leaveRegisterService" ref="leaveRegisterService"></property>
+	</bean>
+	
+	<bean id="leaveApprovalDao" class="com.wiiy.oa.dao.LeaveApprovalDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="leaveApprovalService" class="com.wiiy.oa.service.impl.LeaveApprovalServiceImpl">
+		<property name="leaveApprovalDao" ref="leaveApprovalDao"></property>
+	</bean>
+	<bean id="leaveApprovalAction" class="com.wiiy.oa.action.LeaveApprovalAction" scope="prototype">
+		<property name="leaveApprovalService" ref="leaveApprovalService"></property>
+		<property name="leaveRegisterService" ref="leaveRegisterService"></property>
+	</bean>
+
+	<bean id="workDayReportDao" class="com.wiiy.oa.dao.WorkDayReportDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="workDayReportService" class="com.wiiy.oa.service.impl.WorkDayReportServiceImpl">
+		<property name="workDayReportDao" ref="workDayReportDao"></property>
+	</bean>
+	<bean id="workDayReportAction" class="com.wiiy.oa.action.WorkDayReportAction" scope="prototype">
+		<property name="workDayReportService" ref="workDayReportService"></property>
+		<property name="workReportConfigService" ref="workReportConfigService"></property>
+		<property name="taskService" ref="taskService"></property>
+		<property name="departService" ref="taskDepartService"></property>
+	</bean>
+	<bean id="noticeDao" class="com.wiiy.oa.dao.NoticeDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="noticeService" class="com.wiiy.oa.service.impl.NoticeServiceImpl">
+		<property name="noticeDao" ref="noticeDao"></property>
+	</bean>
+	<bean id="noticeAction" class="com.wiiy.oa.action.NoticeAction" scope="prototype">
+		<property name="userNoticeService" ref="userNoticeService"></property>
+		<property name="noticeService" ref="noticeService"></property>
+		<property name="noticeAttService" ref="noticeAttService"></property>
+	</bean>
+	
+	<bean id="noticeAttDao" class="com.wiiy.oa.dao.NoticeAttDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="noticeAttService" class="com.wiiy.oa.service.impl.NoticeAttServiceImpl">
+		<property name="noticeAttDao" ref="noticeAttDao"></property>
+	</bean>
+	<bean id="noticeAttAction" class="com.wiiy.oa.action.NoticeAttAction" scope="prototype">
+		<property name="noticeAttService" ref="noticeAttService"></property>
+	</bean>
+</beans>

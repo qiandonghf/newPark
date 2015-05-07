@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+html{OVERFLOW:SCROLL;OVERFLOW:hidden;}
+body,div,ul,li,h1,h2,h3,h4,h5,h6,form,pre,input,textarea,td,th,dd,dl,dt,hr,p{ margin:0; padding:0;}
+img{ border:none;}
+body,botton,input,select,textarea{ font:12px/1.5 tahoma,Helvetica, Arial, sans-serif,"宋体";margin:0; padding:0;}
+li,dd dt{ list-style:none;}
+.hackbox{ clear:both;}
+.userleft{ width:196px; position:absolute; bottom:55px;}
+.userleft h1{ background:url(../../../core/common/images/userline.png) no-repeat center; height:25px; line-height:25px;}
+.userleft ul li{ line-height:22px; color:#666; padding-left:35px; padding-top:5px;}
+.service{ margin:15px;}
+.servicetips{ width:200px; height:70px; float:left; margin-right:20px; margin-bottom:15px; border:1px solid #dfdfdf; background:#fbfbfb; cursor:pointer;}
+.servicetips:hover{background:#ededed;}
+.servicetips img{  float:left; padding:5px; text-align:center;}
+.servicetips ul li{ color:#666; height:20px; line-height:20px;}
+.servicetips ul li a:link,.servicetips ul li a:visited,.servicetips ul li a:hover{ color:#666; text-decoration:none;}
+.servicetips .title{ padding-top:5px; font-weight:bold; font-size:14px;}

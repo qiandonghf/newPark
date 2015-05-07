@@ -1,0 +1,57 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="dd" uri="http://www.wiiy.com/taglib/datadict" %>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base href="https://58.215.78.148:8443/svn/parkmanager/trunk/parkmanager.mockup.war/"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="core/common/style/base.css" rel="stylesheet" type="text/css" />
+<link href="parkmanager.oa/web/style/oawork.css" rel="stylesheet" type="text/css" />
+<link href="core/common/style/content.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="core/common/js/righth.js"></script>
+<script type="text/javascript" src="core/common/js/jquery.js"></script>
+<link href="core/common/floatbox/floatbox.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="core/common/floatbox/floatbox.js"></script>
+<script type="text/javascript" src="core/common/js/tools.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#merters li").each(function(index){
+		$("#merters li").eq(index).click(function(){
+			$("#merters li").removeClass("livisited").addClass("lilink");
+			$("#merters li").eq(index).removeClass("lilink").addClass("livisited");
+			$(".workdiv").css({display:"none"});
+			$(".workdiv").eq(index).css({display:"block"})
+		});
+	});
+});
+</script>
+</head>
+
+<body onload="bodyheights('resizable',0,'resizable',0);" style="background:url(core/common/images/workbg.gif)">
+	
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td valign="top">
+		<iframe scrolling="no" id="resizable" frameborder="0" width="100%" name="resizable" src="parkmanager.oa/web/work/workbench.html"></iframe>
+	</td>
+    <td width="33" valign="top">
+	<div class="oaworkright" id="merters">
+		<ul>
+			<li class="livisited">工<br/>作<br/>台</li>
+			<li class="lilink">新<br/>闻<br/>中<br/>心</li>
+			<li class="lilink">快<br/>速<br/>
+			按<br/>钮</li>
+		</ul>
+	</div>
+	</td>
+  </tr>
+</table>
+</body>
+</html>

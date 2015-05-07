@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appConfig>
+	<config key="articleReleaseRemind" label="文章发布提醒信息模版">
+    	<parameter key="email" label="邮件" value="${customerName}发布了新文章【${articleTitle}】，&lt;a href='${url}'&gt;请点击这里&lt;/a&gt;" render="text"/>
+    	<parameter key="sms" label="短信" value="${customerName}发布了新文章【${articleTitle}】" render="text"/>
+    </config>
+    <config key="resourcePosition" label="网站资源">
+    	<parameter key="position" label="资源位置" value="10, 20, 30" render="checkbox">
+        	<option value="10" label="顶部"/>
+        	<option value="20" label="中间通栏"/>
+        	<option value="30" label="底部通栏"/>
+        </parameter>
+    </config>
+    <!-- <config key="newsURL" label="远程服务链接">
+        <parameter key="name" label="远程服务链接" value="http://127.0.0.1:96/parkmanager.cloudService/rss!news.action?id=" render="text"/>
+    </config>
+    <config key="newsList" label="新闻列表">
+        <parameter key="name" label="新闻列表" value="http://127.0.0.1:96/parkmanager.cloudService/rss!list.action" render="text"/>
+    </config> -->
+</appConfig>

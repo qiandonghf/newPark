@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.pb.entity.Facility">
+    	<meta attribute="class-description">公共设施</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="java.lang.String" not-null="true" unique-key="true">
+			<column name="name" not-null="true">
+				<comment>设施名称</comment>
+			</column>
+		</property>
+		<property name="buildingId" type="java.lang.Long">
+			<column name="building_id">
+				<comment>楼宇外键</comment>
+			</column>
+		</property>
+		<many-to-one name="building" class="com.wiiy.pb.entity.Building" foreign-key="fk_facility_building_building" insert="false" update="false" fetch="join">
+			<column name="building_id" >
+				<comment>楼宇实体</comment>
+			</column>
+		</many-to-one>
+		<property name="parkId" type="java.lang.Long" not-null="true">
+			<column name="park_id">
+				<comment>园区Id</comment>
+			</column>
+		</property>
+		<property name="parkName" type="java.lang.String" not-null="true">
+			<column name="park_name" not-null="true">
+				<comment>设施名称</comment>
+			</column>
+		</property>
+
+		 <property name="type">
+            <column name="type" not-null="true">
+				<comment>设施类型</comment>
+			</column>
+            <type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.pb.preferences.enums.FacilityTypeEnum</param>
+				<param name="type">12</param>
+			</type>
+        </property>
+        
+        <property name="status">
+            <column name="status">
+				<comment>设施状态</comment>
+			</column>
+            <type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.pb.preferences.enums.FacilityStatusEnum</param>
+				<param name="type">12</param>
+			</type>
+        </property>
+        <property name="bcharge">
+        	<column name="bcharge">
+				<comment>是否收费</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>		
+        </property>
+        <property name="checkType">
+            <column name="check_type">
+				<comment>结算类型</comment>
+			</column>
+            <type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.pb.preferences.enums.CheckOutTypeEnum</param>
+				<param name="type">12</param>
+			</type>
+        </property>
+        <property name="billingMethod">
+        	<column name="billing_method">
+				<comment>计费类型</comment>
+			</column>
+            <type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.pb.preferences.enums.BillingMethodEnum</param>
+				<param name="type">12</param>
+			</type>
+        </property>
+        <property name="price" type="java.math.BigDecimal">
+        	<column name="price">
+				<comment>单价</comment>
+			</column>
+		</property>
+		<property name="bshare">
+        	<column name="bshare">
+				<comment>是否独享资源</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>		
+        </property>
+        <property name="summary" type="java.lang.String">
+        	<column name="summary" length="1024">
+				<comment>设施介绍</comment>
+			</column>
+		</property>
+		<property name="photos" type="java.lang.String">
+        	<column name="photos" sql-type="text">
+				<comment>设施照片</comment>
+			</column>
+		</property>
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

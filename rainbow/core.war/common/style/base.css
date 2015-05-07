@@ -1,0 +1,75 @@
+@charset "utf-8";
+/* CSS Document */
+html{OVERFLOW:SCROLL;OVERFLOW:hidden;}
+body,div,ul,li,h1,h2,h3,h4,h5,h6,form,pre,input,textarea,td,th,dd,dl,dt,hr,p{ margin:0; padding:0;}
+img{ border:none; cursor:pointer;}
+body,botton,input,select,textarea{ font-size:12px; font-family:tahoma,Helvetica, Arial, sans-serif,simsun;margin:0; padding:0;}
+li,dd,dt{ list-style:none;}
+.hackbox{ clear:both;}
+.floatRt { float:right;}
+.tar { text-align:right;}
+.tac { text-align:center;}
+.tal { text-align:left;}
+
+.floatLt { float:left;}
+.floatRt { float:right;}
+
+
+.page{ height:29px; line-height:29px; border-bottom:1px solid #ccc; background:#f2f2f2; padding-right:5px; padding-left:5px;}
+.page .floatrightdiv{ width:100px; float:left; padding-left:8px;}
+
+
+
+.page .floatrightdiv input { vertical-align:middle; _margin-top:5px; _vertical-align:-3px; margin-left:-2px; margin-left:-6px\9;}
+.page .floatrightdiv a { color:#666;}
+.page .floatrightdiv span { color:#333;}
+
+.page ul li{ width:280px; float:right;}
+.page ul li span{ margin-right:10px; float:left;}
+.page .first{ width:13px; height:13px; background:url(../images/fiest.gif) no-repeat; display:inline-block; cursor:pointer; float:left; margin-top:8px;}
+.page .first{ display:block;}
+.page .first:hover{ background:url(../images/fiestover.gif) no-repeat;}
+.page .pre{ width:13px; height:13px; background:url(../images/pre.gif) no-repeat; display:inline-block; cursor:pointer; float:left; margin-top:8px;}
+.page .pre{ display:block;}
+.page .pre:hover{ background:url(../images/preover.gif) no-repeat;}
+
+.page .next{ width:13px; height:13px; background:url(../images/next.gif) no-repeat; display:inline-block; cursor:pointer; float:left; margin-top:8px;}
+.page .next{ display:block;}
+.page .next:hover{ background:url(../images/nextover.gif) no-repeat;}
+.page .last{ width:13px; height:13px; background:url(../images/last.gif) no-repeat; display:inline-block; cursor:pointer; float:left; margin-top:8px;}
+.page .last{ display:block;}
+.page .last:hover{ background:url(../images/lastover.gif) no-repeat;}
+.page .select{ _margin-top:5px;}
+.page .input{ position:relative; top:4px;}
+*+html .page .input{ position:relative; top:0px;}
+.page .inputbtn{ border:1px solid #ccc; width:30px; height:16px; text-align:center;}
+
+
+.page2 ul li {float:none; position:relative; width:206px; left:50%; margin-left:-103px;}
+
+
+.page_min { height:25px; overflow:hidden; zoom:1;}
+.page_min span { height:25px; float:left; line-height:25px; margin-right:5px; color:#999;}
+.page_min a { width:20px; height:25px; float:left;}
+.page_min .pre { background:url(../images/pre.gif) no-repeat center;}
+.page_min .pre:hover { background:url(../images/preover.gif) no-repeat center;}
+
+.page_min .next { background:url(../images/next.gif) no-repeat center;}
+.page_min .next:hover { background:url(../images/nextover.gif) no-repeat center;}
+
+
+
+
+
+
+
+
+
+
+
+.msgpage{height:22px; line-height:22px; background:#ff8a00; text-align:center; padding:0px 5px; color:#fff; position:fixed; left:40%; top:30%; z-index:99999;}
+.loadpage{height:22px; line-height:22px; text-align:center; background:#fff; border:1px solid #f5f5f5; color:#666; padding:0px 5px; position:fixed; left:36%; top:30%; z-index:99999;}
+.loadpage img{ vertical-align:middle; padding-right:5px;}
+.tips{ width:200px; padding:10px; border:1px solid #ccc;position:absolute; left:40%; top:35%; background:#fbfbfb; z-index:99999;}
+.tips .closediv{ position:absolute; top:0px; right:2px; cursor:pointer;}
+.tips span{ color:#f00; font-weight:bold;}

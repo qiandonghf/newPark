@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.oa.entity.ContractRecord">
+    	<meta attribute="class-description">合同备案</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		
+		<property name="partya" type="java.lang.String">
+			<column name="party_a" sql-type="varchar(255)" not-null="true">
+				<comment>甲方</comment>
+			</column>
+		</property>
+		<property name="partyb" type="java.lang.String">
+			<column name="party_b" sql-type="varchar(255)" not-null="true">
+				<comment>乙方</comment>
+			</column>
+		</property>
+		<property name="contractName" type="java.lang.String">
+			<column name="contract_name" sql-type="varchar(255)" not-null="true">
+				<comment>合同名称</comment>
+			</column>
+		</property>
+		<property name="duration" type="java.lang.String">
+			<column name="duration" sql-type="varchar(255)" not-null="true">
+				<comment>合同期限</comment>
+			</column>
+		</property>
+		<property name="contractCharacter">
+        	<column name="contract_character">
+				<comment>合同性质</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.oa.preferences.enums.ContractCharacterEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="signingDate" type="java.util.Date">
+			<column name="signing_date">
+				<comment>签约时间</comment>
+			</column>
+		</property>
+		<property name="money" type="java.lang.Long">
+			<column name="money">
+				<comment>金额</comment>
+			</column>
+		</property>
+		<set name="atts" cascade="all-delete-orphan" lazy="false">
+        	<comment>附件</comment>
+            <key>
+                <column name="contractRecord_id"></column>
+            </key>
+            <one-to-many class="com.wiiy.oa.entity.ContractRecordAtt" />
+        </set> 
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

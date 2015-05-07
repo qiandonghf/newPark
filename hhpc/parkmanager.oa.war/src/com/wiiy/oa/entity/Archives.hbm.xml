@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.oa.entity.Archives">
+    	<meta attribute="class-description">档案</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="serialNo" type="java.lang.String">
+			<column name="serial_no" not-null="true">
+				<comment>档案编号</comment>
+			</column>
+		</property>
+		<property name="name" type="java.lang.String">
+			<column name="name" not-null="true">
+				<comment>员工姓名</comment>
+			</column>
+		</property>
+		<property name="idNo" type="java.lang.String">
+			<column name="id_no" not-null="true">
+				<comment>身份证号</comment>
+			</column>
+		</property>
+		
+		<property name="religiousId" type="java.lang.String">
+			<column name="religious_id">
+				<comment>宗教信仰外键</comment>
+			</column>
+		</property>
+		<many-to-one name="religious" class="com.wiiy.core.entity.DataDict" foreign-key="fk_Archives_religious" insert="false" update="false" fetch="join">
+			<column name="religious_id">
+				<comment>宗教信仰</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="userId" type="java.lang.Long">
+			<column name="user_id">
+				<comment>用户外键</comment>
+			</column>
+		</property>
+		<many-to-one name="user" class="com.wiiy.core.entity.User" foreign-key="fk_Archives_user" insert="false" update="false" fetch="join">
+			<column name="user_id">
+				<comment>用户</comment>
+			</column>
+		</many-to-one>
+		<property name="birthDay" type="java.util.Date">
+			<column name="birth_day">
+				<comment>出生日期</comment>
+			</column>
+		</property>
+		<property name="politicalId" type="java.lang.String">
+			<column name="political_id">
+				<comment>政治面貌外键</comment>
+			</column>
+		</property>
+		<many-to-one name="political" class="com.wiiy.core.entity.DataDict" foreign-key="fk_Archives_political" insert="false" update="false" fetch="join">
+			<column name="political_id">
+				<comment>政治面貌</comment>
+			</column>
+		</many-to-one>
+		<property name="gender">
+        	<column name="gender">
+				<comment>性别</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.GenderEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="nationalityId" type="java.lang.String">
+			<column name="nationality_id">
+				<comment>国籍外键</comment>
+			</column>
+		</property>
+		<many-to-one name="nationality" class="com.wiiy.core.entity.DataDict" foreign-key="fk_Archives_nationality" insert="false" update="false" fetch="join">
+			<column name="nationality_id">
+				<comment>国籍</comment>
+			</column>
+		</many-to-one>
+		<property name="marriage">
+			<column name="marriage" sql-type="varchar(50)">
+				<comment>是否已婚</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+		<property name="ethnicId" type="java.lang.String">
+			<column name="ethnic_id">
+				<comment>民族外键</comment>
+			</column>
+		</property>
+		<many-to-one name="ethnic" class="com.wiiy.core.entity.DataDict" foreign-key="fk_Archives_ethnic" insert="false" update="false" fetch="join">
+			<column name="ethnic_id">
+				<comment>民族</comment>
+			</column>
+		</many-to-one>
+		<property name="homeTown" type="java.lang.String">
+			<column name="home_town">
+				<comment>籍贯</comment>
+			</column>
+		</property>
+		<property name="status">
+            <column name="status" not-null="true">
+                <comment>状态</comment>
+            </column>
+            <type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.oa.preferences.enums.PositionConditionEnum</param>
+				<param name="type">12</param>
+			</type>
+        </property>
+		<property name="photo" type="java.lang.String">
+			<column name="photo">
+				<comment>照片</comment>
+			</column>
+		</property>
+		<property name="orgId" type="java.lang.Long" not-null="true">
+			<column name="org_id" not-null="true">
+				<comment>部门外键</comment>
+			</column>
+		</property>
+		<many-to-one name="org" class="com.wiiy.core.entity.Org" foreign-key="fk_Archives_org" insert="false" update="false" fetch="join">
+			<column name="org_id">
+				<comment>所属部门</comment>
+			</column>
+		</many-to-one>
+		<!-- <property name="positionId" type="java.lang.Long" not-null="true">
+			<column name="position_id" not-null="true">
+				<comment>职位外键</comment>
+			</column>
+		</property>
+		<many-to-one name="position" class="com.wiiy.oa.entity.Position" foreign-key="fk_Archives_position" insert="false" update="false" fetch="join">
+			<column name="position_id">
+				<comment>职位</comment>
+			</column>
+		</many-to-one> -->
+		<property name="position" type="java.lang.String">
+			<column name="position">
+				<comment>职务</comment>
+			</column>
+		</property>
+		<property name="entryTime" type="java.util.Date">
+			<column name="entry_time">
+				<comment>入职时间</comment>
+			</column>
+		</property>
+		<property name="startTime" type="java.util.Date">
+			<column name="start_time">
+				<comment>合同开始时间</comment>
+			</column>
+		</property>
+		<property name="endTime" type="java.util.Date">
+			<column name="end_time">
+				<comment>合同结束时间</comment>
+			</column>
+		</property>
+		<property name="bank" type="java.lang.String">
+			<column name="bank">
+				<comment>开户行</comment>
+			</column>
+		</property>
+		<property name="bankAccount" type="java.lang.String">
+			<column name="bank_account">
+				<comment>银行账号</comment>
+			</column>
+		</property>
+		
+		
+		
+		<!-- <property name="salaryDefineId" type="java.lang.Long" not-null="true">
+			<column name="salary_define_id" not-null="true">
+				<comment>薪资标准外键</comment>
+			</column>
+		</property>
+		<many-to-one name="salaryDefine" class="com.wiiy.oa.entity.SalaryDefine" foreign-key="fk_Archives_salaryDefine" insert="false" update="false" fetch="join">
+			<column name="salary_define_id">
+				<comment>薪资标准</comment>
+			</column>
+		</many-to-one>
+		<property name="salary" type="java.lang.Double">
+			<column name="salary" precision="2">
+				<comment>薪资标准金额</comment>
+			</column>
+		</property>
+		<property name="salaryName" type="java.lang.String">
+			<column name="salary_name">
+				<comment>薪资标准名称</comment>
+			</column>
+		</property>
+		<property name="salaryNo" type="java.lang.String">
+			<column name="salary_no">
+				<comment>薪资标准编号</comment>
+			</column>
+		</property> -->
+		<property name="train" type="java.lang.String">
+            <column name="train" sql-type="text">
+                <comment>培训情况</comment>
+            </column>
+        </property>
+		<property name="homeAddr" type="java.lang.String">
+			<column name="home_addr">
+				<comment>家庭地址</comment>
+			</column>
+		</property>
+		<property name="phone" type="java.lang.String">
+			<column name="phone">
+				<comment>电话号码</comment>
+			</column>
+		</property>
+		<property name="zipCode" type="java.lang.String">
+			<column name="zip_code">
+				<comment>家庭邮编</comment>
+			</column>
+		</property>
+		<property name="qq" type="java.lang.String">
+			<column name="qq">
+				<comment>QQ号码</comment>
+			</column>
+		</property>
+		<property name="email" type="java.lang.String">
+			<column name="email">
+				<comment>邮箱地址</comment>
+			</column>
+		</property>
+		<property name="mobile" type="java.lang.String">
+			<column name="mobile">
+				<comment>手机号码</comment>
+			</column>
+		</property>
+		
+		<property name="degree" type="java.lang.String">
+			<column name="degree">
+				<comment>学历</comment>
+			</column>
+		</property>
+		
+		<property name="school" type="java.lang.String">
+			<column name="school">
+				<comment>毕业学校</comment>
+			</column>
+		</property>
+		
+		<property name="profession" type="java.lang.String">
+			<column name="profession">
+				<comment>专业</comment>
+			</column>
+		</property>
+		<property name="workTime" type="java.lang.String">
+			<column name="work_time">
+				<comment>参加工作时间</comment>
+			</column>
+		</property>
+		<property name="education" type="java.lang.String">
+            <column name="education" sql-type="text">
+                <comment>教育背景</comment>
+            </column>
+        </property>
+		<property name="rewards" type="java.lang.String">
+            <column name="rewards" sql-type="text">
+                <comment>奖惩情情况</comment>
+            </column>
+        </property>
+        <property name="experience" type="java.lang.String">
+            <column name="experience" sql-type="text">
+                <comment>工作经验</comment>
+            </column>
+        </property>
+        <property name="hobby" type="java.lang.String">
+            <column name="hobby" sql-type="text">
+                <comment>个人爱好</comment>
+            </column>
+        </property>
+		<property name="memo" type="java.lang.String">
+            <column name="memo" sql-type="text">
+                <comment>备注</comment>
+            </column>
+        </property>
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

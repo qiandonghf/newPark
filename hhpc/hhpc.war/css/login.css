@@ -1,0 +1,135 @@
+@charset "utf-8";
+/* CSS Document */
+
+.loginpic{ width:370px; height:294px; float:left; overflow:hidden;}
+.wrapper{ width:585px; height:299px; float:right;border:1px solid #dddddd;}
+.lfloat {float:left;width:240px;}
+.rfloat {float:right;width:342px; height:299px;}
+#tab_left{ float:left;}
+#tab_left li {list-style:none;border-bottom:1px solid #dddddd; width:240px; height:100px;line-height:100px;font-size:24px; font-family:"微软雅黑"; font-weight:400; color:#9f9f9f; text-align:center;}
+#tab_left li a {text-decoration:none; color:#666; }
+#tab_left li:hover {border-right:0px;color:#0b54c5; background: #f7fcff url(../images/login_lbg.gif) no-repeat;}
+.aa {background:#fffff8;cursor:hand;border-right:1px solid #dddddd;border-bottom:1px solid #dddddd;}
+.bb {background:url(../images/login_lbg.gif) no-repeat;cursor:hand; color:#c41210; width:241px; height:100px;}
+#tab_left li.bb {background:url(../images/login_lbg.gif) no-repeat;cursor:hand; color:#c41210;}
+.cc {border-top:4px solid #ff66ff; background:#fcf;cursor:hand;}
+
+.ctt{padding:0;clear:both;text-align:left;height:250px; width:250px; padding-top:20px;}
+.dis{display:block;}
+.undis{display:none;}
+.list2{ font-size:13px; line-height:20px;  width:250px; margin:0 auto;text-align:left;background:#FFFFFF; color:#4d4d4d;}
+.list2 li{ color:#333333;font-size:13px; line-height:25px;}
+.list2 li.title{ font-size:14px; font-weight:600; border-bottom:1px solid #cccccc; margin-bottom:15px; padding-bottom:6px;}
+.list2 li.input{ padding-bottom:10px;}
+.list2 li.input input{ width:245px; height:21px; padding:2px;border:1px solid #dddddd;}
+.list2 li.text{ text-align:left; height:20px; line-height:20px;}
+.list2 li.text strong,.list2 li.text span{ display:inline;}
+.list2 li.text strong{ width:120px; float:left;}
+.list2 li.text span{ width:120px;text-align:right; float:right;}
+.list2 li.but .but_login{ color:#fff; font-weight:600; font-size:12px; cursor:pointer;border:0px; background:url(../images/login.gif) no-repeat; width:250px; height:30px;}
+.list2 li.but:hover .but_login{background:url(../images/login2.jpg) no-repeat; width:250px; height:30px;}
+
+.list2 a{ text-decoration: underline;} 
+
+/*img{ line-height:normal;}
+ul{ list-style-type::none;}
+.ipt-c{ height:16px; vertical-align:middle; padding-bottom:0px; padding-top:0px; padding-left:0px; margin:0px 3px 0px 0px; padding-right:0px; width:16px;}
+article { display:block;}
+aside { display:block;}
+footer { display:block;}
+header { display:block;}
+hgroup { display:block;}
+nav { display:block;}
+section {display:block;}
+.header .subLogo {}
+.ico {background-image:url(../images/leftpic1_dj.gif);background-repeat:no-repeat;}
+.btn {background-image:url(../images/leftpic1_dj.gif);background-repeat:no-repeat;}
+.login .hd {background-image:url(../images/leftpic1_dj.gif);background-repeat:no-repeat;}
+.tab-item A {background-image:url(../images/leftpic1_dj.gif);background-repeat:no-repeat;}
+.content {background-image:url(../images/leftpic.gif) 66px 20px 0px 10px;background-repeat:no-repeat;}
+.txt-b { font-weight:bold;}
+.txt-err { color:red;}
+.links-item {
+	VERTICAL-ALIGN: middle;
+	ZOOM: 1;
+	DISPLAY: inline
+}
+.tab-item A {vertical-align:middle; zoom:1; display:inline;}
+.ico {vertical-align:middle; zoom:1; display:inline;}
+.btn {vertical-align:middle; zoom:1; display:inline;}
+.copy-item {vertical-align:middle; zoom:1; display:inline;}
+.header .subLogo { overflow:hidden; text-indent:-999em;}
+.tab-item A {overflow:hidden; text-indent:-999em;}
+.login .hd {overflow:hidden; text-indent:-999em;}
+.btn {border-top-style:none;cursor:pointer;border-left-style:none;border-right-style:none;width:86px;background:#fff;}
+.btn-submit { font-size:14px; font-weight:bold; color:#fff;}
+.ipt-t {font-size:14px; border-top: #878787 1px solid; border-right: #878787 1px solid; vertical-align:middle; border-bottom: #878787 1px solid; font-weight:bold; padding-bottom:6px; padding-top:6px; padding-left:3px; border-left: #878787 1px solid; padding-right:3px; width:182px; margin-right:10px;}
+.ipt-t-focus { background:#ffffd8;}
+.content { height:486px; position:relative;zoom:1;}
+.tab {
+	height:306px;
+	position:absolute;
+	left:255px;
+	z-index:2;
+	top:66px;
+	width:212px;
+}
+.tab-title { display:none;}
+.tab-item a { height:101px; display:block; width:210px;}
+.tab-item .tab163 { height:102px; background-position:-240px -100px;}
+.tab-item .tab126 { height:102px; background-position:240px 100px;}
+.tab-item .tabyeah {background-position:240px 100px;}
+.tab-item .tab163:hover {background-position:-257px -1px;}
+.tab-item .tab126:hover {background-position:-257px -103px;}
+.tab-item .tabyeah:hover {background-position:-257px -203px;}
+.tab-item-on .tab163 {background-position:-513px -1px;}
+.tab-item-on .tab126 {background-position:-513px -103px;}
+.tab-item-on .tabyeah {background-position:-513px -203px;}
+.login { position:absolute; left:464px; top:50px;width:500px;}
+.login .hd { height:32px; position:relative; margin-left:41px; z-index:1; margin-top:24px; width:265px;}
+.login .bd { margin-left:41px; margin-top:6px;}
+.login .item { padding-bottom:8px; padding-top:8px; padding-left:0px;padding-right:0px;}
+.login .item-version {padding-top:4px;}
+.login .item .name { float:left; line-height:30px; width:44px; margin-right:5px;}
+.login .at { font-size:14px; vertical-align:middle; font-weight:bold; margin-right:8px;}
+.login .domain { font-size:14px; vertical-align:middle; font-weight:bold;}
+.login .sel { cursor:pointer; margin-top:4px; width:190px;}
+.login .submit { font-size:12px; padding-bottom:8px; padding-top:2px; padding-left:48px; padding-right:0px;}
+.login .options { font-size:12px; padding:8px 2px 48px 0px;}
+.login .submit .btn-submit {vertical-align:middle;}
+.login .submit .txt-err { margin-left:10px;}
+.login .options { position:relative;zoom:1; text-decoration:555;}
+.login .options LABEL { margin-right:15px;}
+.login .options .help {vertical-align:middle;position:relative;zoom:1;margin-left:-13px; top:1px; margin-right:13px; _top:0px;}
+.login .ft {font-size:14px; color:#777; margin-left:89px; margin-top:2px;}
+.login .ft A { font-weight:bold; padding-left:10px;}
+#extraLink { font-size:14px; color:#f80606; margin-left:48px; text-decoration:none; line-height:14px;}
+#extraLink:hover { text-decoration:underline;}
+.footer { position:relative; zoom:1; margin-top:5px;}
+.copyright { text-align:center;}
+.copyright { color:#888 !important; text-decoration:none;}
+.copyright A { color:#888 !important; text-decoration:none;}
+.copyright A:hover {text-decoration:underline;}
+.copy-title { display:none;}
+.copy-item { margin-right:10px;}
+.copy-item .sptln { margin-right:10px;}
+.tab163 A { color:#007bbb;}
+.tab163 .btn-submit { background-position:0px 0px;}
+.tab163 .btn-submit-over { background-position:-128px 0px;}
+.tab163 .ipt-t { background:#f1faff;}
+.tab163 .login .hd {background-position:-384px 0px;}
+.mail-126 A {background:#007b43;}
+.mail-126 .btn-submit {background-position:0px -64px;}
+.mail-126 .btn-submit-over {background-position:-128px -64px;}
+.mail-126 .ipt-t {background:#f1fff7;}
+.mail-126 .login .hd {background-position:-384px -64px;}
+.tabyeah A { color:#d9333f;}
+.mail-yeah .btn-submit {background-position:0px -128px;}
+.mail-yeah .btn-submit-over {background-position:-128px -128px;}
+.mail-yeah .ipt-t {
+	BACKGROUND-COLOR: #fff6f6
+}
+.mail-yeah .login .hd {
+	BACKGROUND-POSITION: -384px -128px
+}
+*/

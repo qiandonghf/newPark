@@ -1,0 +1,6 @@
+/* CSS Document */
+.assoction_title{ padding-left:2px; padding-top:5px; font-size:12px; color:#666; font-weight:bold; border-bottom:1px solid #c9c9c9; height:25px; line-height:25px;font-family:simsun,Arial, Helvetica, sans-serif}
+.assoction_td{ height:25px; line-height:25px; text-align:right; padding-right:5px; width:100px; color:#333; font-family:simsun,Arial, Helvetica, sans-serif}
+.assoction_red{ color:#f00; padding-right:2px;}
+.assoction_gray{ height:25px; line-height:25px; color:#666;}
+.assoction_td60{ height:25px; line-height:25px; text-align:right; padding-right:5px; width:55px; color:#333; font-family:simsun,Arial, Helvetica, sans-serif}

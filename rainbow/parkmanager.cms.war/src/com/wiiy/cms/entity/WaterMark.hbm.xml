@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.cms.entity.WaterMark">
+    	<meta attribute="class-description">图片水印</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="paramId" type="java.lang.Long">
+            <column name="param_id">
+                <comment>网站外键Id</comment>
+            </column>
+        </property>
+		<property name="opened">
+			<column name="opened" sql-type="varchar(50)">
+				<comment>是否启用水印</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+		<property name="width" type="java.lang.Integer">
+			<column name="width">
+				<comment>水印宽度</comment>
+			</column>
+		</property>
+		<property name="height" type="java.lang.Integer">
+			<column name="height">
+				<comment>水印高度</comment>
+			</column>
+		</property>
+		<property name="imgName" type="java.lang.String">
+			<column name="img_name">
+				<comment>水印图片名称</comment>
+			</column>
+		</property>
+		<property name="imgPath" type="java.lang.String">
+			<column name="img_path">
+				<comment>水印图片位置</comment>
+			</column>
+		</property>
+		
+		<property name="marktext" type="java.lang.String">
+			<column name="mark_text"  length="255">
+				<comment>水印文字</comment>
+			</column>
+		</property>
+		<property name="color" type="java.lang.String">
+			<column name="color">
+				<comment>水印文字颜色</comment>
+			</column>
+		</property>
+		
+		<property name="position">
+			<column name="position" sql-type="varchar(50)">
+				<comment>水印位置</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.cms.preferences.enums.PositionEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+		
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

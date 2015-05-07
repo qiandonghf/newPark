@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:osgi="http://www.springframework.org/schema/osgi"
+  xmlns:beans="http://www.springframework.org/schema/beans"
+  xmlns:aop="http://www.springframework.org/schema/aop"
+  xmlns:tx="http://www.springframework.org/schema/tx"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+  					  http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+  					  http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+                      http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi-1.2.xsd">
+                      
+	<osgi:reference id="osgiSessionFactory" interface="org.hibernate.SessionFactory"/>
+ <!-- 
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="osgiSessionFactory"/>
+    </bean>
+    <aop:aspectj-autoproxy/>
+
+ 	<aop:config>
+        <aop:advisor id="serviceTx" advice-ref="txAdvice"
+                     pointcut="execution(* com.wiiy.core.service.*Service*.*(..))" order="1"/>
+       <aop:advisor id="repositoryTx" advice-ref="txAdvice"
+                     pointcut="execution(* com.sanlue.*.domain.repository..*Repository*.*(..))" order="2"/>
+    </aop:config>
+
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="search*" read-only="true"/>
+            <tx:method name="get*" read-only="true"/>
+            <tx:method name="view*" read-only="true"/>
+            <tx:method name="find*" read-only="true"/>
+            <tx:method name="list*" read-only="true"/>
+            <tx:method name="page*" read-only="true"/>
+            <tx:method name="load*" read-only="true"/>
+            <tx:method name="log*" read-only="true" propagation="NEVER"/>
+            
+            <tx:method name="*" />
+        </tx:attributes>
+    </tx:advice>
+ -->	
+	<bean id="searchAction" class="com.wiiy.core.action.SearchAction"></bean>
+	<bean id="uploadAction" class="com.wiiy.core.action.UploadAction"></bean>
+	
+<!--   	<bean id="moduleRegister" class="com.wiiy.core.service.export.ModuleRegister" init-method="registerModule">
+		<property name="moduleRegisterService" ref="moduleServiceImpl" />
+	</bean>
+ -->
+ 	<bean name="indexAction" class="com.wiiy.core.action.IndexAction" scope="prototype">
+		<property name="roleService" ref="roleService"></property>
+		<property name="userService" ref="userService"></property>
+ 		<property name="roleDesktopService" ref="roleDesktopService" />
+ 		<property name="moduleService" ref="moduleServiceImpl" />
+ 		<property name="httpSessionService" ref="httpSessionServiceImpl" />
+ 		<property name="coreWorkbenchTipExtensions" ref="coreWorkbenchTipExtensions"></property>
+	</bean>
+
+	<osgi:reference id="sessionService" interface="com.wiiy.hibernate.SessionService"/>
+	
+	<osgi:reference id="smsSender" interface="com.wiiy.external.service.SMSSender"/>
+	
+	<bean id="approvalDao" class="com.wiiy.core.dao.ApprovalDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="approvalService" class="com.wiiy.core.service.impl.ApprovalServiceImpl">
+		<property name="approvalDao" ref="approvalDao"></property>
+	</bean>
+	<bean id="approvalAction" class="com.wiiy.core.action.ApprovalAction" scope="prototype">
+		<property name="approvalService" ref="approvalService"></property>
+	</bean>
+	
+	<bean id="desktopItemDao" class="com.wiiy.core.dao.DesktopItemDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="desktopItemService" class="com.wiiy.core.service.impl.DesktopItemServiceImpl">
+		<property name="desktopItemDao" ref="desktopItemDao"></property>
+	</bean>
+	<bean id="desktopItemAction" class="com.wiiy.core.action.DesktopItemAction" scope="prototype">
+		<property name="desktopItemService" ref="desktopItemService"></property>
+	</bean>
+	
+	<bean id="roleDesktopDao" class="com.wiiy.core.dao.RoleDesktopDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="roleDesktopService" class="com.wiiy.core.service.impl.RoleDesktopServiceImpl">
+		<property name="roleDesktopDao" ref="roleDesktopDao"></property>
+	</bean>
+	<bean id="roleDesktopAction" class="com.wiiy.core.action.RoleDesktopAction" scope="prototype">
+		<property name="roleDesktopService" ref="roleDesktopService"></property>
+	</bean>
+	
+	<bean id="dataDictDao" class="com.wiiy.core.dao.DataDictDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+
+	<bean id="dataDictService" class="com.wiiy.core.service.impl.DataDictServiceImpl">
+		<property name="dataDictDao" ref="dataDictDao"></property>
+	</bean>
+	<bean id="dataDictAction" class="com.wiiy.core.action.DataDictAction" scope="prototype">
+		<property name="dataDictService" ref="dataDictService"></property>
+		<property name="appService" ref="appService"/>
+	</bean>
+
+	<bean id="orgDao" class="com.wiiy.core.dao.OrgDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="orgService" class="com.wiiy.core.service.impl.OrgServiceImpl">
+		<property name="orgDao" ref="orgDao"></property>
+	</bean>
+	<bean id="orgAction" class="com.wiiy.core.action.OrgAction" scope="prototype">
+		<property name="orgService" ref="orgService"></property>
+	</bean>
+
+	<bean id="userDao" class="com.wiiy.core.dao.UserDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="userService" class="com.wiiy.core.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	<bean id="userAction" class="com.wiiy.core.action.UserAction" scope="prototype">
+		<property name="roleService" ref="roleService"></property>
+		<property name="userService" ref="userService"></property>
+		<property name="orgService" ref="orgService"></property>
+	</bean>
+	<bean id="loginAction" class="com.wiiy.core.action.LoginAction" scope="prototype">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	<bean id="selfAction" class="com.wiiy.core.action.SelfAction" scope="prototype">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	
+	<bean id="roleDao" class="com.wiiy.core.dao.RoleDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="roleService" class="com.wiiy.core.service.impl.RoleServiceImpl">
+		<property name="roleDao" ref="roleDao"></property>
+	</bean>
+	<bean id="roleAction" class="com.wiiy.core.action.RoleAction" scope="prototype">
+		<property name="roleService" ref="roleService"></property>
+		<property name="roleAuthorityRefService" ref="roleAuthorityRefServiceImpl"></property>
+		<property name="moduleService" ref="moduleServiceImpl"></property>
+		<property name="roleDesktopService" ref="roleDesktopService"></property>
+		<property name="desktopItemService" ref="desktopItemService"></property>
+	</bean>
+	<bean id="appService" class="com.wiiy.core.service.impl.AppServiceImpl" />
+	<bean id="appAction" class="com.wiiy.core.action.AppAction" scope="prototype">
+		<property name="appService" ref="appService"/>
+	</bean>
+	<bean id="appConfigService" class="com.wiiy.core.service.impl.AppConfigServiceImpl" />
+	<bean id="appParamAction" class="com.wiiy.core.action.AppParamAction" scope="prototype">
+		<property name="appService" ref="appService"/>
+		<property name="appConfigService" ref="appConfigService"/>
+	</bean>
+    <bean id="operationLogDao" class="com.wiiy.core.dao.OperationLogDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="operationLogService" class="com.wiiy.core.service.impl.OperationLogServiceImpl">
+		<property name="operationLogDao" ref="operationLogDao"></property>
+	</bean>
+	<bean id="operationLogAction" class="com.wiiy.core.action.OperationLogAction" scope="prototype">
+		<property name="operationLogService" ref="operationLogService"></property>
+	</bean>
+    <bean id="dbService" class="com.wiiy.core.service.impl.DBServiceImpl">
+	</bean>
+	<bean id="dbAction" class="com.wiiy.core.action.DBAction" scope="prototype">
+		<property name="dbService" ref="dbService"></property>
+	</bean>
+	
+	<bean id="roleAuthorityRefDao" class="com.wiiy.core.dao.RoleAuthorityRefDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="roleAuthorityRefServiceImpl" class="com.wiiy.core.service.impl.RoleAuthorityRefServiceImpl">
+		<property name="roleAuthorityRefDao" ref="roleAuthorityRefDao"></property>
+		<property name="roleDao" ref="roleDao"></property>
+	</bean>
+	<bean id="roleAuthorityRefAction" class="com.wiiy.core.action.RoleAuthorityRefAction" scope="prototype">
+		<property name="roleAuthorityRefService" ref="roleAuthorityRefServiceImpl"></property>
+	</bean>
+	<bean id="userRoleRefDao" class="com.wiiy.core.dao.UserRoleRefDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="userRoleRefService" class="com.wiiy.core.service.impl.UserRoleRefServiceImpl">
+		<property name="userRoleRefDao" ref="userRoleRefDao"></property>
+	</bean>
+	<bean id="userRoleRefAction" class="com.wiiy.core.action.UserRoleRefAction" scope="prototype">
+		<property name="userRoleRefService" ref="userRoleRefService"></property>
+	</bean>
+	<bean id="statisticalAction" class="com.wiiy.core.action.StatisticalAction" scope="prototype">
+		<property name="operationLogService" ref="operationLogService"></property>
+		<property name="orgService" ref="orgService"></property>
+	</bean>
+	<bean id="smsDtoAction" class="com.wiiy.core.action.SMSDtoAction" scope="prototype">
+	</bean>
+	<bean id="userTopButtonDao" class="com.wiiy.core.dao.UserTopButtonDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="userTopButtonService" class="com.wiiy.core.service.impl.UserTopButtonServiceImpl">
+		<property name="userTopButtonDao" ref="userTopButtonDao"></property>
+	</bean>
+	<bean id="userTopButtonAction" class="com.wiiy.core.action.UserTopButtonAction" scope="prototype">
+		<property name="userTopButtonService" ref="userTopButtonService"></property>
+		<property name="userService" ref="userService"></property>
+	</bean>
+	
+	<bean id="userEmailParamDao" class="com.wiiy.core.dao.UserEmailParamDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="userEmailParamService" class="com.wiiy.core.service.impl.UserEmailParamServiceImpl">
+		<property name="userEmailParamDao" ref="userEmailParamDao"></property>
+	</bean>
+	<bean id="userEmailParamAction" class="com.wiiy.core.action.UserEmailParamAction" scope="prototype">
+		<property name="userEmailParamService" ref="userEmailParamService"></property>
+	</bean>
+	<bean id="tryAction" class="com.wiiy.core.action.TryAction">
+	</bean>
+	
+	<bean id="countersignDao" class="com.wiiy.core.dao.CountersignDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="countersignService" class="com.wiiy.core.service.impl.CountersignServiceImpl">
+		<property name="countersignDao" ref="countersignDao"></property>
+	</bean>
+	<bean id="countersignAction" class="com.wiiy.core.action.CountersignAction" scope="prototype">
+		<property name="countersignService" ref="countersignService"></property>
+	</bean>
+	
+	<bean id="contactDao" class="com.wiiy.core.dao.ContactDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="contactService" class="com.wiiy.core.service.impl.ContactServiceImpl">
+		<property name="contactDao" ref="contactDao"></property>
+	</bean>
+	<bean id="contactAction" class="com.wiiy.core.action.ContactAction" scope="prototype">
+		<property name="contactService" ref="contactService"></property>
+		<property name="contactAttService" ref="contactAttService"></property>
+	</bean>
+	<bean id="contactAttDao" class="com.wiiy.core.dao.ContactAttDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="contactAttService" class="com.wiiy.core.service.impl.ContactAttServiceImpl">
+		<property name="contactAttDao" ref="contactAttDao"></property>
+	</bean>
+	<bean id="contactAttAction" class="com.wiiy.core.action.ContactAttAction" scope="prototype">
+		<property name="contactAttService" ref="contactAttService"></property>
+	</bean>
+	
+	<!-- 集团公司 -->
+	<bean id="corporationDao" class="com.wiiy.core.dao.CorporationDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="corporationService" class="com.wiiy.core.service.impl.CorporationServiceImpl">
+		<property name="corporationDao" ref="corporationDao"></property>
+	</bean>
+	<bean id="corporationAction" class="com.wiiy.core.action.CorporationAction" scope="prototype">
+		<property name="corporationService" ref="corporationService"></property>
+	</bean>
+	
+</beans>

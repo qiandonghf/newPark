@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base href="https://58.215.78.148:8443/svn/parkmanager/trunk/parkmanager.mockup.war/"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>基地服务</title>
+<link  rel="stylesheet" type="text/css" href="hhpc/css/index.css" />
+<link  rel="stylesheet" type="text/css" href="hhpc/css/base.css" />
+<link rel="stylesheet" type="text/css" href="hhpc/css/menu.css" />
+
+<script language="javascript" src="hhpc/js/jquery.min.js"></script>
+<script type="text/javascript" src="hhpc/js/jquery.jcarousel.pack.js"></script>
+</head>
+
+<body>
+<!---顶部开始---->
+<div id="header">
+  <div class="top">
+    <div class="logo" > <a href="http://www.hhpc.gov.cn/"><img src="hhpc/images/logo.gif" width="400" height="83" alt="logo" /></a></div>
+    <!---顶部右侧开始---->
+    <div class="top_right" >
+      <div id="site_nav"><a href="#">设为首页</a> | <a href="#">加入收藏</a> | <a href="hhpc/login.html">登录</a></div>
+      <div id="search">
+        <ul>
+          <form action="" method="post" name="form" id="form">
+            <li class="left"> <span class="TPL_username_1" id="searchs" name="searchs" onclick="onclicktext()" onkeypress="oncliwhile()" onblur="onblurs()"></span>
+              <input name="keyword" type="text" class="search_input" id="keyword" onblur="onblurs()" onclick="onclicktext()" onkeypress="oncliwhile()" value="搜索站内信息"/>
+            </li>
+            <li class="right">
+              <input type="image" class="btn" value=" " src="hhpc/images/search.gif"  />
+            </li>
+          </form>
+        </ul>
+      </div>
+      <div class="hackbox"></div>
+    </div>
+    <!---顶部右侧结束----> 
+  </div>
+</div>
+<!---顶部结束----> 
+
+
+<!---基地主体内容开始----> 
+<div class="contenter">
+
+<!---基地联系介绍内容开始----> 
+<div class="jidijieshao">
+<ul>
+<li class="title"><strong>江北基地</strong></li>
+<li>联系电话：0571-7268002</li>
+<li>邮箱：jiangbeijidi@sina.com</li>
+<li>传真：0571-87985585      </li>
+<li>地址：杭州市滨江区江南大道3850号创新大厦12楼(310053)       </li>
+<li class="but"><input name="shenqingruzhu" type="image" src="hhpc/images/but_ruzhu.gif" /></li>
+</ul>
+</div>
+<!---基地联系介绍内容结束----> 
+
+<!---基地导航开始----> 
+<div id="navmaster">
+	<ul>
+		<li id="ctl01_liIndex" class="M1Common M1">
+			<div style="padding-top:27px;"><a href="hhpc/index.html">首&nbsp;页</a></div>
+		</li>
+		<li id="ctl01_liQCenter" class="M2Common M2">
+			<div style="padding-top:44px;"><a title="问卷中心" href="hhpc/fhjd.html">江北基地</a><span class="bordCss bordBottomCssN"></span></div>
+		</li>
+		<li id="ctl01_liPrice" class="M3Common M3">
+			<div style="padding-top:32px;"><a style="padding:9px 0 0px 21px;" href="hhpc/fhjd.html">江南基地</a></div>
+		</li>
+		<li id="ctl01_liUseCase" class="M4Common M4">
+			<div style="padding-top:23px;"><a href="hhpc/fhjd.html">孵化器</a><span class="bordCss bordBottomCssN"></span></div>
+		</li>
+		<li id="ctl01_liCustomer" class="M5Common M5">
+			<div style="padding-top:37px;text-align:left;padding-left:14px;"><a style="" href="hhpc/fhjd.html">创业苗圃</a></div>
+		</li>
+	</ul>
+  <div class="hackbox"></div>
+</div>
+<script type="text/javascript">
+var navmaster = document.getElementById("navmaster");
+var lis = navmaster.getElementsByTagName("li");
+var hrefas = navmaster.getElementsByTagName("a");
+for (var i = 0; i < lis.length; i++) {
+	lis[i].index = i + 1;
+	if (lis[i].className.toLowerCase().indexOf("hover") > -1) {
+		hoverLi(lis[i]);lis[i].isHover = true;
+	}
+	lis[i].onmouseover = function () {
+		hoverLi(this); sb_setmenunav('divDown' + this.index, true, this);
+	}
+	lis[i].onmouseout = function () {
+		sb_setmenunav('divDown' + this.index, false, this); unHoverLi(this);
+	}
+	lis[i].onclick = function () {
+		var href = this.getElementsByTagName("a")[0].href;
+		if (href)
+			window.location = href;
+	}
+
+}
+function getSpanByClassName(ele, className) {
+	var spans = ele.getElementsByTagName("span");
+	for (var i = 0; i < spans.length; i++) {
+		var cName = spans[i].className || "";
+		if (cName.toLowerCase() == className.toLowerCase()) {
+			return spans[i];
+		}
+	}
+}
+function hoverLi(obj) {
+	// obj.style.background = 'url(/images/MasterNew/menu_hover_ico' + obj.index + '.png) top left'; obj.style.color = '#fff';
+	obj.className = "M" + obj.index + "Common M" + obj.index + "Hover";
+	var dda = obj.getElementsByTagName("a")[0];
+	//if(!dda.prevColor && dda.style.color!="#ffffff")dda.prevColor = dda.style.color;
+	dda.style.color = "#ffffff";
+	var span = getSpanByClassName(obj, "bordCss bordBottomCssN") || obj.spanCursor;
+	if (span) {
+		span.className = "bordCss bordBottomCssNF";
+		obj.spanCursor = span;
+	}
+}
+function unHoverLi(obj) {
+	if (!obj.isHover) {
+		obj.className = "M" + obj.index + "Common M" + obj.index;
+		var dda = obj.getElementsByTagName("a")[0];
+		dda.style.color = "";
+		if (obj.spanCursor) obj.spanCursor.className = "bordCss bordBottomCssN";
+	}
+}
+function openwindowSup(url, name, iWidth, iHeight) {
+
+	var url;                                 //转向网页的地址;
+	var name;                           //网页名称，可为空;
+	var iWidth;                          //弹出窗口的宽度;
+	var iHeight;                        //弹出窗口的高度;
+	var iTop = (window.screen.availHeight + 30 - iHeight) / 2;       //获得窗口的垂直位置;
+	var iLeft = (window.screen.availWidth + 208 - iWidth) / 2;           //获得窗口的水平位置;
+	var param = 'height=' + iHeight + ',width=' + iWidth + ',top=' + iTop + ',left=' + iLeft + ',border=no,toolbar=no,menubar=no,scrollbars=no,resizable=yes,location=no,status=no';
+	var o = window.open(url, name, param);
+	o.focus();
+}
+
+function getCoordsNav(el) {
+	var box = el.getBoundingClientRect(),
+	doc = el.ownerDocument,
+	body = doc.body,
+	html = doc.documentElement,
+	clientTop = html.clientTop || body.clientTop || 0,
+	clientLeft = html.clientLeft || body.clientLeft || 0,
+	top = box.top + (self.pageYOffset || html.scrollTop || body.scrollTop) - clientTop,
+	left = box.left + (self.pageXOffset || html.scrollLeft || body.scrollLeft) - clientLeft
+	return { 'top': top, 'left': left };
+};
+function sb_setmenunav(name, vis, obj) {
+	var d = document.getElementById(name); //要显示隐藏的div
+	if (!d) return;
+	var padLeft = parseInt(d.getAttribute("pdLeft") || 0);
+	if (vis) {
+		if (d.timeArray) {
+			window.clearTimeout(d.timeArray);
+			d.timeArray = 0;
+		}
+		d.style.display = "block";
+		if (!d.onmouseover) {
+			d.onmouseover = function () {
+				sb_setmenunav(name, true);
+			}
+			d.onmouseout = function () {
+				sb_setmenunav(name, false);
+				unHoverLi(obj);
+			}
+		}
+		if (obj) {
+			var objp = obj;
+			if (objp.parentNode.tagName.toLowerCase() == "li")
+				objp = obj.parentNode;
+			var xy = getCoordsNav(objp);
+			var xias = xy.left;
+			//alert(d.offsetWidth);
+			var yias = xy.top + objp.offsetHeight;
+			padLeft = padLeft || 0;
+			d.style.left = xias + padLeft + "px";
+			d.style.top = yias + "px"; //;
+			
+		}
+	}
+	if (obj && obj.tagName.toLowerCase() == "li") {
+		d.needSaveClass = obj;
+		d.prevClass = obj.className;
+
+	}
+	else if (d.needSaveClass) {
+		hoverLi(d.needSaveClass);
+	}
+	if (!vis) {//延时隐藏，可以移动上去
+		if (d.spanCursor) d.spanCursor.className = "bordCss bordBottomCssN";
+		d.timeArray = window.setTimeout(function () {
+			d.style.display = "none"; d.style.height = "";
+		}, 100);
+	}
+
+}
+</script>
+<!---基地导航结束----> 
+
+<!---基地介绍开始---->
+<div class="jidijieshaoneirong">
+  <img src="hhpc/images/pic_jidi.gif" width="235" height="150" />
+ <ul>
+					<li><p>"江北基地"——中国机动车辆及内燃机动力成套检测设备专业研发制造公司，专业从事汽车、摩托车、电动车辆、混合动力、通用汽油机、柴油机、汽车发动机以及相关零部件的测试技术研究和成套测试设备制造；面向国内外众多客户开展广泛的技术支持与服务；提供专业的检测实验室的工程设计与规划。</p><br />
+					<p>"江北基地"是天津内燃机研究所(暨天津摩托车技术中心) 创办的国家高新技术企业，以百年学府天津大学（原北洋大学）为技术依托，总部设在天津内燃机研究所，在天津西青开发区建有生产基地，并在华东、华南和西南地区设有多个办事处，提供及时优质的技术支持和技术服务。  </p><br />
+					<p>帮助有创业意向的企业，在有兴趣的地区寻找该区域内所在的孵化器，查看孵化器基本情况并建立在线联系。孵化器管理人员将提供全方位的咨询服务，帮助您对孵化器进行进一步的了解，并最终确定选择合适的入孵场所和入孵服务。</p><br />
+					<p>帮助有创业意向的企业，在有兴趣的地区寻找该区域内所在的孵化器，查看孵化器基本情况并建立在线联系。孵化器管理人员将提供全方位的咨询服务，帮助您对孵化器进行进一步的了解，并最终确定选择合适的入孵场所和入孵服务。</p><br />
+					<p>帮助有创业意向的企业，在有兴趣的地区寻找该区域内所在的孵化器，查看孵化器基本情况并建立在线联系。孵化器管理人员将提供全方位的咨询服务，帮助您对孵化器进行进一步的了解，并最终确定选择合适的入孵场所和入孵服务。</p></li>
+				</ul>
+  
+  </div>
+  <div class="hackbox"></div>
+<!---基地介绍结束---->
+
+<!---基地z照片介绍开始---->
+<div class="jidipic">
+<div id="newPic">
+	<div class="col2">
+		<ul id="mycarousel" class="carousel-list jcarousel-skin-tango">               
+			<li>
+				<a href="#" title="#"><img src="hhpc/images/pic01.gif" width="183" height="134"></a>
+				<h4><a href="#">基地照片介绍一</a></h4>
+			</li>
+			<li>
+				<a href="#" title="#"><img src="hhpc/images/pic02.gif" width="183" height="134"></a>
+				<h4><a href="#"> 基地照片介绍二</a></h4>
+			</li>
+			<li>
+				<a href="#" title="#"><img src="hhpc/images/pic03.gif" width="183" height="134"></a>
+				<h4><a href="#">基地照片介绍三</a></h4>
+			</li>
+			<li>
+				<a href="#" title="#"><img src="hhpc/images/pic04.gif" width="183" height="134"></a>
+				<h4><a href="#">基地照片介绍四</a></h4>
+			</li>
+			<li>
+				<a href="#" title="#"><img src="hhpc/images/pic05.gif" width="183" height="134"></a>
+				<h4><a href="#">基地照片介绍五</a></h4>
+			</li>
+			<li>
+				<a href="#" title="#"><img src="hhpc/images/pic01.gif" width="183" height="134"></a>
+				<h4><a href="#">基地照片介绍一</a></h4>
+			</li>
+			<li>
+				<a href="#" title="#"><img src="hhpc/images/pic02.gif" width="183" height="134"></a>
+				<h4><a href="#"> 基地照片介绍二</a></h4>
+			</li>
+			<li>
+				<a href="#" title="#"><img src="hhpc/images/pic03.gif" width="183" height="134"></a>
+				<h4><a href="#">基地照片介绍三</a></h4>
+			</li>
+			<li>
+				<a href="#" title="#"><img src="hhpc/images/pic04.gif" width="183" height="134"></a>
+				<h4><a href="#">基地照片介绍四</a></h4>
+			</li>
+			<li>
+				<a href="#" title="#"><img src="hhpc/images/pic05.gif" width="183" height="134"></a>
+				<h4><a href="#">基地照片介绍五</a></h4>
+			</li><li>
+				<a href="#" title="#"><img src="hhpc/images/pic01.gif" width="183" height="134"></a>
+				<h4><a href="#">基地照片介绍一</a></h4>
+			</li>
+			<li>
+				<a href="#" title="#"><img src="hhpc/images/pic02.gif" width="183" height="134"></a>
+				<h4><a href="#"> 基地照片介绍二</a></h4>
+			</li>
+			<li>
+				<a href="#" title="#"><img src="hhpc/images/pic03.gif" width="183" height="134"></a>
+				<h4><a href="#">基地照片介绍三</a></h4>
+			</li>
+		</ul>
+		<div class="scrollnav">
+			<img src="hhpc/images/icon_scrollnav_hover.gif" class="firstSlide">
+			<img src="hhpc/images/icon_scrollnav.gif" class="secondSlide">
+			<img src="hhpc/images/icon_scrollnav.gif" class="thirdSlide">
+		</div>
+	</div>
+</div>
+</div>
+<!---基地照片介绍结束---->
+
+
+<!---基地最后一部分开始---->
+<div class="jidilast">
+
+<!---基地服务开始---->
+<div class="jidifuwu">
+<h1>基地服务</h1>
+<ul>
+<li>
+ <em> <img src="hhpc/images/ico_01.gif" width="33" height="37" /></em> <span><a href="#">基地服务</a></span> </li>
+<li>
+   <em><img src="hhpc/images/ico_02.gif" width="33" height="37" /></em> <span><a href="#">基地服务</a></span> </li>
+<li>
+   <em><img src="hhpc/images/ico_03.gif" width="33" height="37" /></em> <span><a href="#">基地服务</a></span> </li>
+<li>
+  <em> <img src="hhpc/images/ico_04.gif" width="33" height="37" /></em> <span><a href="#">基地服务</a></span> </li>
+<li>
+  <em> <img src="hhpc/images/ico_05.gif" width="33" height="37" /></em> <span><a href="#">基地服务</a></span> </li>
+<li>
+  <em> <img src="hhpc/images/ico_06.gif" width="33" height="37" /></em> <span><a href="#">基地服务</a></span> </li>
+<li>
+  <em> <img src="hhpc/images/ico_01.gif" width="33" height="37" /></em> <span><a href="#">基地服务</a></span> </li>
+<li>
+  <em> <img src="hhpc/images/ico_02.gif" width="33" height="37" /></em> <span><a href="#">基地服务</a></span> </li>
+<li>
+  <em> <img src="hhpc/images/ico_03.gif" width="33" height="37" /></em> <span><a href="#">基地服务</a></span> </li>
+</ul>
+</div>
+<!---基地服务结束---->
+
+<!---入驻基地开始---->
+<div class="ruzhuqiye">
+
+<h1>入驻企业</h1>
+ <ul>
+        <li><em><img src="hhpc/images/ico3.gif" width="8" height="5" /></em><a href="hhpc/companyinfo.html">『企业专栏』杭州良瑞科技有限公司 </a></li>
+        <li><em><img src="hhpc/images/ico3.gif"  width="8" height="5" /></em><a href="hhpc/companyinfo.html">『企业专栏』杭州莱源环保科技有限公司</a></li>
+        <li><em><img src="hhpc/images/ico3.gif" width="8" height="5" /></em><a href="#">『企业专栏』杭州莱源环保科技有限公司</a></li>
+        <li><em><img src="hhpc/images/ico3.gif" width="8" height="5" /></em><a href="#">『企业专栏』杭州良瑞科技有限公司</a></li>
+        <li><em><img src="hhpc/images/ico3.gif" width="8" height="5" /></em><a href="#">『企业专栏』杭州莱源环保科技有限公司</a></li>
+        <li><em><img src="hhpc/images/ico3.gif"  width="8" height="5" /></em><a href="#">『企业专栏』杭州良瑞科技有限公司</a></li>
+        <li><em><img src="hhpc/images/ico3.gif"  width="8" height="5" /></em><a href="#">『企业专栏』杭州莱源环保科技有限公司</a></li>
+        <li><em><img src="hhpc/images/ico3.gif" width="8" height="5" /></em><a href="#">『企业专栏』杭州莱源环保科技有限公司</a></li>
+        </ul>
+    <p><a href="hhpc/companylist.html" class="blue2"> 更多...</a></p></div>
+<!---入驻基地结束---->
+
+<!---联系方式开始---->
+<div class="lianxifangshi">
+<h1>申请入驻</h1>
+<p><em><img src="hhpc/images/pic_ruzhu.gif" width="76" height="76" /></em>  <span>联系方式：<img src="hhpc/images/phone.gif" width="30" height="30" /> <img src="hhpc/images/qq.gif" width="31" height="31" /><br /> <strong>400-123- 4567</strong></span></p>
+
+<ul>
+<li>
+<em><img src="hhpc/images/adress.gif" width="12" height="16" /></em> <span>地址：杭州市滨江区江南大道3850号 创新大厦12楼（310053）</span>
+</li>
+<li>
+<em><img src="hhpc/images/phone-15.gif" width="14" height="14" /></em> <span>电话 :86 -021-34639651</span>
+</li>
+<li>
+<em><img src="hhpc/images/chuanzhen.gif" width="16" height="12" /></em>  <span>传真 :86 -021-34660535</span>
+</li>
+<li>
+<em><img src="hhpc/images/email.gif" width="14" height="14" /></em> <span>E-mail: manager@hang</span>
+</li>
+
+</ul>
+
+</div>
+<!---联系方式结束---->
+
+  <div class="hackbox"></div>
+</div>
+
+<!---基地最后一部分结束---->
+
+  <div class="hackbox"></div>
+</div>
+
+<!---基地主体内容结束----> 
+
+<!---底部开始---->
+<div id="footer">
+  <div class=ftop> <a href="http://corp.pconline.com.cn/english/index.html" 
+target=_blank>联系我们</a> | <a 
+href="http://corp.pcauto.com.cn/auto_index.html" target=_blank>法律公告</a> | <a 
+href="http://corp.pcauto.com.cn/privacyPolicy.html" target=_blank>隐私保护</a> | <a 
+href="http://corp.pcauto.com.cn/ivy.html" target=_blank>招贤纳士</a> | <a 
+href="http://corp.pcauto.com.cn/media.html" target=_blank>网站导航</a> | <a 
+href="http://corp.pcauto.com.cn/contribute.html" target=_blank>意见反馈</a> </div>
+  <div class="finfo">
+    <div class="left"><img src="hhpc/images/db_logo.gif" width="67" height="62" /></div>
+    <div class="finfol"> 技术支持：<a href="#">杭州三略信息技术有限公司</a><br />
+      技术支持电话：0571-87985585 <br />
+      传真：0571-87985585</div>
+    <div class="finfor">版权所有 <a href="#">杭州高新区创业中心</a><br />
+      浙ICP备 1201814 <br />
+      Copyright © 2009 - 2010 www.hhpc.gov.cn Inc. All Rights Reserve</div>
+  </div>
+</div>
+<!---底部结束---->
+
+
+</body>
+</html>

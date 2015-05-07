@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="root" extends="json-default" namespace="/">
+		<result-types><!-- 定义json类型 --> 
+		    <result-type name="json1" class="com.wiiy.json.JsonResult" />
+		</result-types> 
+		<global-results>
+			<result name="json" type="json1">
+				<param name="enumAsBean">true</param>
+				<param name="ignoreHierarchy">false</param>
+			</result>
+			<result name="rvalue" type="json1">
+				<param name="root">result.value</param>
+				<param name="enumAsBean">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="excludeNullProperties">true</param>
+			</result>
+			<result name="login">/web/login.jsp</result>
+		</global-results>
+	</package>
+	<package name="site" namespace="/" extends="root">
+	
+		<action name="index" class="indexAction" method="index" >
+			<result name="success">/web/index.jsp</result>
+		</action>
+		<action name="list" class="indexAction" method="list">
+			<result name="success">/web/list.jsp</result>
+			<result name="view">/web/view.jsp</result>
+		</action>
+		<action name="view" class="indexAction" method="view">
+			<result name="success">/web/view.jsp</result>
+		</action>
+		
+		
+
+	</package>
+</struts>

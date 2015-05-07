@@ -1,0 +1,109 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base href="https://58.215.78.148:8443/svn/parkmanager/trunk/parkmanager.mockup.war/"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>科技园区信息管理系统</title>
+<link href="core/common/style/login.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="core/common/js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".logintab li").each(function(index){
+			$(".logintab li").eq(index).click(function(){
+				if(index==1){
+				$(".logintab li").removeClass("link").removeClass("active").addClass("link1");
+				$(".logintab li").eq(index).removeClass("link1").addClass("active");
+				}
+				if(index==0){
+				$(".logintab li").removeClass("link1").removeClass("active").addClass("link");
+				$(".logintab li").eq(index).removeClass("link").addClass("active");
+				}
+				$(".longdiv").css({display:"none"});
+				$(".longdiv").eq(index).css({display:"block"});
+			});
+		});
+	});
+</script>
+</head>
+
+<body>
+<div class="logindiv">
+	<div class="logo"><img src="core/common/images/loginlogo.png" /></div>
+	<div class="quickmenu"><a href="javascript:void(0)">首页</a><a href="javascript:void(0)">帮助</a></div>
+</div>
+<!--content-->
+<div id="content">
+	<div class="loginmain">
+		<div class="loginborder">
+			<div class="logintab">
+				<ul>
+					<li class="active">中心账号</li>
+					<li class="link">企业账号</li>
+				</ul>
+			</div>
+			<div class="longdiv">
+			<!--loginlist-->
+			<div class="loginlist">
+				<ul>
+					<li><input name="" type="text" class="inputlink" value="请输入帐号" onfocus="this.className='inputactive';if(this.value==this.defaultValue){this.value=''}"  onblur="this.className='inputlink';if(this.value==''){this.value=this.defaultValue}" /></li>
+					<li><input name="" type="text" class="inputlink" value="请输入密码"  onfocus="this.className='inputactive';if(this.value==this.defaultValue){this.value=''}"  onblur="this.className='inputlink';if(this.value==''){this.value=this.defaultValue}"/></li>
+					<li><input name="" type="checkbox" class="checkbox" value="" />
+					两周内自动登录</li>
+					<li>
+					<input name="" type="button" class="loginbtn" onmouseover="this.className='loginbtnover'" onmouseout="this.className='loginbtn'" value="登  录" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input name="" type="button" class="logincancel" value="取  消" />
+					</li>
+				</ul>
+			</div>
+			<!--//loginlist-->
+			<!--logindown-->
+			<div class="logindown">
+				<ul>
+					<li><a href="#">·全新园区办公自动化管理</a></li>
+					<li>·<a href="#">聚集创新资源，体验创新服务</a></li>
+				</ul>
+			</div>
+			<!--//logindown-->
+			</div>
+			
+			<div class="longdiv" style="display:none;">
+			<!--loginlist-->
+			<div class="loginlist">
+				<ul>
+					<li><input name="" type="text" class="inputlink" value="请输入帐号" onfocus="this.className='inputactive';if(this.value==this.defaultValue){this.value=''}"  onblur="this.className='inputlink';if(this.value==''){this.value=this.defaultValue}" /></li>
+					<li><input name="" type="text" class="inputlink" value="请输入密码"  onfocus="this.className='inputactive';if(this.value==this.defaultValue){this.value=''}"  onblur="this.className='inputlink';if(this.value==''){this.value=this.defaultValue}"/></li>
+					<li><input name="" type="checkbox" class="checkbox" value="" />
+					两周内自动登录</li>
+					<li>
+					<input name="" type="button" class="loginbtn" onmouseover="this.className='loginbtnover'" onmouseout="this.className='loginbtn'" value="登  录" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input name="" type="button" class="logincancel" value="取  消" />
+					</li>
+				</ul>
+			</div>
+			<!--//loginlist-->
+			<!--logindown-->
+			<div class="logindown">
+				<ul>
+					<li><a href="#">·全新园区办公自动化管理</a></li>
+					<li>·<a href="#">聚集创新资源，体验创新服务</a></li>
+				</ul>
+			</div>
+			<!--//logindown-->
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+<!--//content-->
+<div class="footerlink"><a href="javascript:void(0)">中国科技创业计划大赛 火热进行中...</a></div>
+<div id="footer">
+	<div id="footerdiv">
+		<div id="footerleft"><img src="core/common/images/downpng.png" /></div>
+		<div id="footerlink"><a href="javascript:void(0)">关于中心</a><a href="javascript:void(0)">创业服务</a><a href="javascript:void(0)">创业政策</a><a href="javascript:void(0)">创业载体</a><a href="javascript:void(0)">创业文化</a> | &nbsp;&nbsp;www.zii-china.rog © 1997-2012</div>
+		<div class="copyright"></div>
+	</div>
+</div>
+</body>
+</html>

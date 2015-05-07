@@ -1,0 +1,157 @@
+@charset "gb2312";
+div, ul, p{
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 100%;
+    font-family: inherit;
+}
+body {
+    text-align: center;
+    font: 12px/1.5 Tahoma, Helvetica, Arial, sans-serif;
+}
+
+a:link, a:visited {
+    color: #333;
+    text-decoration: none;
+}
+
+
+
+/* Nav
+==========================================================*/
+.nav {
+	width:980px;
+    position: relative;
+	margin:0px;
+    background: url(nav_bg.png) no-repeat 0 -36px;
+	height:36px;
+}
+.navinner {
+    background: url(nav_bg.png) no-repeat 100% -72px;
+	height:36px;
+}
+.navlist {
+    height: 36px;
+	margin:0px;
+    line-height: 36px;
+	    overflow: hidden;
+    margin: 0 10px;
+    background: url(nav_bg.png) repeat-x 0 0;
+}
+.nav li {
+    float: left;
+    display: inline;
+    margin: 0 0 0 -2px;
+    padding: 0 4px 0 6px;
+    background: url(nav_bg.png) no-repeat 0 -108px;
+}
+.nav a {
+    display: block;
+    width: 96px;
+    text-align: center;
+    font-size: 120%;
+}
+.nav a:link, .nav a:visited {
+    color: #fff;
+}
+.nav a.current, .nav a:hover, .nav a:active {
+    color: #fff;
+	font-weight: bold;
+    background: url(nav_bg.png) no-repeat 50% -144px;
+}
+.subnav {
+    position: absolute;
+    top: 41px;
+    left: 0;
+    float: left;
+    height: 27px;
+    line-height: 27px;
+    white-space: nowrap;
+    background: url(nav_bg.png) no-repeat 0 -180px;
+}
+* html .subnav {
+    margin: 0 10px 0 -10px; /* IE 6 and below */
+}
+.subnav p {
+    padding: 0 10px;
+    background: url(nav_bg.png) no-repeat 100% -234px;
+}
+.subnav p span {
+    display: block;
+    background: url(nav_bg.png) repeat-x 0 -207px;
+}
+.subnav p.pointer {
+    position: absolute;
+    top: -4px;
+    left: 0;
+    height: 5px;
+    width: 11px;
+    padding: 0;
+    margin-left: 20px;
+    text-indent: -999em;
+    background: url(nav_bg.png) repeat-x 0 -261px;
+}
+.subnav a {
+    display: inline;
+    padding: 0;
+    font-size: 100%;
+}
+[class~="subnav"] a {
+    padding: 0 3px;
+}
+.subnav, .subnav a:link, .subnav a:visited {
+    color: #235e99;
+}
+.subnav a:hover, .subnav a:active {
+    color: #235e99;
+}
+.subnav a:hover, .subnav a:active {
+    font-weight: normal;
+    background: none;
+    border-bottom: 2px solid;
+}
+/* subnav position and pointer position */
+#subnav1 { left: 26px; }
+#subnav2 { left: 112px; right:auto}
+#subnav3 { left: 208px; right:auto}
+#subnav4 { left: 304px; right:auto}
+#subnav5 { left: 400px; right:auto}
+#subnav6 { left: 510px; right:auto}
+#subnav7 { left: 632px; right:auto}
+#subnav8 { left: 750px; right:auto}
+#subnav9 { left: auto; right:2px;}
+
+#subnav1 .pointer,{ left: 0px; }
+#subnav2 .pointer,{ left: 30px; }
+#subnav3 .pointer,{ left: 30px; }
+#subnav4 .pointer { left: 30px; }
+#subnav5 .pointer { left: 30px; right: 180px; }
+#subnav6 .pointer { left: 30px; right: 300px; }
+#subnav7 .pointer { left: 10px; right: 70px; }
+#subnav8 .pointer { left: 10px; right: 70px; }
+#subnav9 .pointer { left: auto; right: 100px; }
+
+#subnav1, #subnav2, #subnav3, #subnav4 {
+    min-width: 96px;
+}
+#subnav5 { min-width: 340px; }
+#subnav6 { min-width: 240px; }
+#subnav7 { min-width: 130px; }
+#subnav8 { min-width: 130px; }
+#subnav9 { min-width: 130px; }
+
+
+/* Note
+==========================================================*/
+.note {
+    margin: 0 15px 10px;
+	color:#666666;
+}
+.note span{
+	float:right;
+}
+.disable {
+    display: none;
+}

@@ -1,0 +1,27 @@
+/* CSS Document */
+body,div,ul,li,h1,h2,h3,h4,h5,h6,form,pre,input,textarea,td,th,dd,dl,dt,hr,p{ margin:0; padding:0;}
+img{ border:none; cursor:pointer;}
+body,botton,input,select,textarea{ font-size:12px; font-family:tahoma,Helvetica, Arial, sans-serif,simsun;margin:0; padding:0;}
+li,dd,dt{ list-style:none;}
+.hackbox{ clear:both;}
+.onepage{ padding:50px 0px 5px 0px; width:760px; margin:auto; }
+#title{ background:url(../../../core/common/images/onepage_line.png) bottom no-repeat; width:759px;font-size:16px; font-family:simsun; color:#006699; font-weight:bold; padding:0 0 8px 8px;}
+#main{ width:502px; float:left; margin:10px 15px 5px 15px;}
+.main_con{}
+.main_con h1{ font-size:12px; border-bottom:1px solid #b5b5b5; color:#006699; font-weight:bold; line-height:24px; padding-left:5px;}
+.main_con ul li{ color:#555; padding:5px; line-height:22px;}
+#line{ width:1px; float:left; background:#b5b5b5; height:600px; position:relative;}
+.line_top{ background:url(../../../core/common/images/onepage_shortline_top.png) no-repeat; height:27px; width:1px;}
+.line_bottom{ background:url(../../../core/common/images/onepage_shortline_bottom.png) no-repeat; height:27px; width:1px; position:absolute; bottom:0px;}
+#info{ width:217px; float:right; padding-top:15px;}
+#logo{ height:90px;}
+.infolist{ padding-top:5px;}
+.infolist h1{ font-size:12px; color:#006699; font-weight:bold; line-height:24px; padding-left:5px;}
+.infolist ul li{ color:#555; padding:5px; line-height:22px;}
+.tablediv{width:720px; margin:auto; padding-bottom:30px;}
+.tablediv h1{ color:#069; font-size:12px; padding-bottom:5px;}
+.tablediv h1 span{ color:#666; float:right; padding-right:5px; font-weight:normal;}
+.tablediv h1 em{ color:#f00; font-style:normal;}
+.tableborder{ border-left:1px solid #b7b7b7; color:#069; border-top:2px solid #00a2ff; }
+.tableborder .th{ background:url(../../../core/common/images/onpage_tabbg.png) repeat-x; height:24px; line-height:24px;text-align:center;border-right:1px solid #b7b7b7;border-bottom:1px solid #b7b7b7;}
+.tableborder .td{ height:24px; line-height:24px;text-align:center;border-right:1px solid #b7b7b7;border-bottom:1px solid #b7b7b7;}

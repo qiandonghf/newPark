@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appConfig>
+	<config key="articleReleaseRemind" label="文章发布提醒信息模版">
+    	<parameter key="email" label="邮件" value="${customerName}发布了新文章【${articleTitle}】，&lt;a href='${url}'&gt;请点击这里&lt;/a&gt;" render="text"/>
+    	<parameter key="sms" label="短信" value="${customerName}发布了新文章【${articleTitle}】" render="text"/>
+    </config>
+    <config key="webID" label="网站编号">
+        <parameter key="code" label="网站编号" value="1" render="text"/>
+    </config>
+    <config key="sendDate" label="发送邮件日期">
+        <parameter key="code" label="发送邮件日期" value="1" render="text"/>
+    </config>
+    <!-- <config key="newsList" label="新闻列表">
+        <parameter key="name" label="新闻列表" value="http://127.0.0.1:96/parkmanager.cloudService/rss!list.action" render="text"/>
+    </config> -->
+</appConfig>

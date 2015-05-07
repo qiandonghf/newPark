@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+<module idSpace="7" name="内容管理系统" order="4" icon="/core/common/images/cms_icon.png">
+
+     <menu id="10000" name="系统设置" order="1">
+     	<menu id="11000" name="基本参数" order="1" uris="/parkmanager.cms/param!show.action /parkmanager.cms/web/system/base.jsp" icon="/parkmanager.cms/web/images/sys_01_min.png">
+     		<operation id="11001" name="保存" uris="/parkmanager.cms/param!save.action" ></operation>
+     	</menu>
+     	<menu id="12000" name="图片水印" order="2" uris="/parkmanager.cms/waterMark!show.action /parkmanager.cms/web/system/sys_info_mark.jsp" icon="/parkmanager.cms/web/images/sys_02_min.png">
+     		<operation id="12001" name="保存" uris="/parkmanager.cms/waterMark!save.action" ></operation>
+     	</menu>
+     	<menu id="13000" name="联系方式" order="3" uris="/parkmanager.cms/contactInfo!show.action /parkmanager.cms/web/system/contact.jsp" icon="/parkmanager.cms/web/images/sys_03_min.png">
+     		<operation id="13001" name="保存" uris="/parkmanager.cms/contactInfo!save.action" ></operation>
+     	</menu>
+     	<menu id="14000" name="友情链接" order="3" uris="/parkmanager.cms/links!show.action /parkmanager.cms/web/system/links_list.jsp" icon="/parkmanager.cms/web/images/sys_03_min.png">
+     		<operation id="14001" name="新建" uris="/parkmanager.cms/web/system/links_list_add.jsp /parkmanager.cms/links!save.action /parkmanager.cms/links!list.action" ></operation>
+     		<operation id="14002" name="查看" uris="/parkmanager.cms/links!view.action /parkmanager.cms/web/system/links_list_view.jsp" ></operation>
+     		<operation id="14003" name="编辑" uris="/parkmanager.cms/links!edit.action /parkmanager.cms/web/system/links_list_edit.jsp /parkmanager.cms/links!update.action" ></operation>
+     		<operation id="14004" name="删除" uris="/parkmanager.cms/links!delete.action" ></operation>
+     	</menu>
+     </menu>
+     
+     <menu id="20000" name="常规管理" order="2">
+        <menu id="21000" name="栏目管理" order="1" uris="/parkmanager.cms/web/content/catlog_list.jsp /parkmanager.cms/articleType!treeList.action /parkmanager.cms/web/content/catalog_main.jsp /parkmanager.cms/articleType!listById.action /parkmanager.cms/articleType!listAll.action /parkmanager.cms/articleType!loadById.action" icon="/parkmanager.cms/web/images/sys_04_min.png">
+        	<operation id="21001" name="新建" uris="/parkmanager.cms/web/content/catalog_main_add.jsp /parkmanager.cms/articleType!save.action /parkmanager.cms/web/content/catlog_select.jsp /parkmanager.cms/articleType!treeList.action" icon="/core/common/images/emailadd.gif"/>
+        	<operation id="21002" name="删除" uris="/parkmanager.cms/articleType!delete.action" icon="/core/common/images/emaildel.png"/>
+        	<operation id="21003" name="编辑" uris="/parkmanager.cms/articleType!edit.action /parkmanager.cms/articleType!update.action" icon="/core/common/images/edit.gif"/>
+        	<operation id="21004" name="查看" uris="/parkmanager.cms/articleType!view.action" icon="/core/common/images/viewbtn.gif"/>
+        </menu>
+        <menu id="22000" name="评论管理" order="2" uris="/parkmanager.cms/web/conventional/feedback_main.jsp" icon="/parkmanager.cms/web/images/sys_05_min.png">
+        	<operation id="22001" name="删除" uris="/parkmanager.cms/articleComment!delete.action" icon="core/common/images/emaildel.png"></operation>
+        </menu>
+        
+        <menu id="23000" name="内容回收站" order="3" uris="/parkmanager.cms/web/content/recycling.jsp /parkmanager.cms/article!recycler.action" icon="/parkmanager.cms/web/images/sys_06_min.png">
+         	<operation id="23001" name="还原" uris="/parkmanager.cms/article!restore.action" icon="core/common/images/nIco5.gif"/>
+         	<operation id="23002" name="查看" uris="/parkmanager.cms/article!view.action" icon="/core/common/images/viewbtn.gif"/>
+         	<operation id="23003" name="删除" uris="/parkmanager.cms/article!delete.action" icon="core/common/images/emaildel.png"/>
+        </menu>
+     </menu>
+     
+     <menu id="30000" name="内容管理" order="3">
+     	<menu id="31000" name="单页文章" order="1" uris="/parkmanager.cms/web/content/normalContent_single.jsp /parkmanager.cms/article!insideArticleList.action" icon="/parkmanager.cms/web/images/sys_07_min.png">
+        	<operation id="31001" name="编辑" uris="/parkmanager.cms/article!edit.action /parkmanager.cms/article!update.action" icon="/core/common/images/edit.gif"/>
+        	<operation id="31002" name="查看" uris="/parkmanager.cms/article!view.action" icon="/core/common/images/viewbtn.gif"/>
+        </menu>
+        <menu id="32000" name="列表文章" order="2" uris="/parkmanager.cms/web/content/content_list.jsp /parkmanager.cms/web/content/normalContent_list.jsp /parkmanager.cms/article!listByNormal.action /parkmanager.cms/article!insideArticleList.action" icon="/parkmanager.cms/web/images/sys_07_min.png">
+        	<operation id="32001" name="新建" uris="/parkmanager.cms/web/content/content_addByNormal.jsp /parkmanager.cms/article!save.action java ckeditor /parkmanager.cms/web/content/web/ckeditor/uploader/browse.jsp /parkmanager.cms/web/content/web/ckeditor/uploader/upload.jsp" icon="/core/common/images/emailadd.gif"/>
+        	<operation id="32002" name="删除" uris="/parkmanager.cms/article!recycle.action" icon="/core/common/images/emaildel.png"/>
+        	<operation id="32003" name="编辑" uris="/parkmanager.cms/article!edit.action /parkmanager.cms/article!update.action" icon="/core/common/images/edit.gif"/>
+        	<operation id="32004" name="查看" uris="/parkmanager.cms/article!view.action" icon="/core/common/images/viewbtn.gif"/>
+        </menu>
+         <menu id="33000" name="专题管理" order="3" uris="/parkmanager.cms/web/content/topicContent_list.jsp /parkmanager.cms/article!listByTopic.action /parkmanager.cloudService/webContent.xmlData.action" icon="/parkmanager.cms/web/images/sys_08_min.png">
+         	<operation id="33001" name="新建" uris="/parkmanager.cms/web/content/content_addByTopic.jsp /parkmanager.cms/article!save.action" icon="/core/common/images/emailadd.gif"/>
+         	<operation id="33002" name="保存" uris="/parkmanager.cms/article!topicSave.action" icon="/core/common/images/emailadd.gif"/>
+         	<operation id="33004" name="查看" uris="/parkmanager.cms/article!topicView.action /parkmanager.cms/web/content/topicContent_view.jsp" icon="/core/common/images/viewbtn.gif"/>
+        </menu>
+     </menu>
+</module>
+</modules>

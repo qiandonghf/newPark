@@ -1,0 +1,31 @@
+
+/*#featured {background:none repeat scroll 0 0 #fff;border:5px solid #fff;position: relative;width:340px;margin:0 auto;}
+#featured .ui-tabs-panel img {height:190px;width:260px;}
+#featured ul.ui-tabs-nav {list-style:none outside none;margin:0;padding:0;position:absolute;top:0;width:85px;right:0px;}
+#featured ul.ui-tabs-nav li img {background: none repeat scroll 0 0 #fff;border:1px solid #eee;float: left; margin:0px;}
+#featured li.ui-tabs-nav-item li{height:44px;overflow:hidden}
+#featured li.ui-tabs-nav-item a {display: block;height:44px;}
+#featured li.ui-tabs-nav-item img {height:42px;width:66px; float:right;}
+#featured li.ui-tabs-nav-item a:hover {/*background:none repeat scroll 0 0 #fd4e00;border:1px solid #fd4e00;width:68px;}
+#featured li.ui-tabs-selected {width:90px;*width:90px;_width:90px; max-width:70px;}
+#featured ul.ui-tabs-nav li.ui-tabs-selected a {border:1px solid #fd4e00;}
+#featured .ui-tabs-panel {background:none repeat scroll 0 0 #fff;width:260px;height:200px;position:relative;}
+#featured .ui-tabs-panel img{ width:260px;height:200px;}
+#featured .ui-tabs-hide {display:none;}
+#featured ul.ui-tabs-nav li {color:#666666;position:absolute;font-size:12px;height:60px;margin:0;overflow:hidden;padding-left:12px;text-align:right;}
+*/
+
+/* iFocus style */
+#ifocus { width:338px; height:200px;border:1px solid #fff; background:#fff; float:left;}
+	#ifocus_pic { display:inline; position:relative; float:left; width:260px; height:200px; overflow:hidden; margin:0px; }
+		#ifocus_piclist { position:absolute; }
+		#ifocus_piclist li { width:260px; height:200px; overflow:hidden; }
+		#ifocus_piclist img { width:260px; height:200px; }
+	#ifocus_btn { display:inline; float:right; width:70px; margin:0px; }
+		#ifocus_btn li { width:66px; height:50px; cursor:pointer; opacity:0.5; -moz-opacity:0.5; filter:alpha(opacity=80); }
+		#ifocus_btn img { width:64px; height:44px; margin:0px; }
+		#ifocus_btn .current{ opacity:1; -moz-opacity:1; filter:alpha(opacity=100); }
+		#ifocus_btn .current img{ border:1px solid #fd4e00;}
+	#ifocus_tx { position:absolute; left:8px; bottom:8px; color:#FFF; }
+		#ifocus_tx .normal {display:none; }#ifocus_opdiv { position:absolute; left:0; bottom:0; width:410px; height:35px;opacity:0.5; -moz-opacity:0.5; filter:alpha(opacity=50); }
+	

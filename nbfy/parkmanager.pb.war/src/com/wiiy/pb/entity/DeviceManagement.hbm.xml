@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.pb.entity.DeviceManagement">
+    	<meta attribute="class-description">设备管理</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="number" type="java.lang.String">
+			<column name="number">
+				<comment>设备编号</comment>
+			</column>
+		</property>
+		<property name="name" type="java.lang.String">
+			<column name="name">
+				<comment>设备名称</comment>
+			</column>
+		</property>
+		<property name="specifications" type="java.lang.String">
+			<column name="specifications">
+				<comment>设备规格</comment>
+			</column>
+		</property>
+		<property name="type" type="java.lang.String">
+			<column name="type">
+				<comment>设备型号</comment>
+			</column>
+		</property>
+		<property name="manufacturer" type="java.lang.String">
+			<column name="manufacturer">
+				<comment>制造厂商</comment>
+			</column>
+		</property>
+		<property name="serialNumber" type="java.lang.String">
+			<column name="serial_number">
+				<comment>出厂编号</comment>
+			</column>
+		</property>
+		<property name="department" type="java.lang.String">
+			<column name="department">
+				<comment>使用部门</comment>
+			</column>
+		</property>
+		<property name="departmentNumber" type="java.lang.String">
+			<column name="department_number">
+				<comment>部门编号</comment>
+			</column>
+		</property>
+		<property name="location" type="java.lang.String">
+			<column name="location">
+				<comment>使用地点</comment>
+			</column>
+		</property>
+		<property name="manufacturingDate" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="manufacturing_date">
+				<comment>制造日期</comment>
+			</column>
+		</property>
+		<property name="usedDate" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="used_date">
+				<comment>使用日期</comment>
+			</column>
+		</property>
+		<property name="category" type="java.lang.String">
+			<column name="category">
+				<comment>设备类别</comment>
+			</column>
+		</property>
+		<property name="status">
+        	<column name="status">
+				<comment>设备状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.pb.preferences.enums.DeviceStatusEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="level" type="java.lang.String">
+			<column name="level">
+				<comment>设备级别</comment>
+			</column>
+		</property>
+		<property name="degree" type="java.lang.Double">
+			<column name="degree">
+				<comment>复杂系数</comment>
+			</column>
+		</property>
+		<property name="cost" type="java.lang.Double">
+			<column name="cost">
+				<comment>设备原值</comment>
+			</column>
+		</property>
+		<property name="depreciationYear" type="java.lang.Integer">
+			<column name="depreciation_year">
+				<comment>折旧年限</comment>
+			</column>
+		</property>
+		<property name="size" type="java.lang.String">
+			<column name="size">
+				<comment>外形尺寸</comment>
+			</column>
+		</property>
+		<property name="weight" type="java.lang.String">
+			<column name="weight">
+				<comment>设备重量</comment>
+			</column>
+		</property>
+		<property name="isCNC">
+        	<column name="is_cnc">
+				<comment>数控设备</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>		
+        </property>
+        <property name="isImported">
+        	<column name="is_imported">
+				<comment>进口设备</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>		
+        </property>
+        <property name="patrolInterval" type="java.lang.String">
+			<column name="patrol_interval">
+				<comment>巡检间隔</comment>
+			</column>
+		</property>
+		<property name="patrolIntervalType">
+        	<column name="patrol_interval_type">
+				<comment>巡检间隔类型</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.pb.preferences.enums.PatrolIntervalEnum</param>
+				<param name="type">12</param>
+			</type>		
+        </property>
+		<property name="patrolTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="patrol_time">
+				<comment>巡检日期</comment>
+			</column>
+		</property>
+		<property name="lastPatrolTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="last_patrol_time">
+				<comment>上次巡检日期</comment>
+			</column>
+		</property>
+		<property name="yearlyInterval" type="java.lang.String">
+			<column name="yearly_interval">
+				<comment>年检间隔</comment>
+			</column>
+		</property>
+		<property name="yearlyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="yearly_time">
+				<comment>年检日期</comment>
+			</column>
+		</property>
+		<property name="lastYearlyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="last_yearly_time">
+				<comment>上次年检日期</comment>
+			</column>
+		</property>
+		<property name="reportPatrol" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="report_patrol">
+				<comment>巡检提醒日期</comment>
+			</column>
+		</property>
+		<property name="reportYearly" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="report_yearly">
+				<comment>年检提醒日期</comment>
+			</column>
+		</property>
+		<property name="reportType" type="java.lang.String">
+			<column name="report_type">
+				<comment>提醒类型</comment>
+			</column>
+		</property>
+		<property name="remarks" type="java.lang.String">
+			<column name="remarks">
+				<comment>备注</comment>
+			</column>
+		</property>
+		
+		
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+		
+		
+		
+        
+	</class>
+</hibernate-mapping>

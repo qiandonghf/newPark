@@ -1,0 +1,69 @@
+@charset "utf-8";
+/* CSS Document */
+body,div,ul,li,h1,h2,h3,h4,h5,h6,form,pre,input,textarea,td,th,dd,dl,dt,hr,p{ margin:0; padding:0;}
+img{ border:none;}
+body,botton,input,select,textarea{ font:12px/1.5 tahoma,Helvetica, Arial, sans-serif,"宋体";margin:0; padding:0;}
+#content{ width:auto; min-height:440px; _height:440px; background:#c0d6ad url(../images/loginmainbg.png) center bottom no-repeat;}
+
+#content_wl {background:#36d4bb url(../images/loginmainbg3.png) center bottom no-repeat;}
+
+li,dd dt{ list-style:none;}
+.logindiv{ width:900px; margin:auto; height:80px;}
+.logo{ height:50px; padding-top:30px; text-align:left; line-height:50px; float:left;}
+.quickmenu{ width:100px; text-align:right; padding-right:5px; color:#7a7a7a; padding-top:40px; float:right;}
+.quickmenu a:link,.quickmenu a:visited{ color:#7a7a7a; text-decoration:none; padding:0 5px;}
+.quickmenu a:hover{ color:#7a7a7a; text-decoration:underline; padding:0 5px;}
+.loginmain{ width:430px; padding-left:470px; padding-top:28px; min-height:382px; _height:382px;  margin:auto; padding-bottom:30px;}
+.loginborder{ border:1px solid #b7c2c9; background:#fff; width:338px;}
+.logintab{ height:48px;}
+.logintab ul li{ width:168px; height:48px; float:left;}
+.logintab .active{ font-size:14px; font-weight:bold; text-align:center; line-height:48px; height:48px;border-bottom:1px solid #fff; border-right:1px solid #fff;}
+.logintab .link{font-size:14px; font-weight:bold; text-align:center; line-height:48px; height:48px; border-bottom:1px solid #b7c2c9; border-left:1px solid #b7c2c9; background:url(../images/loginbgs.png) repeat-x; cursor:pointer;}
+.logintab .link1{font-size:14px; font-weight:bold; text-align:center; line-height:48px; height:48px; border-bottom:1px solid #b7c2c9; border-right:1px solid #b7c2c9; background:url(../images/loginbgs.png) repeat-x; cursor:pointer;}
+.loginlist{ padding-top:15px; padding-left:42px;}
+.loginlist ul li{ padding-bottom:10px;}
+.loginlist .inputactive{ width:243px; height:33px; line-height:33px; padding-left:10px; color:#92a4bf; border:1px solid #60a4e8;  font-size:14px; background:url(../images/logininputbg.png) repeat-x; margin-top:15px;}
+.loginlist .inputlink{ width:243px; height:33px; line-height:33px; padding-left:10px; color:#92a4bf; border-top:1px solid #bac5d4; border-left:1px solid #bac5d4;border-right:1px solid #d5dbe2;border-bottom:1px solid #d5dbe2; font-size:14px;margin-top:15px;}
+.checkbox{ margin-right:5px; position:relative; top:2px; *+top:1px;}
+.loginbtn{ background:url(../images/loginbtn1.png) no-repeat; width:102px; height:35px; line-height:35px; border:none; text-align:center; font-size:14px; color:#fff; font-weight:bold; margin-top:10px; margin-bottom:20px; cursor:pointer;}
+.loginbtnover{ background:url(../images/loginbtn1.png) 0px -38px no-repeat; width:102px; height:35px; line-height:35px; border:none; text-align:center; font-size:14px; color:#fff; font-weight:bold; margin-top:10px; margin-bottom:20px; cursor:pointer;}
+
+.logincancel{ background:url(../images/loginbtn1.png) -104px 0px no-repeat; width:102px; height:35px; line-height:35px; border:none; text-align:center; font-size:14px; color:#555; font-weight:bold; margin-top:10px; margin-bottom:20px; cursor:pointer;}
+.logindown{ height:50px; padding-top:12px; padding-bottom:5px; border-top:1px solid #f1f3f5; background:#f8f9fa; font-family:simsun;}
+.logindown ul li{ line-height:22px; height:22px; color:#9bacc6; padding-left:40px;}
+.logindown ul li a:link,.logindown ul li a:visited{ color:#9bacc6; text-decoration:none;}
+.logindown ul li a:hover{ color:#9bacc6; text-decoration:underline;}
+.footerlink{ height:20px; line-height:20px; background:#f4f0c6; text-align:center; color:#c59565;}
+.footerlink a:houver{cursor: pointer;}
+.footerlink a:link,.footerlink a:visited{ color:#c59565; text-decoration:none;}
+.footerlink a:hover{ color:#c59565; text-decoration:underline;}
+#footer{ height:70px; background:#f7f7f7; border-top:1px solid #fff;}
+#footerdiv{ width:900px; margin:auto;}
+#footerleft{ width:165px; padding-top:15px; float:left;}
+#footerlink{ height:70px; line-height:70px; color:#7a7a7a; padding-left:60px; float:left;}
+#footerlink a:link,#footerlink a:visited{ color:#7a7a7a; text-decoration:none; padding:0px 8px;}
+#footerlink a:hover{ color:#7a7a7a; text-decoration:underline;}
+.copyright{ color:#7a7a7a; text-align:right; padding-right:5px; float:right; height:70px; line-height:70px;}
+
+
+
+
+
+/* try
+----------------------- */
+
+.loginborder2 { border:1px solid #b7c2c9; background:#fff;}
+
+.role-title { padding-top:10px; padding-bottom:10px; padding-left:20px; font-size:16px; font-weight:bold; border-bottom:1px solid #eee; margin-bottom:15px; }
+.role-list { overflow:hidden; zoom:1; clear:both; padding:20px 0 5px;}
+.role-list li { padding:0 30px; padding-bottom:15px;}
+
+.role { overflow:hidden; zoom:1;}
+.role .img { width:80px; height:80px; float:left; margin-right:-90px;}
+.role .info { margin-left:90px; color:#999; } 
+.role h2 { font-size:14px; line-height:normal; margin-bottom:3px; color:#333;}
+
+.btn-ty { width:89px; height:25px; text-align:center; line-height:25px; font-size:12px; font-weight:bold; display:block;  background:url(../images/btn-ty.gif) no-repeat; color:#fff; margin-top:5px; text-decoration:none; float:right;}
+
+
+

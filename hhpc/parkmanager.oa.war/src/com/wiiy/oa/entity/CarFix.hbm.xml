@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.oa.entity.CarFix">
+    	<meta attribute="class-description">车辆维修</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.TreeEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="licenseNo" type="java.lang.String">
+			<column name="license_no" not-null="true" length="20" unique-key="true">
+				<comment>车牌号码</comment>
+			</column>
+		</property>
+		<property name="carId" type="java.lang.Long" not-null="true">
+			<column name="car_id">
+				<comment>车辆外键</comment>
+			</column>
+		</property>
+		<many-to-one name="car" class="com.wiiy.oa.entity.Car" foreign-key="fk_carfix_car" insert="false" update="false" fetch="join">
+			<column name="car_id">
+				<comment>车辆</comment>
+			</column>
+		</many-to-one>
+		<property name="fixDate" type="java.util.Date">
+			<column name="fix_date" not-null="true">
+				<comment>维修日期</comment>
+			</column>
+		</property>
+		<property name="operator" type="java.lang.String">
+			<column name="operator">
+				<comment>经办人</comment>
+			</column>
+		</property>
+		<property name="carFixTypeId" type="java.lang.String" not-null="true">
+			<column name="carFix_type_id">
+				<comment>车辆维修类型外键</comment>
+			</column>
+		</property>
+		<many-to-one name="carFixType" class="com.wiiy.core.entity.DataDict" foreign-key="fk_carfix_fixType" insert="false" update="false" fetch="join">
+			<column name="carFix_type_id">
+				<comment>车辆维修类型</comment>
+			</column>
+		</many-to-one>
+		<property name="fee" type="java.lang.Double">
+			<column name="fee" precision="2">
+				<comment>费用</comment>
+			</column>
+		</property>
+		<property name="reason" type="java.lang.String">
+			<column name="reason" length="512">
+				<comment>维修原因</comment>
+			</column>
+		</property>
+		<property name="memo" type="java.lang.String">
+			<column name="memo"  length="512">
+				<comment>备注</comment>
+			</column>
+		</property>
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

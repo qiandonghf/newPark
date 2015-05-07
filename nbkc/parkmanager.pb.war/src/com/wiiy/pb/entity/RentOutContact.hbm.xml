@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.wiiy.pb.entity.RentOutContact">
+        <meta attribute="class-description">退房联系单</meta> 
+    	<meta attribute="extends">com.wiiy.core.entity.ContactEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+        <property name="customerId" type="java.lang.Long" not-null="true" >
+			<column name="customer_id">
+				<comment>企业外键</comment>
+			</column>
+		</property>
+        <property name="customer" type="java.lang.String" not-null="true">
+            <column name="customer" not-null="true">
+                <comment>企业名称</comment>
+            </column>
+        </property>
+        <property name="roomId" type="java.lang.Long">
+			<column name="room_id">
+				<comment>房间外键</comment>
+			</column>
+		</property>
+        <many-to-one name="room" class="com.wiiy.pb.entity.Room" foreign-key="fk_rentOutContact_room" insert="false" update="false" fetch="join">
+			<column name="room_id" >
+				<comment>房间</comment>
+			</column>
+		</many-to-one>
+        <property name="reason" type="java.lang.String">
+            <column name="reason">
+                <comment>退房原因</comment>
+            </column>
+        </property>
+        <property name="opinion1" type="java.lang.String">
+            <column name="opinion1">
+                <comment>管委会创业服务部初审意见</comment>
+            </column>
+        </property>
+        <property name="opinion1Id" type="java.lang.Long">
+            <column name="opinion1_id">
+                <comment>管委会创业服务部初审意见ID</comment>
+            </column>
+        </property>
+        <property name="opinion2" type="java.lang.String">
+            <column name="opinion2">
+                <comment>管委（公司）领导批复意见</comment>
+            </column>
+        </property>
+        <property name="opinion2Id" type="java.lang.Long">
+            <column name="opinion2_id">
+                <comment>管委（公司）领导批复意见ID</comment>
+            </column>
+        </property>
+        <property name="opinion3" type="java.lang.String">
+            <column name="opinion3">
+                <comment>管委会企业发展部注册变更审核意见</comment>
+            </column>
+        </property>
+        <property name="opinion3Id" type="java.lang.Long">
+            <column name="opinion3_id">
+                <comment>管委会企业发展部注册变更审核意见ID</comment>
+            </column>
+        </property>
+        <property name="opinion4" type="java.lang.String">
+            <column name="opinion4">
+                <comment>管委会财务部审核意见</comment>
+            </column>
+        </property>
+        <property name="opinion4Id" type="java.lang.Long">
+            <column name="opinion4_id">
+                <comment>管委会财务部审核意见ID</comment>
+            </column>
+        </property>
+        <property name="opinion5" type="java.lang.String">
+            <column name="opinion5">
+                <comment>南都物业服务中心验房审核意见</comment>
+            </column>
+        </property>
+        <property name="opinion5Id" type="java.lang.Long">
+            <column name="opinion5_id">
+                <comment>南都物业服务中心验房审核意见ID</comment>
+            </column>
+        </property>
+        <property name="opinion6" type="java.lang.String">
+            <column name="opinion6">
+                <comment>南都物业服务中心（财务）审核意见</comment>
+            </column>
+        </property>
+        <property name="opinion6Id" type="java.lang.Long">
+            <column name="opinion6_id">
+                <comment>南都物业服务中心（财务）审核意见ID</comment>
+            </column>
+        </property>
+        
+        
+        
+        
+        <property name="resolveStatus">
+        	<column name="resolveStatus">
+				<comment>解决状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.core.preferences.enums.ContactResolveStatusEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="status">
+        	<column name="status">
+				<comment>处理状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.core.preferences.enums.ContactStatusEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="type">
+        	<column name="type">
+				<comment>类型</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.core.preferences.enums.ContactTypeEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+        <property name="receiveId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="receive_id">
+				<comment>受理人ID</comment>
+			</column>
+		</property>
+        <property name="receiveName" type="java.lang.String">
+			<meta attribute="gen-property">false</meta>
+			<column name="receive_name">
+				<comment>受理人</comment>
+			</column>
+		</property>
+		<property name="opinionNow" type="java.lang.String">
+			<meta attribute="gen-property">false</meta>
+			<column name="opinion_now">
+				<comment>当前审批</comment>
+			</column>
+		</property>
+        <property name="usedIds" type="java.lang.String">
+			<meta attribute="gen-property">false</meta>
+			<column name="used_ids">
+				<comment>处理过的人IDS</comment>
+			</column>
+		</property>
+        <property name="linkmanId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="linkman_id">
+				<comment>联系人ID</comment>
+			</column>
+		</property>
+        <property name="linkman" type="java.lang.String">
+			<meta attribute="gen-property">false</meta>
+			<column name="linkman">
+				<comment>联系人</comment>
+			</column>
+		</property>
+        <property name="telephone" type="java.lang.String">
+			<meta attribute="gen-property">false</meta>
+			<column name="telephone">
+				<comment>联系电话</comment>
+			</column>
+		</property>
+		<property name="startDate" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="start_date">
+				<comment>受理开始时间</comment>
+			</column>
+		</property>
+		<property name="endDate" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="end_date">
+				<comment>受理结束时间</comment>
+			</column>
+		</property>
+		<property name="description" type="java.lang.String">
+			<meta attribute="gen-property">false</meta>
+			<column name="description">
+				<comment>情况说明</comment>
+			</column>
+		</property>
+        
+        
+        <property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.oa.entity.WorkSchedule">
+    	<meta attribute="class-description">班制定义</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.TreeEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="java.lang.String">
+			<column name="name" not-null="true" length="20" unique-key="true">
+				<comment>班制名称</comment>
+			</column>
+		</property>
+		
+		<property name="isDefault">
+			<column name="is_default" sql-type="varchar(50)">
+				<comment>是否缺省</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+		<property name="workClassCfg" type="java.lang.String">
+			<column name="workClassCfg">
+				<comment>班次设置</comment>
+			</column>
+		</property>
+		<property name="day1" type="java.lang.String">
+			<column name="day1">
+				<comment>周一</comment>
+			</column>
+		</property>
+		<property name="day2" type="java.lang.String">
+			<column name="day2">
+				<comment>周二</comment>
+			</column>
+		</property>
+		<property name="day3" type="java.lang.String">
+			<column name="day3">
+				<comment>周三</comment>
+			</column>
+		</property>
+		<property name="day4" type="java.lang.String">
+			<column name="day4">
+				<comment>周四</comment>
+			</column>
+		</property>
+		<property name="day5" type="java.lang.String">
+			<column name="day5">
+				<comment>周五</comment>
+			</column>
+		</property>
+		<property name="day6" type="java.lang.String">
+			<column name="day6">
+				<comment>周六</comment>
+			</column>
+		</property>
+		<property name="day7" type="java.lang.String">
+			<column name="day7">
+				<comment>周日</comment>
+			</column>
+		</property>
+		
+		
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

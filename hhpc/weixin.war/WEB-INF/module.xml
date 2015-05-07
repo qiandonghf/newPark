@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+<module idSpace="21" name="学校管理系统" order="8" icon="/core/common/images/assoc_icon.png">
+    <menu id="10000" name="会员信息管理" order="3">
+        <menu id="11000" name="协会会员" order="1" uris="/parkmanager.association/web/incubator/incubator_list.jsp /parkmanager.association/incubator!list.action" icon="/parkmanager.association/web/images/assoc_01_min.png">
+        	<operation id="11001" name="新建" uris="/parkmanager.association/web/incubator/incubator_add.jsp /parkmanager.association/incubator!save.action /parkmanager.association/incubator!upload.action" icon="/core/common/images/emailadd.gif"/>
+        	<operation id="11002" name="删除" uris="/parkmanager.association/incubator!delete.action" icon="/core/common/images/emaildel.png"/>
+        	<operation id="11003" name="编辑" uris="/parkmanager.association/incubator!edit.action /parkmanager.association/incubator!update.action /parkmanager.association/incubator!upload.action" icon="/core/common/images/edit.gif"/>
+        	<operation id="11004" name="查看" uris="/parkmanager.association/incubator!view.action" icon="/core/common/images/viewbtn.gif"/>
+        	<operation id="11005" name="导入名片" uris="/parkmanager.association/incubator!importCard.action" icon="/core/common/images/card.png"/>
+        	<operation id="11006" name="创建用户" uris="/parkmanager.association/web/incubator/user_add.jsp /parkmanager.association/incubator!createUser.action /parkmanager.association/incubator!editUser.action /parkmanager.association/incubator!updateUser.action /parkmanager.association/incubator!checkUser.action" icon="/core/common/images/users.png"/>
+        </menu>
+		<menu id="12000" name="合作机构" order="2" uris="/parkmanager.association/web/cooperate/cooperate_list.jsp /parkmanager.association/agency!list.action" icon="/parkmanager.association/web/images/assoc_02_min.png">
+			<operation id="12001" name="新建" uris="/parkmanager.association/web/cooperate/cooperate_add.jsp /parkmanager.association/agency!save.action /parkmanager.association/agency!upload.action" icon="/core/common/images/emailadd.gif"/>
+			<operation id="12002" name="删除" uris="/parkmanager.association/agency!delete.action" icon="/core/common/images/emaildel.png"/>
+			<operation id="12003" name="编辑" uris="/parkmanager.association/agency!edit.action /parkmanager.association/agency!update.action /parkmanager.association/agency!upload.action" icon="/core/common/images/edit.gif"/>
+			<operation id="12004" name="查看" uris="/parkmanager.association/agency!view.action" icon="/core/common/images/viewbtn.gif"/>
+			<operation id="12005" name="导入名片" uris="/parkmanager.association/agency!importCard.action" icon="/core/common/images/card.png"/>
+		</menu>
+		<menu id="13000" name="专家管理" order="3" uris="/parkmanager.association/web/vip/vip_list.jsp /parkmanager.association/vip!list.action" icon="/parkmanager.association/web/images/assoc_03_min.png">
+			<operation id="13001" name="新建" uris="/parkmanager.association/web/vip/vip_add.jsp /parkmanager.association/vip!save.action /parkmanager.association/vip!upload.action" icon="/core/common/images/emailadd.gif"/>
+			<operation id="13002" name="删除" uris="/parkmanager.association/vip!delete.action" icon="/core/common/images/emaildel.png"/>
+			<operation id="13003" name="编辑" uris="/parkmanager.association/vip!edit.action /parkmanager.association/vip!update.action " icon="/core/common/images/edit.gif"/>
+			<operation id="13004" name="查看" uris="/parkmanager.association/vip!view.action" icon="/core/common/images/viewbtn.gif"/>
+			<operation id="13005" name="导入名片" uris="/parkmanager.association/vip!importCard.action" icon="/core/common/images/card.png"/>
+		</menu>
+		<menu id="14000" name="协会会员通讯录" order="4" uris="" icon="/parkmanager.association/web/images/assoc_08_min.png">
+			<menu id="14100" name="联系人" order="5" uris="/parkmanager.association/web/incubator/incubator_contract_list.jsp /parkmanager.association/incubator!list.action" icon="/parkmanager.association/web/images/assoc_18_min.png">
+				<operation id="14101" name="新建" uris="/parkmanager.association/web/vip/vip_add.jsp /parkmanager.association/vip!save.action /parkmanager.association/vip!upload.action" icon="/core/common/images/emailadd.gif"/>
+				<operation id="14102" name="删除" uris="/parkmanager.association/vip!delete.action" icon="/core/common/images/emaildel.png"/>
+				<operation id="14103" name="编辑" uris="/parkmanager.association/vip!edit.action /parkmanager.association/vip!update.action " icon="/core/common/images/edit.gif"/>
+				<operation id="14104" name="查看" uris="/parkmanager.association/vip!view.action" icon="/core/common/images/viewbtn.gif"/>
+				<operation id="14105" name="导入名片" uris="/parkmanager.association/vip!importCard.action" icon="/core/common/images/card.png"/>
+				<operation id="14106" name="导出" uris="/parkmanager.association/incubator!export.action" icon="/core/common/images/card.png"/>
+			</menu>
+			<menu id="14200" name="负责人" order="6" uris="/parkmanager.association/web/incubator/incubator_charger_list.jsp /parkmanager.association/incubator!list.action" icon="/parkmanager.association/web/images/assoc_28_min.png">
+				<operation id="14201" name="新建" uris="/parkmanager.association/web/vip/vip_add.jsp /parkmanager.association/vip!save.action /parkmanager.association/vip!upload.action" icon="/core/common/images/emailadd.gif"/>
+				<operation id="14202" name="删除" uris="/parkmanager.association/vip!delete.action" icon="/core/common/images/emaildel.png"/>
+				<operation id="14203" name="编辑" uris="/parkmanager.association/vip!edit.action /parkmanager.association/vip!update.action " icon="/core/common/images/edit.gif"/>
+				<operation id="14204" name="查看" uris="/parkmanager.association/vip!view.action" icon="/core/common/images/viewbtn.gif"/>
+				<operation id="14205" name="导入名片" uris="/parkmanager.association/vip!importCard.action" icon="/core/common/images/card.png"/>
+				<operation id="14206" name="导出" uris="/parkmanager.association/incubator!export.action" icon="/core/common/images/card.png"/>
+			</menu>
+		</menu>
+    </menu>
+
+    <menu id="20000" name="数据报送管理" order="2">
+        <menu id="21000" name="国家级" order="1" uris="/parkmanager.association/web/data/data_nation.jsp" icon="/parkmanager.association/web/images/assoc_04_min.png">
+        	        	<operation id="21001" name="孵化器在孵(毕业)企业情况表" uris="/parkmanager.association/companyReport!add.action /parkmanager.association/companyReport!reportList.action /parkmanager.association/web/data/data_company_add.jsp /parkmanager.association/companyReport!list.action 
+        	/parkmanager.association/web/data/data_company.jsp /parkmanager.association/companyReport!save.action /parkmanager.association/companyReport!sendReport.action /parkmanager.association/companyReport!delete.action /parkmanager.association/companyReport!edit.action 
+        	/parkmanager.association/companyReport!view.action /parkmanager.association/companyReport!update.action /parkmanager.association/web/data/dataReportToCustomer_backSuggestion.jsp /parkmanager.association/companyReport!reportBack.action"/>
+        	
+        	<operation id="21002" name="孵化器综合情况表" uris="/parkmanager.association/incubatorReport!add.action /parkmanager.association/incubatorReport!loadList.action /parkmanager.association/incubatorReport!list.action 
+        	/parkmanager.association/incubatorReport!save.action /parkmanager.association/incubatorReport!sendReport.action /parkmanager.association/incubatorReport!delete.action /parkmanager.association/incubatorReport!edit.action 
+        	/parkmanager.association/incubatorReport!view.action /parkmanager.association/incubatorReport!update.action /parkmanager.association/web/data/dataReportToCustomer_backSuggestion.jsp /parkmanager.association/incubatorReport!reportBack.action"/>
+        	
+        	<operation id="21003" name="孵化器基本情况快报表" uris="/parkmanager.association/incubatorBaseReport!add.action /parkmanager.association/incubatorBaseReport!list.action /parkmanager.association/incubatorBaseReport!edit.action /parkmanager.association/incubatorBaseReport!view.action
+        	/parkmanager.association/incubatorBaseReport!delete.action /parkmanager.association/incubatorBaseReport!sendReport.action /parkmanager.association/incubatorBaseReport!loadList.action 
+        	/parkmanager.association/incubatorBaseReport!save.action /parkmanager.association/incubatorBaseReport!update.action /parkmanager.association/web/data/dataReportToCustomer_backSuggestion.jsp /parkmanager.association/incubatorBaseReport!reportBack.action"/>
+        </menu>
+        <menu id="22000" name="市级" order="2" uris="/parkmanager.association/web/data/data_city_info.jsp " icon="/parkmanager.association/web/images/assoc_05_min.png">
+        	<operation id="22101" name="宁波市科技企业孵化器调查表" uris="/parkmanager.association/incubatorCityReport!reportList.action /parkmanager.association/incubatorCityReport!list.action /parkmanager.association/incubatorCityReport!add.action /parkmanager.association/incubatorCityReport!save.action
+        	/parkmanager.association/incubatorCityReport!edit.action /parkmanager.association/incubatorCityReport!update.action
+        	/parkmanager.association/incubatorCityReport!view.action /parkmanager.association/incubatorCityReport!sendReport.action
+        	/parkmanager.association/incubatorCityReport!countCity.action /parkmanager.association/incubatorCityReport!export.action
+        	/parkmanager.association/incubatorCityReport!delete.action /parkmanager.association/web/data/dataReportToCustomer_backSuggestion.jsp /parkmanager.association/incubatorCityReport!reportBack.action" icon="/core/common/images/emailadd.gif"/>
+        </menu>
+    </menu>
+    
+    <menu id="30000" name="项目库管理 " order="2">
+    	<menu id="31000" name="项目库管理" order="" uris="/parkmanager.association/project!projectList.action  /parkmanager.association/project!list.action" icon="/parkmanager.association/web/images/assoc_06_min.png">
+        	<operation id="31001" name="新建" uris="/parkmanager.association/project!add.action /parkmanager.association/project!save.action"/>
+        	<operation id="31002" name="删除" uris="/parkmanager.association/project!delete.action"/>
+        	<operation id="31003" name="编辑" uris="/parkmanager.association/project!edit.action /parkmanager.association/project!update.action"/>
+        	<operation id="31004" name="生成onepage" uris="/parkmanager.association/project!view.action"/>
+        	<operation id="31005" name="导出" uris="/parkmanager.association/project!export.action"/>
+        </menu>
+    </menu>
+</module>
+</modules>

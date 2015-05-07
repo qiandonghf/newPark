@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+       id="com.wiiy.web.entity.EmailData"
+       name="邮件相关数据"
+       point="platform.base.bundle.HibernateExtension">
+      <entity
+            class="com.wiiy.web.entity.EmailData">
+      </entity>
+   </extension>
+</plugin>

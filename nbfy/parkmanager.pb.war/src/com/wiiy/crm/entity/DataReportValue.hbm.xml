@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.wiiy.crm.entity.DataReportValue">
+        <meta attribute="class-description">上报数据值</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="reportCustomerId" type="java.lang.Long"  not-null="true">
+			<column name="report_customer_id">
+				<comment>报表企业配置外键</comment>
+			</column>
+		</property>
+        <many-to-one name="reportCustomer" class="com.wiiy.crm.entity.DataReportToCustomer" foreign-key="fk_DataReportValue_reportCustomer" insert="false" update="false" fetch="join">
+            <column name="report_customer_id" not-null="true">
+                <comment>报表企业配置</comment>
+            </column>
+        </many-to-one>
+		
+        <property name="propertyId" type="java.lang.Long"  not-null="true">
+			<column name="property_id">
+				<comment>报表数据项配置外键</comment>
+			</column>
+		</property>
+        <many-to-one name="property" class="com.wiiy.crm.entity.DataReportProperty" foreign-key="fk_datareportvalue_property" insert="false" update="false" fetch="join">
+            <column name="property_id" not-null="true">
+                <comment>报表数据项配置</comment>
+            </column>
+        </many-to-one>
+        
+        <property name="intVal" type="java.lang.Integer">
+            <column name="int_val">
+            	<comment>整数值</comment>
+            </column>
+        </property>
+        <property name="strVal" type="java.lang.String">
+            <column name="str_val" length="512">
+            	<comment>字符串值</comment>
+            </column>
+        </property>
+        <property name="doubleVal" type="java.lang.Double">
+            <column name="double_val">
+            	<comment>小数值</comment>
+            </column>
+        </property>
+        <property name="selVal" type="java.lang.String">
+            <column name="sel_val">
+            	<comment>选择值</comment>
+            </column>
+        </property>
+        <property name="dateVal" type="java.util.Date">
+			<column name="date_val">
+				<comment>时间值</comment>
+			</column>
+		</property>
+        
+        <property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+    </class>
+</hibernate-mapping>

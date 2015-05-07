@@ -1,0 +1,45 @@
+<?xml version = "1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.core.entity.DataDict">
+    	<meta attribute="class-description">数据字典</meta> 
+        <id name="id" column="id" type="java.lang.String">
+            <generator class="assigned"/>
+        </id>
+		<property name="moduleName" type="java.lang.String" not-null="true">
+			<column name="module_name">
+				<comment>模块名称</comment>
+			</column>
+        </property>
+        <property name="parentId" type="java.lang.String">
+			<column name="parent_id">
+				<comment>父ID</comment>
+			</column>
+        </property>
+        <property name="dataName" type="java.lang.String" not-null="true">
+			<column name="data_name">
+				<comment>数据名称</comment>
+			</column>
+        </property>
+        <property name="dataValue" type="java.lang.String" length="4096">
+			<column name="data_value">
+				<comment>数据值</comment>
+			</column>
+        </property>
+        <property name="type" type="java.lang.Integer">
+			<column name="type">
+				<comment>数据类型 0单一值 1列表值</comment>
+			</column>
+        </property>
+        <property name="fixed" type="java.lang.Integer">
+			<column name="fixed">
+				<comment>是否固定不允许删除编辑</comment>
+			</column>
+        </property>
+        <property name="displayOrder" type="java.lang.Integer">
+			<column name="displayOrder">
+				<comment>显示顺序(数字小的在前面)</comment>
+			</column>
+        </property>
+    </class>
+</hibernate-mapping>

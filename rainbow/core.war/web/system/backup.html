@@ -1,0 +1,102 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base href="https://58.215.78.148:8443/svn/parkmanager/trunk/parkmanager.mockup.war/"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="core/common/style/base.css" rel="stylesheet" type="text/css" />
+<link href="core/common/style/content.css" rel="stylesheet" type="text/css" />
+<link href="core/floatbox/floatbox.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="core/common/floatbox/floatbox.js"></script>
+<script type="text/javascript" src="core/common/js/tools.js"></script>
+<script type="text/javascript" src="core/common/js/righth.js"></script>
+<script type="text/javascript" src="core/common/js/layertable.js"></script>
+<link href="core/common/tree/themes/default/easyui.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="core/common/js/jquery.js"></script>
+<script type="text/javascript" src="core/common/tree/jquery.easyui.min.js"></script>
+<script type="text/javascript">
+		$(function(){
+			$(".tree").tree({
+				animate: true,
+				lines: true,
+				checkbox: true
+			});
+		});
+function checkradio(){ 
+var item = $(":checked")
+var len=item.length; 
+if(len>0){ 
+ if($(":radio:checked").val()==2){
+ 	$("#times").css({display:"block"});
+ }else{
+ 	$("#times").css({display:"none"});
+ }
+} 
+} 
+</script>
+</head>
+
+<body>
+<!--container-->
+<div id="container">
+	<div class="emailtop">
+	<!--leftemail-->
+	<div class="leftemail">
+		<ul>
+			<li onmouseover="this.className='libg'" onmouseout="this.className=''"><span><img src="core/common/images/emaildel.png"/></span>清理30天前数据</li>
+		</ul>
+	</div>
+	<!--//leftemail-->
+</div>
+
+	<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="35" class="tdleftc"><label>
+          序号
+        </label></td>
+        <td width="120" class="tdcenterL" onmousemove="this.className='tdcenterLover'" onmouseout="this.className='tdcenterL'">备份日期</td>
+        <td width="120" class="tdcenterL"  onmousemove="this.className='tdcenterLover'" onmouseout="this.className='tdcenterL'">备份文件</td>
+        <td class="tdcenter"  onmousemove="this.className='tdcenterover'" onmouseout="this.className='tdcenter'">路径</td>
+        <td width="100" class="tdcenter"  onmousemove="this.className='tdcenterover'" onmouseout="this.className='tdcenter'">大小</td>
+        <td width="60" class="tdrightc"  onmousemove="this.className='tdrightcover'" onmouseout="this.className='tdrightc'">操作</td>
+      </tr>
+      <tr onmouseover="this.style.background='#f4f4f4'" onmouseout="this.style.background='#fff'">
+        <td class="centertd"><label>
+          1
+        </label></td>
+        <td class="lefttd">2012-07-09</td>
+        <td class="lefttd">20120708-09.rar</td>
+        <td class="centertd">D:/www/parkmanager</td>
+        <td class="centertd">5000KB</td>
+        <td class="centertd"><img src="core/common/images/download.png" width="14" height="14" /></td>
+      </tr>
+      <tr onmouseover="this.style.background='#f4f4f4'" onmouseout="this.style.background='#fff'">
+			<td class="centertd"><label> 2 </label></td>
+      	<td class="lefttd">2012-07-09</td>
+      	<td class="lefttd">20120708-09.rar</td>
+      	<td class="centertd">D:/www/parkmanager</td>
+      	<td class="centertd">358962KB</td>
+      	<td class="centertd"><img src="core/common/images/download.png" width="14" height="14" /></td>
+      </tr>
+    </table>
+  </form>
+  <!--分页开始-->
+  <div class="page">
+    <div class="floatrightdiv">选中50</div>
+    <ul>
+      <li> <span class="first"></span><span class="pre"></span><span>显示1-6 </span><span class="next"></span><span class="last"></span><span>显示
+        <select name="select3" class="select">
+              <option>20</option>
+              <option>40</option>
+              <option>60</option>
+          </select>
+      </span>共10条</li>
+    </ul>
+  </div>
+  <!--分页结束-->
+</div>
+ <!--//container-->
+</body>
+</html>

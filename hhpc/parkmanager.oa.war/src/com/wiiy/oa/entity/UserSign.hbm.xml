@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.oa.entity.UserSign">
+    	<meta attribute="class-description">用户签到</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="userId" type="java.lang.Long" not-null="true">
+			<column name="user_id">
+				<comment>用户外键</comment>
+			</column>
+		</property>
+		<many-to-one name="user" class="com.wiiy.core.entity.User" foreign-key="fk_UserSign_user" insert="false" update="false" fetch="join">
+			<column name="user_id">
+				<comment>用户</comment>
+			</column>
+		</many-to-one>
+		<property name="workClassId" type="java.lang.Long" not-null="true">
+			<column name="workClass_id">
+				<comment>班次外键</comment>
+			</column>
+		</property>
+		<many-to-one name="workClass" class="com.wiiy.oa.entity.WorkClass" foreign-key="fk_UserSign_workClass" insert="false" update="false" fetch="join">
+			<column name="workClass_id">
+				<comment>班次</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="signTime" type="java.util.Date">
+			<column name="sign_time">
+				<comment>考勤时间</comment>
+			</column>
+		</property>
+		<property name="signType">
+        	<column name="sign_type">
+				<comment>考勤类型</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.oa.preferences.enums.SignTypeEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="signStatus">
+        	<column name="sign_status">
+				<comment>考勤状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.oa.preferences.enums.SignStatusEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="minute" type="java.lang.Long">
+            <column name="minute">
+                <comment>迟到或早退分钟</comment>
+            </column>
+        </property>
+        <property name="reason" type="java.lang.String">
+            <column name="reason" sql-type="text">
+                <comment>迟到或早退原因</comment>
+            </column>
+        </property>
+		
+		
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

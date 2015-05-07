@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+	<module idSpace="1" name="核心系统" order="1" icon="/core/common/images/set_sys_icon.png">
+		<menu id="10000" name="基础管理" order="1">
+			<menu id="11000" name="机构设置" order="1" uris="/core/org.action /core/org!treeOrgs.action /core/user!list.action /core/user!loadUserByOrgId.action" icon="/core/web/images/m_setSystem_min.png">
+				<operation id="11001" name="创建" uris="/core/org!createChild.action /core/org!save.action" />
+				<operation id="11002" name="编辑" uris="/core/org!edit.action core/org!save.action" />
+				<operation id="11003" name="删除" uris="/core/org!delete.action" />
+			</menu>
+			<menu id="12000" name="用户管理" order="2" uris="/core/user.action /core/user!list.action" icon="/core/web/images/m_user_min.png">
+				<operation id="12001" name="创建" uris="/core/user!create.action /core/user!save.action /core/org!select.action /core/upload.action" />
+				<operation id="12002" name="编辑" uris="/core/user!edit.action /core/user!update.action /core/org!select.action /core/upload.action" />
+				<operation id="12003" name="删除" uris="/core/user!delete.action" />
+				<operation id="12004" name="密码重置" uris="/core/user!resetPwd.action" />
+				<operation id="12005" name="导入名片" uris="/core/user!importCard.action" />
+				<operation id="12006" name="加载部门用户" uris="/core/user!loadUsersByOrgId.action" />
+			</menu>
+			<menu id="13000" name="角色管理" order="3" uris="/core/role.action /core/role!list.action" icon="/core/web/images/m_role_min.png">
+				<operation id="13001" name="创建" uris="/core/role!create.action /core/role!save.action" />
+				<operation id="13002" name="编辑" uris="/core/role!edit.action /core/role!update.action" />
+				<operation id="13003" name="删除" uris="/core/role!delete.action" />
+				<operation id="13004" name="权限配置" uris="/core/role!editAuthorityConfig.action /core/role!treeAuthorities.action /core/saveAuthorityConfig.action" />
+				<operation id="13005" name="工作台应用权限" uris="/core/role!configRoleDesktop.action /core/role!submitConfigRoleDesktop.action" />
+			</menu>
+		</menu>
+		<menu id="20000" name="应用管理" order="1">
+			<menu id="21000" name="应用管理" order="1" uris="/core/appConsole.action /core/appConsole!detail.action 
+        			/core/appParam.action /core/appParam!configDetail.action /core/appParam!update.action 
+        			/core/dataDict.action /core/dataDict!list.action /core/dataDict!create.action /core/dataDict!edit.action /core/dataDict!save.action /core/dataDict!delete.action" icon="/core/web/images/m_app_min.png">
+				<operation id="21001" name="创建" uris="" />
+			</menu>
+		</menu>
+
+		<menu id="30000" name="系统管理" order="1">
+			<menu id="32000" name="登录统计" order="2" uris="" icon="/core/web/images/m_loginCount_min.png">
+				<menu id="32100" name="登录统计" order="1" uris="/core/statistical!loginStatistical.action" icon="/core/web/images/m_coding_min.png"></menu>
+				<menu id="32200" name="最近使用统计" order="2" uris="/core/statistical!opStatistical.action /core/operationLog!opList.action" icon="/core/web/images/m_count_min.png"></menu>
+			</menu>
+			<menu id="33000" name="备份管理" order="3" uris="/core/db!list.action /core/db!delete.action /core/db!doBackup.action /core/db!download.action " icon="/core/web/images/m_backup_min.png">
+				<operation id="33001" name="查看" uris="" />
+			</menu>
+			<menu id="34000" name="短信统计" order="4" uris="/core/statistical!smsStatistical.action /core/smsDto!list.action" icon="/core/web/images/m_sms_min.png">
+				<operation id="34001" name="查看" uris="" />
+			</menu>
+			<!-- <menu id="35000" name="新闻订阅" order="5" uris="/parkmanager.cms/webInfoConfig!list.action /parkmanager.cms/webInfoConfig!save.action" icon="/core/web/images/m_loginCount_min.png">
+			</menu> -->
+		</menu>
+	</module>
+	<module idSpace="11" name="基本功能" order="2" icon="/core/common/images/set_sys_icon.png" display="false">
+		<operation id="99995" name="全文搜索" uris="/core/search.action" />
+		<operation id="99996" name="新闻中心" uris="/parkmanager.cms/article!deskTopView.action /parkmanager.cloudService/rss!xmlData.action /parkmanager.cloudService/rss!news.action" />
+		<operation id="99998" name="工作台" uris="/parkmanager.pb/customer!initRZKH.action /parkmanager.pb/investment!initZSXM.action /core/web/desktop/index.jsp /core/web/desktop/desktop.jsp /parkmanager.oa/task!mySignedTaskCount.action /parkmanager.oa/task!myPendingTaskCount.action /parkmanager.oa/schedule!promotCount.action /parkmanager.oa/task!deskTopPendingTask.action /core/userTopButton!desktopList.action /parkmanager.oa/workArrange!loadWorkArrangeToSign.action /parkmanager.oa/userSign!signIn.action /parkmanager.oa/userSign!signOut.action /core/approval!consoleList.action /parkmanager.oa/mail!list.action /parkmanager.oa/schedule!remindCount.action /parkmanager.oa/schedule!remindList.action /core/web/account/core_user_edit.jsp /parkmanager.pb/countersign!countCountersign.action" />
+		<operation id="99999" name="账户设置" uris="/core/self.action /core/self!update.action /core/upload.action /core/web/account/core_user_edit.jsp /core/userTopButton!list.action /core/web/account/fastbtn_add.jsp /core/userTopButton!userMenus.action /core/userTopButton!selectedTopButton.action /core/userEmailParam!emailByUserId.action /core/userEmailParam!saveOrUpdate.action /core/core/login!lockScreen.action /core/core/self!passwordReset.action /core/self!passwordResetDone.action" />
+		<operation id="99997" name="用户选择" uris="/core/user!select.action /core/user!list.action" />
+		<operation id="99994" name="部门选择" uris="/core/org!select.action /core/org!treeOrgs.action" />
+		<operation id="99993" name="办公用品选择" uris="/parkmanager.oa/supply!select.action /parkmanager.oa/supply!listAll.action /parkmanager.oa/web/chiefadmin/supplyCategory_select.jsp /parkmanager.oa/supplyCategory!treeList.action" />
+		<operation id="99992" name="企业选择" uris="/parkmanager.pb/customer!select.action /parkmanager.pb/customer!simpleList.action" />
+		<operation id="99991" name="楼宇选择" uris="/parkmanager.pb/room!select.action /parkmanager.pb/room!loadRoomByBuilding.action" />
+		<operation id="100000" name="园区概况" uris="/parkmanager.pb/building!loadParkSituationData.action /parkmanager.pb/web/client/customer_list_onDesktop.jsp /parkmanager.pb/customer!listOnDesktop.action /parkmanager.pb/web/contract/contract_list_ondesktop.jsp /parkmanager.pb/contract!listOnDesktop.action /parkmanager.pb/bill!listOnDeskTop.action  /parkmanager.pb/bill!loadBillForDesktop.action" />
+		<operation id="100001" name="园区管理" uris="/parkmanager.pb/bill!checkoutToDesktop.action" />
+		<operation id="100002" name="园区管理-出账" uris="/parkmanager.pb/bill!checkout2.action" />
+		<operation id="100003" name="园区管理-结算" uris="/parkmanager.pb/bill!listBillOnDesktop.action" />
+	</module>
+</modules>

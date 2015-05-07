@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.multipart.maxSize" value="524288000"></constant><!-- 500M -->
+	<package name="core" namespace="/" extends="json-default">
+		<result-types><!-- 定义json类型 --> 
+		    <result-type name="json1" class="com.wiiy.json.JsonResult" />
+		</result-types> 
+		<global-results>
+			<result name="json" type="json1">
+				<param name="ignoreHierarchy">false</param>
+				<param name="enumAsBean">true</param>
+			</result>
+			<result name="login">/web/login.jsp</result>
+		</global-results>
+		
+		<action name="upload" class="uploadAction">
+		</action>
+
+		<action name="index" class="indexAction">
+			<result name="index">/web/index.jsp</result>
+			<result name="desktop">/web/desktop/desktop.jsp</result>
+			<result name="desktopGL">/web/desktop/desktopGL.jsp</result>
+			<result name="desktopGK">/web/desktop/desktopGK.jsp</result>
+		</action>
+		<action name="search" class="searchAction">
+			<result name="success">/web/desktop/search.jsp</result>
+		</action>
+		<action name="org" class="orgAction">
+			<result name="list">/web/base/org/orgTreeList.jsp</result>
+			<result name="edit">/web/base/org/orgForm.jsp</result>
+			<result name="select">/web/base/org/orgSelector.jsp</result>
+			<result name="json" type="json1">
+			    <param name="root">result</param>  
+				<param name="enumAsBean">true</param>
+			</result>
+			<result name="listJson" type="json1">
+			    <param name="root">nodeList</param>  
+				<param name="enumAsBean">true</param>
+				<param name="excludeNullProperties">true</param>
+			</result>
+		</action>
+		<action name="self" class="selfAction">
+			<result name="edit">/web/base/user/selfForm.jsp</result>
+			<result name="password">/web/base/user/selfPassword.jsp</result>
+			<result name="json" type="json1">
+			    <param name="root">result</param>  
+			</result>
+		</action>
+		<action name="user" class="userAction">
+			<result name="list">/web/base/user/userList.jsp</result>
+			<result name="edit">/web/base/user/userForm.jsp</result>
+			<result name="multiSelect">/web/base/user/multiSelector.jsp</result>
+			<result name="singleSelect">/web/base/user/singleSelector.jsp</result>
+			<result name="singleSelectSelf">/web/base/user/singleSelectorSelf.jsp</result>
+			<result name="listJson" type="json1">
+			    <param name="root">nodeList</param>  
+				<param name="enumAsBean">true</param>
+				<param name="excludeNullProperties">true</param>
+			</result>
+		</action>
+		<action name="login" class="loginAction">
+			<result name="login">/web/login.jsp</result>
+			<result name="lockScreen">/web/lockScreen.jsp</result>
+			<result name="json" type="json1">
+			    <param name="root">result</param>  
+			</result>
+		</action>
+		<action name="role" class="roleAction">
+			<result name="list">/web/base/role/roleList.jsp</result>
+			<result name="edit">/web/base/role/roleForm.jsp</result>
+			<result name="authorityRefs">/web/base/role/roleAuthorityConfig.jsp</result>
+ 			<result name="listJson" type="json1">
+			    <param name="root">nodeList</param>  
+				<param name="enumAsBean">true</param>
+				<param name="excludeNullProperties">true</param>
+			</result>
+			<result name="configRoleDesktop">/web/base/role/roleConfigRoleDesktop.jsp</result>
+		</action>
+		<action name="saveAuthorityConfig" class="roleAction" method="saveAuthorityConfig">
+ 			<interceptor-ref name="json">
+            	<param name="contentType">application/json</param>
+        	</interceptor-ref>
+			<result name="json" type="json1">
+			    <param name="root">result</param>  
+				<param name="enumAsBean">true</param>
+			</result>
+		</action>
+		<action name="appConsole" class="appAction">
+			<result name="view">/web/app/app/appConsole.jsp</result>
+			<result name="json" type="json1">
+			    <param name="root">result</param>  
+				<param name="enumAsBean">true</param>
+			</result>
+		</action>
+		<action name="appParam" class="appParamAction">
+			<result name="view">/web/app/appParam/appParam.jsp</result>
+			<result name="json" type="json1">
+			    <param name="root">result</param>  
+				<param name="enumAsBean">true</param>
+				<param name="excludeNullProperties">true</param>
+			</result>
+		</action>
+		<action name="dataDict" class="dataDictAction">
+			<result name="list">/web/app/dataDict/dataDictList.jsp</result>
+			<result name="edit">/web/app/dataDict/dataDictForm.jsp</result>
+		</action>
+		
+		<action name="db" class="dbAction">
+			<result name="list">/web/system/dbbackup.jsp</result>
+			<result name="download" type="stream"> 
+				<param name="contentType">text/plain</param> 
+				<param name="inputName">inputStream</param> 
+				<param name="contentDisposition">attachment;filename=${fileName}</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		<action name="statistical" class="statisticalAction">
+			<result name="loginStatistical">/web/statistical/loginStatistical.jsp</result>
+			<result name="showDetails">/web/statistical/showDetails.jsp</result>
+			<result name="opStatistical">/web/statistical/opStatistical.jsp</result>
+			<result name="smsStatistical">/web/statistical/smsStatistical.jsp</result>
+		</action>
+		<action name="smsDto" class="smsDtoAction">
+			<result name="loginStatistical">/web/statistical/loginStatistical.jsp</result>
+			<result name="opStatistical">/web/statistical/opStatistical.jsp</result>
+			<result name="smsStatistical">/web/statistical/smsStatistical.jsp</result>
+		</action>
+		<action name="operationLog" class="operationLogAction">
+		</action>
+		<action name="userTopButton" class="userTopButtonAction">
+			<result name="list">/web/account/fastbtn.jsp</result>
+			<result name="desktopList">/web/desktop/fastbtn.jsp</result>
+		</action>
+		<action name="userEmailParam" class="userEmailParamAction">
+			<result name="emailByUserId">/web/account/core_user_email.jsp</result>
+		</action>
+		<action name="desktopItem" class="desktopItemAction">
+			<result name="list">/web/base/role/authorityRefsList.jsp</result>
+		</action>
+		<action name="roleDesktop" class="roleDesktopAction">
+		</action>
+		<action name="approval" class="approvalAction">
+			<result name="consoleList">/web/approval/approval_consoleList.jsp</result>
+			<result name="edit">/web/approval/approval_edit.jsp</result>
+			<result name="view">/web/approval/approval_view.jsp</result>
+		</action>
+		<action name="try" class="tryAction">
+		  <result name="success">/web/login-try.jsp</result>
+		   <result name="error">/web/login-try.jsp</result>
+		</action>
+		<action name="serviceInfor" class="obtainInfo"></action>
+		<action name="newsParam" class="newsParamAction">
+		    <result name="success"></result>
+		    <result name="error"></result>
+		</action>
+		<action name="countersign" class="countersignAction">
+			<result name="list">/web/countersign/countersign.jsp</result>
+		</action>
+<!-- 		
+		<action name="log" class="logAction">
+			<result name="list">/web/log/role/doing.jsp</result>
+		</action>
+		<action name="loginStat" class="loginAction">
+			<result name="list">/web/log/doing.jsp</result>
+		</action>
+		<action name="backup" class="backupAction">
+			<result name="list">/web/log/doing.jsp</result>
+		</action>
+ -->
+ 		<action name="contact" class="contactAction">
+ 			<result name="listMyAll">/web/contact/contact_my_list.jsp</result>
+ 			<result name="listAll">/web/contact/contact_all_list.jsp</result>
+ 			<result name="myDidCountersign">/web/contact/contact_did_countersign_list.jsp</result>
+ 			<result name="myWaitCountersign">/web/contact/contact_wait_countersign_list.jsp</result>
+ 			<result name="myView">/web/contact/contact_baseView_my.jsp</result>
+ 			<result name="view">/web/contact/contact_baseView_all.jsp</result>
+ 			<result name="countersignView">/web/contact/contact_baseView_countersign.jsp</result>
+ 			<result name="index">/web/contact/contact_index.jsp</result>
+		</action>
+		<action name="contactAtt" class="contactAttAction">
+			<result name="attImage">/web/contact/attImage.jsp</result>
+		</action>
+		<action name="corporation" class="corporationAction">
+			<result name="list">/web/base/corporation/corporation_list.jsp</result>
+			<result name="edit">/web/base/corporation/corporation_edit.jsp</result>
+			<result name="view">/web/base/corporation/corporation_view.jsp</result>
+		</action>
+ 	</package>
+</struts>

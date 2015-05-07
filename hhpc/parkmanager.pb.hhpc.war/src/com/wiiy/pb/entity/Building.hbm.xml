@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.pb.entity.Building">
+    	<meta attribute="class-description">楼宇</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.TreeEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="maxArea" type="java.lang.Double" not-null="true">
+			<column name="maxArea">
+				<comment>房间面积</comment>
+			</column>
+		</property>
+		<property name="minArea" type="java.lang.Double" not-null="true">
+			<column name="minArea">
+				<comment>房间面积</comment>
+			</column>
+		</property>
+		<property name="name" type="java.lang.String" not-null="true" length="50">
+			<column name="name">
+				<comment>楼宇名称</comment>
+			</column>
+		</property>
+		<property name="parkId" type="java.lang.Long" not-null="true">
+			<column name="park_id">
+				<comment>园区外键</comment>
+			</column>
+		</property>
+		<many-to-one name="park" class="com.wiiy.pb.entity.Park" foreign-key="fk_building_park_park" insert="false" update="false" fetch="join">
+			<column name="park_id">
+				<comment>园区实体</comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="type" class="com.wiiy.core.entity.DataDict" foreign-key="fk_building_datadict_type" insert="false" update="false" fetch="join">
+			<column name="type_id" >
+				<comment>楼宇类型</comment>
+			</column>
+		</many-to-one>
+		<property name="typeId" type="java.lang.String">
+			<column name="type_id">
+				<comment>楼宇类型外键</comment>
+			</column>
+		</property>
+		<many-to-one name="kind" class="com.wiiy.core.entity.DataDict" foreign-key="fk_building_datadict_kind" insert="false" update="false" fetch="join">
+			<column name="kind_id">
+				<comment>楼宇性质实体</comment>
+			</column>
+		</many-to-one>
+		<property name="kindId" type="java.lang.String">
+			<column name="kind_id">
+				<comment>楼宇性质</comment>
+			</column>
+		</property>
+		<property name="realArea" type="java.math.BigDecimal">
+			<column name="real_area">
+				<comment>总建筑面积</comment>
+			</column>
+		</property>
+		<property name="commericalArea" type="java.math.BigDecimal">
+			<column name="commerical_area">
+				<comment>商务面积</comment>
+			</column>
+		</property>
+		<property name="completeDate" type="java.util.Date">
+			<column name="complete_date">
+				<comment>竣工日期</comment>
+			</column>
+		</property>
+		<property name="address" type="java.lang.String" length="255">
+			<column name="address">
+				<comment>地址</comment>
+			</column>
+		</property>
+		<property name="propertyBegin" type="java.math.BigDecimal">
+			<column name="property_begin">
+				<comment>物业费区间起</comment>
+			</column>
+		</property>
+		<property name="propertyEnd" type="java.math.BigDecimal">
+			<column name="property_end">
+				<comment>物业费区间止</comment>
+			</column>
+		</property>
+		<property name="rentBegin" type="java.math.BigDecimal">
+			<column name="rent_begin">
+				<comment>租金区间起</comment>
+			</column>
+		</property>
+		<property name="rentEnd" type="java.math.BigDecimal">
+			<column name="rent_end">
+				<comment>租金区间止</comment>
+			</column>
+		</property>
+		
+		
+		<many-to-one name="investDirection" class="com.wiiy.core.entity.DataDict" foreign-key="fk_building_datadict_investDirection" insert="false" update="false" fetch="join">
+			<column name="invest_direction_id" >
+				<comment>招商方向实体</comment>
+			</column>
+		</many-to-one>
+		<property name="investDirectionId" type="java.lang.String">
+			<column name="invest_direction_id">
+				<comment>招商方向外键</comment>
+			</column>
+		</property>
+		<property name="downParkingSpaces" type="java.lang.Integer">
+			<column name="down_parking_spaces">
+				<comment>地下停车位</comment>
+			</column>
+		</property>
+		<property name="downParkingFee" type="java.lang.String">
+			<column name="down_parking_fee">
+				<comment>地下月停车费</comment>
+			</column>
+		</property>
+		<property name="upParkingSpaces" type="java.lang.Integer">
+			<column name="up_parking_spaces">
+				<comment>地上停车位</comment>
+			</column>
+		</property>
+		<property name="upParkingFee" type="java.lang.String">
+			<column name="up_parking_fee">
+				<comment>地上月停车费</comment>
+			</column>
+		</property>
+		<property name="hourParkingFee" type="java.lang.String">
+			<column name="hour_parking_fee">
+				<comment>小时停车费</comment>
+			</column>
+		</property>
+		<property name="passengerElevator" type="java.lang.String">
+			<column name="passenger_elevator">
+				<comment>客梯数</comment>
+			</column>
+		</property>
+		<property name="cargoElevator" type="java.lang.String">
+			<column name="cargo_elevator">
+				<comment>货梯数</comment>
+			</column>
+		</property>
+		<many-to-one name="airconSituation" class="com.wiiy.core.entity.DataDict" foreign-key="fk_building_datadict_airconSituation" insert="false" update="false" fetch="join">
+			<column name="aircon_situation_id">
+				<comment>空调设施实体</comment>
+			</column>
+		</many-to-one>
+		<property name="airconSituationId" type="java.lang.String">
+			<column name="aircon_situation_id">
+				<comment>空调设施外键</comment>
+			</column>
+		</property>
+		<many-to-one name="decorationSituation" class="com.wiiy.core.entity.DataDict" foreign-key="fk_building_datadict_decorationSituation" insert="false" update="false" fetch="join">
+			<column name="decoration_situation_id">
+				<comment>装修情况实体</comment>
+			</column>
+		</many-to-one>
+		<property name="decorationSituationId" type="java.lang.String">
+			<column name="decoration_situation_id">
+				<comment>装修情况外键</comment>
+			</column>
+		</property>
+		<property name="contact" type="java.lang.String">
+			<column name="contact">
+				<comment>联系人</comment>
+			</column>
+		</property>
+		<property name="tel" type="java.lang.String">
+			<column name="tel">
+				<comment>联系电话</comment>
+			</column>
+		</property>
+		<property name="investTel" type="java.lang.String">
+			<column name="invest_tel">
+				<comment>招商热线</comment>
+			</column>
+		</property>
+		<property name="summary" type="java.lang.String" length="1024">
+			<column name="summary">
+				<comment>楼宇介绍</comment>
+			</column>
+		</property>
+		<property name="supportSituation" type="java.lang.String" length="1024">
+			<column name="support_situation">
+				<comment>配套设施</comment>
+			</column>
+		</property>
+		<property name="trafficSituation" type="java.lang.String" length="1024">
+			<column name="traffic_situation">
+				<comment>交通情况</comment>
+			</column>
+		</property>
+		<property name="photos" type="java.lang.String" length="512">
+			<column name="photos" length="512">
+				<comment>楼宇照片</comment>
+			</column>
+		</property>
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="level" type="java.lang.Integer">
+			<column name="level">
+				<comment>LEVEL</comment>
+			</column>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

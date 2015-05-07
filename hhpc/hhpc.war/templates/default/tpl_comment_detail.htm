@@ -1,0 +1,129 @@
+<!-start->
+<table class=bbstable width=100% align=center cellpadding=4 cellspacing=1>
+  <tr> 
+    <td class=bbstitle  colspan=4>{#lanTitle#}:{#title#}</td>
+  </tr>
+  <tr> 
+    <td rowspan=2 class=bbscon width=80 height=80 align=center valign=top> <br>
+      <img src={#face#}><br>
+      {#author#}</td>
+    <td class=bbscon height=100 valign=top colspan=2>{#body#}</td>
+  </tr>
+  <tr> 
+    <td class=bbscon height=22 colspan="2" > {#lanPubTime#}:{#dtime#}&nbsp;&nbsp;{#lanBrowseTimes#}:{#cl#}  &nbsp;&nbsp;{#lanAnswer#}:{#count#} </td>
+  </tr>
+  <!-start-> <!-list-> 
+  <tr> 
+    <td rowspan=2 class=bbscon width=80 height=100 align=center valign=top><br>
+      <img src={#face#}><br>
+      {#author#}</td>
+    <td class=bbscon height=100 valign=top colspan=2>{#body#}</td>
+  </tr>
+  <tr> 
+    <td class=bbscon height=22 colspan=2>{#lanPubTime#}:{#dtime#}&nbsp; IP: {#ip#}&nbsp;</td>
+  </tr>
+  <!-list-> <!-end-> 
+  <tr> 
+    <td class=bbstitle  colspan=3>{#lanAnswer#}:{#title#}<a name="feedback"></a></td>
+  </tr>
+</table>
+  
+<table width="100%" border="0" cellspacing="1" cellpadding="3" align="center" class=bbstable>
+  <form method="post" action="{#RP#}comment_send.php">
+    <tr> 
+      <td width="100" height="25" align="center" class=bbstitle> {#lanBackCon#}:</td>
+      <td height="25"  class=bbscon> 
+        <textarea name="body" cols="75" class="textarea" rows="9"></textarea>
+        <input type="hidden" name="title" size="76" class=input value="RE:{#title#}">
+        <input type="hidden" name="step" value="add">
+        <input type="hidden" name="nowmenuid" value="{#nowmenuid#}">
+        <input type="hidden" name="id" value="{#id#}">
+        <input type="hidden" name="pid" value="{#pid#}">
+        <input type="hidden" name="nowcoltype" value="{#nowcoltype#}">
+      </td>
+    </tr>
+    <tr> 
+      <td width="100" height="25" align="center" class=bbstitle>{#lanFaceIcon#}:</td>
+      <td height="25"  class=bbscon> 
+        <table width="450" border="0" cellspacing="1" cellpadding="3">
+          <tr> 
+            <td> 
+              <input type="radio" name="face" value="1" checked>
+              <img src="{#RP#}face/1.gif" > </td>
+            <td> 
+              <input type="radio" name="face" value="2">
+              <img src="{#RP#}face/2.gif" > </td>
+            <td> 
+              <input type="radio" name="face" value="3">
+              <img src="{#RP#}face/3.gif" > </td>
+            <td> 
+              <input type="radio" name="face" value="4">
+              <img src="{#RP#}face/4.gif" > </td>
+            <td> 
+              <input type="radio" name="face" value="5">
+              <img src="{#RP#}face/5.gif" > </td>
+            <td> 
+              <input type="radio" name="face" value="6">
+              <img src="{#RP#}face/6.gif" > </td>
+            <td> 
+              <input type="radio" name="face" value="7">
+              <img src="{#RP#}face/7.gif" > </td>
+            <td> 
+              <input type="radio" name="face" value="8">
+              <img src="{#RP#}face/8.gif" > </td>
+          </tr>
+          <tr> 
+            <td> 
+              <input type="radio" name="face" value="9">
+              <img src="{#RP#}face/9.gif" > </td>
+            <td> 
+              <input type="radio" name="face" value="10">
+              <img src="{#RP#}face/10.gif" > </td>
+            <td> 
+              <input type="radio" name="face" value="11">
+              <img src="{#RP#}face/11.gif" > </td>
+            <td> 
+              <input type="radio" name="face" value="12">
+              <img src="{#RP#}face/12.gif" > </td>
+            <td> 
+              <input type="radio" name="face" value="13">
+              <img src="{#RP#}face/13.gif" > </td>
+            <td> 
+              <input type="radio" name="face" value="14">
+              <img src="{#RP#}face/14.gif" > </td>
+            <td> 
+              <input type="radio" name="face" value="15">
+              <img src="{#RP#}face/15.gif" > </td>
+            <td> 
+              <input type="radio" name="face" value="16">
+              <img src="{#RP#}face/16.gif" > </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr> 
+      <td width="100" height="25" align="center" class=bbstitle>{#lanCheckCode#}:</td>
+      <td height="25"  class=bbscon> 
+        <table border="0" cellspacing="2" cellpadding="0" height="20">
+          <tr> 
+            <td width="1"><font color="#FFFFFF"> 
+              <input type="text" name="ImgCode" style="width:39px"  class=input >
+              </font></td>
+            <td> 
+              <table width="30" border="0" cellspacing="1" cellpadding="0" >
+                <tr> 
+                  <td><img src="{#RP#}codeimg.php" width="60" height="18" style="border:1px #dddddd solid"></td>
+                  <td width="95" align="center"> 
+                    <input type="submit" name="Submit" value="{#lanSubmit#}"  class=button>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </form>
+</table>
+
+<!-end->

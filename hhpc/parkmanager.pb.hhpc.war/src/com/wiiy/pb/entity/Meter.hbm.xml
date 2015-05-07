@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.pb.entity.Meter">
+    	<meta attribute="class-description">水电表</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.TreeEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="java.lang.String" not-null="true">
+			<column name="name" not-null="true">
+				<comment>名称</comment>
+			</column>
+		</property>
+		
+		<property name="meterFactor" type="java.lang.Integer" not-null="true">
+			<column name="meter_factor" not-null="true">
+				<comment>倍数</comment>
+			</column>
+		</property>
+		<property name="orderNo" type="java.lang.String" not-null="true">
+			<column name="orderNo" length="50" unique="true">
+				<comment>编号</comment>
+			</column>
+		</property>
+		<property name="sequenceNo" type="java.lang.String">
+			<column name="sequenceNo" length="50">
+				<comment>序列号</comment>
+			</column>
+		</property>
+		<property name="preReading" type="java.lang.Double">
+			<column name="pre_reading">
+				<comment>上期读数</comment>
+			</column>
+		</property>
+		
+		<property name="parentNo" type="java.lang.String">
+			<column name="parentNo" length="50">
+				<comment>母表编号</comment>
+			</column>
+		</property>
+		<property name="parentId" type="java.lang.Long">
+			<column name="parent_id">
+				<comment>母表ID</comment>
+			</column>
+		</property>
+		<property name="capacity" type="java.lang.Double">
+			<column name="capacity">
+				<comment>装机容量</comment>
+			</column>
+		</property>
+		<property name="capacityBill" type="java.lang.Double">
+			<column name="capacity_bill">
+				<comment>基本电费</comment>
+			</column>
+		</property>
+		
+		<property name="parentIds" type="java.lang.String">
+			<column name="parent_ids">
+				<comment>所有母表ID</comment>
+			</column>
+		</property>
+		<property name="roomIds" type="java.lang.String">
+			<column name="room_ids">
+				<comment>房间Ids</comment>
+			</column>
+		</property>
+		<many-to-one name="parent" class="com.wiiy.pb.entity.Meter" foreign-key="fk_meter_parent" insert="false" update="false" fetch="join">
+			<column name="parent_id">
+				<comment>水电表实体</comment>
+			</column>
+		</many-to-one>
+		<property name="level" type="java.lang.Integer">
+			<column name="level">
+				<comment>LEVEL</comment>
+			</column>
+		</property>
+		
+		<property name="readingDate" type="java.util.Date">
+			<column name="reading_date" length="19">
+				<comment>最后抄表日期</comment>
+			</column>
+		</property>
+		<property name="kind">
+			<column name="kind" sql-type="varchar(50)">
+				<comment>性质</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.pb.preferences.enums.MeterKindEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+		<property name="type">
+			<column name="type" sql-type="varchar(50)">
+				<comment>类型</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.pb.preferences.enums.MeterTypeEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+		<property name="parkName" type="java.lang.String">
+			<column name="park_name" length="50">
+				<comment>园区名称</comment>
+			</column>
+		</property>
+		<property name="parkId" type="java.lang.Long">
+			<column name="park_id">
+				<comment>园区id</comment>
+			</column>
+		</property>
+		
+		<property name="buildingName" type="java.lang.String">
+			<column name="building_name" length="50">
+				<comment>楼宇名称</comment>
+			</column>
+		</property>
+		<property name="buildingId" type="java.lang.Long">
+			<column name="building_id">
+				<comment>楼宇id</comment>
+			</column>
+		</property>
+		
+		<property name="checkOut">
+			<column name="check_out" sql-type="varchar(50)">
+				<comment>是否出表</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+		
+		<property name="status">
+			<column name="status" sql-type="varchar(50)">
+				<comment>状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.pb.preferences.enums.MeterStatusEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+		<property name="memo" type="java.lang.String">
+        	<column name="memo" length="512">
+				<comment>备注</comment>
+			</column>
+		</property>
+		
+		
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

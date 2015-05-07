@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+.psdiv{ width:300px; height:130px; border:1px solid #dfdfdf; float:left; margin-left:10px; margin-top:10px; cursor:pointer;}
+.psdiv img{ float:left; padding-right:5px; padding:10px 5px 0px 5px;}
+.psdiv:hover{ background:#ededed;}
+.psdiv ul li{ font-size:12px; float:right; width:195px; padding-right:5px; padding-top:10px;}
+.psdiv ul li td{ height:25px; line-height:25px;}
+.psdiv ul li .tdline{ border-bottom:1px solid #ccc;}
+.resources{ padding:10px 20px 0 20px;}
+.resources h1{ font-size:14px; color:#333; border-bottom:1px solid #ccc;}
+.resources h1 img{ padding-right:5px;}
+.resources .listcontent{ width:188px; height:63px; background:#fbfbfb; border:1px solid #dfdfdf; float:left; margin-right:10px; margin-top:15px; overflow:hidden; cursor:pointer;}
+.resources .listcontent:hover{ background:#ededed; cursor:pointer;}
+.resources .listcontent img{ float:left; padding:5px;}
+.resources .listcontent ul{ padding-top:5px;}
+.resources .listcontent ul li{ height:25px; line-height:25px; color:#333;}
+.pstd{ border-left:1px solid #a1a1a1; border-bottom:1px solid #a1a1a1; text-align:center; color:#666;}
+.pstddown{ border-left:1px solid #a1a1a1; padding-left:1px;  padding-top:5px; color:#666;}
+.pstddown .red{ color:#c00;}
+.pstddown .green{ color:#329500;}
+.pstables{ position:relative; top:9px;}
+.psapplist{ margin:10px 25px 30px 25px; border-top:1px solid #c9c9c9; text-align:right; padding-top:15px;}
+.psapplist .btns{ background:url(../images/appbtn.gif) no-repeat; width:75px; height:22px; border:none; text-align:center; color:#333;}

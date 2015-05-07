@@ -1,0 +1,28 @@
+<!-start->
+<table width="100%"  cellspacing="0"  cellpadding="3">
+  <tr class="newsquerytitle2"> 
+    <td height="25">{#lanArticalTitle#}</td>
+    <td align=center height="25" width="130">{#lanPubTime#}</td>
+    <td align=center height="25" width="60">{#lanChecked#}</td>
+    <td align=center height="25" width="60">{#lanModify#}</td>
+  </tr>
+  <!-start-> <!-rowstart-> 
+  <tr class=list> <!-rowstart-> <!-list-> 
+    <td class="newsquery"><a href="{#link#}" class="newsquery" target="{#target#}"  >{#title#}</a></td>
+    <td  class="newsquerytime" align=center {#bold#}{#red#} width="130">{#dtime#}</td>
+    <td  class="newsquerytime" align=center {#bold#}{#red#} width="60">{#check#}</td>
+    <td  class="newsquerytime" align=center {#bold#}{#red#} width="60"> 
+      <input type="button" name="Button" value="{#lanModify#}" class="button" onClick="window.location='member_guanli1.php?id={#id#}'">
+    </td>
+    <!-list-> <!-rowend-> </tr>
+  <!-rowend-> <!-end-> 
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="3">
+  <tr class="newsquerytitle2"> 
+    <td width="300" class=pagesinfo>{#PagesInfo#}</td>
+    <td align="right" class=pages>{#ShowPages#}</td>
+    <td align="right" class=pages width="30">&nbsp;</td>
+  </tr>
+</table>
+<!-end->
+

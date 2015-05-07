@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:osgi="http://www.springframework.org/schema/osgi"
+  xmlns:beans="http://www.springframework.org/schema/beans"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                      http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi-1.2.xsd">
+	
+	<osgi:reference id="sessionService" interface="com.wiiy.hibernate.SessionService"/>
+	
+	<bean id="articleTypeDao" class="com.wiiy.cms.dao.ArticleTypeDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="articleTypeService" class="com.wiiy.cms.service.impl.ArticleTypeServiceImpl">
+		<property name="articleTypeDao" ref="articleTypeDao"></property>
+	</bean>
+	
+	
+	<bean id="articleDao" class="com.wiiy.cms.dao.ArticleDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="articleService" class="com.wiiy.cms.service.impl.ArticleServiceImpl">
+		<property name="articleDao" ref="articleDao"></property>
+	</bean>
+	<bean id="linksDao" class="com.wiiy.cms.dao.LinksDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="linksService" class="com.wiiy.cms.service.impl.LinksServiceImpl">
+		<property name="linksDao" ref="linksDao"></property>
+	</bean>
+	<bean id="paramDao" class="com.wiiy.cms.dao.ParamDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="paramService" class="com.wiiy.cms.service.impl.ParamServiceImpl">
+		<property name="paramDao" ref="paramDao"></property>
+	</bean>
+	<bean id="contactInfoDao" class="com.wiiy.cms.dao.ContactInfoDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="contactInfoService" class="com.wiiy.cms.service.impl.ContactInfoServiceImpl">
+		<property name="contactInfoDao" ref="contactInfoDao"></property>
+	</bean>
+	<bean id="waterMarkDao" class="com.wiiy.cms.dao.WaterMarkDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="waterMarkService" class="com.wiiy.cms.service.impl.WaterMarkServiceImpl">
+		<property name="waterMarkDao" ref="waterMarkDao"></property>
+	</bean>
+	<bean id="gardenApplyDao" class="com.wiiy.pb.dao.GardenApplyDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="gardenApplyService" class="com.wiiy.pb.service.impl.GardenApplyServiceImpl">
+		<property name="gardenApplyDao" ref="gardenApplyDao"></property>
+	</bean>
+	<bean id="investmentDirectorDao" class="com.wiiy.crm.dao.InvestmentDirectorDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="investmentDirectorService" class="com.wiiy.crm.service.impl.InvestmentDirectorServiceImpl">
+		<property name="investmentDirectorDao" ref="investmentDirectorDao"></property>
+	</bean>
+	<bean id="investmentDao" class="com.wiiy.crm.dao.InvestmentDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="investmentService" class="com.wiiy.crm.service.impl.InvestmentServiceImpl">
+		<property name="investmentDao" ref="investmentDao"></property>
+		<property name="investmentDirectorDao" ref="investmentDirectorDao"></property>
+	</bean>
+	<bean id="productDao" class="com.wiiy.crm.dao.ProductDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="productService" class="com.wiiy.crm.service.impl.ProductServiceImpl">
+		<property name="productDao" ref="productDao"></property>
+	</bean>
+	<bean id="customerInfoDao" class="com.wiiy.crm.dao.CustomerInfoDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="customerDao" class="com.wiiy.crm.dao.CustomerDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="customerService" class="com.wiiy.crm.service.impl.CustomerServiceImpl">
+		<property name="customerDao" ref="customerDao"></property>
+		<property name="customerInfoDao" ref="customerInfoDao"></property>
+	</bean>
+	<bean id="advicementDao" class="com.wiiy.cms.dao.AdvicementDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="advicementService" class="com.wiiy.cms.service.impl.AdvicementServiceImpl">
+		<property name="advicementDao" ref="advicementDao"></property>
+	</bean>
+	<bean id="mailDao" class="com.wiiy.cms.dao.MailDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="mailService" class="com.wiiy.cms.service.impl.MailServiceImpl">
+		<property name="mailDao" ref="mailDao"></property>
+	</bean>
+	<bean id="platformDao" class="com.wiiy.cms.dao.PlatformDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="platformService" class="com.wiiy.cms.service.impl.PlatformServiceImpl">
+		<property name="platformDao" ref="platformDao"></property>
+	</bean>
+	<bean id="federationDao" class="com.wiiy.cms.dao.FederationDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="federationService" class="com.wiiy.cms.service.impl.FederationServiceImpl">
+		<property name="federationDao" ref="federationDao"></property>
+	</bean>
+	<bean id="receiptDao" class="com.wiiy.cms.dao.ReceiptDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="receiptService" class="com.wiiy.cms.service.impl.ReceiptServiceImpl">
+		<property name="receiptDao" ref="receiptDao"></property>
+	</bean>
+	
+	<bean id="gardenApplyAttDao" class="com.wiiy.pb.dao.GardenApplyAttDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="gardenApplyAttService" class="com.wiiy.pb.service.impl.GardenApplyAttServiceImpl">
+		<property name="gardenApplyAttDao" ref="gardenApplyAttDao"></property>
+	</bean>
+	
+	<bean id="receiptAttDao" class="com.wiiy.cms.dao.ReceiptAttDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="receiptAttService" class="com.wiiy.cms.service.impl.ReceiptAttServiceImpl">
+		<property name="receiptAttDao" ref="receiptAttDao"></property>
+	</bean>
+	
+	<bean id="resourceDao" class="com.wiiy.cms.dao.ResourceDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="resourceService" class="com.wiiy.cms.service.impl.ResourceServiceImpl">
+		<property name="resourceDao" ref="resourceDao"></property>
+	</bean>
+	
+	<bean id="documentDao" class="com.wiiy.oa.dao.DocumentDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="documentService" class="com.wiiy.oa.service.impl.DocumentServiceImpl">
+		<property name="documentDao" ref="documentDao"></property>
+	</bean>
+	
+	<bean id="agencyDao" class="com.wiiy.crm.dao.AgencyDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="agencyService" class="com.wiiy.crm.service.impl.AgencyServiceImpl">
+		<property name="agencyDao" ref="agencyDao"></property>
+	</bean>
+	
+	<bean id="investmentArchiveAttDao" class="com.wiiy.crm.dao.InvestmentArchiveAttDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="investmentArchiveAttService" class="com.wiiy.crm.service.impl.InvestmentArchiveAttServiceImpl">
+		<property name="investmentArchiveAttDao" ref="investmentArchiveAttDao"></property>
+	</bean>
+	
+	<bean id="emailDataDao" class="com.wiiy.web.dao.EmailDataDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="emailDataService" class="com.wiiy.web.service.impl.EmailDataServiceImpl">
+		<property name="emailDataDao" ref="emailDataDao"></property>
+	</bean>
+	<bean id="emailDataAction" class="com.wiiy.web.action.EmailDataAction" scope="prototype">
+		<property name="emailDataService" ref="emailDataService"></property>
+	</bean>
+	
+	<bean id="homeAction" class="com.wiiy.web.action.HomeAction" scope="prototype">
+		<property name="articleTypeService" ref="articleTypeService"></property>
+		<property name="articleService" ref="articleService"></property>
+		<property name="linksService" ref="linksService"></property>
+		<property name="paramService" ref="paramService"></property>
+		<property name="waterMarkService" ref="waterMarkService"></property>
+		<property name="contactInfoService" ref="contactInfoService"></property>
+		<property name="gardenApplyService" ref="gardenApplyService"></property>
+		<property name="investmentService" ref="investmentService"></property>
+		<property name="customerService" ref="customerService"></property>
+		<property name="productService" ref="productService"></property>
+		<property name="advicementService" ref="advicementService"></property>
+		<property name="mailService" ref="mailService"></property>
+		<property name="platformService" ref="platformService"></property>
+		<property name="federationService" ref="federationService"></property>
+		<property name="receiptService" ref="receiptService"></property>
+		<property name="gardenApplyAttService" ref="gardenApplyAttService"></property>
+		<property name="receiptAttService" ref="receiptAttService"></property>
+		<property name="resourceService" ref="resourceService"></property>
+		<property name="documentService" ref="documentService"></property>
+		<property name="agencyService" ref="agencyService"></property>
+		<property name="investmentArchiveAttService" ref="investmentArchiveAttService"></property>
+		<property name="investmentDirectorService" ref="investmentDirectorService"></property>
+	</bean>
+	<bean id="streamAction" class="com.wiiy.web.action.StreamAction" scope="prototype">
+	</bean>
+	
+	
+</beans>

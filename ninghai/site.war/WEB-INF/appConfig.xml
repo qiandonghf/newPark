@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appConfig>
+	<config key="menu" label="主菜单">
+    	<parameter key="menu.aboutus" label="关于我们" value="1" render="text"/>
+    	<parameter key="menu.base" label="创业基地" value="3" render="text"/>
+    	<parameter key="menu.policy" label="创业政策" value="5" render="text"/>
+    	<parameter key="menu.serv" label="创业服务" value="4" render="text"/>
+    	<parameter key="menu.info" label="创业资讯" value="2" render="text"/>
+    	<parameter key="menu.contact" label="联系我们" value="6" render="text"/>
+    </config>
+    <config key="sys" label="系统配置">
+        <parameter key="sys.site" label="站点域名" value="www.cycxjd.com" render="text"/>    	
+        <parameter key="sys.email" label="邮件地址" value="jss_king@163.com" render="text"/>
+    </config>
+</appConfig>

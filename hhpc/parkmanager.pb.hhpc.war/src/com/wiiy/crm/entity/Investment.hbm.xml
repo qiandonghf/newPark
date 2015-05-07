@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.crm.entity.Investment">
+    	<meta attribute="class-description">入孵项目</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<one-to-one name="regInfo" class="com.wiiy.crm.entity.InvestmentRegInfo">
+        	<meta attribute="class-description">详细信息</meta> 
+        </one-to-one>
+        <property name="name" type="java.lang.String" not-null="true" unique-key="true">
+        	<column name="name">
+        		<comment>企业名称</comment>
+        	</column>
+        </property>
+        <property name="type" type="java.lang.String">
+        	<column name="type">
+        		<comment>企业类型</comment>
+        	</column>
+        </property>
+        <property name="address" type="java.lang.String">
+        	<column name="address">
+        		<comment>详细地址</comment>
+        	</column>
+        </property>
+        <property name="officeArea" type="java.lang.Double">
+        	<column name="office_area">
+        		<comment>办公场地面积</comment>
+        	</column>
+        </property>
+        <property name="legalPerson" type="java.lang.String">
+        	<column name="legal_person">
+        		<comment>法定代表人</comment>
+        	</column>
+        </property>
+        <property name="legalPersonPhone" type="java.lang.String">
+        	<column name="legal_person_phone">
+        		<comment>法定代表人联系电话</comment>
+        	</column>
+        </property>
+        <property name="legalPersonEmail" type="java.lang.String">
+        	<column name="legal_person_email">
+        		<comment>法定代表人E-mail</comment>
+        	</column>
+        </property>
+        <property name="contactPerson" type="java.lang.String">
+        	<column name="contact_person">
+        		<comment>联系人</comment>
+        	</column>
+        </property>
+        <property name="contactPhone" type="java.lang.String">
+        	<column name="contact_phone">
+        		<comment>联系人联系电话</comment>
+        	</column>
+        </property>
+        <property name="contactEmail" type="java.lang.String">
+        	<column name="contact_email">
+        		<comment>联系人E-mail</comment>
+        	</column>
+        </property>
+        <property name="projectName" type="java.lang.String">
+        	<column name="project_name">
+        		<comment>项目名称</comment>
+        	</column>
+        </property>
+        <property name="staffInfo" type="java.lang.String">
+        	<column name="staff_info">
+        		<comment>企业人数信息</comment>
+        	</column>
+        </property>
+        <property name="marketSituation" type="java.lang.String">
+        	<column name="market_situation" sql-type="text">
+        		<comment>市场状况</comment>
+        	</column>
+        </property>
+        <property name="propertyRight" type="java.lang.String">
+        	<column name="property_right" sql-type="text">
+        		<comment>产权情况</comment>
+        	</column>
+        </property>
+        <property name="businessScope" type="java.lang.String">
+            <column name="business_scope" sql-type="text">
+                <comment>经营范围</comment>
+            </column>
+        </property>
+        
+        
+        
+        <property name="staff" type="java.lang.Integer">
+        	<column name="staff">
+        		<comment>企业人数</comment>
+        	</column>
+        </property>
+         <property name="account" type="java.lang.String" not-null="true">
+        	<column name="account">
+        		<comment>企业帐号</comment>
+        	</column>
+        </property>
+        <property name="code" type="java.lang.String">
+        	<column name="code">
+        		<comment>编号</comment>
+        	</column>
+        </property>
+        <property name="regCapital" type="java.lang.Double">
+        	<column name="reg_capital">
+        		<comment>注册资本</comment>
+        	</column>
+        </property>
+        <many-to-one name="currency" class="com.wiiy.core.entity.DataDict" foreign-key="fk_investment_datadict_currency" insert="false" update="false" fetch="join">
+			<column name="currency_id">
+				<comment>货币类型实体</comment>
+			</column>
+		</many-to-one>
+        <property name="currencyId" type="java.lang.String">
+			<column name="currency_id">
+				<comment>货币类型外键</comment>
+			</column>
+		</property>
+		<property name="hostId" type="java.lang.Long">
+        	<column name="host_id">
+        		<comment>跟踪人ID</comment>
+        	</column>
+        </property>
+        <property name="hostName" type="java.lang.String">
+        	<column name="host_name">
+        		<comment>跟踪人</comment>
+        	</column>
+        </property>
+		<property name="importId" type="java.lang.Long">
+        	<column name="import_id">
+        		<comment>引进人ID</comment>
+        	</column>
+        </property>
+        <property name="importName" type="java.lang.String">
+        	<column name="import_name">
+        		<comment>引进人</comment>
+        	</column>
+        </property>
+		
+		
+        <property name="investCapital" type="java.lang.Double">
+        	<column name="invest_capital">
+        		<comment>计划总投资</comment>
+        	</column>
+        </property>
+        <property name="outputValue" type="java.lang.Double">
+        	<column name="output_value">
+        		<comment>预计年产值</comment>
+        	</column>
+        </property>
+        <property name="needOffice">
+			<column name="need_office" sql-type="varchar(50)">
+				<comment>是否申请用房</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>		
+		</property>
+        <property name="officeName" type="java.lang.String">
+        	<column name="office_name">
+        		<comment>申请用房名称</comment>
+        	</column>
+        </property>
+        <property name="memo" type="java.lang.String">
+            <column name="memo" sql-type="text">
+                <comment>备注</comment>
+            </column>
+        </property>
+		<property name="investmentStatus">
+			<column name="investment_status">
+				<comment>招商状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.crm.preferences.enums.InvestmentStatusEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="priority">
+			<column name="priority">
+				<comment>重要性</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.crm.preferences.enums.PriorityEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+        <one-to-one name="businessPlan" class="com.wiiy.crm.entity.BusinessPlan" cascade="all">
+        	<meta attribute="class-description">商业计划书</meta> 
+        </one-to-one>
+		
+		<property name="businessmanSuggestion" type="java.lang.String">
+            <column name="businessman_suggestion">
+                <comment>业务员意见</comment>
+            </column>
+        </property>
+		<property name="departmentApprovalId" type="java.lang.Long">
+            <column name="department_approvalId">
+                <comment>投资促进部审批ID</comment>
+            </column>
+        </property>
+        <many-to-one name="departmentApproval" class="com.wiiy.core.entity.Approval" foreign-key="fk_investment_approval_department" insert="false" update="false" fetch="join">
+        	<column name="department_approvalId">
+        		<comment>投资促进部审批</comment>
+        	</column>
+        </many-to-one>
+        
+        <property name="managerApprovalId" type="java.lang.Long">
+            <column name="manager_approvalId">
+                <comment>经理审批ID</comment>
+            </column>
+        </property>
+        <many-to-one name="managerApproval" class="com.wiiy.core.entity.Approval" foreign-key="fk_investment_approval_manager" insert="false" update="false" fetch="join">
+        	<column name="manager_approvalId">
+        		<comment>经理审批</comment>
+        	</column>
+        </many-to-one>
+        <property name="chiefApprovalId" type="java.lang.Long">
+            <column name="chief_approvalId">
+                <comment>分管主任审批ID</comment>
+            </column>
+        </property>
+        <many-to-one name="chiefApproval" class="com.wiiy.core.entity.Approval" foreign-key="fk_investment_approval_chief" insert="false" update="false" fetch="join">
+        	<column name="chief_approvalId">
+        		<comment>分管主任审批</comment>
+        	</column>
+        </many-to-one>
+        <property name="officeApprovalId" type="java.lang.Long">
+            <column name="office_approvalId">
+                <comment>主任办公室审批ID</comment>
+            </column>
+        </property>
+		<many-to-one name="officeApproval" class="com.wiiy.core.entity.Approval" foreign-key="fk_investment_approval_office" insert="false" update="false" fetch="join">
+        	<column name="office_approvalId">
+        		<comment>主任办公室审批</comment>
+        	</column>
+        </many-to-one>
+        <property name="projectMemo" type="java.lang.String">
+            <column name="project_memo" sql-type="text">
+                <comment>项目概况</comment>
+            </column>
+        </property>
+       <many-to-one name="incubateConfig" class="com.wiiy.core.entity.DataDict" foreign-key="fk_Investment_incubateConfig" insert="false" update="false" fetch="join">
+			<column name="incubate_config_id">
+				<comment>入驻场所</comment>
+			</column>
+		</many-to-one>
+		<property name="incubateConfigId" type="java.lang.String">
+			<column name="incubate_config_id">
+				<comment>入驻场所外键</comment>
+			</column>
+		</property>
+        <many-to-one name="technic" class="com.wiiy.core.entity.DataDict" foreign-key="fk_Investment_datadict_technic" insert="false" update="false" fetch="join">
+			<column name="technic_id">
+				<comment>行业分类</comment>
+			</column>
+		</many-to-one>
+		<property name="technicId" type="java.lang.String">
+			<column name="technic_id">
+				<comment>行业分类外键</comment>
+			</column>
+		</property>
+	    <many-to-one name="enterpriseType" class="com.wiiy.core.entity.DataDict" foreign-key="fk_Investment_datadict_enterpriseType" insert="false" update="false" fetch="join">
+			<column name="enterpriseType_id">
+				<comment>创业者归属实体</comment>
+			</column>
+		</many-to-one>
+		<property name="enterpriseTypeId" type="java.lang.String">
+			<column name="enterpriseType_id">
+				<comment>创业者归属外键</comment>
+			</column>
+		</property>
+        <set name="atts" cascade="all-delete-orphan" lazy="false">
+        	<comment>附件</comment>
+            <key>
+                <column name="investment_id"></column>
+            </key>
+            <one-to-many class="com.wiiy.crm.entity.InvestmentProcessAtt" />
+        </set>
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

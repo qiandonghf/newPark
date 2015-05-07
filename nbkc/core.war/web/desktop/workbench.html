@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base href="https://58.215.78.148:8443/svn/parkmanager/trunk/parkmanager.mockup.war/"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="core/common/style/base.css" rel="stylesheet" type="text/css" />
+<link href="parkmanager.oa/web/style/oawork.css" rel="stylesheet" type="text/css" />
+<link href="core/common/style/content.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="core/common/js/righth.js"></script>
+<script type="text/javascript" src="core/common/js/jquery.js"></script>
+<link href="core/common/floatbox/floatbox.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="core/common/floatbox/floatbox.js"></script>
+<script type="text/javascript" src="core/common/js/tools.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#merters li").each(function(index){
+		$("#merters li").eq(index).click(function(){
+			$("#merters li").removeClass("livisited").addClass("lilink");
+			$("#merters li").eq(index).removeClass("lilink").addClass("livisited");
+			$(".workdiv").css({display:"none"});
+			$(".workdiv").eq(index).css({display:"block"})
+		});
+	});
+});
+</script>
+</head>
+
+<body onload="bodyheights('resizable',0,'resizable',0);" style="background:url(core/common/images/workbg.gif)">
+	
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td valign="top">
+		<div class="oaworkbg"  id="resizable">
+			<!--workdiv-->
+			<div class="workdiv">
+				<!--workheader-->
+				<div class="workheader">
+					<div class="headerbase">
+						<div class="headerbaseTime">
+							<h3>22</h3>
+							<ul>
+								<li>2012年12月22号</li>
+								<li>星期四</li>
+							</ul>
+						</div>
+						<div class="headerbasetext">
+							<ul>
+								<li>您好，张庆华<a href="javascript:void(0)">[退出]</a></li>
+								<li>最后登录时间：2012年3月22号 10:10:20</li>
+								<li>消息<a href="javascript:void(0)"><strong>[30]</strong></a>任务<a href="javascript:void(0)"><strong>[30]</strong></a>提醒<a href="javascript:void(0)"><strong>[10]</strong></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--//workheader-->
+				<div class="oacontent">
+				  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="35%" valign="top" class="oatdcellspacing">
+							<div class="oatask">
+								<div class="oatitle"><span><img src="core/common/images/refresh.png" /></span>当天任务</div>
+								<div class="oatasklist">
+									<ul>
+										<li><span>2012-3-15</span><img src="core/common/images/gth.png" /><a href="javascript:void(0)">年会方案的征集。</a></li>
+										<li><span>2012-3-15</span><img src="core/common/images/gth.png" /><a href="javascript:void(0)">年会方案的征集。</a></li>
+										<li><span>2012-3-15</span><img src="core/common/images/gth.png" /><a href="javascript:void(0)">年会方案的征集。</a></li>
+										<li><span>2012-3-15</span><img src="core/common/images/gth.png" /><a href="javascript:void(0)">年会方案的征集。</a></li>
+										<li><span>2012-3-15</span><img src="core/common/images/gth.png" /><a href="javascript:void(0)">年会方案的征集。</a></li>
+									</ul>
+								</div>
+							</div>
+							
+							<div class="oatask">
+								<div class="oatitle">缴费情况</div>
+								<div class="oaimg">
+								<img src="core/common/images/qiangkong.png" />
+								</div>
+							</div>
+						</td>
+                        <td width="40%" valign="top" class="oatdcellspacing">
+							<div class="oatask">
+							<div class="oatitle">客户</div>
+							<div class="oaimg">
+							  <table width="100%" border="0" cellspacing="0" cellpadding="10">
+                                  <tr>
+                                    <td class="oaimgtd100">意向企业：</td>
+                                    <td class="oaimgtda"><a href="javascript:void(0)"><span class="oafontred">长乐龙禄</span></a><a href="javascript:void(0)">上海贡允</a><a href="javascript:void(0)">上海飞奥德</a><a href="javascript:void(0)">长乐龙禄</a><a href="javascript:void(0)"><span class="oafontred">长乐龙禄</span></a><a href="javascript:void(0)">上海贡允</a><a href="javascript:void(0)">上海飞奥德</a><a href="javascript:void(0)">长乐龙禄</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="oaimgtd100">新企业：</td>
+                                    <td class="oaimgtda">&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="oaimgtd100">老企业：</td>
+                                    <td class="oaimgtda">&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="oaimgtd100">新合作：</td>
+                                    <td class="oaimgtda">&nbsp;</td>
+                                  </tr>
+                              </table>
+							</div>
+							</div>
+							
+							<div class="oatask">
+							<div class="oatitle">客户动态</div>
+							<div class="oatasklist">
+								<ul>
+									<li><strong class="oafontred">【置顶】</strong><a href="javascript:void(0)">年会方案的征集。</a><em class="oafontgray">2011-03-15</em></li>
+									<li><strong class="oafontred">【置顶】</strong>年会方案的征集。<em class="oafontgray">2011-03-15</em></li>
+									<li><strong class="oafontred">【置顶】</strong>年会方案的征集。<em class="oafontgray">2011-03-15</em></li>
+									<li><strong class="oafontred">【置顶】</strong>年会方案的征集。<em class="oafontgray">2011-03-15</em></li>
+								</ul>
+							</div>
+							</div>
+							
+						</td>
+                        <td width="25%" valign="top" class="oatdcellspacingright">
+							<div class="oatask">
+								<div class="oatitle">审批提示</div>
+								<div class="oaimg">
+								<table width="100%" border="0" cellspacing="0" cellpadding="10">
+								  <tr>
+									<td height="25">待审批合同：<strong class="oafontred">10</strong></td>
+									<td>待审批项目：<strong class="oafontred">10</strong></td>
+								  </tr>
+								  <tr>
+									<td height="25">待审批人事：<strong class="oafontred">10</strong></td>
+									<td>待审批项目：<strong class="oafontred">0</strong></td>
+								  </tr>
+								</table>
+								</div>
+							</div>
+							
+							<div class="oatask">
+								<div class="oatitle">日月周报</div>
+								<div class="oaimg">
+								</div>
+							</div>
+						</td>
+                      </tr>
+                  </table>
+				</div>
+				<div class="hackbox"></div>
+			</div>
+			<!--//workdiv-->
+			<!--新闻中心-->
+			<div class="workdiv" style="display:none">
+			这里是新闻中心
+			</div>
+			<!--//新闻中心-->
+			<!--快速按钮-->
+			<div class="workdiv" style="display:none">
+				<!--btnlist-->
+				<div class="btnlist">
+					<h1>核心系统</h1>
+					<ul>
+						<li><a href="javascript:void(0)"><img src="core/web/images/m_setSystem_b.png" width="32" height="32" />
+					  <p>机构设置</p>
+						</a></li>
+						<li><a href="javascript:void(0)"><img src="core/web/images/m_user_b.png" width="32" height="32" />
+					  <p>用户管理</p>
+						</a></li>
+						<li><a href="javascript:void(0)"><img src="core/web/images/m_role_b.png" width="32" height="32" />
+					    <p>角色管理</p>
+						</a></li>
+						<li><a href="javascript:void(0)"><img src="core/web/images/m_app_b.png" width="32" height="32" />
+						<p>应用管理</p>
+						</a></li>
+						<li><a href="javascript:void(0)"><img src="core/web/images/m_log_b.png" width="32" height="32" />
+						<p>日志管理</p>
+						</a></li>
+						<li><a href="javascript:void(0)"><img src="core/web/images/m_coding_b.png" width="32" height="32" />
+						<p>登录统计</p>
+						</a></li>
+						<li><a href="javascript:void(0)"><img src="core/web/images/m_count_b.png" width="32" height="32" />
+						<p>最新使用统计</p>
+						</a></li>
+						<li><a href="javascript:void(0)"><img src="core/web/images/m_backup_b.png" width="32" height="32" />
+						<p>备份管理</p>
+						</a></li>
+						<li><a href="javascript:void(0)"><img src="core/web/images/m_sms_b.png" width="32" height="32" />
+						<p>短信统计</p>
+						</a></li>
+					</ul>
+					<div class="hackbox"></div>
+				</div>
+				<!--//btnlist-->
+				<!--btnlist-->
+				<div class="btnlist">
+					<h1>办公管理系统</h1>
+					<ul>
+						<li><a href="javascript:void(0)"><img src="parkmanager.oa/web/images/m_task_b.png" width="32" height="32" />
+					  <p>任务管理</p></a></li>
+						<li><a href="javascript:void(0)"><img src="parkmanager.oa/web/images/m_agenda_b.png" width="32" height="32" />
+						<p>日程管理</p></a></li>
+						<li><a href="javascript:void(0)"><img src="parkmanager.oa/web/images/m_mywordk_b.png" width="32" height="32" />
+					    <p>我的工作</p>
+						</a></li>
+						<li><a href="javascript:void(0)"><img src="parkmanager.oa/web/images/m_work_b.png" width="32" height="32" />
+						<p>工作汇报</p></a></li>
+						<li><a href="javascript:void(0)"><img src="parkmanager.oa/web/images/m_card_b.png" width="32" height="32" />
+						<p>名片夹</p>
+						</a></li>
+						<li><a href="javascript:void(0)"><img src="parkmanager.oa/web/images/m_sms_b.png" width="32" height="32" />
+						<p>短信管理</p>
+						</a></li>
+						<li><a href="javascript:void(0)"><img src="parkmanager.oa/web/images/m_personalUser_b.png" width="32" height="32" />
+						<p>个人文档</p>
+						</a></li>
+						<li><a href="javascript:void(0)"><img src="parkmanager.oa/web/images/m_shardocument_b.png" width="32" height="32" />
+						<p>共享文档</p>
+						</a></li>
+						<li><a href="javascript:void(0)"><img src="parkmanager.oa/web/images/m_documet_b.png" width="32" height="32" />
+						<p>公共文档</p>
+						</a></li>
+					</ul>
+					<div class="hackbox"></div>
+				</div>
+				<!--//btnlist-->
+			</div>
+			<!--//快速按钮-->			
+		</div>
+	</td>
+  </tr>
+</table>
+</body>
+</html>

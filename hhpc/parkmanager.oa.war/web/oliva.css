@@ -1,0 +1,35 @@
+body {
+font-size=10pt; font-family: Arial, Helvetica, sans-serif; background-color: #ffffff;
+}
+
+td {
+font-size=10pt; font-family: Arial, Helvetica, sans-serif;
+}
+
+th {
+font-size=10pt; font-family: Arial, Helvetica, sans-serif;
+}
+
+h1.top-hdr {
+font-size=12pt; color: #000066; padding-left: 0em;
+}
+
+table.basic {
+background-color: #999999;
+}
+
+td.hdr {
+font-size=10pt; font-family: Arial, Helvetica, sans-serif; background-color: #ccccff; font-weight: bold;
+}
+
+td.data {
+font-size=10pt; font-family: Arial, Helvetica, sans-serif; background-color: #eeeeff;
+}
+
+a.list:link, a.list:visited, a.list:active, a.list:hover {
+	color: #000033; text-decoration: none;
+}
+
+a:link, a:visited, a:active, a:hover {
+	color: #000033;
+}

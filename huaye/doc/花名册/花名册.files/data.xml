@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisioDocument>
+	<DocumentProperties>
+		<Title></Title>
+		<HyperlinkBase href=""></HyperlinkBase>
+	</DocumentProperties>
+	<Pages>
+		<Page ID="0" Name="员工花名册列表页" NameU="员工花名册列表页">
+			<Shapes>
+				<Shape ID="1" UniqueID="{BFC7EE90-847D-4522-A792-392690FC8460}" Name="Sheet.1" NameU="Sheet.1">
+					<XForm>
+						<PinX Unit="MM">14.879183070866141</PinX>
+						<PinY Unit="MM">6.121883202099737</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="2" UniqueID="{F3E76E3B-829B-4900-89D9-FFE7D9F2398D}" Name="Sheet.2" NameU="Sheet.2">
+					<Text>要求左侧做成组织机构树，右侧显示列表，点击顶层（组织名称比如华业科技园发展有限公司），显示全公司所有员工，点击二级某个部门，只显示该部门及下属部门的全部员工。
+
+关于左侧树的操作，点击箭头或者文件夹图标，展开树，点击组织机构名称，右侧显示相应列表。
+另外关于列表上方的快速搜索，做成上周探讨过的模糊查询，没有必要每个属性弄一个输入框，该要求适用今后所有的园区系统列表功能。
+右侧列表下方提供每页10条 20条 50条 全部4个选项</Text>
+					<XForm>
+						<PinX Unit="MM">13.934820647419080</PinX>
+						<PinY Unit="MM">2.851213910761156</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="4" UniqueID="{345D369A-EAEC-419F-BA58-7CDCD1E900B3}" Name="Sheet.4" NameU="Sheet.4">
+					<Text>该功能做到OA模块中</Text>
+					<XForm>
+						<PinX Unit="MM">13.645731783527060</PinX>
+						<PinY Unit="MM">0.926290463692038</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+		<Page ID="4" Name="花名册新建页" NameU="花名册新建页">
+			<Shapes>
+				<Shape ID="1" UniqueID="{AA9CA320-C82E-49B9-A915-FAF4F125F8FB}" Name="Sheet.1" NameU="Sheet.1">
+					<XForm>
+						<PinX Unit="MM">4.874302821522312</PinX>
+						<PinY Unit="MM">4.724778543307087</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="2" UniqueID="{FD0F2D7F-EA74-4EA3-BBA7-040A4F827DD9}" Name="Sheet.2" NameU="Sheet.2">
+					<Text>调用原来core的用户新建功能。</Text>
+					<XForm>
+						<PinX Unit="MM">2.769423639118283</PinX>
+						<PinY Unit="MM">1.079677730832427</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+		<Page ID="5" Name="花名册编辑页" NameU="花名册编辑页">
+			<Shapes>
+				<Shape ID="1" UniqueID="{CF604D10-B4CB-4FC1-9DCD-6A0DD7379FCB}" Name="Sheet.1" NameU="Sheet.1">
+					<XForm>
+						<PinX Unit="MM">5.306799540682414</PinX>
+						<PinY Unit="MM">12.492495078740159</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="2" UniqueID="{477D8CA8-06C9-4B51-A0E2-89E55097FB96}" Name="普通箭头" NameU="Simple Arrow" Master="2">
+					<XForm>
+						<PinX Unit="MM">6.832820702099738</PinX>
+						<PinY Unit="MM">12.039370078740159</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="3" UniqueID="{999D73B9-253E-4F8C-9226-FA29ACE3FA16}" Name="Sheet.3" NameU="Sheet.3">
+					<Text>此处除了用户角色之外，增加【员工档案】，【劳动合同】，【考勤记录】，【其它附件】4个tab页</Text>
+					<XForm>
+						<PinX Unit="MM">9.765748031496063</PinX>
+						<PinY Unit="MM">11.253062117235350</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="5" UniqueID="{8243F414-60EE-41A1-8153-A91A1BA80E73}" Name="Sheet.5" NameU="Sheet.5">
+					<Text>【员工档案】，原来OA模块中已经有一个com.wiiy.oa.entity.Archives实体，需要对它进行修改。改造后的员工档案包括下表中的字段
+其中姓名为必填，其它全部选填</Text>
+					<XForm>
+						<PinX Unit="MM">5.263615485564306</PinX>
+						<PinY Unit="MM">8.913741251093612</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="6" UniqueID="{1FFE12E9-7A2F-4439-A99C-2DB839063BC1}" Name="Sheet.6" NameU="Sheet.6">
+					<XForm>
+						<PinX Unit="MM">5.263615485564306</PinX>
+						<PinY Unit="MM">7.261454643634970</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="7" UniqueID="{0F117101-CB6B-429E-BFBA-51914E7FB733}" Name="Sheet.7" NameU="Sheet.7">
+					<Text>【其它附件】显示附件列表（附件名称、上传时间、上传人，操作）
+上方提供新建功能，可以下载附件。（新建、下载都要权限设置）
+可以上传：个人简历、身份证复印件、毕业证书、转正审批表、职务变动审批表、工资变动审批表等。
+</Text>
+					<XForm>
+						<PinX Unit="MM">11.453818272715910</PinX>
+						<PinY Unit="MM">6.862344376168405</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="8" UniqueID="{B5A88D98-F8E7-4A0A-A999-AC43730A2896}" Name="Sheet.8" NameU="Sheet.8">
+					<Text>【考勤记录】列表的形式显示考勤记录列表，可以按时间区间查询。列表项包括：姓名、考勤时间、考勤类型（上班、下班）、考勤状态（正常、迟到、早退、）</Text>
+					<XForm>
+						<PinX Unit="MM">11.424134483189601</PinX>
+						<PinY Unit="MM">9.195987220347458</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="9" UniqueID="{1E83DC44-45AF-4DBF-9F83-C4B418C42429}" Name="Sheet.9" NameU="Sheet.9">
+					<Text>【劳动合同】列表的形式显示该员工所有历史劳动合同，列表项包括：员工姓名、签到日期、合同有效期起止时间，操作项：查看详情。
+列表上方提供新建功能（需要权限控制，只要具有权限的人显示新建）
+新建页：合同类型（试用期合同，兼职合同，正式合同），合同开始时间、合同结束时间、合同签订日期、岗位名称、附件上传（多个附件）</Text>
+					<XForm>
+						<PinX Unit="MM">5.263615485564307</PinX>
+						<PinY Unit="MM">4.682639279465066</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="10" UniqueID="{662FA42A-B007-4C9D-BEC2-1B8A4AE1AC9A}" Name="Sheet.10" NameU="Sheet.10">
+					<Text>该功能做到OA中，不去改变原来core的用户编辑页面。</Text>
+					<XForm>
+						<PinX Unit="MM">6.165416822897138</PinX>
+						<PinY Unit="MM">2.797572178477690</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+	</Pages>
+</VisioDocument>

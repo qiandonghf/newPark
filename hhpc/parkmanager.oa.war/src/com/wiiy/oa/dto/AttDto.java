@@ -1,0 +1,26 @@
+package com.wiiy.oa.dto;
+
+public class AttDto {
+	private String name;
+	private String link;
+	private int size;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getLink() {
+		return link;
+	}
+	public void setLink(String link) {
+		this.link = link;
+	}
+	public int getSize() {
+		return size;
+	}
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+}

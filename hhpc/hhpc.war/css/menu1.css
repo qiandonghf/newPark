@@ -1,0 +1,157 @@
+/* Grid Container */
+
+/*导航条*/
+/*nav*
+#nav{ width:958px;margin:0 auto; background:url(../images/nav_bg.gif) no-repeat;height:36px; line-height:36px;position:relative;}
+#nav ul{padding-left:50px; padding-right:50px;}
+#nav ul li{ float:left;font-size:14px; font-weight:bold;color:#c41210; text-align:center;width:115px;height:36px; line-height:36px; background:url(../images/nav_shuxian.gif) no-repeat right; }
+#nav ul li a:link,#nav ul li a:visited,#nav ul li a:active{color:#c41210; text-decoration:none;  display:block;}
+#nav ul li a:hover{ color:#605c5a; text-decoration:none; }
+#nav ul li div.navlist{ width:113px; background:#fff;border:1px solid #cccccc; z-index:99999;}
+#nav ul li div.navlist dl dt{text-align:center; font-size:14px; font-weight:normal; margin:0px auto; padding:0px; height:36px; line-height:36px; display:inline;} 
+#nav ul li div.navlist dl dt a:link,#nav ul li div.navlist dl dt a:visited,#nav ul li div.navlist dl dt a:active{ color:#605c5a; text-decoration:none; background:url(../images/nav_mid.gif) repeat-x;}
+#nav ul li div.navlist dl dt a:hover{background:url(../images/nav_mid2.jpg) repeat-x;color:#fff; text-decoration:none;}/
+/*nav
+*/	
+#nav {
+	position: relative;
+	width: 957px;	background:#d04140;	
+}
+
+#nav:after {
+	content: "";
+	display: block;
+	clear: both;
+	height: 0;
+}	
+#menu {
+	width: 958px;	
+	position: relative;z-index:10000;
+	float: left;
+	padding:0px;
+	border-radius: 3px;
+	box-shadow: inset 0 1px 1px #fff, inset 0 -1px 0 #000000, 0 1px 3px #000000);
+	height:36px; line-height:36px;
+}
+#menu, #menu ul {
+	width:810px;
+	list-style: none;
+	padding-left:50px;
+}
+#menu > li {
+	 width:115px;
+	float: left;
+	text-align:center;
+	display:block;
+	position: relative;
+	border-right:0px solid #000;
+	box-shadow:0px 0 0 #fff;
+	perspective: 1000px;
+
+}
+
+#menu > li:first-child {
+	border-left: 0px solid #ffff ;
+	box-shadow: -0px 0 0 #000000, 0px 0 0 #fff;
+}
+
+#menu li li{float:left;}
+#menu a {
+	display:block;
+	float:left;
+	float:left;
+	position: relative;
+	z-index:10;
+	padding: 13px 20px 7px 20px;
+	text-decoration: none;
+	color:#fff;
+	line-height: 1;
+	font-weight: 600;
+	font-size: 14px;
+	letter-spacing: -.05em;
+	background: transparent;		
+	text-shadow: 0 1px 1px #fff;
+	transition: all .25s ease-in-out;
+	
+
+}
+
+#menu > li:hover > a {
+	width:74px;
+	border-top:2px solid #333333;
+	background:#fff;
+	color:#4d4d4d;
+	text-shadow: none;
+}
+
+#menu li ul  {
+	position: absolute;
+	top:36px;
+	left: 0;
+	z-index: 1;
+	width:115px;
+	padding: 0;
+	opacity: 0;
+	visibility: hidden;
+	border-bottom-left-radius:4px;
+	border-bottom-right-radius:4px;
+	background:transparent;
+	overflow:hidden;
+	transform-origin: 50% 0%;
+}
+
+#menu li:hover ul {
+	/*width:230px;*/
+	padding:0px 0px 15px 0;
+	background:#fff;
+	opacity: 1;
+	visibility: visible;
+	box-shadow: 1px 1px 7px #000;
+	animation-name:swingdown;
+	animation-duration: 1s;
+	animation-timing-function: ease;
+
+}
+
+@keyframes swingdown {
+	0% {
+		opacity: .99999;
+		transform: rotateX(90deg);
+	}
+
+	30% {			
+		transform: rotateX(-20deg) rotateY(5deg);
+		animation-timing-function: ease-in-out;
+	}
+
+	65% {
+		transform: rotateX(20deg) rotateY(-3deg);
+		animation-timing-function: ease-in-out;
+	}
+
+	100% {
+		transform: rotateX(0);
+		animation-timing-function: ease-in-out;
+	}
+}
+
+#menu li li a {
+	width:75px;
+	font-weight:400;
+	color: #4d4d4d;
+	text-shadow: none;
+	border-top:dotted 1px transparent;
+	border-bottom: dotted 1px transparent;
+	transition: all .15s linear;
+}
+
+#menu li li a:hover {
+	background:#555555;	
+	color:#fff;	
+	border-top:dotted 1px #333333;
+	border-bottom:dotted 1px #333333;
+	
+	/*background:#c41210;*/
+	/*background:#333;*/
+}
+	

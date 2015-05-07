@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:osgi="http://www.springframework.org/schema/osgi"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                      http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi-1.2.xsd">
+
+	<osgi:reference id="sessionService" interface="com.wiiy.hibernate.SessionService" />
+
+
+	<bean id="articleTypeDao" class="com.wiiy.cms.dao.ArticleTypeDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="articleTypeService" class="com.wiiy.cms.service.impl.ArticleTypeServiceImpl">
+		<property name="articleTypeDao" ref="articleTypeDao"></property>
+	</bean>
+
+	<bean id="articleDao" class="com.wiiy.cms.dao.ArticleDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="articleService" class="com.wiiy.cms.service.impl.ArticleServiceImpl">
+		<property name="articleDao" ref="articleDao"></property>
+	</bean>	
+	
+<!-- 	<bean id="documentDao" class="com.wiiy.cms.dao.DocumentDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="documentService" class="com.wiiy.cms.service.impl.DocumentServiceImpl">
+		<property name="documentDao" ref="documentDao"></property>
+	</bean>
+ -->	
+	
+	<bean id="indexAction" class="com.site.action.IndexAction"
+		scope="prototype">
+		<property name="articleService" ref="articleService"></property>
+		<property name="articleTypeService" ref="articleTypeService"></property>
+	</bean>
+
+
+
+
+
+</beans>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="root" extends="json-default" namespace="/">
+		<result-types><!-- 定义json类型 --> 
+		    <result-type name="json1" class="com.wiiy.json.JsonResult" />
+		</result-types> 
+		<global-results>
+			<result name="json" type="json1">
+				<param name="enumAsBean">true</param>
+				<param name="ignoreHierarchy">false</param>
+			</result>
+			<result name="image" type="stream"> 
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">inputStream</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="error">404.jsp</result>
+		</global-results>
+		<action name="download" class="streamAction" method="download">
+			<result name="fileNotFound">/403.jsp</result>
+			<result name="download" type="stream"> 
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename=${fileName}</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		<action name="image" class="streamAction" method="image">
+			<result name="image" type="stream"> 
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename=${fileName}</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package name="web" namespace="/" extends="root">
+		<action name="index" class="homeAction" method="execute">
+			<result name="index">index.jsp</result>
+		</action>
+		<action name="list" class="homeAction" method="list">
+			<result name="list">list.jsp</result>
+		</action>
+		<action name="view" class="homeAction" method="view">
+			<result name="view">view.jsp</result>
+		</action>
+		<action name="viewt" class="homeAction" method="viewt">
+			<result name="view">view.jsp</result>
+		</action>
+		<action name="easy" class="homeAction" method="easy">
+			<result name="contact">footer_contact.jsp</result>
+			<result name="legal">footer_legal.jsp</result>
+			<result name="privacy">footer_privacy.jsp</result>
+			<result name="drafting">footer_drafting.jsp</result>
+			<result name="navigation">footer_navigation.jsp</result>
+			<result name="feedback">footer_feedback.jsp</result>
+		</action>
+		<action name="login" class="homeAction" method="login">
+			<result name="login">login.jsp</result>
+		</action>
+		<action name="enterprise" class="homeAction" method="enterprise">
+			<result name="list">enterprise_list.jsp</result>
+		</action>
+		<action name="enterpriseView" class="homeAction" method="enterpriseView">
+			<result name="view">enterprise_view.jsp</result>
+		</action>
+		<action name="showView" class="homeAction" method="showView">
+			<result name="view">show_view.jsp</result>
+		</action>
+		<action name="show" class="homeAction" method="show">
+			<result name="list">show_list.jsp</result>
+		</action>
+		<action name="service" class="homeAction" method="service">
+			<result name="list">list.jsp</result>
+			<result name="train">service_train_list.jsp</result>
+			<result name="finance">service_finance_list.jsp</result>
+			<result name="hiring">service_hiring_list.jsp</result>
+			<result name="platform">service_platform_list.jsp</result>
+			<result name="federation">service_federation_list.jsp</result>
+		</action>
+		<action name="serviceView" class="homeAction" method="serviceView">
+			<result name="view">view.jsp</result>
+			<result name="incubation">service_incubation_view.jsp</result>
+			<result name="train">service_train_list.view</result>
+			<result name="finance">service_finance_view.jsp</result>
+			<result name="hiring">service_hiring_view.jsp</result>
+			<result name="platform">service_platform_view.jsp</result>
+			<result name="federation">service_federation_view.jsp</result>
+			<result name="nursery">base_nursery.jsp</result>
+			<result name="cloud">service_cloud_view.jsp</result>
+		</action>
+		<action name="base" class="homeAction" method="base">
+			<result name="base">view.jsp</result>
+			<result name="south">base_south.jsp</result>
+			<result name="north">base_north.jsp</result>
+			<result name="accelerator">base_accelerator.jsp</result>
+			<result name="nursery">base_nursery.jsp</result>
+		</action>
+		<action name="search" class="homeAction" method="search">
+			<result name="list">search.jsp</result>
+		</action>
+		<action name="save" class="homeAction" method="save">
+		</action>
+		<action name="garden" class="homeAction" method="garden">
+			<result name="gardenApply">garden_apply_add.jsp</result>
+			<result name="incubation">incubation_add.jsp</result>
+			<result name="rename">garden_att_rename.jsp</result>
+		</action>
+		<action name="upload" class="homeAction" method="upload">
+		</action>
+		<action name="indexItem" class="homeAction" method="indexItem">
+			<result name="list">list.jsp</result>
+			<result name="incubation">service_incubation_view.jsp</result>
+			<result name="customer">enterprise_list.jsp</result>
+			<result name="north">base_north.jsp</result>
+			<result name="download">download.jsp</result>
+			<result name="view">view.jsp</result>
+		</action>
+		<action name="delFile" class="homeAction" method="delFile">
+		</action>
+		<action name="findImage" class="homeAction" method="findImage">
+		</action>
+		<action name="checkVerify" class="homeAction" method="checkVerify">
+		</action>
+	</package>
+</struts>

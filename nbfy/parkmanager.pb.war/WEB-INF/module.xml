@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+<module idSpace="2" name="园区管理系统" order="10" icon="/core/common/images/pb_icon.png">
+
+	<menu id="10000" name="项目管理" order="1" uris="">
+		<menu id="18000" name="所有项目" order="7" uris="/parkmanager.pb/investment!list.action /parkmanager.pb/investment!listByType.action /parkmanager.pb/web/investment/investment_index.jsp" icon="/parkmanager.pb/web/images/icon/projectadmin_01_min.png">
+	       		 <operation id="11001" name="新建项目" uris="/parkmanager.pb/web/investment/investment_add.jsp /parkmanager.pb/investment!businessmanSuggestion.action /parkmanager.pb/investment!updateBusinessmanSuggestion.action /parkmanager.pb/investment!saveOrUpdate.action /parkmanager.pb/investment!generateCode.action" icon=""/> 
+	       		 <operation id="11002" name="查看项目" uris="/parkmanager.pb/investment!view.action /parkmanager.pb/investment!viewFloatbox.action" icon=""/>
+	       		 <operation id="11003" name="基本信息编辑" uris="/parkmanager.pb/investment!edit.action /parkmanager.pb/investment!update.action" icon=""/>
+	       		 <operation id="11004" name="打印" uris="/parkmanager.pb/investment!print.action" icon=""/>
+	       		 <operation id="11005" name="设为睡眠" uris="/parkmanager.pb/investment!sleep.action" icon=""/>
+	       		 <operation id="11006" name="唤醒" uris="/parkmanager.pb/investment!wakeUp.action" icon=""/>
+	       		 <operation id="11007" name="完成审批" uris="/parkmanager.pb/investment!agree.action" icon=""/>
+	       		 <operation id="11008" name="否决项目" uris="/parkmanager.pb/investment!disagree.action" icon=""/>
+	       		 <operation id="11009" name="重要性" uris="/parkmanager.pb/investment!high.action /parkmanager.pb/investment!middle.action /parkmanager.pb/investment!low.action" icon=""/>
+	       		 <operation id="11010" name="报送审批" uris="/parkmanager.pb/investment!view.action" icon=""/>
+	       		 <operation id="11011" name="提交入驻" uris="/parkmanager.pb/investment!submitSettled.action" icon=""/>
+	       		 <operation id="11012" name="删除" uris="/parkmanager.pb/investment!delete.action" icon=""/>
+	       		 <operation id="11013" name="选择项目" uris="/parkmanager.pb/investment!selectList.action" icon=""/>
+	       		 
+	       		 <operation id="11031" name="负责人列表" uris="/parkmanager.pb/investmentDirector!list.action" icon=""/>
+	       		 <operation id="11032" name="新建负责人" uris="/parkmanager.pb/web/investment/investmentDirector_add.jsp /parkmanager.pb/investmentDirector!save.action" icon=""/>
+	       		 <operation id="11033" name="删除负责人" uris="/parkmanager.pb/investmentDirector!delete.action" icon=""/>
+	       		 <operation id="11034" name="编辑负责人" uris="/parkmanager.pb/investmentDirector!edit.action /parkmanager.pb/investmentDirector!update.action" icon=""/>
+	       		 <operation id="11035" name="查看负责人" uris="/parkmanager.pb/investmentDirector!view.action /parkmanager.pb/web/investment/investmentDirector_view.jsp" icon=""/>
+	       		 
+	       		 <operation id="11021" name="投资人列表" uris="/parkmanager.pb/investmentInvestor!list.action" icon=""/>
+	       		 <operation id="11022" name="新建投资人" uris="/parkmanager.pb/web/investment/investmentInvestor_add.jsp /parkmanager.pb/investmentInvestor!save.action" icon=""/>
+	       		 <operation id="11023" name="删除投资人" uris="/parkmanager.pb/investmentInvestor!delete.action" icon=""/>
+	       		 <operation id="11024" name="编辑投资人" uris="/parkmanager.pb/investmentInvestor!edit.action /parkmanager.pb/investmentInvestor!update.action" icon=""/>
+	       		 <operation id="11025" name="查看投资人" uris="/parkmanager.pb/investmentInvestor!view.action" icon=""/>
+	       		 
+	       		 <operation id="11101" name="查看创业计划书" uris="/parkmanager.pb/businessPlan!view.action" icon=""/>
+	       		 <operation id="11102" name="上传创业计划书" uris="/parkmanager.pb/businessPlanAtt!save.action /parkmanager.pb/businessPlanAtt!edit.action /parkmanager.pb/businessPlanAtt!update.action"/>
+	       		 <operation id="11103" name="编辑创业计划书" uris="/parkmanager.pb/businessPlan!edit.action /parkmanager.pb/businessPlan!update.action"/>
+	       		 <operation id="11104" name="删除创业计划书附件" uris="/parkmanager.pb/businessPlanAtt!delete.action"/>
+	       		 
+	       		 <operation id="11201" name="备案材料列表" uris="/parkmanager.pb/investmentArchiveAtt!list.action" icon=""/>
+	       		 <operation id="11202" name="上传备案材料" uris="/parkmanager.pb/investmentArchiveAtt!save.action" />
+	       		 <operation id="11203" name="编辑备案材料" uris="/parkmanager.pb/investmentArchiveAtt!edit.action /parkmanager.pb/investmentArchiveAtt!update.action" />
+	       		 <operation id="11204" name="删除备案材料" uris="/parkmanager.pb/investmentArchiveAtt!delete.action" />
+	       		 
+	       		 <operation id="11301" name="招商轨迹列表" uris="/parkmanager.pb/web/investment/investmentLog_list.jsp /parkmanager.pb/investmentLog!list.action" icon=""/>
+	       		 <operation id="11302" name="新建招商轨迹" uris="/parkmanager.pb/investmentLog!add.action /parkmanager.pb/investmentLog!save.action" />
+	       		 <operation id="11303" name="编辑招商轨迹" uris="/parkmanager.pb/investmentLog!edit.action /parkmanager.pb/investmentLog!update.action" />
+	       		 <operation id="11304" name="查看招商轨迹" uris="/parkmanager.pb/investmentLog!view.action" />
+	       		 <operation id="11305" name="删除招商轨迹" uris="/parkmanager.pb/investmentLog!delete.action" />
+	       		 
+	       		 <operation id="11401" name="分管主任审批" uris="/parkmanager.pb/investment!approvalView.action /core/approval!edit.action /core/approval!update.action /parkmanager.pb/investment!chiefApproval.action /parkmanager.pb/investment!chiefApprovalUpdate.action"/>
+	 			 <operation id="11402" name="投资促进部审批" uris="/parkmanager.pb/investment!approvalView.action /core/approval!edit.action /core/approval!update.action /parkmanager.pb/investment!departmentApproval.action /parkmanager.pb/investment!departmentApprovalUpdate.action /core/user!select.action"/>
+	 			 <operation id="11403" name="主任办公室审批" uris="/parkmanager.pb/investment!approvalView.action /core/approval!edit.action /core/approval!update.action /parkmanager.pb/investment!officeApproval.action /parkmanager.pb/investment!officeApprovalUpdate.action"/>
+	 			 
+	       		 <operation id="11501" name="协议与合同列表" uris="/parkmanager.pb/investmentContractAtt!list.action" icon=""/>      		
+	       		 <operation id="11502" name="上传协议与合同" uris="/parkmanager.pb/investmentContractAtt!save.action" icon=""/>      		
+	       		 <operation id="11503" name="编辑协议与合同" uris="/parkmanager.pb/investmentContractAtt!edit.action /parkmanager.pb/investmentContractAtt!update.action" icon=""/>      		
+	       		 <operation id="11504" name="删除协议与合同" uris="/parkmanager.pb/investmentContractAtt!delete.action" icon=""/>      		
+	       		 
+	       		 <operation id="11601" name="查看ALL" uris="/parkmanager.pb/investmentLog!list.action /parkmanager.pb/investment!approvalView.action /parkmanager.pb/investmentLog!view.action /parkmanager.pb/businessPlan!view.action /parkmanager.pb/investmentInvestor!view.action 
+	       		 /parkmanager.pb/investmentDirector!view.action /parkmanager.pb/web/investment/investmentDirector_view.jsp /parkmanager.pb/investment!view.action 
+	       		 /parkmanager.pb/investment!viewFloatbox.action /parkmanager.pb/investmentContractAtt!list.action /parkmanager.pb/web/investment/investmentLog_list.jsp /parkmanager.pb/investmentArchiveAtt!list.action /parkmanager.pb/investmentInvestor!list.action 
+	       		 /parkmanager.pb/investmentDirector!list.action /parkmanager.pb/investment!list.action 
+	       		 /parkmanager.pb/web/investment/investment_index.jsp /parkmanager.pb/investment!view.action /parkmanager.pb/investment!viewFloatbox.action 
+	       		 /parkmanager.pb/investmentDirector!view.action /parkmanager.pb/investmentInvestor!view.action /parkmanager.pb/investmentLog!view.action /parkmanager.pb/businessPlan!view.action" icon=""/>      		
+			
+		</menu>
+		<menu id="17000" name="我的项目" order="7" uris="/parkmanager.pb/investment!myList.action /parkmanager.pb/investment!myListByType.action /parkmanager.pb/web/investment/investment_index.jsp" icon="/parkmanager.pb/web/images/icon/projectadmin_02_min.png">
+				 <operation id="17101" name="新建项目" uris="/parkmanager.pb/web/investment/investment_my_add.jsp /parkmanager.pb/investment!myBusinessmanSuggestion.action /parkmanager.pb/investment!myUpdateBusinessmanSuggestion.action /parkmanager.pb/investment!mySaveOrUpdate.action /parkmanager.pb/investment!myGenerateCode.action" icon=""/> 
+	       		 <operation id="17102" name="查看项目" uris="/parkmanager.pb/investment!myView.action /parkmanager.pb/investment!myViewFloatbox.action" icon=""/>
+	       		 <operation id="17103" name="基本信息编辑" uris="/parkmanager.pb/investment!myEdit.action /parkmanager.pb/investment!myUpdate.action" icon=""/>
+	       		 <operation id="17104" name="打印" uris="/parkmanager.pb/investment!myPrint.action" icon=""/>
+	       		 <operation id="17105" name="设为睡眠" uris="/parkmanager.pb/investment!mySleep.action" icon=""/>
+	       		 <operation id="17106" name="唤醒" uris="/parkmanager.pb/investment!myWakeUp.action" icon=""/>
+	       		 <operation id="17107" name="完成审批" uris="/parkmanager.pb/investment!myAgree.action" icon=""/>
+	       		 <operation id="17108" name="否决项目" uris="/parkmanager.pb/investment!myDisagree.action" icon=""/>
+	       		 <operation id="17109" name="重要性" uris="/parkmanager.pb/investment!myHigh.action /parkmanager.pb/investment!myMiddle.action /parkmanager.pb/investment!myLow.action" icon=""/>
+	       		 <operation id="17110" name="报送审批" uris="/parkmanager.pb/investment!myView.action /parkmanager.pb/investment!myManagerApproval.action /parkmanager.pb/investment!myOfficeApproval.action" icon=""/>
+	       		 <operation id="17111" name="提交入驻" uris="/parkmanager.pb/investment!mySubmitSettled.action" icon=""/>
+	       		 <operation id="17112" name="删除" uris="/parkmanager.pb/investment!myDelete.action" icon=""/>
+	       		 
+	       		 <operation id="17113" name="投资人列表" uris="/parkmanager.pb/investmentInvestor!myList.action" icon=""/>
+	       		 <operation id="17114" name="新建投资人" uris="/parkmanager.pb/web/investment/investmentInvestor_my_add.jsp /parkmanager.pb/investmentInvestor!mySave.action" icon=""/>
+	       		 <operation id="17115" name="删除投资人" uris="/parkmanager.pb/investmentInvestor!myDelete.action" icon=""/>
+	       		 <operation id="17116" name="编辑投资人" uris="/parkmanager.pb/investmentInvestor!myEdit.action /parkmanager.pb/investmentInvestor!myUpdate.action" icon=""/>
+	       		 <operation id="17117" name="查看投资人" uris="/parkmanager.pb/investmentInvestor!myView.action" icon=""/>
+	       		 
+	       		 <operation id="17118" name="查看创业计划书" uris="/parkmanager.pb/businessPlan!myView.action" icon=""/>
+	       		 <operation id="17119" name="上传创业计划书" uris="/parkmanager.pb/businessPlanAtt!mySave.action /parkmanager.pb/businessPlanAtt!myEdit.action /parkmanager.pb/businessPlanAtt!myUpdate.action"/>
+	       		 <operation id="17120" name="编辑创业计划书" uris="/parkmanager.pb/businessPlan!myEdit.action /parkmanager.pb/businessPlan!myUpdate.action"/>
+	       		 <operation id="17121" name="删除创业计划书附件" uris="/parkmanager.pb/businessPlanAtt!myDelete.action"/>
+	       		 
+	       		 <operation id="17122" name="备案材料列表" uris="/parkmanager.pb/investmentArchiveAtt!myList.action" icon=""/>
+	       		 <operation id="17123" name="上传备案材料" uris="/parkmanager.pb/investmentArchiveAtt!mySave.action" />
+	       		 <operation id="17124" name="编辑备案材料" uris="/parkmanager.pb/investmentArchiveAtt!myEdit.action /parkmanager.pb/investmentArchiveAtt!myUpdate.action" />
+	       		 <operation id="17125" name="删除备案材料" uris="/parkmanager.pb/investmentArchiveAtt!myDelete.action" />
+	       		 
+	       		 <operation id="17126" name="招商轨迹列表" uris="/parkmanager.pb/web/investment/investmentLog_my_list.jsp /parkmanager.pb/investmentLog!myList.action" icon=""/>
+	       		 <operation id="17127" name="新建招商轨迹" uris="/parkmanager.pb/investmentLog!myAdd.action /parkmanager.pb/investmentLog!mySave.action" />
+	       		 <operation id="17128" name="编辑招商轨迹" uris="/parkmanager.pb/investmentLog!myEdit.action /parkmanager.pb/investmentLog!myUpdate.action" />
+	       		 <operation id="17129" name="查看招商轨迹" uris="/parkmanager.pb/investmentLog!myView.action" />
+	       		 <operation id="17130" name="删除招商轨迹" uris="/parkmanager.pb/investmentLog!myDelete.action" />
+	       		 
+	       		 <operation id="17131" name="分管主任审批" uris="/parkmanager.pb/investment!myApprovalView.action /core/approval!edit.action /core/approval!update.action /parkmanager.pb/investment!chiefApproval.action /parkmanager.pb/investment!chiefApprovalUpdate.action"/>
+	 			 <operation id="17132" name="投资促进部审批" uris="/parkmanager.pb/investment!myApprovalView.action /core/approval!edit.action /core/approval!update.action /parkmanager.pb/investment!departmentApproval.action /parkmanager.pb/investment!departmentApprovalUpdate.action /core/user!select.action"/>
+	 			 <operation id="17133" name="主任办公室审批" uris="/parkmanager.pb/investment!myApprovalView.action /core/approval!edit.action /core/approval!update.action /parkmanager.pb/investment!officeApproval.action /parkmanager.pb/investment!officeApprovalUpdate.action"/>
+	 			 
+	       		 <operation id="17134" name="协议与合同列表" uris="/parkmanager.pb/investmentContractAtt!myList.action" icon=""/>      		
+	       		 <operation id="17135" name="上传协议与合同" uris="/parkmanager.pb/investmentContractAtt!mySave.action" icon=""/>      		
+	       		 <operation id="17136" name="编辑协议与合同" uris="/parkmanager.pb/investmentContractAtt!myEdit.action /parkmanager.pb/investmentContractAtt!myUpdate.action" icon=""/>      		
+	       		 <operation id="17137" name="删除协议与合同" uris="/parkmanager.pb/investmentContractAtt!myDelete.action" icon=""/>      		
+				 <operation id="17138" name="项目名称查询" uris="/parkmanager.pb/investment!myList.action /parkmanager.pb/investment!myList2.action /parkmanager.pb/investment!myList3.action /parkmanager.pb/investment!myList4.action /parkmanager.pb/investment!myList5.action" icon=""></operation>
+				  
+				 <operation id="17139" name="负责人列表" uris="/parkmanager.pb/investmentDirector!myList.action" icon=""/>
+	       		 <operation id="17140" name="新建负责人" uris="/parkmanager.pb/web/investment/investmentDirector_my_add.jsp /parkmanager.pb/investmentDirector!mySave.action" icon=""/>
+	       		 <operation id="17141" name="删除负责人" uris="/parkmanager.pb/investmentDirector!myDelete.action" icon=""/>
+	       		 <operation id="17142" name="编辑负责人" uris="/parkmanager.pb/investmentDirector!myEdit.action /parkmanager.pb/investmentDirector!myUpdate.action" icon=""/>
+	       		 <operation id="17143" name="查看负责人" uris="/parkmanager.pb/investmentDirector!myView.action /parkmanager.pb/web/investment/investmentDirector_my_view.jsp" icon=""/>
+	       		 
+	       		 <operation id="17144" name="查看ALL" uris="/parkmanager.pb/investment!myList.action /parkmanager.pb/web/investment/investment_index.jsp /parkmanager.pb/investmentInvestor!myList.action /parkmanager.pb/investmentArchiveAtt!myList.action 
+	       		 /parkmanager.pb/web/investment/investmentLog_my_list.jsp /parkmanager.pb/investmentLog!myList.action /parkmanager.pb/investmentContractAtt!myList.action 
+	       		 /parkmanager.pb/investment!myList.action /parkmanager.pb/investment!myList2.action /parkmanager.pb/investment!myList3.action /parkmanager.pb/investment!myList4.action /parkmanager.pb/investment!myList5.action 
+	       		 /parkmanager.pb/investmentDirector!myList.action /parkmanager.pb/investment!myView.action /parkmanager.pb/investment!myViewFloatbox.action 
+	       		 /parkmanager.pb/investment!myView.action /parkmanager.pb/investment!myManagerApproval.action /parkmanager.pb/investmentInvestor!myView.action 
+	       		 /parkmanager.pb/businessPlan!myView.action /parkmanager.pb/investmentLog!myView.action /parkmanager.pb/investment!myApprovalView.action 
+	       		 /parkmanager.pb/investmentDirector!myView.action /parkmanager.pb/web/investment/investmentDirector_my_view.jsp" icon=""/>
+	       		 
+	       		 <operation id="17545" name="发起会签" uris="/parkmanager.pb/investmentProcess!add.action /parkmanager.pb/web/investment/investment_process_add.jsp" icon=""/>
+				 <operation id="17546" name="检查流程会签是否存在" uris="/parkmanager.pb/investmentProcess!checkExist.action" icon=""/>
+			</menu>
+		
+		<menu id="16000" name="招商轨迹" order="6" uris="/parkmanager.pb/web/investment/investmentLog_list2.jsp /parkmanager.pb/investment!select2.action /parkmanager.pb/investmentLog!list2.action" icon="/parkmanager.pb/web/images/icon/projectadmin_03_min.png">
+			<operation id="16001" name="新建招商轨迹" uris="/parkmanager.pb/web/investment/investmentLog_add2.jsp /parkmanager.pb/investmentLog!save2.action /parkmanager.pb/investment!selectList2.action /parkmanager.pb/investment!select.action" />
+			<operation id="16002" name="编辑招商轨迹" uris="/parkmanager.pb/investmentLog!edit2.action /parkmanager.pb/investmentLog!update2.action" />
+			<operation id="16003" name="查看招商轨迹" uris="/parkmanager.pb/investmentLog!view2.action" />
+			<operation id="16004" name="删除招商轨迹" uris="/parkmanager.pb/investmentLog!delete2.action" />
+			<operation id="16006" name="工作台招商跟进编辑" uris="/parkmanager.pb/investmentLog!editLog.action" />
+			
+			<operation id="16005" name="查看ALL" uris="/parkmanager.pb/web/investment/investmentLog_list2.jsp /parkmanager.pb/investment!select2.action /parkmanager.pb/investmentLog!list2.action /parkmanager.pb/investmentLog!view2.action" />
+		</menu>
+    </menu>
+
+    <menu id="20000" name="企业管理" order="2" uris="">
+
+        <menu id="21000" name="企业档案" order="1" uris="" icon="/parkmanager.pb/web/images/icon/client_00_min.png">
+            <menu id="21100" name="企业信息" order="1" uris="/parkmanager.pb/web/client/customer_list.jsp /parkmanager.pb/customer!list.action /parkmanager.pb/customer!simpleList.action /parkmanager.pb/customer!list.action /parkmanager.pb/customer!loadCustomer.action
+            	/parkmanager.pb/customer!saveAccount.action /parkmanager.pb/customer!updateAccountPassword.action /parkmanager.pb/customer!updatePassword.action
+            	/parkmanager.pb/customer!loadLabelByCategoryId.action /parkmanager.pb/customer!loadCategory.action /parkmanager.pb/customer!loadMyLabel.action
+             	/parkmanager.pb/web/client/customer_search.jsp" icon="/parkmanager.pb/web/images/icon/client_01_min.png">
+            	<operation id="21101" name="企业分类" uris="/parkmanager.pb/web/client/group_add.jsp /parkmanager.pb/customerCategory!save.action"  icon=""/>
+            	<operation id="21102" name="添加标签" uris="/parkmanager.pb/customerLabel!addByCategoryId.action /parkmanager.pb/customerLabel!addByCategoryId.action /parkmanager.pb/customerLabel!save.action"  icon=""/>
+            	<operation id="21103" name="重命名" uris="/parkmanager.pb/customerCategory!edit.action /parkmanager.pb/customerCategory!update.action" icon=""/>
+            	<operation id="21104" name="删除" uris="/parkmanager.pb/customerCategory!delete.action" icon=""/>
+            	<operation id="21105" name="重命名标签" uris="/parkmanager.pb/customerLabel!edit.action /parkmanager.pb/customerLabel!update.action" icon=""/>
+            	<operation id="21106" name="删除标签" uris="/parkmanager.pb/customerLabel!delete.action" icon=""/>
+            	<operation id="21107" name="新建" uris="/parkmanager.pb/customer!add.action /parkmanager.pb/web/client/customer_add.jsp /parkmanager.pb/customer!save.action /core/user!select.action /parkmanager.pb/customer!generateCode.action
+            	  /parkmanager.pb/customer!upload.action /parkmanager.pb/customerLabel!loadCustomerLabel.action /parkmanager.pb/contect!addByCustomerId.action /parkmanager.pb/contectInfo!addByCustomerId.action 
+            	  /parkmanager.pb/product!addByCustomerId.action /parkmanager.pb/staffer!addByCustomerId.action /parkmanager.pb/patent!addByCustomerId.action /parkmanager.pb/copyright!addByCustomerId.action /parkmanager.pb/certification!addByCustomerId.action" icon=""/>
+            	<operation id="21108" name="编辑" uris="/parkmanager.pb/customer!edit.action /parkmanager.pb/customer!update.action" icon=""/>
+            	<operation id="21109" name="删除" uris="/parkmanager.pb/customer!delete.action" icon=""/>
+            	<operation id="21110" name="查看" uris="/parkmanager.pb/customer!view.action 
+            	/parkmanager.pb/customerPolicy!list.action /parkmanager.pb/web/client/contect_list_byCustomerId.jsp /parkmanager.pb/web/client/contectInfo_list_by_customerId.jsp
+            	/parkmanager.pb/contract!listByCustomerId.action /parkmanager.pb/customerPolicy!add.action /parkmanager.pb/customerPolicy!save.action /parkmanager.pb/customerPolicy!delete.action /parkmanager.pb/customerPolicy!overdue.action
+            	/parkmanager.pb/web/client/customerModifyLog_add.jsp /parkmanager.pb/customerModifyLog!add.action /parkmanager.pb/customerModifyLog!list.action /parkmanager.pb/customerModifyLog!edit.action /parkmanager.pb/customerModifyLog!save.action /parkmanager.pb/customerModifyLog!update.action /parkmanager.pb/customerModifyLog!delete.action
+            	/parkmanager.pb/web/client/staffer_view_by_customerId.jsp /parkmanager.pb/web/client/project_view.jsp /parkmanager.pb/web/client/knowledge_view.jsp /parkmanager.pb/projectApply!addByCustomerId.action" icon=""/>
+            	<operation id="21111" name="导出" uris="/parkmanager.pb/customer!export.action" icon=""/>
+				<operation id="21112" name="导入通讯录" uris="/parkmanager.pb/customer!importCard.action"/>            	
+				<operation id="21113" name="工作台企业入驻情况" uris="/parkmanager.pb/customer!workBenchCustomerList.action /parkmanager.pb/customer!workBenchCustomerEdit.action"/>            	
+				<operation id="21114" name="工作台企业变更信息" uris="/parkmanager.pb/customerModifyLog!workBenchCustomerModifyLog.action /parkmanager.pb/customerModifyLog!view.action"/>            	
+            	<!-- <operation id="21115" name="查看企业材料信息" uris="/parkmanager.pb/investment!view.action /parkmanager.pb/investment!edit.action /parkmanager.pb/investment!print.action
+            	/parkmanager.pb/businessPlan!view.action  /parkmanager.pb/investmentArchiveAtt!list.action /parkmanager.pb/web/investment/investmentLog_list.jsp /parkmanager.pb/investment!approvalView.action /parkmanager.pb/investmentContractAtt!list.action
+            	/parkmanager.pb/investment!update.action /parkmanager.pb/web/investment/investmentInvestor_add.jsp /parkmanager.pb/investmentInvestor!save.action /parkmanager.pb/investmentInvestor!edit.action /parkmanager.pb/investmentInvestor!update.action /parkmanager.pb/investmentInvestor!delete.action /parkmanager.pb/investmentInvestor!list.action  /parkmanager.pb/businessPlan!edit.action /parkmanager.pb/businessPlan!update.action /parkmanager.pb/businessPlanAtt!save.action /parkmanager.pb/businessPlanAtt!edit.action /parkmanager.pb/businessPlanAtt!update.action /parkmanager.pb/businessPlanAtt!delete.action
+            	/parkmanager.pb/investmentArchiveAtt!save.action /parkmanager.pb/investmentArchiveAtt!update.action /parkmanager.pb/investmentArchiveAtt!edit.action /parkmanager.pb/investmentArchiveAtt!delete.action /parkmanager.pb/web/investment/investmentLog_list.jsp /parkmanager.pb/investmentLog!list.action /parkmanager.pb/investmentLog!view.action /parkmanager.pb/investmentLog!edit.action /parkmanager.pb/investmentLog!add.action /parkmanager.pb/investmentLog!save.action /parkmanager.pb/investmentLog!delete.action /parkmanager.pb/investmentContractAtt!save.action
+            	/parkmanager.pb/investmentContractAtt!update.action /parkmanager.pb/investmentContractAtt!edit.action /parkmanager.pb/investmentContractAtt!delete.action">
+            	</operation> -->
+				<operation id="21116" name="数据填报" uris="/parkmanager.pb/analyse!customerView.action /parkmanager.pb/analyse!customerCount.action /parkmanager.pb/dataReport!viewByCustomerId.action /parkmanager.pb/dataReport!listByCustomerId.action
+				  /parkmanager.pb/dataReport!countData.action /parkmanager.pb/analyse!countData.action /parkmanager.pb/analyse!dataXML2.action"/>            	
+				<operation id="21117" name="设置帐号" uris="/parkmanager.pb/customer!configAccount.action"/>
+				
+				<operation id="21118" name="查看ALL" uris="/parkmanager.pb/bill!view.action /parkmanager.pb/bill!loadBill.action /parkmanager.pb/bill!listByCustomerId.action /parkmanager.pb/customerLabel!loadCustomerLabel.action /parkmanager.pb/customer!loadMyLabel.action /parkmanager.pb/customer!loadCategory.action /parkmanager.pb/customer!loadLabelByCategoryId.action /parkmanager.pb.war/web/bill/bill_list_by_customerId.jsp /parkmanager.pb/web/client/customer_search.jsp /parkmanager.pb/web/client/customer_list.jsp /parkmanager.pb/customer!list.action /parkmanager.pb/customer!simpleList.action /parkmanager.pb/customer!list.action /parkmanager.pb/customer!loadCustomer.action 
+				/parkmanager.pb/customerPolicy!list.action /parkmanager.pb/web/client/contect_list_byCustomerId.jsp /parkmanager.pb/web/client/contectInfo_list_by_customerId.jsp
+            	/parkmanager.pb/contract!listByCustomerId.action /parkmanager.pb/customerModifyLog!list.action /parkmanager.pb/dataReport!listByCustomerId.action 
+            	/parkmanager.pb/customer!view.action /parkmanager.pb/web/client/staffer_view_by_customerId.jsp /parkmanager.pb/web/client/project_view.jsp /parkmanager.pb/web/client/knowledge_view.jsp 
+            	/parkmanager.pb/customerModifyLog!view.action /parkmanager.pb/analyse!customerView.action /parkmanager.pb/dataReport!viewByCustomerId.action /parkmanager.pb/dataProperty!loadParentProperty.action 
+            	/parkmanager.pb/dataReport!loadGroup.action /parkmanager.pb/web/client/dataReport_index.jsp"/>
+            	<operation id="21119" name="工作台客户信息更新变化编辑" uris="/parkmanager.pb/customerModifyLog!editLog.action" />
+            </menu>
+            <menu id="21200" name="联系人" order="2" uris="/parkmanager.pb/web/client/contect_list.jsp /parkmanager.pb/contect!list.action /parkmanager.pb/web/client/contect_search.jsp" icon="/parkmanager.pb/web/images/icon/client_02_min.png">
+            	<operation id="21201" name="新建" uris="/parkmanager.pb/web/client/contect_add.jsp /parkmanager.pb/contect!save.action /parkmanager.pb/customer!select.action" icon=""/>
+            	<operation id="21202" name="删除" uris="/parkmanager.pb/contect!delete.action" icon=""/>
+            	<operation id="21203" name="编辑" uris="/parkmanager.pb/contect!edit.action /parkmanager.pb/contect!update.action" icon=""/>
+            	<operation id="21204" name="查看" uris="/parkmanager.pb/contect!view.action" icon=""/>
+            	<operation id="21205" name="导入通讯录" uris="/parkmanager.pb/contect!importCard.action"/>
+            	
+            	<operation id="21206" name="查看ALL" uris="/parkmanager.pb/web/client/contect_list.jsp /parkmanager.pb/contect!list.action /parkmanager.pb/web/client/contect_search.jsp /parkmanager.pb/contect!view.action"/>
+            </menu>
+            <menu id="21300" name="交往信息" order="3" uris="/parkmanager.pb/web/client/contectInfo_list.jsp /parkmanager.pb/contectInfo!list.action /parkmanager.pb//web/client/contectInfo_search.jsp" icon="/parkmanager.pb/web/images/icon/client_03_min.png">
+            	<operation id="21301" name="新建" uris="/parkmanager.pb/web/client/contectInfo_add.jsp /parkmanager.pb/contect!loadContectsByCustomerId.action /parkmanager.pb/contectInfo!save.action" icon="/core/common/images/emailadd.gif"/>
+				<operation id="21302" name="编辑" uris="/parkmanager.pb/contectInfo!edit.action /parkmanager.pb/contectInfo!update.action" icon="/core/common/images/edit.gif"/>
+				<operation id="21303" name="删除" uris="/parkmanager.pb/contectInfo!delete.action" icon="/core/common/images/del.gif"/>
+				<operation id="21304" name="查看" uris="/parkmanager.pb/contectInfo!view.action" icon="/core/common/images/viewbtn.gif"/>
+				
+				<operation id="21305" name="查看ALL" uris="/parkmanager.pb/contect!loadContectsByCustomerId.action /parkmanager.pb/web/client/contectInfo_list.jsp /parkmanager.pb/contectInfo!list.action /parkmanager.pb//web/client/contectInfo_search.jsp /parkmanager.pb/contectInfo!view.action" icon=""/>
+            </menu>
+        </menu>
+        <menu id="22000" name="项目产品" order="2" uris="" icon="/parkmanager.pb/web/images/icon/client_11_min.png">
+            <menu id="22100" name="项目与产品管理" order="1" uris="/parkmanager.pb/web/client/product_list.jsp /parkmanager.pb/product!list.action /parkmanager.pb/web/client/product_search.jsp" icon="/parkmanager.pb/web/images/icon/client_12_min.png">
+            	<operation id="22101" name="新建" uris="/parkmanager.pb/web/client/product_add.jsp /parkmanager.pb/product!save.action" icon="/core/common/images/emailadd.gif"/>
+				<operation id="22102" name="编辑" uris="/parkmanager.pb/product!edit.action /parkmanager.pb/product!update.action" icon="/core/common/images/edit.gif"/>
+				<operation id="22103" name="删除" uris="/parkmanager.pb/product!delete.action" icon="/core/common/images/del.gif"/>
+				<operation id="22104" name="查看" uris="/parkmanager.pb/product!view.action" icon="/core/common/images/del.gif"/>
+				
+				<operation id="22105" name="查看ALL" uris="/parkmanager.pb/web/client/product_list.jsp /parkmanager.pb/product!list.action /parkmanager.pb/web/client/product_search.jsp /parkmanager.pb/product!view.action" icon=""/>
+            </menu>
+            <menu id="22200" name="项目申报情况" order="2" uris="/parkmanager.pb/web/client/projectApply_list.jsp /parkmanager.pb/projectApply!list.action /parkmanager.pb/web/client/projectApply_search.jsp" icon="/parkmanager.pb/web/images/icon/client_13_min.png">
+           		<operation id="22201" name="新建" uris="/parkmanager.pb/product!loadProductsByCustomerId.action /parkmanager.pb/web/client/projectApply_add.jsp /parkmanager.pb/projectApply!save.action" icon="/core/common/images/emailadd.gif"/>
+				<operation id="22202" name="编辑" uris="/parkmanager.pb/projectApply!edit.action /parkmanager.pb/projectApply!update.action" icon="/core/common/images/edit.gif"/>
+				<operation id="22203" name="删除" uris="/parkmanager.pb/projectApply!delete.action" icon="/core/common/images/del.gif"/>
+				<operation id="22204" name="查看" uris="/parkmanager.pb/projectApply!view.action" icon="/core/common/images/del.gif"/>
+				
+				<operation id="22205" name="查看ALL" uris="/parkmanager.pb/product!loadProductsByCustomerId.action /parkmanager.pb/web/client/projectApply_list.jsp /parkmanager.pb/projectApply!list.action /parkmanager.pb/web/client/projectApply_search.jsp /parkmanager.pb/projectApply!view.action" icon=""/>
+            </menu>
+        </menu>
+
+        <menu id="23000" name="主要人员" order="3" uris="/parkmanager.pb/web/client/staffer_list.jsp /parkmanager.pb/staffer!list.action /parkmanager.pb/web/client/staffer_search.jsp" icon="/parkmanager.pb/web/images/icon/client_21_min.png">
+       			<operation id="23001" name="新建" uris="/parkmanager.pb/staffer!check.action /parkmanager.pb//web/client/staffer_add.jsp /parkmanager.pb/staffer!save.action" icon="/core/common/images/emailadd.gif"/>
+				<operation id="23002" name="编辑" uris="/parkmanager.pb/staffer!check.action /parkmanager.pb/staffer!edit.action /parkmanager.pb/staffer!update.action" icon="/core/common/images/edit.gif"/>
+				<operation id="23003" name="删除" uris="/parkmanager.pb/staffer!delete.action" icon="/core/common/images/del.gif"/>
+				<operation id="23004" name="查看" uris="/parkmanager.pb/staffer!view.action" icon="/core/common/images/del.gif"/>
+				<operation id="23005" name="导入通讯录" uris="/parkmanager.pb/staffer!importCard.action"/>
+				
+				<operation id="23006" name="查看ALL" uris="/parkmanager.pb/web/client/staffer_list.jsp /parkmanager.pb/staffer!list.action /parkmanager.pb/web/client/staffer_search.jsp /parkmanager.pb/staffer!view.action"/>
+        </menu>
+        <menu id="24000" name="知识产权" order="4" uris="" icon="/parkmanager.pb/web/images/icon/client_31_min.png">
+            <menu id="24100" name="专利" order="1" uris="/parkmanager.pb/web/client/patent_list.jsp /parkmanager.pb/patent!list.action /parkmanager.pb/web/client/patent_search.jsp" icon="/parkmanager.pb/web/images/icon/client_32_min.png">
+            	<operation id="24101" name="新建" uris="/parkmanager.pb/web/client/patent_add.jsp /parkmanager.pb/patent!save.action" icon="/core/common/images/emailadd.gif"/>
+				<operation id="24102" name="编辑" uris="/parkmanager.pb/patent!edit.action /parkmanager.pb/patent!update.action" icon="/core/common/images/edit.gif"/>
+				<operation id="24103" name="删除" uris="/parkmanager.pb/patent!delete.action" icon="/core/common/images/del.gif"/>
+				<operation id="24104" name="查看" uris="/parkmanager.pb/patent!view.action" icon="/core/common/images/viewbtn.gif"/>
+				
+				<operation id="24105" name="查看ALL" uris="/parkmanager.pb/web/client/patent_list.jsp /parkmanager.pb/patent!list.action /parkmanager.pb/web/client/patent_search.jsp /parkmanager.pb/patent!view.action" />
+            </menu>
+            <menu id="24200" name="著作权" order="2" uris="/parkmanager.pb/web/client/copyright_list.jsp /parkmanager.pb/copyright!list.action /parkmanager.pb/web/client/copyright_search.jsp" icon="/parkmanager.pb/web/images/icon/client_33_min.png">
+            	<operation id="24201" name="新建" uris="/parkmanager.pb/web/client/copyright_add.jsp /parkmanager.pb/copyright!save.action" icon="/core/common/images/emailadd.gif"/>
+				<operation id="24202" name="编辑" uris="/parkmanager.pb/copyright!edit.action /parkmanager.pb/copyright!update.action" icon="/core/common/images/edit.gif"/>
+				<operation id="24203" name="删除" uris="/parkmanager.pb/copyright!delete.action" icon="/core/common/images/del.gif"/>
+				<operation id="24204" name="查看" uris="/parkmanager.pb/copyright!view.action" icon="/core/common/images/viewbtn.gif"/>
+				
+				<operation id="24205" name="查看ALL" uris="/parkmanager.pb/web/client/copyright_list.jsp /parkmanager.pb/copyright!list.action /parkmanager.pb/web/client/copyright_search.jsp /parkmanager.pb/copyright!view.action" />
+            </menu>
+            <menu id="24300" name="认证" order="3" uris="/parkmanager.pb/web/client/certification_list.jsp /parkmanager.pb/certification!list.action /parkmanager.pb/web/client/certification_search.jsp" icon="/parkmanager.pb/web/images/icon/client_34_min.png">
+       			<operation id="24301" name="新建" uris="/parkmanager.pb/web/client/certification_add.jsp /parkmanager.pb/certification!save.action" icon="/core/common/images/emailadd.gif"/>
+				<operation id="24302" name="编辑" uris="/parkmanager.pb/certification!edit.action /parkmanager.pb/certification!update.action" icon="/core/common/images/edit.gif"/>
+				<operation id="24303" name="删除" uris="/parkmanager.pb/certification!delete.action" icon="/core/common/images/del.gif"/>
+				<operation id="24304" name="查看" uris="/parkmanager.pb/certification!view.action" icon="/core/common/images/viewbtn.gif"/>
+				
+				<operation id="24305" name="查看ALL" uris="/parkmanager.pb/web/client/certification_list.jsp /parkmanager.pb/certification!list.action /parkmanager.pb/web/client/certification_search.jsp /parkmanager.pb/certification!view.action" />
+            </menu>
+            <menu id="24400" name="商标" order="4" uris="/parkmanager.pb/web/client/brand_list.jsp /parkmanager.pb/brand!list.action" icon="/parkmanager.pb/web/images/icon/client_35_min.png">
+            	<operation id="24401" name="新建" uris="/parkmanager.pb/web/client/brand_add.jsp /parkmanager.pb/brand!save.action" icon="/core/common/images/emailadd.gif"/>
+				<operation id="24402" name="编辑" uris="/parkmanager.pb/brand!edit.action /parkmanager.pb/brand!update.action" icon="/core/common/images/edit.gif"/>
+				<operation id="24403" name="删除" uris="/parkmanager.pb/brand!delete.action" icon="/core/common/images/del.gif"/>
+				<operation id="24404" name="查看" uris="/parkmanager.pb/brand!view.action" icon="/core/common/images/viewbtn.gif"/>
+				
+				<operation id="24405" name="查看ALL" uris="/parkmanager.pb/web/client/brand_list.jsp /parkmanager.pb/brand!list.action /parkmanager.pb/brand!view.action" />
+            </menu>
+        </menu>
+        
+        <menu id="25000" name="统计" order="6" uris="/parkmanager.pb/statistic!customerParkStatus.action" icon="/parkmanager.pb/web/images/icon/client_51_min.png">
+       		<operation id="25001" name="企业入驻情况表" uris="/parkmanager.pb/statistic!customerParkStatus.action"/>
+           	<operation id="25002" name="企业孵化状态表" uris="/parkmanager.pb/statistic!customerIncubationStatus.action"/>
+           	<operation id="25003" name="企业技术领域统计表" uris="/parkmanager.pb/statistic!customerTechnic.action"/>
+           	<operation id="25004" name="企业分类统计表" uris="/parkmanager.pb/statistic!customerLabel.action"/>
+           	<operation id="25005" name="企业融资项目情况表" uris="/parkmanager.pb/statistic!customerLabel.action"/>
+           	<operation id="25006" name="企业注册资本情况表" uris="/parkmanager.pb/statistic!registeredCapital.action"/>
+           	<operation id="25007" name="企业从业人员情况表" uris="/parkmanager.pb/statistic!customerStaffer.action"/>
+           	<operation id="25008" name="企业知识产权情况表" uris="/parkmanager.pb/statistic!propertyRight.action"/>
+           	<operation id="25009" name="企业产品情况表" uris="/parkmanager.pb/statistic!productTechnic.action"/>
+           	<operation id="25010" name="企业项目申报情况表" uris="/parkmanager.pb/statistic!customerLabel.action"/>
+           	
+           	<operation id="25011" name="查看ALL" uris="/parkmanager.pb/statistic!customerParkStatus.action /parkmanager.pb/statistic!customerParkStatus.action /parkmanager.pb/statistic!customerIncubationStatus.action 
+           	/parkmanager.pb/statistic!customerTechnic.action /parkmanager.pb/statistic!customerLabel.action /parkmanager.pb/statistic!customerLabel.action /parkmanager.pb/statistic!registeredCapital.action
+           	/parkmanager.pb/statistic!customerStaffer.action /parkmanager.pb/statistic!propertyRight.action /parkmanager.pb/statistic!productTechnic.action /parkmanager.pb/statistic!customerLabel.action" />
+        </menu>
+		<menu id="26000" name="招商政策" order="2" uris="/parkmanager.pb/web/investment/policy_list.jsp /parkmanager.pb/policy!list.action" icon="/parkmanager.pb/web/images/icon/merchants_03_min.png">
+ 			<operation id="26001" name="新建" uris="/parkmanager.pb/web/investment/policy_add.jsp /parkmanager.pb/policy!save.action" icon=""/>
+ 			<operation id="26002" name="删除" uris="/parkmanager.pb/policy!delete.action" icon=""/>
+ 			<operation id="26003" name="编辑" uris="/parkmanager.pb/policy!edit.action /parkmanager.pb/policy!update.action" icon=""/>
+ 			<operation id="26004" name="查看" uris="/parkmanager.pb/policy!view.action" icon=""/>
+ 			
+ 			<operation id="26005" name="查看ALL" uris="/parkmanager.pb/web/investment/policy_list.jsp /parkmanager.pb/policy!list.action /parkmanager.pb/policy!view.action" />
+		</menu>
+    </menu>
+    
+   	<menu id="30000" name="经营数据" order="3">
+   		<menu id="31000" name="数据填报" order="1" uris="" icon="/core/web/images/m_loginCount_min.png">
+            <menu id="31100" name="数据项设置" order="1" uris="/parkmanager.pb/dataProperty!dataPropertyList.action /parkmanager.pb/dataProperty!list.action" icon="/parkmanager.pb/web/images/dataSet_min.png">
+            	<operation id="31101" name="新建数据" uris="/parkmanager.pb/dataProperty!add.action /parkmanager.pb/dataProperty!loadParentProperty.action /parkmanager.pb/dataProperty!save.action" icon=""/>
+            	<operation id="31102" name="编辑" uris="/parkmanager.pb/dataProperty!edit.action /parkmanager.pb/dataProperty!update.action" icon=""/>
+            	<operation id="31103" name="上移" uris="/parkmanager.pb/dataProperty!up.action" icon=""/>
+            	<operation id="31104" name="下移" uris="/parkmanager.pb/dataProperty!down.action" icon=""/>
+            	<operation id="31105" name="删除" uris="/parkmanager.pb/dataProperty!delete.action" icon=""/>
+            	<operation id="31106" name="查看" uris="/parkmanager.pb/dataProperty!view.action" icon=""/>
+            	
+            	<operation id="31107" name="查看ALL" uris="/parkmanager.pb/dataProperty!dataPropertyList.action /parkmanager.pb/dataProperty!list.action /parkmanager.pb/dataProperty!view.action" icon=""/>
+            </menu>
+            <menu id="31200" name="数据模板设置" order="1" uris="/parkmanager.pb/dataTemplate!list.action /parkmanager.pb/dataTemplate!saveConfig.action /parkmanager.pb/dataTemplate!loadConfig.action" icon="/parkmanager.pb/web/images/table_min.png">
+            	<operation id="31201" name="新建模板" uris="/parkmanager.pb/web/client/dataTemplate_add.jsp /parkmanager.pb/dataTemplate!save.action" icon=""/>
+            	<operation id="31202" name="重命名" uris="/parkmanager.pb/dataTemplate!edit.action /parkmanager.pb/dataTemplate!update.action" icon=""/>
+            	<operation id="31203" name="删除" uris="/parkmanager.pb/dataTemplate!delete.action" icon=""/>
+            	<operation id="31204" name="查看 " uris="/parkmanager.pb/dataTemplate!preview.action" icon=""/>
+            	
+            	<operation id="31205" name="查看ALL " uris="/parkmanager.pb/dataTemplate!list.action /parkmanager.pb/dataTemplate!saveConfig.action /parkmanager.pb/dataTemplate!loadConfig.action /parkmanager.pb/dataTemplate!preview.action" icon=""/>
+            </menu>
+            <menu id="31300" name="企业数据填报" order="2" uris="/parkmanager.pb/dataReport!list.action /parkmanager.pb/dataReport!loadGroup.action /parkmanager.pb/dataReport!loadReportByGroupId.action /parkmanager.pb/dataReport!count.action /parkmanager.pb/web/client/dataReport_index.jsp" icon="/parkmanager.pb/web/images/table_edit_min.png">
+            	<operation id="31301" name="新建分组" uris="/parkmanager.pb/web/client/dataReportGroup_add.jsp /parkmanager.pb/dataReportGroup!save.action" icon=""/>
+            	<operation id="31302" name="编辑分组" uris="/parkmanager.pb/dataReportGroup!edit.action /parkmanager.pb/dataReportGroup!update.action" icon=""/>
+            	<operation id="31303" name="删除分组" uris="/parkmanager.pb/dataReportGroup!delete.action" icon=""/>
+            	<operation id="31304" name="新建报表" uris="/parkmanager.pb/dataReport!add.action /parkmanager.pb/dataReport!save.action /parkmanager.pb/dataReport!view.action" icon=""/>
+            	<operation id="31305" name="编辑报表" uris="/parkmanager.pb/dataReport!edit.action /parkmanager.pb/dataReport!update.action /parkmanager.pb/dataReport!view.action" icon=""/>
+            	<operation id="31306" name="关闭报表" uris="/parkmanager.pb/dataReport!close.action" icon=""/>
+            	<operation id="31307" name="打开报表" uris="/parkmanager.pb/dataReport!open.action" icon=""/>
+            	<operation id="31308" name="删除报表" uris="/parkmanager.pb/dataReport!delete.action" icon=""/>
+            	<operation id="31309" name="查看企业报送数据" uris="/parkmanager.pb/dataReportToCustomer!view.action" icon=""/>
+            	<operation id="31310" name="删除企业报送数据" uris="/parkmanager.pb/dataReportToCustomer!delete.action" icon=""/>
+            	<operation id="31311" name="退回企业报送数据" uris="/parkmanager.pb/web/client/dataReportToCustomer_backSuggestion.jsp /parkmanager.pb/dataReportToCustomer!back.action" icon=""/>
+            	<operation id="31312" name="编辑企业报送数据" uris="/parkmanager.pb/dataReportToCustomer!edit.action /parkmanager.pb/dataReportToCustomer!update.action" icon=""/>
+            	<operation id="31313" name="企业报送数据" uris="/parkmanager.pb/dataReportToCustomer!edit.action /parkmanager.pb/dataReportToCustomer!report.action /parkmanager.pb/dataReportToCustomer!view.action /parkmanager.pb/dataReportToCustomer!update.action" icon=""/>
+            	<operation id="31314" name="发布" uris="/parkmanager.pb/dataReportToCustomer!list.action /parkmanager.pb/customer!multiSelect.action /parkmanager.pb/dataReport!publish.action" icon=""/>
+            	<operation id="31315" name="工作台企业数据报送" uris="/parkmanager.pb/dataReportToCustomer!deskTopList.action /parkmanager.pb/dataReport!list.action" icon=""/>
+            	<operation id="31316" name="添加企业" uris="/parkmanager.pb/dataReport!addCustomer.action" icon=""/>
+            	<operation id="31319" name="工作台数据填报编辑" uris="/parkmanager.pb/dataReportToCustomer!viewLog.action" icon=""/>
+            	
+            	<operation id="31317" name="查看ALL" uris="/parkmanager.pb/dataReport!list.action /parkmanager.pb/dataReport!loadGroup.action /parkmanager.pb/dataReport!loadReportByGroupId.action /parkmanager.pb/dataReport!count.action /parkmanager.pb/web/client/dataReport_index.jsp 
+            	/parkmanager.pb/dataReportToCustomer!list.action /parkmanager.pb/dataReportToCustomer!deskTopList.action /parkmanager.pb/dataReport!list.action 
+            	/parkmanager.pb/dataReport!view.action /parkmanager.pb/dataReport!view.action /parkmanager.pb/dataReportToCustomer!view.action 
+            	/parkmanager.pb/dataReportToCustomer!view.action"  />
+            	<operation id="31318" name="工作台园区日志" uris="/parkmanager.pb/dataReport!getParkLog.action /parkmanager.pb/customerModifyLog!editLog.action /parkmanager.pb/investmentLog!editLog.action /parkmanager.pb/dataReportToCustomer!editLog.action /parkmanager.pb/dataReport!loadReport.action" icon=""/>
+            </menu>
+        </menu>
+        <menu id="32000" name="数据分析" order="2" uris="/parkmanager.pb/analyse!list.action /parkmanager.pb/analyse!loadPropertyByTemplate.action /parkmanager.pb/analyse!count.action /parkmanager.pb/analyse!loadDataReportById.action /parkmanager.pb/analyse!dataXML.action" icon="/parkmanager.pb/web/images/client_71_min.png"></menu>
+		<!-- <menu id="33000" name="综合查询" order="3" uris="/parkmanager.pb/search!before.action /parkmanager.pb/search.action /parkmanager.pb/search!export.action /parkmanager.pb/dataReport!loadReportGroup.action /parkmanager.pb/dataReport!loadReport.action /parkmanager.pb/dataTemplate!loadTemplate.action" icon="/parkmanager.pb/web/images/icon/client_61_min.png"></menu> -->
+   	</menu>
+   
+    <menu id="40000" name="合同管理" order="4">
+       <!--  <menu id="41000" name="合同总览" order="1" uris="/parkmanager.pb/web/contract/contract_list.jsp /parkmanager.pb/contract!list.action" icon="/parkmanager.pb/web/images/icon/contract_01_min.png">
+        	
+        </menu> -->
+        <menu id="42000" name="合同管理" order="2" uris="" icon="/parkmanager.pb/web/images/icon/contract_02_min.png">
+            <menu id="42100" name="合同信息" order="1" uris="/parkmanager.pb/web/contract/contract_list.jsp /parkmanager.pb/contract!list.action /parkmanager.pb/web/contract/contract_search.jsp /parkmanager.pb/customer!simpleList.action /parkmanager.pb/room!select.action /parkmanager.pb/room!loadRoomByBuilding.action" icon="/parkmanager.pb/web/images/icon/contract_03_min.png">
+        	 	<operation id="42101" name="新建物业管理合同" uris="/parkmanager.pb/web/contract/contract_add_customer_rent_1.jsp /parkmanager.pb/contract!generateCode.action /parkmanager.pb/contract!saveRentContract1.action /parkmanager.pb/web/contract/contract_add_rent.jsp /parkmanager.pb/contract!saveOrUpdate.action /parkmanager.pb/contract!addBillRent.action /parkmanager.pb/billPlanRent!save.action /parkmanager.pb/customer!loadCustomer.action"/>
+        	 	<operation id="42102" name="新建厂房租赁合同" uris="/parkmanager.pb/web/contract/contract_add_customer_rent_2.jsp /parkmanager.pb/contract!generateCode.action /parkmanager.pb/contract!saveRentContract1.action /parkmanager.pb/customer!select.action /parkmanager.pb/contract!addBillRent.action /parkmanager.pb/contract!saveOrUpdate.action /parkmanager.pb/web/contract/contract_deposit_add.jsp"/>
+        	 	<operation id="42103" name="新建办公楼租赁合同" uris="/parkmanager.pb/web/contract/contract_add_customer_rent_3.jsp /parkmanager.pb/contract!generateCode.action /parkmanager.pb/contract!saveRentContract1.action /parkmanager.pb/customer!select.action /parkmanager.pb/contract!addBillRent.action /parkmanager.pb/contract!saveOrUpdate.action /parkmanager.pb/web/contract/contract_deposit_add.jsp"/>
+        	 	<operation id="42104" name="编辑合同" uris="/parkmanager.pb/contract!edit.action /parkmanager.pb/contract!generateCode.action /parkmanager.pb/contract!update.action"/>
+        	 	<operation id="42105" name="查看合同" uris="/parkmanager.pb/contract!view.action"/>
+        	 	<operation id="42106" name="合同导出" uris="/parkmanager.pb/contract!export.action"/>
+        	 	<operation id="42107" name="打印合同" uris="/parkmanager.pb/contract!print.action /parkmanager.pb/contract!printDoc.action"/>
+        	 	<operation id="42108" name="合同续租" uris="/parkmanager.pb/contract!relet.action /parkmanager.pb/contract!submitRelet.action"/>
+        	 	<operation id="42109" name="合同减租" uris="/parkmanager.pb/contract!subtract.action /parkmanager.pb/contract!submitSubtract.action"/>
+        	 	<operation id="421010" name="合同退租" uris="/parkmanager.pb/contract!surrender.action /parkmanager.pb/contract!submitSurrender.action"/>
+        	 	<operation id="421011" name="关闭合同" uris="/parkmanager.pb/contract!checkBillPlan.action /parkmanager.pb/contract!checkDeposit.action /parkmanager.pb/contract!checkBill.action /parkmanager.pb/contract!closeContract.action "/>
+        	 	<operation id="421012" name="合同送审" uris="/parkmanager.pb/contract!approval.action"/>
+        	 	<operation id="421013" name="执行合同" uris="/parkmanager.pb/contract!executeContract.action"/>
+        	 	<operation id="421014" name="删除合同" uris="/parkmanager.pb/contract!delete.action"/>
+        	 	<operation id="421015" name="工作台合同到期提醒" uris="/parkmanager.pb/contract!dueRemind.action /parkmanager.pb/contract!workBenchContractEdit.action"/>
+        	 	
+        	 	<operation id="42110" name="房间租赁标的列表" uris="/parkmanager.pb/subjectRent!list.action"/>
+        	 	<operation id="42111" name="新建房间租赁标的" uris="/parkmanager.pb/web/contract/subjectRent_add.jsp /parkmanager.pb/subjectRent!save.action"/>
+        	 	<operation id="42112" name="编辑房间租赁标的" uris="/parkmanager.pb/subjectRent!edit.action /parkmanager.pb/subjectRent!update.action"/>
+        	 	<operation id="42113" name="删除房间租赁标的" uris="/parkmanager.pb/subjectRent!delete.action"/>
+        	 	<operation id="42114" name="生成资金计划" uris="/parkmanager.pb/subjectRent!generatePlan.action /parkmanager.pb/billPlanRent!autoGenerate.action /parkmanager.pb/billPlanRent!submitBillPlan.action"/>
+        	 	<operation id="42115" name="查看房间租赁标的" uris="/parkmanager.pb/subjectRent!view.action"/>
+        	 	
+        	 	<operation id="42120" name="房间租赁资金计划列表" uris="/parkmanager.pb/billPlanRent!list.action"/>
+        	 	<operation id="42121" name="新建房间租赁资金计划" uris="/parkmanager.pb/billPlanRent!add.action /parkmanager.pb/billPlanRent!save.action"/>
+        	 	<operation id="42122" name="编辑房间租赁资金计划" uris="/parkmanager.pb/billPlanRent!edit.action /parkmanager.pb/billPlanRent!update.action"/>
+        	 	<operation id="42123" name="删除房间租赁资金计划" uris="/parkmanager.pb/billPlanRent!delete.action"/>
+        	 	<operation id="42124" name="查看房间租赁资金计划" uris="/parkmanager.pb/billPlanRent!view.action"/>
+        	 	<operation id="42125" name="房间租赁资金计划收款出账" uris="/parkmanager.pb/billPlanRent!checkinById.action"/>
+        	 	<operation id="42126" name="房间租赁资金计划退款出账" uris="/parkmanager.pb/billPlanRent!checkoutById.action"/>
+        	 	
+        	 	<operation id="42130" name="押金列表" uris="/parkmanager.pb/deposit!list.action"/>
+        	 	<operation id="42131" name="新建押金" uris="/parkmanager.pb/deposit!add.action /parkmanager.pb/deposit!save.action"/>
+        	 	<operation id="42132" name="编辑押金" uris="/parkmanager.pb/deposit!edit.action /parkmanager.pb/deposit!update.action"/>
+        	 	<operation id="42133" name="删除押金" uris="/parkmanager.pb/deposit!delete.action"/>
+				<operation id="42135" name="押金收款出账" uris="/parkmanager.pb/deposit!checkinById.action"/>
+        	 	<operation id="42136" name="押金退款出账" uris="/parkmanager.pb/deposit!checkoutById.action"/>
+        	 	<operation id="42137" name="查看押金" uris="/parkmanager.pb/deposit!view.action"/>
+        	 	
+        	 	<operation id="42140" name="合同附件列表" uris="/parkmanager.pb/contractAtt!list.action"/>
+        	 	<operation id="42141" name="新建附件" uris="/parkmanager.pb/web/contract/contractAtt_add.jsp /parkmanager.pb/contractAtt!save.action"/>
+        	 	<operation id="42142" name="编辑附件" uris="/parkmanager.pb/contractAtt!edit.action /parkmanager.pb/contractAtt!update.action"/>
+        	 	<operation id="42143" name="删除附件" uris="/parkmanager.pb/contractAtt!delete.action"/>
+        	 	
+        	 	<operation id="42150" name="合同备忘列表" uris="/parkmanager.pb/contractMemo!list.action"/>
+        	 	<operation id="42151" name="新建备忘" uris="/parkmanager.pb/web/contract/contractMemo_add.jsp /parkmanager.pb/contractMemo!save.action"/>
+        	 	<operation id="42152" name="编辑备忘" uris="/parkmanager.pb/contractMemo!edit.action /parkmanager.pb/contractMemo!update.action"/>
+        	 	<operation id="42153" name="删除备忘" uris="/parkmanager.pb/contractMemo!delete.action"/>
+        	 	<operation id="42154" name="查看备忘" uris="/parkmanager.pb/contractMemo!view.action"/>
+        	 	
+        	 	<operation id="42160" name="合同审批列表" uris="/core/approval!list.action"/>
+        	 	<operation id="42161" name="审批" uris="/core/approval!edit.action /core/approval!update.action"/>
+        	 	<operation id="42162" name="查看审批" uris="/core/approval!view.action"/>
+        	 	<operation id="42163" name="删除审批" uris="/core/approval!delete.action"/>
+        	 
+        	 	<operation id="42170" name="合同变更列表" uris="/parkmanager.pb/contractModifyLog!list.action /parkmanager.pb/contractModifyLog!view.action"/>
+        	 	<operation id="42173" name="删除变更" uris="/parkmanager.pb/contractModifyLog!delete.action"/>
+        	 	
+        	 	<operation id="42180" name="网络标的列表" uris="/parkmanager.pb/subjectNetwork!list.action"/>
+        	 	<operation id="42181" name="新建网络标的" uris="/parkmanager.pb/subjectNetwork!add.action /parkmanager.pb/subjectNetwork!save.action"/>
+        	 	<operation id="42182" name="编辑网络标的" uris="/parkmanager.pb/subjectNetwork!edit.action /parkmanager.pb/subjectNetwork!update.action"/>
+        	 	<operation id="42183" name="删除网络标的" uris="/parkmanager.pb/subjectNetwork!delete.action"/>
+        	 
+        	 	<operation id="42190" name="网络资金计划列表" uris="/parkmanager.pb/billPlanFacility!list.action"/>
+        	 	<operation id="42191" name="新建网络资金计划" uris="/parkmanager.pb/billPlanFacility!addNetworkPlan.action /parkmanager.pb/billPlanFacility!save.action"/>
+        	 	<operation id="42192" name="编辑网络资金计划" uris="/parkmanager.pb/billPlanFacility!editNetworkPlan.action /parkmanager.pb/billPlanFacility!update.action"/>
+        	 	<operation id="42193" name="删除网络资金计划" uris="/parkmanager.pb/billPlanFacility!delete.action"/>
+        	 	<operation id="42194" name="查看网络资金计划" uris="/parkmanager.pb/billPlanFacility!viewNetworkPlan.action"/>
+        	 	<operation id="42195" name="网络资金计划收款出账" uris="/parkmanager.pb/billPlanFacility!checkinById.action"/>
+        	 	<operation id="42196" name="网络资金计划退款出账" uris="/parkmanager.pb/billPlanFacility!checkoutById.action"/>
+        	 	
+        	 	<operation id="421970" name="发起到期合同审批会签" uris="/parkmanager.pb/contractExpireApproval!add.action /parkmanager.pb/web/investment/contract_expire_add.jsp" icon=""/>
+        	 	<operation id="421980" name="发起合同审核会签" uris="/parkmanager.pb/contractReview!add.action /parkmanager.pb/web/investment/contract_review_add.jsp" icon=""/>
+        	 	<operation id="421990" name="检查到期合同会签是否存在" uris="/parkmanager.pb/contractExpireApproval!checkExist.action" icon=""/>
+        	 	<operation id="422000" name="检查合同审核会签是否存在" uris="/parkmanager.pb/contractReview!checkExist.action" icon=""/>
+        	 	
+        	 	<operation id="422001" name="查看ALL" uris="/parkmanager.pb/web/contract/contract_list.jsp /parkmanager.pb/contract!list.action /parkmanager.pb/web/contract/contract_search.jsp /parkmanager.pb/customer!simpleList.action /parkmanager.pb/room!select.action /parkmanager.pb/room!loadRoomByBuilding.action 
+        	 	/parkmanager.pb/subjectRent!list.action /parkmanager.pb/billPlanRent!list.action /parkmanager.pb/deposit!list.action /parkmanager.pb/contractAtt!list.action 
+        	 	 /parkmanager.pb/contractMemo!list.action /core/approval!list.action /parkmanager.pb/contractModifyLog!list.action /parkmanager.pb/subjectNetwork!list.action /parkmanager.pb/billPlanFacility!list.action 
+        	 	 /parkmanager.pb/contract!view.action /parkmanager.pb/subjectRent!view.action /parkmanager.pb/billPlanRent!view.action /parkmanager.pb/deposit!view.action /parkmanager.pb/contractMemo!view.action 
+        	 	 /core/approval!view.action /parkmanager.pb/contractModifyLog!view.action /parkmanager.pb/billPlanFacility!viewNetworkPlan.action" />
+            </menu>
+           <!--  <menu id="42200" name="合同审批" order="2" uris="/parkmanager.pb/web/contract/contract_list_approval.jsp /core/approval!list.action" icon="/parkmanager.pb/web/images/icon/contract_04_min.png">
+            	<operation id="42201" name="查看" uris="/parkmanager.pb/contract!view.action" icon=""/>
+            	<operation id="42202" name="审批" uris="/core/approval!edit.action /core/approval!update.action" icon=""/>
+            	<operation id="42203" name="删除" uris="/parkmanager.pb/contract!delete.action" icon=""/>
+            </menu> -->
+            <menu id="42300" name="合同模板" order="3" uris="/parkmanager.pb/web/contract/contractTemplate_list.jsp /parkmanager.pb/contractTemplate!list.action" icon="/parkmanager.pb/web/images/icon/contract_05_min.png">
+            	<operation id="42301" name="新建" uris="/parkmanager.pb/web/contract/contractTemplate_add.jsp /parkmanager.pb/contractTemplate!save.action" icon=""/>
+            	<operation id="42302" name="重命名" uris="/parkmanager.pb/contractTemplate!edit.action /parkmanager.pb/contractTemplate!update.action" icon=""/>
+            	<operation id="42303" name="删除" uris="/parkmanager.pb/contractTemplate!delete.action" icon=""/>
+            	<operation id="42304" name="查看ALL" uris="/parkmanager.pb/web/contract/contractTemplate_list.jsp /parkmanager.pb/contractTemplate!list.action" icon=""/>
+            </menu>
+        </menu>
+	</menu>
+
+    <menu id="50000" name="楼宇管理" order="5" uris="">
+        <menu id="51000" name="楼宇管理" order="1" uris="/parkmanager.pb/park!list.action /parkmanager.pb/park!listBuilding.action /parkmanager.pb/building!view.action /parkmanager.pb/web/building/park_index.jsp 
+        	/parkmanager.pb/floor!floorView.action /parkmanager.pb/room!listByBuildingId.action /parkmanager.pb/room!list.action /parkmanager.pb/floor!save.action /core/upload.action
+        	/parkmanager.pb/floor!update.action /p3arkmanager.pb/floor!exchangeOrder.action /parkmanager.pb/floor!delete.action
+        	 /parkmanager.pb/floor!listByBuildingId.action" icon="/parkmanager.pb/web/images/icon/building_01_min.png">
+        	<operation id="51001" name="添加园区" uris="/parkmanager.pb/web/building/park_add.jsp /parkmanager.pb/park!save.action" icon=""/>
+        	<operation id="51002" name="编辑园区" uris="/parkmanager.pb/park!edit.action /parkmanager.pb/park!update.action" icon=""/>
+        	<operation id="51003" name="删除园区" uris="/parkmanager.pb/park!delete.action" icon=""/>
+        	<operation id="51004" name="新建楼宇" uris="/parkmanager.pb/building!add.action /parkmanager.pb/building!save.action" icon=""/>
+        	<operation id="51005" name="编辑楼宇" uris="/parkmanager.pb/building!edit.action /parkmanager.pb/building!update.action" icon=""/>
+        	<operation id="51006" name="删除楼宇" uris="/parkmanager.pb/building!delete.action" icon=""/>
+        	
+        	<operation id="51007" name="新建房间" uris="/parkmanager.pb/room!add.action /parkmanager.pb/room!save.action /core/upload.action /parkmanager.pb/room!checkNameUnique.action"/>
+        	<operation id="51008" name="删除房间" uris="/parkmanager.pb/room!delete.action" icon=""/>
+        	<operation id="51009" name="编辑房间" uris="/parkmanager.pb/room!edit.action /parkmanager.pb/room!update.action" icon=""/>
+        	<operation id="51010" name="查看房间" uris="/parkmanager.pb/room!roomViewTitleById.action /parkmanager.pb/room!info.action /parkmanager.pb/billType!typeTree.action /parkmanager.pb/bill!loadBill.action /parkmanager.pb/room!view.action /parkmanager.pb/facilityOrder!list.action" icon=""/>
+        	<operation id="51011" name="合并" uris="/parkmanager.pb/web/building/room_merge.jsp /parkmanager.pb/room!roomMerge.action /parkmanager.pb/park!listBuilding.action /parkmanager.pb/park!selectList.action /parkmanager.pb/room!selectList.action" icon=""/>
+        	<operation id="51012" name="拆分" uris="/parkmanager.pb/web/building/room_broken_into.jsp /parkmanager.pb/room!roomBroken.action /parkmanager.pb/park!listBuilding.action /parkmanager.pb/park!selectList.action /parkmanager.pb/room!selectList.action" icon=""/>
+        	<operation id="51013" name="变更记录" uris="/parkmanager.pb/web/building/room_ChangeLoglist.jsp /parkmanager.pb/roomChangeLog!list.action" icon=""/>
+        	<operation id="51014" name="删除变更记录" uris="/parkmanager.pb/roomChangeLog!delete.action" icon=""/>
+        	<operation id="51015" name="附件和图片" uris="/parkmanager.pb/web/building/room_AttList.jsp /parkmanager.pb/roomAtt!list.action" icon=""/>
+        	<operation id="51016" name="新建附件和图片" uris="/parkmanager.pb/web/building/roomAtt_add.jsp /core/upload.action /parkmanager.pb/roomAtt!save.action" icon=""/>
+        	<operation id="51017" name="删除附件和图片" uris="/parkmanager.pb/roomAtt!delete.action" icon=""/>
+        	<operation id="51018" name="备注" uris="/parkmanager.pb/web/building/room_Memolist.jsp /parkmanager.pb/roomMemo!list.action" icon=""/>
+        	<operation id="51019" name="新建备注" uris="/parkmanager.pb/web/building/roomMemo_add.jsp /parkmanager.pb/roomMemo!save.action" icon=""/>
+        	<operation id="51020" name="删除备注" uris="/parkmanager.pb/roomMemo!delete.action" icon=""/>
+        	<operation id="51021" name="物业报修" uris="/parkmanager.pb/room!propertyRepair.action /parkmanager.pb/propertyFix!save.action" icon=""/>
+        	<operation id="51022" name="收费标准" uris="/parkmanager.pb/web/building/room_editFees.jsp /parkmanager.pb/roomFee!editRoomFees.action /parkmanager.pb/roomFee!editRoomFee.action /parkmanager.pb/roomFee!feeTypeList.action /parkmanager.pb/roomFee!update.action" icon=""/>
+        	<operation id="51023" name="跟进管理" uris="/parkmanager.pb/web/building/room_followup_add.jsp /parkmanager.pb/roomMonitor!save.action /parkmanager.pb/web/building/room_followupList.jsp /parkmanager.pb/roomMonitor!list.action /parkmanager.pb/roomMonitor!delete.action" icon=""/>
+        	<operation id="51024" name="选择房间" uris="/parkmanager.pb/room!select.action /parkmanager.pb/room!loadRoomByBuilding.action" icon=""/>
+        	<operation id="51025" name="工作台楼宇总览" uris="/parkmanager.pb/building!graph.action" icon=""/>
+        	<operation id="51026" name="出租率一览表" uris="/parkmanager.pb/building!rentGraph.action" icon=""/>
+        	<operation id="51027" name="企业信息" uris="/parkmanager.pb/room!loadCusInfoByRoomId.action" icon=""/>
+        	<operation id="51028" name="水电表" uris="/parkmanager.pb/web/building/room_listmeter.jsp /parkmanager.pb/roomMeterFee!list.action /parkmanager.pb/web/building/room_listmeter_add.jsp /parkmanager.pb/web/property/meter_select2.jsp /parkmanager.pb/roomMeterFee!save.action /parkmanager.pb/roomMeterFee!edit.action /parkmanager.pb/roomMeterFee!update.action /parkmanager.pb/roomMeterFee!delete.action"  icon=""/>
+        
+        	<operation id="51029" name="查看ALL" uris="/parkmanager.pb/room!loadCusInfoByRoomId.action /parkmanager.pb/room!loadRoomByBuilding.action /parkmanager.pb/bill!loadBill.action /parkmanager.pb/park!list.action /parkmanager.pb/park!listBuilding.action /parkmanager.pb/building!view.action /parkmanager.pb/web/building/park_index.jsp 
+        	/parkmanager.pb/floor!floorView.action /parkmanager.pb/room!listByBuildingId.action /parkmanager.pb/room!list.action  /parkmanager.pb/floor!listByBuildingId.action 
+        	/parkmanager.pb/facilityOrder!list.action /parkmanager.pb/park!listBuilding.action /parkmanager.pb/park!selectList.action /parkmanager.pb/room!selectList.action 
+        	/parkmanager.pb/web/building/room_ChangeLoglist.jsp /parkmanager.pb/roomChangeLog!list.action /parkmanager.pb/web/building/room_AttList.jsp /parkmanager.pb/roomAtt!list.action 
+        	/parkmanager.pb/web/building/room_Memolist.jsp /parkmanager.pb/roomMemo!list.action /parkmanager.pb/roomFee!feeTypeList.action /parkmanager.pb/web/building/room_followupList.jsp 
+        	/parkmanager.pb/web/building/room_listmeter.jsp /parkmanager.pb/roomMeterFee!list.action /parkmanager.pb/room!roomViewTitleById.action /parkmanager.pb/room!view.action 
+        	" />
+        </menu>
+        <menu id="52000" name="房源管理" order="2" uris="" icon="/parkmanager.pb/web/images/icon/house_01_min.png">
+            <menu id="52100" name="所有房间" order="1" uris="/parkmanager.pb/web/building/building_room_list.jsp /parkmanager.pb/room!roomList.action" icon="/parkmanager.pb/web/images/icon/house_02_min.png">
+	        	<operation id="52101" name="新建房间" uris="/parkmanager.pb/room!addRoom.action /parkmanager.pb/room!save.action /core/upload.action /parkmanager.pb/room!checkNameUnique.action /parkmanager.pb/room!loadByParkId.action /parkmanager.pb/room!loadByBuildingId.action"/>
+	        	<operation id="52102" name="搜索" uris="/parkmanager.pb/web/building/building_room_search.jsp"/>
+	        	<operation id="52103" name="删除房间" uris="/parkmanager.pb/room!delete.action" icon=""/>
+	        	<operation id="52104" name="编辑房间" uris="/parkmanager.pb/room!edit.action /parkmanager.pb/room!update.action" icon=""/>
+	        	<operation id="52105" name="查看房间" uris="/parkmanager.pb/room!view.action" />
+	        	
+	        	
+	        	<operation id="52106" name="查看ALL" uris="/parkmanager.pb/room!view.action /parkmanager.pb/web/building/building_room_list.jsp /parkmanager.pb/room!roomList.action /parkmanager.pb/room!loadByBuildingId.action /parkmanager.pb/web/building/building_room_search.jsp" />
+            </menu>
+            <menu id="52200" name="置空单元" order="2" uris="/parkmanager.pb/web/building/building_roomIdle_list.jsp /parkmanager.pb/room!idleRoomList.action" icon="/parkmanager.pb/web/images/icon/house_03_min.png">
+            	<operation id="52201" name="搜索" uris="/parkmanager.pb/web/building/building_room_search.jsp"/>
+	        	<operation id="52202" name="删除房间" uris="/parkmanager.pb/room!delete.action" icon=""/>
+	        	<operation id="52203" name="查看房间" uris="/parkmanager.pb/room!view.action" />
+	        	
+	        	<operation id="52204" name="查看ALL" uris="/parkmanager.pb/room!view.action /parkmanager.pb/web/building/building_roomIdle_list.jsp /parkmanager.pb/room!idleRoomList.action /parkmanager.pb/web/building/building_room_search.jsp" />
+            </menu>
+            <menu id="52300" name="到期单元" order="3" uris="/parkmanager.pb/web/building/building_roomExpires_list.jsp /parkmanager.pb/room!expiresRoomList.action" icon="/parkmanager.pb/web/images/icon/house_04_min.png">
+           		<operation id="52301" name="搜索" uris="/parkmanager.pb/web/building/building_room_search.jsp"/>
+	        	<operation id="52302" name="删除房间" uris="/parkmanager.pb/room!delete.action" icon=""/>
+	        	<operation id="52303" name="编辑房间" uris="/parkmanager.pb/room!edit.action /parkmanager.pb/room!update.action" icon=""/>
+	        	<operation id="52304" name="查看房间" uris="/parkmanager.pb/room!view.action" />
+	        	
+	        	<operation id="52305" name="查看ALL" uris="/parkmanager.pb/room!view.action /parkmanager.pb/web/building/building_roomExpires_list.jsp /parkmanager.pb/room!expiresRoomList.action /parkmanager.pb/web/building/building_room_search.jsp" />
+            </menu>
+        </menu>
+        
+        <menu id="53000" name="统计" order="3" uris="/parkmanager.pb/building!buildingCensus.action" icon="/parkmanager.pb/web/images/icon/house_05_min.png">
+        	<operation id="530001" name="楼宇总览" uris="/parkmanager.pb/building!buildingCensus.action" icon=""/>
+        	<operation id="530002" name="出租率统计" uris="/parkmanager.pb/building!buildingRent.action" icon=""/>
+        	<operation id="530003" name="出租明细表" uris="/parkmanager.pb/room!rentDetail.action /parkmanager.pb/room!rentRoom.action /parkmanager.pb/room!loadByParkId.action" icon=""/>
+        	<operation id="530004" name="孵化用房管理表" uris="/parkmanager.pb/room!parkmanageList.action" icon=""/>
+         </menu>
+        <menu id="54000" name="能源费用设置" order="4" uris="/parkmanager.pb/park!energyFeeList.action" icon="/parkmanager.pb/web/images/icon/energyFee_min.png">
+         	<operation id="54001" name="更新" uris="/parkmanager.pb/park!update.action" icon=""/>
+        </menu>
+    </menu>
+
+    <menu id="60000" name="物业管理" order="6" uris="">
+
+        <menu id="62000" name="物业管理" order="2" uris="" icon="/parkmanager.pb/web/images/icon/property_01_min.png">
+            <menu id="62100" name="物业报修" order="1" uris="/parkmanager.pb/web/property/property_repair_list.jsp /parkmanager.pb/propertyFix!list.action /parkmanager.pb/propertyFix!serviceList.action /parkmanager.pb/propertyFix!listByUserId.action" icon="/parkmanager.pb/web/images/icon/property_02_min.png">
+           		<operation id="62101" name="新建" uris="/parkmanager.pb/propertyFix!add.action /parkmanager.pb/propertyFix!save.action" icon="/core/common/images/emailadd.gif"/>
+        		<operation id="62102" name="编辑" uris="/parkmanager.pb/propertyFix!edit.action /parkmanager.pb/propertyFix!update.action" icon="/core/common/images/edit.gif"/>
+            	<operation id="62103" name="删除" uris="/parkmanager.pb/propertyFix!delete.action" icon="/core/common/images/del.gif"/>
+            	<operation id="62104" name="查看" uris="/parkmanager.pb/propertyFix!view.action"/>
+            	<operation id="62105" name="递交" uris="/parkmanager.pb/propertyFix!hangIn.action"/>
+            	<operation id="62106" name="处理" uris="/parkmanager.pb/propertyFix!handle.action /parkmanager.pb/propertyFix!handleOrder.action"/>
+            	<operation id="62107" name="工作台物业维修" uris="/parkmanager.pb/propertyFix!handleDesktop.action /parkmanager.pb/propertyFix!countRepairs.action /parkmanager.pb/propertyFix!workBenchPropertyFixList.action"/>
+            	
+            	<operation id="62108" name="查看ALL" uris="/parkmanager.pb/web/property/property_repair_list.jsp /parkmanager.pb/propertyFix!list.action /parkmanager.pb/propertyFix!serviceList.action /parkmanager.pb/propertyFix!listByUserId.action /parkmanager.pb/propertyFix!view.action"/>
+            </menu>
+           <!--  <menu id="62200" name="单元跟进" order="2" uris="" icon="/parkmanager.pb/web/images/icon/property_03_min.png">
+            </menu> -->
+            <menu id="62300" name="企业投诉" order="5" uris="/parkmanager.pb/web/property/complaint_list.jsp /parkmanager.pb/complaint!list.action" icon="/parkmanager.pb/web/images/icon/property_04_min.png">
+           		<operation id="62301" name="新建" uris="/parkmanager.pb/web/property/complaint_add.jsp /parkmanager.pb/complaint!save.action" icon=""/>
+        		<operation id="62302" name="编辑" uris="/parkmanager.pb/complaint!edit.action /parkmanager.pb/complaint!update.action" icon=""/>
+            	<operation id="62303" name="删除" uris="/parkmanager.pb/complaint!delete.action" icon=""/>
+            	<operation id="62304" name="查看" uris="/parkmanager.pb/complaint!view.action"/>
+            	<operation id="62305" name="处理" uris="/parkmanager.pb/complaint!handle.action"/>
+            	<operation id="62306" name="工作台企业投诉" uris="/parkmanager.pb/complaint!workBenchComplaint.action"/>
+            	
+            	<operation id="62307" name="查看ALL" uris="/parkmanager.pb/web/property/complaint_list.jsp /parkmanager.pb/complaint!list.action /parkmanager.pb/complaint!view.action"/>
+            </menu>
+        </menu>
+
+        <menu id="63000" name="水电管理" order="3" uris="" icon="parkmanager.pb/web/images/icon/property_11_min.png">
+            <menu id="63100" name="水电表抄表" order="1" uris="/parkmanager.pb/meterLabel!list.action  /parkmanager.pb/web/property/meterLabel_info.jsp  /parkmanager.pb/web/property/meterLabel_record.jsp /parkmanager.pb/web/investment/investment_index.jsp /parkmanager.pb/web/property/meterLabelRecord_waterView.jsp /parkmanager.pb/web/property/meterLabel_basicInfoEle.jsp /parkmanager.pb/web/property/meterLabelRecord_eleView.jsp /parkmanager.pb/meterLabelRecord!waterEleView.action" icon="parkmanager.pb/web/images/icon/property_12_min.png">
+            	<operation id="63101" name="新建分户表抄表" uris="/parkmanager.pb/web/property/meterLabel_add.jsp /parkmanager.pb/meterLabel!save.action /parkmanager.pb/park!listBuilding.action"/>
+            	<operation id="63102" name="查看分户表抄表" uris="/parkmanager.pb/meterLabel!view.action /parkmanager.pb/meterLabelRecord!list.action"/>
+            	<operation id="63103" name="编辑分户表抄表" uris="/parkmanager.pb/meterLabel!edit.action /parkmanager.pb/meterLabel!update.action"/>
+            	<operation id="63104" name="删除分户表抄表" uris="/parkmanager.pb/meterLabel!delete.action"/>
+            	<operation id="63105" name="追加水电表" uris="/parkmanager.pb/meter!select.action /parkmanager.pb/meterLabelRecord!addMeter.action /parkmanager.pb/meter!multipList.action"/>
+            	<operation id="63106" name="删除抄表记录" uris="/parkmanager.pb/meterLabelRecord!delete.action"/>
+            	<operation id="63107" name="编辑抄表记录" uris="/parkmanager.pb/meterLabelRecord!update.action /parkmanager.pb/meterLabelRecord!updateWater.action"/>
+            	<operation id="63108" name="打印" uris="/parkmanager.pb/meterLabelRecord!print.action /parkmanager.pb/meterLabelRecord!export.action"/>
+            	<operation id="63109" name="生成费用报表" uris="/parkmanager.pb/meterLabelRecord!generateReport.action /parkmanager.pb/meterLabelRecord!validatGenerateReport.action /parkmanager.pb/meterLabelRecord!updateGenaratorReport.action /parkmanager.pb/meterLabelRecord!updateWGRGenaratorReport.action /parkmanager.pb/meterLabelRecord!checkWaterEleFee.action /parkmanager.pb/meterLabelRecord!printFee.action"  />
+            	
+            	<operation id="63110" name="查看ALL" uris="/parkmanager.pb/meterLabel!list.action  /parkmanager.pb/web/property/meterLabel_info.jsp  /parkmanager.pb/web/property/meterLabel_record.jsp /parkmanager.pb/web/investment/investment_index.jsp /parkmanager.pb/web/property/meterLabelRecord_waterView.jsp /parkmanager.pb/web/property/meterLabel_basicInfoEle.jsp /parkmanager.pb/web/property/meterLabelRecord_eleView.jsp /parkmanager.pb/meterLabelRecord!waterEleView.action 
+            	/parkmanager.pb/meterLabel!view.action /parkmanager.pb/meterLabelRecord!list.action"  />
+            	
+            </menu>
+            <!-- <menu id="63200" name="自用表抄表" order="2" uris="/parkmanager.pb/selfMeterLabel!list.action" icon="parkmanager.pb/web/images/icon/property_13_min.png">
+            	<operation id="63201" name="新建自用表抄表" uris="/parkmanager.pb/web/property/selfMeterLabel_add.jsp /parkmanager.pb/selfMeterLabel!save.action /parkmanager.pb/park!listBuilding.action"/>
+            	<operation id="63202" name="查看自用表抄表" uris="/parkmanager.pb/selfMeterLabel!view.action /parkmanager.pb/selfLabelRecord!list.action"/>
+            	<operation id="63203" name="编辑自用表抄表" uris="/parkmanager.pb/selfMeterLabel!edit.action /parkmanager.pb/selfMeterLabel!update.action"/>
+            	<operation id="63204" name="删除自用表抄表" uris="/parkmanager.pb/selfMeterLabel!delete.action"/>
+            	<operation id="63205" name="追加水电表" uris="/parkmanager.pb/meter!select.action /parkmanager.pb/selfLabelRecord!addMeter.action /parkmanager.pb/meter!multipList.action"/>
+            	<operation id="63206" name="删除抄表记录" uris="/parkmanager.pb/selfLabelRecord!delete.action"/>
+            	<operation id="63207" name="编辑抄表记录" uris="/parkmanager.pb/selfLabelRecord!update.action"/>
+            	<operation id="63208" name="打印" uris="/parkmanager.pb/selfLabelRecord!print.action /parkmanager.pb/selfLabelRecord!export.action"/>
+            	<operation id="63209" name="生成费用报表" uris=""/>
+            </menu> -->
+            <menu id="63300" name="水电表设置" order="4" uris="/parkmanager.pb/web/property/meter_list.jsp /parkmanager.pb/web/property/waterMeter_list.jsp /parkmanager.pb/web/property/eleMeter_list.jsp /parkmanager.pb/web/property/gasMeter_list.jsp /parkmanager.pb/meter!waterList.action /parkmanager.pb/meter!eleList.action /parkmanager.pb/meter!gasList.action" icon="parkmanager.pb/web/images/icon/property_15_min.png">
+           		<operation id="63301" name="新建" uris="/parkmanager.pb/meter!addWaterMeter.action /parkmanager.pb/meter!addEleMeter.action /parkmanager.pb/meter!addGasMeter.action 
+           		/parkmanager.pb/meter!save.action /parkmanager.pb/web/property/meter_select.jsp /parkmanager.pb/web/property/meter_select2.jsp  /parkmanager.pb/meter!treeList.action /parkmanager.pb/meter!select.action /parkmanager.pb/meter!listByBuildingId.action"/>
+           		<operation id="63302" name="编辑" uris="/parkmanager.pb/meter!edit.action /parkmanager.pb/meter!update.action"/>
+           		<operation id="63303" name="查看" uris="/parkmanager.pb/meter!view.action"/>
+           		<operation id="63304" name="删除" uris="/parkmanager.pb/meter!delete.action"/>
+           		
+           		<operation id="63305" name="查看ALL" uris="/parkmanager.pb/web/property/meter_list.jsp /parkmanager.pb/web/property/waterMeter_list.jsp /parkmanager.pb/web/property/eleMeter_list.jsp /parkmanager.pb/web/property/gasMeter_list.jsp /parkmanager.pb/meter!waterList.action /parkmanager.pb/meter!eleList.action /parkmanager.pb/meter!gasList.action 
+           		/parkmanager.pb/meter!view.action"/>
+            </menu>
+            <menu id="63400" name="费用设置" order="5" uris="/parkmanager.pb/web/property/config_list.jsp" icon="parkmanager.pb/web/images/icon/property_16_min.png">
+            	<operation id="63401" name="水电费用" uris="/parkmanager.pb/park!parkFeeList.action"/>
+            	<operation id="63402" name="公摊费用" uris="/parkmanager.pb/web/property/feeShare_list.jsp /parkmanager.pb/feeShare!list.action /parkmanager.pb/feeShare!add.action /parkmanager.pb/feeShare!save.action /parkmanager.pb/feeShare!edit.action /parkmanager.pb/feeShare!update.action /parkmanager.pb/feeShare!delete.action" />
+            </menu>
+        </menu>
+        <menu id="64000" name="车辆管理" order="4" uris="" icon="parkmanager.pb/web/images/icon/property_11_min.png">
+	        <menu id="64100" name="车辆管理" order="1" uris="/parkmanager.pb/web/property/vehicle_list.jsp /parkmanager.pb/vehicleManagement!list.action" icon="/parkmanager.pb/web/images/icon/property_04_min.png">
+           		<operation id="64101" name="新建" uris="/parkmanager.pb/web/property/vehicle_add.jsp /parkmanager.pb/vehicleManagement!save.action" icon=""/>
+        		<operation id="64102" name="编辑" uris="/parkmanager.pb/vehicleManagement!edit.action /parkmanager.pb/vehicleManagement!update.action" icon=""/>
+            	<operation id="64103" name="删除" uris="/parkmanager.pb/vehicleManagement!delete.action" icon=""/>
+            	<operation id="64104" name="查看" uris="/parkmanager.pb/vehicleManagement!view.action"/>
+           	</menu>
+        </menu>
+    </menu>
+
+    <menu id="70000" name="公共设施" order="7" uris="">
+
+        <menu id="71000" name="公共设施设置" order="1" uris="/parkmanager.pb/facility!list.action /parkmanager.pb/facilityOrder!list.action /parkmanager.pb/web/facility/facility_index.jsp /parkmanager.pb/facility!view.action 
+        	/parkmanager.pb/facility!loadType.action /parkmanager.pb/facility!loadFacilityByType.action 
+         /parkmanager.pb/facilityOrder!serviceList.action" icon="/parkmanager.pb/web/images/icon/facilities_01_min.png">
+        	<operation id="71001" name="添加设施" uris="/parkmanager.pb/facility!add.action /parkmanager.pb/facility!save.action /parkmanager.pb/building!loadBuildingByParkId.action /parkmanager.pb/facility!facilityWeekInfo.action"  icon=""/>
+        	<operation id="71002" name="编辑设施" uris="/parkmanager.pb/facility!edit.action /parkmanager.pb/facility!update.action" icon=""/>
+        	<operation id="71003" name="删除设施" uris="/parkmanager.pb/facility!delete.action" icon=""/>
+        	<operation id="71004" name="新建使用申请单" uris="/parkmanager.pb/web/facility/facilityOrder_add.jsp /parkmanager.pb/facilityOrder!save.action /parkmanager.pb/facilityOrder!add.action /parkmanager.pb/contract!loadContractByCustomerId.action" icon=""/>
+        	<operation id="71005" name="编辑使用申请单" uris="/parkmanager.pb/facilityOrder!edit.action /parkmanager.pb/facilityOrder!update.action" icon=""/>
+        	<operation id="71006" name="删除使用申请单" uris="/parkmanager.pb/facilityOrder!delete.action" icon=""/>
+        	<operation id="71007" name="查看使用申请单" uris="/parkmanager.pb/facilityOrder!view.action" icon=""/>
+        	<operation id="71008" name="工作台公共设施预约使用情况" uris="/parkmanager.pb/facilityOrder!workBenchFacilityOrder.action" icon=""/>
+        	
+        	<operation id="71009" name="查看ALL" uris="/parkmanager.pb/facility!list.action /parkmanager.pb/facilityOrder!list.action /parkmanager.pb/web/facility/facility_index.jsp /parkmanager.pb/facility!view.action 
+        	/parkmanager.pb/facility!loadType.action /parkmanager.pb/facility!loadFacilityByType.action 
+         /parkmanager.pb/facilityOrder!serviceList.action /parkmanager.pb/facilityOrder!view.action /parkmanager.pb/facilityOrder!workBenchFacilityOrder.action" icon=""/>
+        </menu>
+
+        <menu id="72000" name="费用清单" order="2" uris="/parkmanager.pb/web/facility/cost_list.jsp /parkmanager.pb/billPlanFacility!listAll.action /parkmanager.pb/billPlanFacility!listByCustomerId.action" icon="/parkmanager.pb/web/images/icon/facilities_02_min.png">
+        	<operation id="72001" name="费用清单" uris="/parkmanager.pb/web/facility/cost_layer_list.jsp /parkmanager.pb/billPlanFacility!listByFacilityOrderId.action" icon=""/>
+        	<operation id="72002" name="新建费用清单" uris="/parkmanager.pb/billPlanFacility!addByFacilityId.action /parkmanager.pb/billPlanFacility!save.action" icon=""/>
+        	<operation id="72003" name="查看费用清单" uris="/parkmanager.pb/billPlanFacility!view.action" icon=""/>
+        	<operation id="72004" name="编辑费用清单" uris="/parkmanager.pb/billPlanFacility!edit.action /parkmanager.pb/billPlanFacility!update.action" icon=""/>
+        	<operation id="72005" name="删除费用清单" uris="/parkmanager.pb/billPlanFacility!delete.action" icon=""/>
+        </menu>
+    </menu>
+    
+    <menu id="80000" name="结算管理" order="8" uris="">
+
+        <menu id="81000" name="费用出账" order="1" uris="/parkmanager.pb/bill!checkout.action" icon="/parkmanager.pb/web/images/icon/account_01_min.png">
+        	<operation id="81001" name="物业租金出帐" uris="/parkmanager.pb/bill!checkoutListBillPlanRent.action /parkmanager.pb/billPlanRent!batchCheckout.action"/>
+        	<operation id="81002" name="押金出帐" uris="/parkmanager.pb/bill!checkoutListDeposit.action"/>
+        	<operation id="81003" name="自定义费用出帐" uris="/parkmanager.pb/bill!checkoutListBillPlanFacility.action /parkmanager.pb/billPlanFacility!batchCheckout.action"/>
+        </menu>
+
+        <menu id="82000" name="费用结算" order="2" uris="/parkmanager.pb/bill!list.action /parkmanager.pb/web/bill/bill_search.jsp /parkmanager.pb/bill!loadBill.action /parkmanager.pb/bill!listByTypeId.action" icon="/parkmanager.pb/web/images/icon/account_02_min.png">
+        	<operation id="82001" name="删除" uris="/parkmanager.pb/bill!delete.action"/>
+        	<operation id="82002" name="查看" uris="/parkmanager.pb/bill!view.action"/>
+        	<operation id="82003" name="收款" uris="/parkmanager.pb/web/bill/bill_in.jsp /parkmanager.pb/bill!in.action /parkmanager.pb/bill!confirm.action /parkmanager.pb/bill!pay.action"/>
+        	<operation id="82004" name="退款" uris="/parkmanager.pb/web/bill/bill_out.jsp /parkmanager.pb/bill!out.action /parkmanager.pb/bill!confirm.action /parkmanager.pb/bill!pay.action"/>
+        	<operation id="82005" name="拆分" uris="/parkmanager.pb/web/bill/bill_apart.jsp /parkmanager.pb/bill!apart.action"/>
+        	<operation id="82006" name="核销" uris="/parkmanager.pb/bill!chargeoff.action"/>
+        	<operation id="82007" name="退回" uris="/parkmanager.pb/bill!back.action"/>
+        	<operation id="82008" name="补收" uris="/parkmanager.pb/web/bill/bill_add.jsp /parkmanager.pb/bill!save.action /parkmanager.pb/billType!loadTopType.action /parkmanager.pb/billType!loadChildrenType.action"/>
+        	<operation id="82009" name="收款通知" uris="/parkmanager.pb/bill!inInformList.action /parkmanager.pb/bill!inInform.action /parkmanager.pb/bill!inInformListById.action /parkmanager.pb/bill!inBill.action"/>
+        	<operation id="82010" name="退款通知" uris="/parkmanager.pb/bill!outInformList.action /parkmanager.pb/bill!outInform.action /parkmanager.pb/bill!outInformListById.action /parkmanager.pb/bill!outBill.action"/>
+        	<operation id="82011" name="编辑" uris="/parkmanager.pb/bill!edit.action /parkmanager.pb/bill!update.action /parkmanager.pb/billType!loadTopType.action /parkmanager.pb/billType!loadChildrenType.action"/>
+        	<operation id="82012" name="工作台30天内应出账" uris="/parkmanager.pb/bill!checkoutCount.action"/>
+        	<operation id="82013" name="工作台应收款" uris="/parkmanager.pb/bill!inList.action"/>
+        	<operation id="82014" name="工作台应付款" uris="/parkmanager.pb/bill!outList.action"/>
+        	<operation id="82015" name="查看企业账单" uris="/parkmanager.pb/bill!listByCustomerId.action"/>
+        	
+        	<operation id="82016" name="查看ALL" uris="/parkmanager.pb/billType!loadTopType.action /parkmanager.pb/bill!list.action /parkmanager.pb/web/bill/bill_search.jsp /parkmanager.pb/bill!loadBill.action /parkmanager.pb/bill!listByTypeId.action 
+        	/parkmanager.pb/bill!view.action /parkmanager.pb/bill!checkoutCount.action /parkmanager.pb/bill!inList.action /parkmanager.pb/bill!outList.action /parkmanager.pb/bill!listByCustomerId.action /parkmanager.pb/billType!loadChildrenType.action"/>
+        </menu>
+        
+        <menu id="83000" name="收费测算" order="3" uris="/parkmanager.pb/bill!measure.action /parkmanager.pb/billType!loadTopType.action /parkmanager.pb/billType!loadChildrenType.action" icon="/parkmanager.pb/web/images/icon/account_03_min.png">
+        	<operation id="83001" name="删除" uris="/parkmanager.pb/bill!delete.action"/>
+        	<operation id="83002" name="查看" uris="/parkmanager.pb/bill!view.action"/>
+        	<operation id="83003" name="收款" uris="/parkmanager.pb/web/bill/bill_in.jsp /parkmanager.pb/bill!in.action /parkmanager.pb/bill!confirm.action /parkmanager.pb/bill!pay.action"/>
+        	<operation id="83004" name="退款" uris="/parkmanager.pb/web/bill/bill_out.jsp /parkmanager.pb/bill!out.action /parkmanager.pb/bill!confirm.action /parkmanager.pb/bill!pay.action"/>
+        	<operation id="83005" name="拆分" uris="/parkmanager.pb/web/bill/bill_apart.jsp /parkmanager.pb/bill!apart.action"/>
+        	<operation id="83006" name="核销" uris="/parkmanager.pb/bill!chargeoff.action"/>
+        	<operation id="83007" name="退回" uris="/parkmanager.pb/bill!back.action"/>
+        	<operation id="83008" name="补收" uris="/parkmanager.pb/web/bill/bill_add.jsp /parkmanager.pb/bill!save.action /parkmanager.pb/billType!loadTopType.action /parkmanager.pb/billType!loadChildrenType.action"/>
+        	<operation id="83009" name="收款通知" uris="/parkmanager.pb/bill!inInformList.action /parkmanager.pb/bill!inInform.action /parkmanager.pb/bill!inInformListById.action /parkmanager.pb/bill!inBill.action"/>
+        	<operation id="83010" name="退款通知" uris="/parkmanager.pb/bill!outInformList.action /parkmanager.pb/bill!outInform.action /parkmanager.pb/bill!outInformListById.action /parkmanager.pb/bill!outBill.action"/>
+        	<operation id="83011" name="编辑" uris="/parkmanager.pb/bill!edit.action /parkmanager.pb/bill!update.action /parkmanager.pb/billType!loadTopType.action /parkmanager.pb/billType!loadChildrenType.action"/>
+        	<operation id="83012" name="工作台30天内应出账" uris="/parkmanager.pb/bill!checkoutCount.action"/>
+        	<operation id="83013" name="工作台应收款" uris="/parkmanager.pb/bill!inList.action"/>
+        	<operation id="83014" name="工作台应付款" uris="/parkmanager.pb/bill!outList.action"/>
+        	<operation id="83015" name="查看企业账单" uris="/parkmanager.pb/bill!listByCustomerId.action"/>
+        	
+        	<operation id="83016" name="查看ALL" uris="/parkmanager.pb/billType!loadChildrenType.action /parkmanager.pb/billType!loadTopType.action /parkmanager.pb/bill!list.action /parkmanager.pb/web/bill/bill_search.jsp /parkmanager.pb/bill!loadBill.action /parkmanager.pb/bill!listByTypeId.action 
+        	/parkmanager.pb/bill!view.action /parkmanager.pb/bill!checkoutCount.action /parkmanager.pb/bill!inList.action /parkmanager.pb/bill!outList.action /parkmanager.pb/bill!listByCustomerId.action"/>
+        </menu>
+        
+        <menu id="84000" name="欠费预警" order="4" uris="/parkmanager.pb/bill!arrearAlert.action" icon="/parkmanager.pb/web/images/icon/account_04_min.png">
+        	<operation id="84001" name="删除" uris="/parkmanager.pb/bill!delete.action"/>
+        	<operation id="84002" name="查看" uris="/parkmanager.pb/bill!view.action"/>
+        	<operation id="84003" name="收款" uris="/parkmanager.pb/web/bill/bill_in.jsp /parkmanager.pb/bill!in.action /parkmanager.pb/bill!confirm.action /parkmanager.pb/bill!pay.action"/>
+        	<operation id="84004" name="退款" uris="/parkmanager.pb/web/bill/bill_out.jsp /parkmanager.pb/bill!out.action /parkmanager.pb/bill!confirm.action /parkmanager.pb/bill!pay.action"/>
+        	<operation id="84005" name="拆分" uris="/parkmanager.pb/web/bill/bill_apart.jsp /parkmanager.pb/bill!apart.action"/>
+        	<operation id="84006" name="核销" uris="/parkmanager.pb/bill!chargeoff.action"/>
+        	<operation id="84007" name="退回" uris="/parkmanager.pb/bill!back.action"/>
+        	<operation id="84008" name="补收" uris="/parkmanager.pb/web/bill/bill_add.jsp /parkmanager.pb/bill!save.action /parkmanager.pb/billType!loadTopType.action /parkmanager.pb/billType!loadChildrenType.action"/>
+        	<operation id="84009" name="收款通知" uris="/parkmanager.pb/bill!inInformList.action /parkmanager.pb/bill!inInform.action /parkmanager.pb/bill!inInformListById.action /parkmanager.pb/bill!inBill.action"/>
+        	<operation id="84010" name="退款通知" uris="/parkmanager.pb/bill!outInformList.action /parkmanager.pb/bill!outInform.action /parkmanager.pb/bill!outInformListById.action /parkmanager.pb/bill!outBill.action"/>
+        	<operation id="84011" name="编辑" uris="/parkmanager.pb/bill!edit.action /parkmanager.pb/bill!update.action /parkmanager.pb/billType!loadTopType.action /parkmanager.pb/billType!loadChildrenType.action"/>
+        	<operation id="84012" name="工作台30天内应出账" uris="/parkmanager.pb/bill!checkoutCount.action"/>
+        	<operation id="84013" name="工作台应收款" uris="/parkmanager.pb/bill!inList.action"/>
+        	<operation id="84014" name="工作台应付款" uris="/parkmanager.pb/bill!outList.action"/>
+        	<operation id="84015" name="查看企业账单" uris="/parkmanager.pb/bill!listByCustomerId.action"/>
+        	
+        	<operation id="84016" name="查看ALL" uris="/parkmanager.pb/billType!loadChildrenType.action /parkmanager.pb/billType!loadTopType.action /parkmanager.pb/bill!list.action /parkmanager.pb/web/bill/bill_search.jsp /parkmanager.pb/bill!loadBill.action /parkmanager.pb/bill!listByTypeId.action 
+        	/parkmanager.pb/bill!view.action /parkmanager.pb/bill!checkoutCount.action /parkmanager.pb/bill!inList.action /parkmanager.pb/bill!outList.action /parkmanager.pb/bill!listByCustomerId.action"/>
+        </menu>
+        
+        <menu id="86000" name="统计结算" order="6" uris="/parkmanager.pb/statistic!billCostByDay.action" icon="/parkmanager.pb/web/images/icon/account_06_min.png">
+        	<operation id="86001" name="日结算报表" uris="/parkmanager.pb/bill!billCostByDay.action /parkmanager.pb/web/statistic/bill_form_list_day_iframe.jsp /parkmanager.pb/bill!exportBillByDay.action"/>
+        	<operation id="86002" name="月结算报表" uris="/parkmanager.pb/statistic!billCostByMonth.action /parkmanager.pb/bill!exportBillByMonth.action"/>
+        	<operation id="86003" name="年结算报表" uris="/parkmanager.pb/statistic!billCostByYear.action /parkmanager.pb/bill!exportBillByYear.action"/>
+        	<operation id="86004" name="分户明细表" uris="/parkmanager.pb/statistic!billCostByCustomer.action /parkmanager.pb/bill!exportBillByCustomer.action"/>
+        	<operation id="86005" name="物业应收实收统计表" uris="/parkmanager.pb/statistic!billCostByProperty.action /parkmanager.pb/bill!exportBillByProperty.action"/>
+        	<operation id="86006" name="企业收费情况表" uris="/parkmanager.pb/statistic!customerContract.action /parkmanager.pb/statistic!exportContract.action"/>
+        </menu>
+    </menu>
+    
+    <menu id="90000" name="客服中心" order="9" uris="">
+    	 <menu id="91000" name="客服联系单" order="3" uris="/parkmanager.pb/customerService!list.action" icon="/parkmanager.pb/web/images/icon/client_22_min.png">
+				<operation id="91001" name="新建联系单" uris="/parkmanager.pb/web/client/customerService_add.jsp /parkmanager.pb/customerService!save.action"/>
+				<operation id="91002" name="编辑联系单" uris="/parkmanager.pb/customerService!edit.action /parkmanager.pb/customerService!update.action"/>
+				<operation id="91003" name="查看联系单" uris="/parkmanager.pb/customerService!view.action /parkmanager.pb/customerServiceTrack!list.action"/>
+				<operation id="91004" name="删除联系单" uris="/parkmanager.pb/customerService!delete.action"/>
+				<operation id="91005" name="添加服务轨迹" uris="/parkmanager.pb/web/client/customerServiceTrack_add.jsp /parkmanager.pb/customerServiceTrack!save.action"/>
+				<operation id="91006" name="删除服务轨迹" uris="/parkmanager.pb/customerServiceTrack!delete.action"/>
+				<operation id="91007" name="打印" uris="/parkmanager.pb/customerService!print.action"/>
+				<operation id="91008" name="受理" uris="/parkmanager.pb/customerService!accept.action"/>
+				<operation id="91009" name="挂起" uris="/parkmanager.pb/customerService!suspend.action"/>
+				<operation id="91010" name="发送" uris="/parkmanager.pb/customerService!send.action"/>
+				<operation id="91011" name="关闭" uris="/parkmanager.pb/customerService!serviceClosed.action"/>
+				<operation id="91012" name="已解决" uris="/parkmanager.pb/customerService!solved.action"/>
+				<operation id="91013" name="部分解决" uris="/parkmanager.pb/customerService!partSolved.action"/>
+				<operation id="91014" name="未解决" uris="/parkmanager.pb/customerService!unsolved.action"/>
+				
+				<operation id="91015" name="查看ALL" uris="/parkmanager.pb/customerService!list.action /parkmanager.pb/customerService!view.action /parkmanager.pb/customerServiceTrack!list.action"/>
+				<operation id="91016" name="工作台联系单" uris="/parkmanager.pb/customerService!initCustomerView.action /parkmanager.pb/customerService!initCustomerService.action"/>
+				
+        </menu>
+    </menu>
+    
+    <menu id="100000" name="会签中心" order="10" icon="" uris="">
+    	<menu id="110000" name="会签单" order="1" icon="/parkmanager.pb/web/images/icon/countersign_03_min.png" uris="">
+    		<menu id="111000" name="入驻企业流程联系单" order="1" uris="/parkmanager.pb/investmentProcess!list.action /parkmanager.pb/web/investment/investment_process_index.jsp" icon="/parkmanager.pb/web/images/icon/countersign_02_min.png">
+    			<operation id="111001" name="新建" uris="/parkmanager.pb/web/investment/investment_process_add.jsp  /parkmanager.pb/investmentProcess!save.action" icon="/core/common/images/emailadd.gif"></operation>
+    			<operation id="111002" name="编辑" uris="/parkmanager.pb/investmentProcess!edit.action /parkmanager.pb/web/investment/investment_process_edit.jsp /parkmanager.pb/investmentProcess!update.action" icon="/core/common/images/edit.gif"></operation>
+    			<operation id="111003" name="删除" uris="/parkmanager.pb/investmentProcess!delete.action /parkmanager.pb/web/investment/investment_process.jsp" icon="/core/common/images/del.gif"></operation>
+    			<operation id="111004" name="查看基本信息" uris="/parkmanager.pb/investmentProcess!view.action /parkmanager.pb/web/investment/investment_process_view.jsp" icon=""></operation>
+    			<operation id="111005" name="查看流程单轨迹" uris="/parkmanager.pb/investmentProcess!approvalView.action /parkmanager.pb/web/investment/investment_process_approvalView.jsp" icon=""></operation>
+    			<operation id="111006" name="招商人员意见" uris="/parkmanager.pb/web/investment/investment_process_businessmanSuggestion.jsp /parkmanager.pb/investmentProcess!businessmanSuggestion.action /parkmanager.pb/investmentProcess!updateBusinessmanSuggestion.action" icon=""></operation>
+    			<operation id="111007" name="财务部意见" uris="/parkmanager.pb/investmentProcess!cwbApproval.action" icon=""></operation>
+    			<operation id="111008" name="工程部意见" uris="/parkmanager.pb/investmentProcess!gcbApproval.action" icon=""></operation>
+    			<operation id="111009" name="入住企业代表确认" uris="/parkmanager.pb/investmentProcess!rzqyApproval.action" icon=""></operation>
+    			<operation id="111010" name="打印" uris="/parkmanager.pb/investmentProcess!print.action" icon=""></operation>
+    			<operation id="111011" name="开启会签" uris="/parkmanager.pb/investmentProcess!open.action" icon=""></operation>
+    			<operation id="111012" name="关闭会签" uris="/parkmanager.pb/investmentProcess!close.action" icon=""></operation>
+	       		<operation id="111013" name="上传入驻企业流程联系单附件" uris="/parkmanager.pb/investmentProcessAtt!save.action /parkmanager.pb/investmentProcessAtt!edit.action /parkmanager.pb/investmentProcessAtt!update.action"/>
+	       		<operation id="111014" name="删除附件" uris="/parkmanager.pb/investmentProcessAtt!delete.action"/>
+	       		<operation id="111015" name="附件重命名" uris="/parkmanager.pb/investmentProcessAtt!edit.action /parkmanager.pb/web/investment/investmentProcessAtt_edit.jsp"/>
+	       		
+	       		<operation id="111016" name="查看ALL" uris="/parkmanager.pb/investmentProcess!list.action /parkmanager.pb/web/investment/investment_process_index.jsp /parkmanager.pb/investmentProcess!view.action /parkmanager.pb/web/investment/investment_process_view.jsp 
+	       		/parkmanager.pb/investmentProcess!approvalView.action /parkmanager.pb/web/investment/investment_process_approvalView.jsp"/>
+    		</menu>
+    		<menu id="112000" name="合同到期审批单" order="2" uris="/parkmanager.pb/contractExpireApproval!list.action /parkmanager.pb/web/investment/contract_expire_index.jsp" icon="/parkmanager.pb/web/images/icon/countersign_01_min.png">
+    			<operation id="112001" name="新建" uris="/parkmanager.pb/contractExpireApproval!save.action /parkmanager.pb/web/contract/contract_list.jsp" icon="/core/common/images/emailadd.gif"></operation>
+    			<operation id="112002" name="编辑" uris="/parkmanager.pb/contractExpireApproval!edit.action /parkmanager.pb/web/investment/contract_expire_edit.jsp /parkmanager.pb/contractExpireApproval!update.action" icon="/core/common/images/edit.gif"></operation>
+    			<operation id="112003" name="删除" uris="/parkmanager.pb/contractExpireApproval!delete.action /parkmanager.pb/web/investment/contract_expire.jsp" icon="/core/common/images/del.gif"></operation>
+    			<operation id="112004" name="查看基本信息" uris="/parkmanager.pb/contractExpireApproval!view.action /parkmanager.pb/web/investment/contract_expire_view.jsp" icon=""></operation>
+    			<operation id="112006" name="招商人员意见" uris="/parkmanager.pb/web/investment/contract_expire_businessmanSuggestion.jsp /parkmanager.pb/contractExpireApproval!businessmanSuggestion.action /parkmanager.pb/contractExpireApproval!updateBusinessmanSuggestion.action" icon=""></operation>
+    			<operation id="112007" name="财务部意见" uris="/parkmanager.pb/contractExpireApproval!cwbApproval.action" icon=""></operation>
+    			<operation id="112008" name="工程部意见" uris="/parkmanager.pb/contractExpireApproval!gcbApproval.action" icon=""></operation>
+    			<operation id="112009" name="客户确认" uris="/parkmanager.pb/contractExpireApproval!khApproval.action" icon=""></operation>
+    			<operation id="112011" name="开启会签" uris="/parkmanager.pb/contractExpireApproval!open.action" icon=""></operation>
+    			<operation id="112012" name="关闭会签" uris="/parkmanager.pb/contractExpireApproval!close.action" icon=""></operation>
+	       		<operation id="112013" name="上传入驻企业流程联系单附件" uris="/parkmanager.pb/contractExpireApprovalAtt!save.action /parkmanager.pb/contractExpireApprovalAtt!edit.action /parkmanager.pb/contractExpireApprovalAtt!update.action"/>
+	       		<operation id="112014" name="删除附件" uris="/parkmanager.pb/contractExpireApprovalAtt!delete.action"/>
+	       		<operation id="112015" name="附件重命名" uris="/parkmanager.pb/contractExpireApprovalAtt!edit.action /parkmanager.pb/web/investment/contractExpireApprovalAtt_edit.jsp"/>   		
+	       		<operation id="112016" name="总经理审批" uris="/parkmanager.pb/contractExpireApproval!zjlApproval.action" icon=""></operation>
+	       		<operation id="112017" name="财务总监审核" uris="/parkmanager.pb/contractExpireApproval!cwzjApproval.action" icon=""></operation>
+	       		
+	       		<operation id="112018" name="查看ALL" uris="/parkmanager.pb/contractExpireApproval!list.action /parkmanager.pb/web/investment/contract_expire_index.jsp /parkmanager.pb/contractExpireApproval!view.action /parkmanager.pb/web/investment/contract_expire_view.jsp" ></operation>
+    		</menu>
+    		<menu id="113000" name="合同会签审核单" order="3" uris="/parkmanager.pb/contractReview!list.action /parkmanager.pb/web/investment/contract_review_index.jsp" icon="/parkmanager.pb/web/images/icon/countersign_04_min.png">
+    			<operation id="113001" name="新建" uris="/parkmanager.pb/contractReview!save.action /parkmanager.pb/web/contract/contract_list.jsp" icon="/core/common/images/emailadd.gif"></operation>
+    			<operation id="113002" name="编辑" uris="/parkmanager.pb/contractReview!edit.action /parkmanager.pb/web/investment/contract_review_edit.jsp /parkmanager.pb/contractReview!update.action" icon="/core/common/images/edit.gif"></operation>
+    			<operation id="113003" name="删除" uris="/parkmanager.pb/contractReview!delete.action /parkmanager.pb/web/investment/contract_review.jsp" icon="/core/common/images/del.gif"></operation>
+    			<operation id="113004" name="查看基本信息" uris="/parkmanager.pb/contractReview!view.action /parkmanager.pb/web/investment/contract_review_view.jsp" icon=""></operation>
+    			<operation id="113007" name="审核意见" uris="/parkmanager.pb/contractReview!shApproval.action" icon=""></operation>
+    			<operation id="113008" name="审批意见" uris="/parkmanager.pb/contractReview!spApproval.action" icon=""></operation>
+    			<operation id="113009" name="经办" uris="/parkmanager.pb/contractReview!jbApproval.action" icon=""></operation>
+    			<operation id="113011" name="开启会签" uris="/parkmanager.pb/contractReview!open.action" icon=""></operation>
+    			<operation id="113012" name="关闭会签" uris="/parkmanager.pb/contractReview!close.action" icon=""></operation>
+	       		<operation id="113013" name="上传入驻企业流程联系单附件" uris="/parkmanager.pb/contractReviewAtt!save.action /parkmanager.pb/contractReviewAtt!edit.action /parkmanager.pb/contractReviewAtt!update.action"/>
+	       		<operation id="113014" name="删除附件" uris="/parkmanager.pb/contractReviewAtt!delete.action"/>
+	       		<operation id="113015" name="附件重命名" uris="/parkmanager.pb/contractReviewAtt!edit.action /parkmanager.pb/web/investment/contractReviewAtt_edit.jsp"/>
+	       		<operation id="113016" name="会签" uris="/parkmanager.pb/contractReview!hqApproval.action"/>
+	       		
+	       		<operation id="113017" name="查看ALL" uris="/parkmanager.pb/contractReview!list.action /parkmanager.pb/web/investment/contract_review_index.jsp /parkmanager.pb/contractReview!view.action /parkmanager.pb/web/investment/contract_review_view.jsp"/>
+    		</menu>
+    	</menu>
+    		
+ 		<menu id="120000" name="我的会签" order="2" icon="/parkmanager.pb/web/images/icon/countersign_05_min.png" uris="/parkmanager.pb/countersign!list.action /parkmanager.pb/web/investment/countersign.jsp /parkmanager.pb/web/investment/investment_index.jsp">
+ 			<operation id="120001" name="新建" uris="" icon="/core/common/images/emailadd.gif"></operation>
+ 			<operation id="120002" name="查看会签基本信息" uris="/parkmanager.pb/countersign!view.action /parkmanager.pb/web/investment/investment_process_view.jsp /parkmanager.pb/web/investment/contract_review_view.jsp /parkmanager.pb/web/investment/contract_expire_view.jsp" icon=""></operation>
+    		<operation id="120003" name="查看会签轨迹" uris="/parkmanager.pb/countersign!approvalView.action /parkmanager.pb/web/investment/investment_process_approvalView.jsp /parkmanager.pb/web/investment/contract_expire_approvalView.jsp /parkmanager.pb/web/investment/contract_review_approvalView.jsp" icon=""></operation>
+    		<operation id="120004" name="完成审批" uris="/parkmanager.pb/countersign!agree.action" icon=""></operation>
+  		</menu>
+   </menu>
+</module>
+</modules>

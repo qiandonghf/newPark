@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.cloud.capture.entity.WebInfo">
+    	<meta attribute="class-description">网站信息</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.TreeEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="parentId" type="java.lang.Long">
+			<column name="parent_id">
+				<comment>父节点外键</comment>
+			</column>
+		</property>
+		<property name="parentIds" type="java.lang.String">
+			<column name="parent_ids">
+				<comment>根目录开始的所有父节点</comment>
+			</column>
+		</property>
+		<many-to-one name="parent" class="com.wiiy.cloud.capture.entity.WebInfo" foreign-key="fk_webInfo_parent" insert="false" update="false" fetch="join">
+			<column name="parent_id">
+				<comment>网站信息实体</comment>
+			</column>
+		</many-to-one>
+		<property name="columnId" type="java.lang.Long">
+			<column name="column_id">
+				<comment>栏目外键id</comment>
+			</column>
+		</property>
+			<many-to-one name="column" class="com.wiiy.cloud.capture.entity.Column" foreign-key="fk_columns_parent" lazy="false" insert="false" update="false" fetch="join">
+			<column name="column_id">
+				<comment>栏目信息实体</comment>
+			</column>
+		</many-to-one>
+		<property name="name" type="java.lang.String">
+			<column name="name" >
+				<comment>网站名称</comment>
+			</column>
+		</property>
+		<property name="subName" type="java.lang.String">
+			<column name="sub_name" >
+				<comment>子栏目名称</comment>
+			</column>
+		</property>
+		<property name="params" type="java.lang.String">
+			<column name="params" >
+				<comment>网址参数</comment>
+			</column>
+		</property>
+		<property name="url" type="java.lang.String">
+			<column name="url" >
+				<comment>网址</comment>
+			</column>
+		</property>
+		<property name="beginFlag" type="java.lang.String">
+			<column name="begin_flag" >
+				<comment>截取所有内容起始标志</comment>
+			</column>
+		</property>
+		<property name="endFlag" type="java.lang.String">
+			<column name="end_flag" >
+				<comment>截取所有内容结束标志</comment>
+			</column>
+		</property>
+		<property name="basePath" type="java.lang.String">
+			<column name="base_path" >
+				<comment>首页链接</comment>
+			</column>
+		</property>
+		<property name="itemRegex" type="java.lang.String">
+			<column name="item_regex" >
+				<comment>匹配每个内容标志</comment>
+			</column>
+		</property>
+		<property name="idRegex" type="java.lang.String">
+			<column name="id_regex" >
+				<comment>匹配每个内容ID标志</comment>
+			</column>
+		</property>
+		<property name="dateRegex" type="java.lang.String">
+			<column name="date_regex" >
+				<comment>匹配每个内容截取时间</comment>
+			</column>
+		</property>
+		<property name="datePattern" type="java.lang.String">
+			<column name="date_pattern" >
+				<comment>日期格式</comment>
+			</column>
+		</property>
+		<property name="isCatLog">
+			<column name="isCatLog" sql-type="varchar(50)">
+				<comment>是否栏目</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+	    <property name="period" type="java.lang.Double">
+			<column name="period">
+				<comment>抓取间隔</comment>
+			</column>
+		</property>
+		
+		
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

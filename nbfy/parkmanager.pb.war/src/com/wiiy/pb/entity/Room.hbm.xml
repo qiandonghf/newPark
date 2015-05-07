@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.pb.entity.Room">
+    	<meta attribute="class-description">房间</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="buildingId" type="java.lang.Long" not-null="true">
+			<column name="building_id">
+				<comment>楼宇外键</comment>
+			</column>
+		</property>
+		<many-to-one name="building" class="com.wiiy.pb.entity.Building" foreign-key="fk_room_building_building" insert="false" update="false" fetch="join">
+			<column name="building_id">
+				<comment>楼宇实体</comment>
+			</column>
+		</many-to-one>
+		<property name="floorId" type="java.lang.Long" not-null="true">
+			<column name="floor_id">
+				<comment>楼层外键</comment>
+			</column>
+		</property>
+		<many-to-one name="floor"  class="com.wiiy.pb.entity.Floor" foreign-key="fk_room_floor_floor" insert="false" update="false" fetch="join">
+			<column name="floor_id">
+				<comment>楼层实体</comment>
+			</column>
+		</many-to-one>
+		<property name="customerId" type="java.lang.Long" not-null="true">
+			<column name="customer_id">
+				<comment>企业外键</comment>
+			</column>
+		</property>
+        <many-to-one name="customer" class="com.wiiy.crm.entity.Customer" foreign-key="fk_room_customer_customer" insert="false" update="false" fetch="join">
+            <column name="customer_id">
+                <comment>企业</comment>
+            </column>
+        </many-to-one>
+		<property name="name" type="java.lang.String" not-null="true">
+			<column name="name">
+				<comment>房间名称</comment>
+			</column>
+		</property>
+		<property name="reserveCompanyName" type="java.lang.String">
+			<column name="reserve_company_name">
+				<comment>预订房间的公司名称</comment>
+			</column>
+		</property>
+		<property name="customerName" type="java.lang.String">
+        	<column name="customer_name">
+        		<comment>企业名称</comment>
+        	</column>
+        </property>
+		<many-to-one name="kind" class="com.wiiy.core.entity.DataDict" foreign-key="fk_room_datadict_kind" insert="false" update="false" fetch="join" lazy="false">
+			<column name="kind_id">
+				<comment>房间性质实体</comment>
+			</column>
+		</many-to-one>
+		<property name="kindId" type="java.lang.String">
+			<column name="kind_id">
+				<comment>房间性质外键</comment>
+			</column>
+		</property>
+		<many-to-one name="type" class="com.wiiy.core.entity.DataDict" foreign-key="fk_room_datadict_type" insert="false" update="false" fetch="join">
+			<column name="type_id">
+				<comment>房间用途实体</comment>
+			</column>
+		</many-to-one>
+		<property name="typeId" type="java.lang.String">
+			<column name="type_id">
+				<comment>房间用途外键</comment>
+			</column>
+		</property>
+		<property name="buildingArea" type="java.math.BigDecimal">
+			<column name="building_area">
+				<comment>房间建筑面积</comment>
+			</column>
+		</property>
+		<property name="realArea" type="java.math.BigDecimal">
+			<column name="real_area">
+				<comment>房间实际面积</comment>
+			</column>
+		</property>
+		<property name="location" type="java.lang.String" length="255">
+			<column name="location">
+				<comment>房间位置</comment>
+			</column>
+		</property>
+		<property name="status">
+        	<column name="status">
+				<comment>房间状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.pb.preferences.enums.RoomStatusEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="rentStart" type="java.math.BigDecimal">
+			<column name="rent_start">
+				<comment>租金区间起</comment>
+			</column>
+		</property>
+		<property name="rentEnd" type="java.math.BigDecimal">
+			<column name="rent_end">
+				<comment>租金区间止</comment>
+			</column>
+		</property>
+		<property name="discountRate" type="java.lang.String">
+			<column name="discount_rate">
+				<comment>优惠说明</comment>
+			</column>
+		</property>
+		<property name="discountBeginTime" type="java.util.Date">
+			<column name="discount_begin_time">
+				<comment>优惠起始时间</comment>
+			</column>
+		</property>
+		<property name="endDate" type="java.util.Date">
+			<column name="end_date" length="19">
+				<comment>合同到期</comment>
+			</column>
+		</property>
+		<property name="electricityDeposit" type="java.math.BigDecimal">
+			<column name="electricity_deposit">
+				<comment>水电押金</comment>
+			</column>
+		</property>
+		<property name="rentPrice" type="java.math.BigDecimal">
+			<column name="rent_price">
+				<comment>租赁价格</comment>
+			</column>
+		</property>
+		<property name="rentDeposit" type="java.math.BigDecimal">
+			<column name="rent_deposit">
+				<comment>租赁押金</comment>
+			</column>
+		</property>
+		<property name="summary" type="java.lang.String" length="1024">
+			<column name="summary">
+				<comment>房间介绍</comment>
+			</column>
+		</property>
+		<property name="photos" type="java.lang.String" >
+			<column name="photos" sql-type="text">
+				<comment>房间照片</comment>
+			</column>
+		</property>
+		<property name="chargingType">
+			<column name="charging_type">
+				<comment>计费方式</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.pb.preferences.enums.BillingMethodEnum</param>
+				<param name="type">12</param>
+			</type>		
+		</property>
+		<property name="displayOrder" type="java.lang.Integer">
+			<column name="display_order">
+				<comment>显示顺序</comment>
+			</column>
+		</property>
+		
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

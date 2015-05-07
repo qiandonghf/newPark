@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:osgi="http://www.springframework.org/schema/osgi"
+  xmlns:beans="http://www.springframework.org/schema/beans"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                      http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi-1.2.xsd">
+	
+	<osgi:reference id="sessionService" interface="com.wiiy.hibernate.SessionService"/>
+	
+	<bean id="articleTypeDao" class="com.wiiy.cms.dao.ArticleTypeDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="articleTypeService" class="com.wiiy.cms.service.impl.ArticleTypeServiceImpl">
+		<property name="articleTypeDao" ref="articleTypeDao"></property>
+	</bean>
+	<bean id="articleTypeAction" class="com.wiiy.cms.action.ArticleTypeAction" scope="prototype">
+		<property name="articleTypeService" ref="articleTypeService"></property>
+		<property name="paramService" ref="paramService"></property>
+		<property name="articleService" ref="articleService"></property>
+	</bean>
+	
+	<bean id="articleDao" class="com.wiiy.cms.dao.ArticleDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="articleService" class="com.wiiy.cms.service.impl.ArticleServiceImpl">
+		<property name="articleDao" ref="articleDao"></property>
+	</bean>
+	<bean id="articleAction" class="com.wiiy.cms.action.ArticleAction" scope="prototype">
+		<property name="articleService" ref="articleService"></property>
+		<property name="articleTypeService" ref="articleTypeService"></property>
+		<property name="webInfoConfigService" ref="webInfoConfigService"></property>
+		<property name="paramService" ref="paramService"></property>
+	</bean>
+	
+	<bean id="articleCommentDao" class="com.wiiy.cms.dao.ArticleCommentDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="articleCommentService" class="com.wiiy.cms.service.impl.ArticleCommentServiceImpl">
+		<property name="articleCommentDao" ref="articleCommentDao"></property>
+	</bean>
+	<bean id="articleCommentAction" class="com.wiiy.cms.action.ArticleCommentAction" scope="prototype">
+		<property name="articleCommentService" ref="articleCommentService"></property>
+	</bean>
+	
+	<bean id="contactInfoDao" class="com.wiiy.cms.dao.ContactInfoDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="contactInfoService" class="com.wiiy.cms.service.impl.ContactInfoServiceImpl">
+		<property name="contactInfoDao" ref="contactInfoDao"></property>
+	</bean>
+	<bean id="contactInfoAction" class="com.wiiy.cms.action.ContactInfoAction" scope="prototype">
+		<property name="contactInfoService" ref="contactInfoService"></property>
+	</bean>
+	
+	<bean id="paramDao" class="com.wiiy.cms.dao.ParamDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="paramService" class="com.wiiy.cms.service.impl.ParamServiceImpl">
+		<property name="paramDao" ref="paramDao"></property>
+	</bean>
+	<!-- 关联service 浮窗-->
+	<bean id="paramAction" class="com.wiiy.cms.action.ParamAction" scope="prototype">
+		<property name="paramService" ref="paramService"></property>
+		<property name="waterMarkService" ref="waterMarkService"></property>
+		<property name="contactInfoService" ref="contactInfoService"></property>
+		<property name="linksService" ref="linksService"></property>
+		<property name="articleTypeService" ref="articleTypeService"></property>
+		<property name="resourceService" ref="resourceService"></property>
+	    <property name="floatingWindowService" ref="floatingWindowService"></property>
+	</bean>
+	
+	<bean id="waterMarkDao" class="com.wiiy.cms.dao.WaterMarkDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="waterMarkService" class="com.wiiy.cms.service.impl.WaterMarkServiceImpl">
+		<property name="waterMarkDao" ref="waterMarkDao"></property>
+	</bean>
+	<bean id="waterMarkAction" class="com.wiiy.cms.action.WaterMarkAction" scope="prototype">
+		<property name="waterMarkService" ref="waterMarkService"></property>
+	</bean>
+	
+	<bean id="webInfoConfigDao" class="com.wiiy.cms.dao.WebInfoConfigDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="webInfoConfigService" class="com.wiiy.cms.service.impl.WebInfoConfigServiceImpl">
+		<property name="webInfoConfigDao" ref="webInfoConfigDao"></property>
+	</bean>
+	<bean id="webInfoConfigAction" class="com.wiiy.cms.action.WebInfoConfigAction" scope="prototype">
+		<property name="webInfoConfigService" ref="webInfoConfigService"></property>
+	</bean>
+	
+	<bean id="linksDao" class="com.wiiy.cms.dao.LinksDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="linksService" class="com.wiiy.cms.service.impl.LinksServiceImpl">
+		<property name="linksDao" ref="linksDao"></property>
+	</bean>
+	<bean id="linksAction" class="com.wiiy.cms.action.LinksAction" scope="prototype">
+		<property name="linksService" ref="linksService"></property>
+	</bean>
+	
+	<bean id="resourceDao" class="com.wiiy.cms.dao.ResourceDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="resourceService" class="com.wiiy.cms.service.impl.ResourceServiceImpl">
+		<property name="resourceDao" ref="resourceDao"></property>
+	</bean>
+	<bean id="resourceAction" class="com.wiiy.cms.action.ResourceAction" scope="prototype">
+		<property name="resourceService" ref="resourceService"></property>
+		<property name="paramService" ref="paramService"></property>
+	</bean>
+	
+	<bean id="mailDao" class="com.wiiy.cms.dao.MailDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="mailService" class="com.wiiy.cms.service.impl.MailServiceImpl">
+		<property name="mailDao" ref="mailDao"></property>
+	</bean>
+	<bean id="mailAction" class="com.wiiy.cms.action.MailAction" scope="prototype">
+		<property name="mailService" ref="mailService"></property>
+	</bean>
+	
+	<bean id="advicementDao" class="com.wiiy.cms.dao.AdvicementDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="advicementService" class="com.wiiy.cms.service.impl.AdvicementServiceImpl">
+		<property name="advicementDao" ref="advicementDao"></property>
+	</bean>
+	<bean id="advicementAction" class="com.wiiy.cms.action.AdvicementAction" scope="prototype">
+		<property name="advicementService" ref="advicementService"></property>
+	</bean>
+	
+	<bean id="platformDao" class="com.wiiy.cms.dao.PlatformDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="platformService" class="com.wiiy.cms.service.impl.PlatformServiceImpl">
+		<property name="platformDao" ref="platformDao"></property>
+	</bean>
+	<bean id="platformAction" class="com.wiiy.cms.action.PlatformAction" scope="prototype">
+		<property name="platformService" ref="platformService"></property>
+	</bean>
+	
+	<bean id="federationDao" class="com.wiiy.cms.dao.FederationDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="federationService" class="com.wiiy.cms.service.impl.FederationServiceImpl">
+		<property name="federationDao" ref="federationDao"></property>
+	</bean>
+	<bean id="federationAction" class="com.wiiy.cms.action.FederationAction" scope="prototype">
+		<property name="federationService" ref="federationService"></property>
+	</bean>
+	
+	<bean id="receiptAttDao" class="com.wiiy.cms.dao.ReceiptAttDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="receiptAttService" class="com.wiiy.cms.service.impl.ReceiptAttServiceImpl">
+		<property name="receiptAttDao" ref="receiptAttDao"></property>
+	</bean>
+	<bean id="receiptAttAction" class="com.wiiy.cms.action.ReceiptAttAction" scope="prototype">
+		<property name="receiptAttService" ref="receiptAttService"></property>
+	</bean>
+	
+	<bean id="receiptDao" class="com.wiiy.cms.dao.ReceiptDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="receiptService" class="com.wiiy.cms.service.impl.ReceiptServiceImpl">
+		<property name="receiptDao" ref="receiptDao"></property>
+	</bean>
+	<bean id="receiptAction" class="com.wiiy.cms.action.ReceiptAction" scope="prototype">
+		<property name="receiptService" ref="receiptService"></property>
+	</bean>
+	<!-- 浮窗关系管理 -->
+	<bean id="floatingWindowDao" class="com.wiiy.cms.dao.FloatingWindowDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="floatingWindowService" class="com.wiiy.cms.service.impl.FloatingWindowServiceImpl">
+		<property name="floatingWindowDao" ref="floatingWindowDao"></property>
+	</bean>
+	<bean id="floatingWindowAction" class="com.wiiy.cms.action.FloatingWindowAction" scope="prototype">
+		<property name="floatingWindowService" ref="floatingWindowService"></property>
+			<property name="paramService" ref="paramService"></property>
+	</bean>
+	<!-- 文章抓取 -->
+	
+	
+	<bean id="webInfoDao" class="com.wiiy.cloud.capture.dao.WebInfoDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="webInfoService" class="com.wiiy.cloud.capture.service.impl.WebInfoServiceImpl">
+		<property name="webInfoDao" ref="webInfoDao"></property>
+	</bean>
+	<bean id="webInfoAction" class="com.wiiy.cloud.capture.action.WebInfoAction" scope="prototype">
+		<property name="webInfoService" ref="webInfoService"></property>
+		<property name="columnService" ref="columnService"></property>
+	</bean> 
+	
+	<bean id="webContentDao" class="com.wiiy.cloud.capture.dao.WebContentDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="webContentService" class="com.wiiy.cloud.capture.service.impl.WebContentServiceImpl">
+		<property name="webContentDao" ref="webContentDao"></property>
+	</bean>  
+	<bean id="webContentAction" class="com.wiiy.cloud.capture.action.WebContentAction" scope="prototype">
+		<property name="webContentService" ref="webContentService"></property>
+		<property name="columnService" ref="columnService"></property>
+		<property name="webInfoService" ref="webInfoService"></property>
+		<property name="webContentConfigService" ref="webContentConfigService"></property>
+	</bean> 
+	<bean id="columnDao" class="com.wiiy.cloud.capture.dao.ColumnDao">
+	     <property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="columnService" class="com.wiiy.cloud.capture.service.impl.ColumnServiceImpl">
+	     <property name="columnDao" ref="columnDao" ></property>
+	</bean>
+	<bean id="columnAction" class="com.wiiy.cloud.capture.action.ColumnAction">
+	     <property name="columnService" ref="columnService" ></property>
+	     <property name="webInfoService" ref="webInfoService" ></property>
+	</bean>
+	
+	<bean id="docShareDao" class="com.wiiy.cms.dao.DocShareDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="docShareService" class="com.wiiy.cms.service.impl.DocShareServiceImpl">
+		<property name="docShareDao" ref="docShareDao"></property>
+	</bean>
+	<bean id="docShareAction" class="com.wiiy.cms.action.DocShareAction" scope="prototype">
+		<property name="docShareService" ref="docShareService"></property>
+	</bean>
+	
+	<bean id="docPublicDao" class="com.wiiy.cms.dao.DocPublicDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="docPublicService" class="com.wiiy.cms.service.impl.DocPublicServiceImpl">
+		<property name="docPublicDao" ref="docPublicDao"></property>
+	</bean>
+	<bean id="docPublicAction" class="com.wiiy.cms.action.DocPublicAction" scope="prototype">
+		<property name="docPublicService" ref="docPublicService"></property>
+	</bean>
+	
+	<bean id="documentDao" class="com.wiiy.cms.dao.DocumentDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="documentService" class="com.wiiy.cms.service.impl.DocumentServiceImpl">
+		<property name="documentDao" ref="documentDao"></property>
+	</bean>
+	<bean id="documentAction" class="com.wiiy.cms.action.DocumentAction" scope="prototype">
+		<property name="documentService" ref="documentService"></property>
+		<property name="docShareService" ref="docShareService"></property>
+		<property name="docPublicService" ref="docPublicService"></property>
+	</bean>
+	
+	<!-- 新闻收藏 -->
+	<bean id="webContentConfigDao" class="com.wiiy.cloud.capture.dao.WebContentConfigDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="webContentConfigService" class="com.wiiy.cloud.capture.service.impl.WebContentConfigServiceImpl">
+		<property name="webContentConfigDao" ref="webContentConfigDao"></property>
+	</bean>
+	<bean id="webContentConfigAction" class="com.wiiy.cloud.capture.action.WebContentConfigAction" scope="prototype">
+		<property name="webContentConfigService" ref="webContentConfigService"></property>
+	</bean>
+	
+	
+	<osgi:service id="osgiResourceService" ref="resourceService" interface="com.wiiy.cms.service.ResourceService"/>
+ 	
+</beans>

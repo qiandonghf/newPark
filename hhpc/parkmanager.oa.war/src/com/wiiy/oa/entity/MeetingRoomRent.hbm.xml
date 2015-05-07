@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.oa.entity.MeetingRoomRent">
+    	<meta attribute="class-description">会议室租用</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		
+		<property name="company" type="java.lang.String">
+			<column name="company" sql-type="varchar(255)">
+				<comment>借用单位</comment>
+			</column>
+		</property>
+		<property name="rentTime" type="java.util.Date">
+			<column name="rent_time">
+				<comment>借用时间</comment>
+			</column>
+		</property>
+		<property name="phone" type="java.lang.String">
+			<column name="phone" sql-type="varchar(255)">
+				<comment>联系电话</comment>
+			</column>
+		</property>
+		<property name="linkman" type="java.lang.String">
+			<column name="linkman" sql-type="varchar(255)">
+				<comment>联系人</comment>
+			</column>
+		</property>
+		<property name="reason" type="java.lang.String">
+			<column name="reason" sql-type="text">
+				<comment>借用理由</comment>
+			</column>
+		</property>
+		<property name="cnt" type="java.lang.String">
+			<column name="cnt" sql-type="varchar(50)">
+				<comment>参会人数</comment>
+			</column>
+		</property>
+		<property name="meetingRoom" type="java.lang.String">
+			<column name="meeting_room" sql-type="text">
+				<comment>借用场地</comment>
+			</column>
+		</property>
+		
+		<property name="approval" type="java.lang.String">
+			<column name="approval" sql-type="text">
+				<comment>办公室意见</comment>
+			</column>
+		</property>
+		
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

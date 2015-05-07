@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>错误</title>
+<style>
+	body { background:#fff;}
+	.error_bg { background:url(../common/images/fail.png) no-repeat; padding-left:110px; min-height:95px; _height:95px; position:absolute; left:50%; margin-left:-135px; top:50%; margin-top:-50px;}
+	p { margin:0; padding:0;}
+	.p1 { margin:0; padding:0; width:160px; height:70px; font-size:12px; font-family:'微软雅黑'; color:#666; font-weight:bold;}
+	.p1 a { color:#06c;}
+	
+</style>
+<script type="text/javascript">
+	function login(){
+		var flag = 0;
+		try{
+			window.parent.logout();
+			flag++;
+		}catch(e){
+		}
+		if(flag!=1){
+			try{
+				window.parent.parent.logout();
+				flag++;
+			}catch(e){
+			}
+		}
+		if(flag!=1){
+			try{
+				window.parent.parent.parent.logout();
+				flag++;
+			}catch(e){
+			}
+		}
+		if(flag!=1){
+			try{
+				window.parent.parent.parent.parent.logout();
+				flag++;
+			}catch(e){
+			}
+		}
+	}
+</script>
+</head>
+
+<body>
+
+<div class="error_bg">
+	<div class="p1">
+    	<p style="font-size:24px;">404&nbsp;Error!</p>
+        <p style="margin-bottom:5px;">出错了,访问的资源不存在。<br />
+    	</p>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>

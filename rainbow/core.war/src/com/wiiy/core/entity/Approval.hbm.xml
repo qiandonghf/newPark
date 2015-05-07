@@ -1,0 +1,121 @@
+<?xml version = "1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.core.entity.Approval">
+    	<meta attribute="class-description">审批</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+        <id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native"/>
+		</id>
+		<property name="title" type="java.lang.String">
+			<column name="title">
+				<comment>标题</comment>
+			</column>
+		</property>
+		<property name="width" type="java.lang.Integer">
+			<column name="width">
+				<comment>宽度</comment>
+			</column>
+		</property>
+		<property name="height" type="java.lang.Integer">
+			<column name="height">
+				<comment>高度</comment>
+			</column>
+		</property>
+        <property name="groupId" type="java.lang.Long" not-null="true" length="255">
+			<column name="group_id">
+				<comment>审批组ID(对应其它实体)</comment>
+			</column>
+        </property>
+        <property name="userId" type="java.lang.Long" not-null="true" length="255">
+			<column name="user_id">
+				<comment>审批人ID</comment>
+			</column>
+        </property>
+		<property name="userName" type="java.lang.String">
+			<column name="userName">
+				<comment>审批人</comment>
+			</column>
+		</property>
+		<property name="url" type="java.lang.String">
+        	<column name="url">
+        		<comment>审批页面</comment>
+        	</column>
+        </property>
+		<property name="approvalTime" type="java.util.Date" not-null="true">
+			<column name="approval_time">
+				<comment>审批时间</comment>
+			</column>
+        </property>
+        <property name="suggestion" type="java.lang.String">
+        	<column name="suggestion">
+        		<comment>审批意见</comment>
+        	</column>
+        </property>
+        <property name="type">
+        	<column name="type">
+				<comment>类型</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.core.preferences.enums.ApprovalTypeEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+        <property name="status">
+        	<column name="status">
+				<comment>状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.core.preferences.enums.ApprovalStatusEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+        
+        <property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+    </class>
+</hibernate-mapping>

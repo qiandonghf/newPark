@@ -1,0 +1,23 @@
+<!-start->
+<table width="100%" border="0" cellpadding="3" cellspacing="1" class="table">
+  <tr>
+    <td  class=title align=center height="26">{#question#}</td>
+</tr>
+<form action="{#RP#}vote.php?action=add&pollid={#ipoll_id#}"  method="post" name=voteform target="vote">
+<!-start->
+
+<!-list->
+<tr><td  class="con" style="padding-left:10px">
+<input type="radio" name="option_id" value={#option_id#} {#checked#}>&nbsp;{#option_text#}</td>
+</tr>
+<!-list->
+
+<!-end->
+
+<tr>
+<td  class=title align=center>
+<input type="submit" name="Submit" class=button  value="{#lanVoteButton#}" onClick="window.open('','vote','width=500,height=300,left=300,scrollbars=1')">
+<input name="submit" type="button" class=button value="{#lanBrowse#}" onClick="window.open('{#RP#}vote.php?action=show&pollid={#ipoll_id#}','view','width=500,height=300,left=300,scrollbars=1')">
+</td></tr></form></table>
+
+<!-end->

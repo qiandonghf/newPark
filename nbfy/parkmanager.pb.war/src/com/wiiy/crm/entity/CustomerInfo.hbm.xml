@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.crm.entity.CustomerInfo">
+    	<meta attribute="class-description">企业详细信息</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="foreign">
+                <param name="property">customer</param>
+            </generator>
+		</id>
+		<one-to-one name="customer" class="com.wiiy.crm.entity.Customer" foreign-key="fk_customerInfo_customer_id" constrained="true" cascade="all" fetch="join">
+        	<meta attribute="class-description">企业实体</meta> 
+        </one-to-one>
+        
+        <property name="address" type="java.lang.String" length="512">
+        	<column name="address">
+        		<comment>联系地址</comment>
+        	</column>
+        </property>
+        <property name="managerAddress" type="java.lang.String" length="512">
+        	<column name="manager_address">
+        		<comment>经营地址</comment>
+        	</column>
+        </property>
+        <property name="zipCode" type="java.lang.String">
+        	<column name="zip_code">
+        		<comment>邮编</comment>
+        	</column>
+        </property>
+        <property name="webSite" type="java.lang.String">
+        	<column name="web_site">
+        		<comment>网址</comment>
+        	</column>
+        </property>
+        <property name="officePhone" type="java.lang.String">
+        	<column name="office_phone">
+        		<comment>办公电话</comment>
+        	</column>
+        </property>
+        <property name="fax" type="java.lang.String">
+        	<column name="fax">
+        		<comment>传真</comment>
+        	</column>
+        </property>
+        <property name="email" type="java.lang.String" length="255">
+        	<column name="email">
+        		<comment>Email地址</comment>
+        	</column>
+        </property>
+        <property name="regTime" type="java.util.Date">
+        	<column name="reg_time">
+        		<comment>注册时间</comment>
+        	</column>
+        </property>
+        
+        <property name="userCount" type="java.lang.Integer"></property>
+        <property name="userbs" type="java.lang.Integer"></property>
+        <property name="userbsh" type="java.lang.Integer"></property>
+        <property name="userss" type="java.lang.Integer"></property>
+        <property name="userbk" type="java.lang.Integer"></property>
+        <property name="userqt" type="java.lang.Integer"></property>
+        <property name="usergj" type="java.lang.Integer"></property>
+        <property name="userzj" type="java.lang.Integer"></property>
+        <property name="usercj" type="java.lang.Integer"></property>
+        <property name="userlxs" type="java.lang.Integer"></property>
+        
+        
+        <many-to-one name="regType" class="com.wiiy.core.entity.DataDict" foreign-key="fk_customerInfo_datadict_regType" insert="false" update="false" fetch="join">
+			<column name="reg_type_id">
+				<comment>注册类型实体</comment>
+			</column>
+		</many-to-one>
+        <property name="regTypeId" type="java.lang.String">
+        	<column name="reg_type_id">
+        		<comment>注册类型外键</comment>
+        	</column>
+        </property>
+        <property name="regCapital" type="java.math.BigDecimal">
+        	<column name="reg_capital">
+        		<comment>注册资本</comment>
+        	</column>
+        </property>
+        <property name="realCapital" type="java.math.BigDecimal">
+        	<column name="real_capital">
+        		<comment>实际资本</comment>
+        	</column>
+        </property>
+        <property name="inPark">
+        	<column name="in_park">
+        		<comment>是否在园区内</comment>
+        	</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+        <property name="inBuild">
+        	<column name="in_build">
+        		<comment>是否在大厦内</comment>
+        	</column>
+        	<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>
+        </property>
+        <property name="research">
+        	<column name="research">
+        		<comment>是否研发机构</comment>
+        	</column>
+        	<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>
+        </property>
+        <property name="zyjck">
+        	<column name="zyjck">
+        		<comment>是否有自营进出口权</comment>
+        	</column>
+        	<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>
+        </property>
+        <property name="ybnsr">
+        	<column name="ybnsr">
+        		<comment>是否一般纳税人</comment>
+        	</column>
+        	<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>
+        </property>
+        
+        <many-to-one name="currencyType" class="com.wiiy.core.entity.DataDict" foreign-key="fk_customerInfo_datadict_currencyType" insert="false" update="false" fetch="join">
+			<column name="currency_type_id">
+				<comment>币种实体</comment>
+			</column>
+		</many-to-one>
+        <property name="currencyTypeId" type="java.lang.String">
+        	<column name="currency_type_id">
+        		<comment>币种外键</comment>
+        	</column>
+        </property>
+        
+        <property name="organizationNumber" type="java.lang.String">
+        	<column name="organization_number">
+        		<comment>组织机构代码</comment>
+        	</column>
+        </property>
+        <property name="businessNumber" type="java.lang.String">
+        	<column name="business_number">
+        		<comment>工商注册号</comment>
+        	</column>
+        </property>
+        <property name="taxNumberG" type="java.lang.String">
+        	<column name="tax_number_g">
+        		<comment>税务登记证(国税)</comment>
+        	</column>
+        </property>
+        <property name="taxNumberD" type="java.lang.String">
+        	<column name="tax_number_d">
+        		<comment>税务登记证(地税)</comment>
+        	</column>
+        </property>
+        <many-to-one name="taxAddress" class="com.wiiy.core.entity.DataDict" foreign-key="fk_customerInfo_datadict_taxAddress" insert="false" update="false" fetch="join">
+        	<column name="tax_address_id">
+        		<comment>纳税地</comment>
+        	</column>
+        </many-to-one>
+        <property name="taxAddressId" type="java.lang.String">
+       		<column name="tax_address_id">
+        		<comment>纳税地</comment>
+        	</column>
+        </property>
+        
+        <property name="legalPerson" type="java.lang.String">
+        	<column name="legal_person">
+        		<comment>法定代表人</comment>
+        	</column>
+        </property>
+        <property name="shareholder" type="java.lang.String">
+        	<column name="shareholder">
+        		<comment>股东</comment>
+        	</column>
+        </property>
+        
+        <many-to-one name="documentType" class="com.wiiy.core.entity.DataDict" foreign-key="fk_customerInfo_datadict_documentType" insert="false" update="false" fetch="join">
+			<column name="document_type_id">
+				<comment>证件类型实体</comment>
+			</column>
+		</many-to-one>
+        <property name="documentTypeId" type="java.lang.String">
+        	<column name="document_type_id">
+        		<comment>证件类型外键</comment>
+        	</column>
+        </property>
+        
+        <property name="documentNumber" type="java.lang.String">
+        	<column name="document_number">
+        		<comment>证件号</comment>
+        	</column>
+        </property>
+        <property name="regMail" type="java.lang.String" length="255">
+        	<column name="reg_mail">
+        		<comment>注册EMAIL</comment>
+        	</column>
+        </property>
+        <property name="cellphone" type="java.lang.String">
+        	<column name="cellphone">
+        		<comment>移动电话</comment>
+        	</column>
+        </property>
+        <property name="regAddress" type="java.lang.String" length="255">
+        	<column name="reg_address">
+        		<comment>注册地址</comment>
+        	</column>
+        </property>
+        <property name="businessScope" type="java.lang.String">
+        	<column name="business_scope" sql-type="text">
+        		<comment>经营范围</comment>
+        	</column>
+        </property>
+        <property name="businessExpireDate" type="java.util.Date">
+        	<column name="business_expire_date">
+        		<comment>营业截至日期</comment>
+        	</column>
+        </property>
+        <property name="description" type="java.lang.String" length="512">
+        	<column name="description" sql-type="text">
+        		<comment>公司描述</comment>
+        	</column>
+        </property>
+        <property name="memo" type="java.lang.String" length="1024">
+        	<column name="memo" sql-type="text">
+        		<comment>备注</comment>
+        	</column>
+        </property>
+        
+        
+        
+        <property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

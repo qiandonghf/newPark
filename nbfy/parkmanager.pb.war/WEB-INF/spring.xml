@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:osgi="http://www.springframework.org/schema/osgi"
+  xmlns:beans="http://www.springframework.org/schema/beans"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                      http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi-1.2.xsd">
+                      
+	
+	<bean id="customerRmiService" class="com.wiiy.pb.service.impl.CustomerRmiServiceImpl">
+	    <property name="customerService" ref="customerService"></property>
+	</bean>
+	<osgi:service id="customerService" ref="customerRmiService" interface="com.wiiy.edi.service.export.CustomerRmiService"/>
+	<bean id="customerServiceDao" class="com.wiiy.crm.dao.CustomerServiceDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="customerServiceService" class="com.wiiy.crm.service.impl.CustomerServiceServiceImpl">
+		<property name="customerServiceDao" ref="customerServiceDao"></property>
+	</bean>
+	<bean id="customerServiceAction" class="com.wiiy.crm.action.CustomerServiceAction" scope="prototype">
+		<property name="customerServiceService" ref="customerServiceService"></property>
+	</bean>
+	
+	<bean id="customerServiceTrackDao" class="com.wiiy.crm.dao.CustomerServiceTrackDao">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+	<bean id="customerServiceTrackService" class="com.wiiy.crm.service.impl.CustomerServiceTrackServiceImpl">
+		<property name="customerServiceTrackDao" ref="customerServiceTrackDao"></property>
+	</bean>
+	<bean id="customerServiceTrackAction" class="com.wiiy.crm.action.CustomerServiceTrackAction" scope="prototype">
+		<property name="customerServiceTrackService" ref="customerServiceTrackService"></property>
+	</bean>
+	
+	<bean id="smsPubServiceImpl" class="com.wiiy.oa.external.service.impl.SMSPubServiceImpl">
+	</bean>
+	<osgi:service id="smsPubService" ref="smsPubServiceImpl" interface="com.wiiy.external.service.SMSPubService"/>
+	<bean id="sysEmailPubServiceImpl" class="com.wiiy.oa.external.service.impl.SysEmailPubServiceImpl">
+	</bean>
+	<osgi:service id="emailPubService" ref="sysEmailPubServiceImpl" interface="com.wiiy.external.service.SysEmailSenderPubService"/>
+</beans>

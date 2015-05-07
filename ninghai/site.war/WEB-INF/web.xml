@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+	version="2.4">
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring.xml /WEB-INF/applicationContext.xml</param-value>
+	</context-param>
+	<context-param>
+		<param-name>contextClass</param-name>
+		<param-value>org.springframework.osgi.web.context.support.OsgiBundleXmlWebApplicationContext</param-value>
+	</context-param>
+	<listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    
+<!-- 	<listener>
+    	<listener-class>com.wiiy.cms.listener.InitListener</listener-class>
+    </listener>
+ -->    
+ 	<filter>
+        <filter-name>accessControllerFilter</filter-name>
+        <filter-class>
+            com.wiiy.core.security.SecurityFilter
+        </filter-class>
+        <init-param>
+            <param-name>activatorClass</param-name>
+            <param-value>com.site.Activator</param-value>
+        </init-param>
+        <init-param>
+            <param-name>freeAccess</param-name>
+            <param-value>/site</param-value>
+        </init-param>
+    </filter>
+
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>
+			org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
+		</filter-class>
+		<init-param>   
+			<param-name>config</param-name>   
+			<param-value>struts-default.xml,struts-plugin.xml,/WEB-INF/struts.xml</param-value>  
+		</init-param> 
+	</filter>
+	
+    <filter-mapping>
+    	<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>		
+    </filter-mapping>
+	
+    <filter-mapping>
+    	<filter-name>accessControllerFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>		
+    </filter-mapping>
+
+	<!-- struts2用以处理用户Web请求的路径模式-->
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+	
+		
+	
+	<welcome-file-list>
+		<welcome-file>zhongxinjieshao.jsp</welcome-file>
+	</welcome-file-list>
+	
+	
+</web-app>

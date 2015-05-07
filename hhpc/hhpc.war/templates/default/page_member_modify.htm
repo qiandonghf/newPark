@@ -1,0 +1,294 @@
+<link href="images/style.css" rel="stylesheet" type="text/css">
+ 
+<table width="1000"  border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td><table width="100%"  border="0" align="center" cellpadding="5" cellspacing="0" class="in_toptable">
+        <tr>
+          <td width="60%" class="memberinfo" style="padding-left:20px; font-size:12px;">{#lanMemberWelcome#} <A style="FONT-SIZE: 12px" href="logout.php">{#lanMemberExit#}</A></td>
+          <td width="40%" style="text-align:right; padding-right:20px;"><script src="../js/now.js"></script></td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="227" height="84"><div align="center"><a href="index.php">{#modLogo#}</a></div></td>
+          <td width="470"><div align="center"> {#Advs[2][470*62]#}</div></td>
+          <td width="303"><div align="center">
+              <table width="285" height="62"  border="0" cellpadding="3" cellspacing="1" bgcolor="AACCEE">
+                <tr>
+                  <td bgcolor="F2F6FB"><div align="left">{#modNewsList-5#}</div></td>
+                </tr>
+              </table>
+          </div></td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="36"><div align="center">
+        <table width="980" height="35"  border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="19"><img src="images/in_menu_01.gif" width="19" height="36"></td>
+            <td width="954" background="images/in_menu_02.gif">{#modMainMenu#}</td>
+            <td width="10"><img src="images/in_menu_03.gif" width="19" height="36"></td>
+          </tr>
+        </table>
+    </div></td>
+  </tr>
+</table>
+<div align="center">
+  <table width="100%"  border="0" cellspacing="0" cellpadding="0" class="body_table">
+    <tr>
+      <td><table width="100%"  border="0" cellspacing="0" cellpadding="0" class="mem_tb">
+          <tr>
+            <td width="218" valign="top" class="mem_td"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td height="30" bgcolor="EAF3FB" style="text-indent:1em;">{#lanMemberMenu#}</td>
+                </tr>
+                <tr>
+                  <td><table width="98%" height=120 border=0 align=center cellpadding=2 cellspacing=2>
+                      <tbody>
+                        <tr>
+                          <td valign=top>{#modMemberMenu#}</td>
+                        </tr>
+                      </tbody>
+                  </table></td>
+                </tr>
+            </table></td>
+            <td width="762" valign="top"><table height=26 cellspacing=0 cellpadding=0 width="100%" align=center border=0>
+                <tbody>
+                  <tr>
+                    <td class=nav>{#lanLocat#}:<a href="../../" class="nav">{#SiteName#}</a> &gt; <a href="member.php" class="nav">{#lanMemberCenter#}</a> &gt; {#lanMemberModify#}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table width=100% align=center cellpadding=0 cellspacing=1>
+                <tr valign="top">
+                  <form method="post" action="member_modifyok.php" name="regform">
+                    <td  height=72 style="font-size:12px;color:#ff6600">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" height="30" background="images/detailtitle.gif">
+                        <tr>
+                          <td  width="10" align="center" ></td>
+                          <td >{#lanCommonInfo#}</td>
+                        </tr>
+                      </table>
+                      <table width="100%" border="0" cellspacing="1" cellpadding="8">
+                        <tr>
+                          <td>
+                            <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                              <tr {#FUuser#}>
+                                <td width="120" align="right">{#FMuser#}: </td>
+                                <td style="color:#666666">
+                                  <input type="text" name="user"  class=input style="width:150px" value="{#user#}" readonly>
+                                </td>
+                              </tr>
+                              <tr  {#FUpassword#}>
+                                <td width="120" align="right">{#FMpassword#}: </td>
+                                <td  style="color:#666666">
+                                  <input type="password" name="password" style="width:150px" class=input disabled value="******">
+                                  <input type="checkbox" name="resetpass" value="yes" onClick="regform.password.disabled=false; regform.password.value='';regform.password.focus()">
+                    {#lanResetPass#} </td>
+                              </tr>
+                              <tr {#FUemail#}>
+                                <td width="120" align="right" >{#FMemail#}: </td>
+                                <td  style="color:#666666" >
+                                  <input type="text" name="email"  class=input  value="{#email#}" size="35">
+                    {#INemail#} </td>
+                              </tr>
+                          </table></td>
+                        </tr>
+                      </table>
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" height="30" background="images/detailtitle.gif">
+                        <tr>
+                          <td  width="10" align="center" ></td>
+                          <td >{#lanContactInfo#}</td>
+                        </tr>
+                      </table>
+                      <table width="100%" border="0" cellspacing="1" cellpadding="8">
+                        <tr>
+                          <td>
+                            <table width="100%" border="0" cellspacing="1" cellpadding="3" >
+                              <tr {#FUcompany#}>
+                                <td width="120" align="right" height="24">{#FMcompany#}: </td>
+                                <td height="22"  style="color:#666666">
+                                  <input type="text" name="company"  class=input  value="{#company#}" size="50">
+                    {#INcompany#} </td>
+                              </tr>
+                              <tr {#FUname#}>
+                                <td width="120" align="right">{#FMname#}: </td>
+                                <td height="22" style="color:#666666">
+                                  <input type="text" name="name"  class=input  value="{#name#}" size="20">
+                    {#INname#} </td>
+                              </tr>
+                              <tr {#FUsex#}>
+                                <td width="120" align="right">{#FMsex#}: </td>
+                                <td height="22" style="color:#666666">
+                                  <input type="radio" name="sex" value="1" {#CHKman#}>
+                    {#strMan#}
+                    <input type="radio" name="sex" value="2" {#CHKwoman#}>
+                    {#strWoman#} {#INsex#}</td>
+                              </tr>
+                              <tr {#FUpasstype#}>
+                                <td width="120" align="right">{#FMpasstype#}: </td>
+                                <td height="22" style="color:#666666">
+                                  <select name="passtype" style="color:#666666;font-size:12px">
+                                    
+                                  {#PassList#}
+                                
+                          
+                                  </select>
+                    {#INpasstype#} </td>
+                              </tr>
+                              <tr  {#FUpasscode#}>
+                                <td width="120" align="right">{#FMpasscode#}: </td>
+                                <td height="22" style="color:#666666">
+                                  <input type="text" name="passcode"  class=input  value="{#passcode#}" size="30">
+                    {#INpasscode#} </td>
+                              </tr>
+                              <tr  {#FUbirthday#}>
+                                <td width="120" align="right">{#FMbirthday#}: </td>
+                                <td height="22" style="color:#666666">
+                                  <select name="yy" style="color:#666666;font-size:12px">
+                                    
+								{#BirthYear#}
+                                
+                          
+                                  </select>
+                    {#strYear#}
+                    <select name="mm" style="color:#666666;font-size:12px">
+                      
+								{#BirthMonth#}
+                                
+                          
+                    </select>
+                    {#strMonth#}
+                    <select name="dd" style="color:#666666;font-size:12px">
+                      
+								{#BirthDay#}
+                                
+                          
+                    </select>
+                    {#strDay#}{#INbirthday#}</td>
+                              </tr>
+                              <tr {#FUzoneid#}>
+                                <td width="120" align="right">{#FMzoneid#}: </td>
+                                <td height="22" style="color:#666666"> {#ZoneList#}
+                                    <select onKeyUp='if(window.event.keyCode==13) document.regform.zoneid.focus();'  onChange=provinceSelChange(regform.zoneid,regform.Province.value,'{#zoneid#}') name="Province"  style="color:#666666;font-size:12px" >
+                                      <script language=javascript>document.write(pList.getOptionString('{#Province#}'));
+								</script>
+                                    </select>
+                                    <div id='zonediv' style='position:absolute; width:150px; height:26px; z-index:1'>
+                                      <select onKeyUp='if(window.event.keyCode==13) document.regform.regCardNum.focus();'  name="zoneid"  style="color:#666666;font-size:12px">
+                                        <script language=javascript>
+document.write(pList.getOptionAreasString(regform.Province.value,regform.zoneid,'{#zoneid#}',1));
+                </script>
+                                      </select>
+                                    </div>
+                                    {#INzoneid#}</td>
+                              </tr>
+                              <tr {#FUcatid#}>
+                                <td width="120" align="right">{#FMcatid#}: </td>
+                                <td height="22"  style="color:#666666">
+                                  <select name='catid' style='WIDTH: 200;font-size:12px;color:#666666' >
+                                    
+							{#IndustryList#}
+				                
+                          
+                                  </select>
+                    {#INcatid#} </td>
+                              </tr>
+                              <tr {#FUaddr#}>
+                                <td width="120" align="right">{#FMaddr#}: </td>
+                                <td height="22" style="color:#666666">
+                                  <input type="text" name="addr"  class=input  value="{#addr#}" size="50">
+                    {#INaddr#} </td>
+                              </tr>
+                              <tr {#FUtel#}>
+                                <td width="120" align="right">{#FMtel#}: </td>
+                                <td height="22"  style="color:#666666">
+                                  <input type="text" name="tel"  class=input  value="{#tel#}" size="30">
+                    {#INtel#} </td>
+                              </tr>
+                              <tr {#FUmov#}>
+                                <td width="120" align="right">{#FMmov#}: </td>
+                                <td height="22" style="color:#666666">
+                                  <input type="text" name="mov"  class=input  value="{#mov#}" size="30">
+                    {#INmov#} </td>
+                              </tr>
+                              <tr {#FUfax#}>
+                                <td width="120" align="right">{#FMfax#}: </td>
+                                <td height="22" style="color:#666666">
+                                  <input type="text" name="fax"  class=input  value="{#fax#}" size="30">
+                    {#INfax#} </td>
+                              </tr>
+                              <tr {#FUpostcode#}>
+                                <td width="120" align="right">{#FMpostcode#}: </td>
+                                <td height="22" style="color:#666666">
+                                  <input type="text" name="postcode"  class=input  value="{#postcode#}" size="12">
+                    {#INpostcode#} </td>
+                              </tr>
+                              <tr {#FUqq#}>
+                                <td width="120" align="right">{#FMqq#}: </td>
+                                <td height="22" style="color:#666666">
+                                  <input type="text" name="qq"  class=input  value="{#qq#}" size="12">
+                    {#INqq#} </td>
+                              </tr>
+                              <tr {#FUmsn#}>
+                                <td width="120" align="right">{#FMmsn#}: </td>
+                                <td height="22" style="color:#666666">
+                                  <input type="text" name="msn"  class=input  value="{#msn#}" size="30">
+                    {#INmsn#} </td>
+                              </tr>
+                              <tr {#FUurl#}>
+                                <td width="120" align="right">{#FMurl#}: </td>
+                                <td height="22" style="color:#666666">
+                                  <input type="text" name="url"  class=input  value="{#url#}" size="50">
+                    {#INurl#} </td>
+                              </tr>
+                              <tr {#FUbz#}>
+                                <td width="120" align="right">{#FMbz#}: </td>
+                                <td height="22" style="color:#666666">
+                                  <textarea name="bz" class="textarea" cols="48" rows="5" >{#bz#}</textarea>
+                    {#INbz#} </td>
+                              </tr>
+                              <tr >
+                                <td width="120" align="right">&nbsp;</td>
+                                <td height="22" style="color:#666666">
+                                  <input type="submit" name="Submit" value="{#lanModiButton#}" class="button">
+                                  <input type="hidden" name="step" value="modify">
+                                </td>
+                              </tr>
+                          </table></td>
+                        </tr>
+                    </table></td>
+                  </form>
+                </tr>
+              </table></td>
+          </tr>
+      </table></td>
+    </tr>
+  </table>
+</div>
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td><div align="center">
+        <table width="980" border="0" cellspacing="0" cellpadding="0" id="tab_2">
+          <tr>
+            <td><div align="center">{#modBottomMenu#}</div></td>
+          </tr>
+        </table>
+    </div></td>
+  </tr>
+  <tr>
+    <td><div align="center">
+        <table width="980" border="0" cellspacing="0" cellpadding="5">
+          <tr>
+            <td><div align="center"><font color="#333333">{#modButtomInfo#}</font></div></td>
+          </tr>
+          <tr>
+            <td><div align="center"><font color="#000000">{#modShowCount#}</font></div></td>
+          </tr>
+        </table>
+    </div></td>
+  </tr>
+</table>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.wiiy.crm.entity.Bill">
+		<meta attribute="class-description">账单</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="number" type="java.lang.String" not-null="true">
+			<column name="number">
+				<comment>流水号</comment>
+			</column>
+		</property>
+		<property name="billSplit" type="java.lang.Integer" not-null="true">
+			<column name="bill_split">
+				<comment>账单拆分</comment>
+			</column>
+		</property>
+		<property name="billTypeId" type="java.lang.Long" not-null="true">
+			<column name="bill_type_id">
+				<comment>费用类型ID</comment>
+			</column>
+		</property>
+		<many-to-one name="billType" class="com.wiiy.crm.entity.BillType" insert="false" update="false" foreign-key="fk_bill_billType" fetch="join" >
+			<column name="bill_type_id" not-null="true">
+				<comment>费用类型</comment>
+			</column>
+		</many-to-one>
+		<property name="customerId" type="java.lang.Long" not-null="true">
+			<column name="customer_id">
+				<comment>企业ID</comment>
+			</column>
+		</property>
+		<many-to-one name="customer" class="com.wiiy.crm.entity.Customer" insert="false" update="false" foreign-key="fk_bill_customer" fetch="join" >
+			<column name="customer_id" not-null="true">
+				<comment>企业</comment>
+			</column>
+		</many-to-one>
+		<property name="roomId" type="java.lang.Long">
+			<column name="room_id">
+				<comment>房间ID</comment>
+			</column>
+		</property>
+		<many-to-one name="room" class="com.wiiy.pb.entity.Room" insert="false" update="false" foreign-key="fk_bill_room" fetch="join" >
+			<column name="room_id">
+				<comment>房间</comment>
+			</column>
+		</many-to-one>
+		<property name="billPlanId" type="java.lang.Long">
+        	<column name="bill_plan_id">
+        		<comment>资金计划ID</comment>
+        	</column>
+        </property>
+		<property name="billPlanTableName" type="java.lang.String">
+        	<column name="bill_plan_table_name">
+        		<comment>资金计划表名</comment>
+        	</column>
+        </property>
+		<property name="price" type="java.lang.String">
+        	<column name="price">
+        		<comment>单价</comment>
+        	</column>
+        </property>
+        <property name="amount" type="java.lang.Double">
+        	<column name="amount">
+        		<comment>数量</comment>
+        	</column>
+        </property>
+		<property name="contractNo" type="java.lang.String">
+			<column name="contractNo">
+				<comment>合同编号</comment>
+			</column>
+		</property>
+		<property name="invoice">
+			<column name="invoice" sql-type="varchar(50)">
+				<comment>是否发票</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="urged">
+			<column name="urged" sql-type="varchar(50)">
+				<comment>已催缴</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="payType">
+			<column name="pay_type" sql-type="varchar(50)">
+				<comment>支付方式</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.crm.preferences.enums.PayTypeEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="totalAmount" type="java.lang.Double">
+			<column name="totalAmount" precision="2" not-null="true">
+				<comment>总金额</comment>
+			</column>
+		</property>
+		<property name="factPayment" type="java.lang.Double">
+			<column name="factPayment" precision="2">
+				<comment>实际支付金额</comment>
+			</column>
+		</property>
+		<property name="planPayTime" type="java.util.Date">
+			<column name="planPayTime" length="19" not-null="true">
+				<comment>计划支付日期</comment>
+			</column>
+		</property>
+		<property name="payTime" type="java.util.Date">
+			<column name="payTime" length="19">
+				<comment>实际支付日期</comment>
+			</column>
+		</property>
+		<property name="checkoutTime" type="java.util.Date">
+			<column name="checkoutTime" length="19">
+				<comment>出账日期</comment>
+			</column>
+		</property>
+		
+		<property name="penalty" type="java.lang.Double">
+			<column name="penalty" precision="2">
+				<comment>违约金</comment>
+			</column>
+		</property>
+		<property name="status">
+			<column name="status" sql-type="varchar(50)">
+				<comment>状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.crm.preferences.enums.BillStatusEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+		<property name="inOut">
+			<column name="in_out" sql-type="varchar(50)">
+				<comment>收支类型</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.crm.preferences.enums.BillInOutEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+		
+		<property name="discountRate" type="java.lang.Double">
+			<column name="discountRate" precision="10" >
+				<comment>优惠金额</comment>
+			</column>
+		</property>
+		<property name="feeStartTime" type="java.util.Date">
+			<column name="feeStartTime" >
+				<comment>计费开始时间</comment>
+			</column>
+		</property>
+		<property name="feeEndTime" type="java.util.Date">
+			<column name="feeEndTime" >
+				<comment>计费结束时间</comment>
+			</column>
+		</property>
+		<property name="memo" type="java.lang.String">
+			<column name="memo" >
+				<comment>备注</comment>
+			</column>
+		</property>
+		
+		
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

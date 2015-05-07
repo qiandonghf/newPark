@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<body><div style="background-color:#F0F0F0;text-align:center;padding:40px;">
+	<div class="mmsgLetter" style="width:620px;margin:0 auto;padding:10px;color:#333;background-color:#fff;border:0px solid #aaa;border-radius:5px;-webkit-box-shadow:3px 3px 10px #999;-moz-box-shadow:3px 3px 10px #999;box-shadow:3px 3px 10px #999;font-family:Verdana, sans-serif; " >
+
+		<div class="mmsgLetterHeader" style="height:10px; overflow:hidden; background:#446B8C;">
+			
+		</div>
+		<div class="mmsgLetterContent" style="text-align:left;padding:30px;font-size:14px;line-height:1.5; background:url(cid:logo_mail.gif) no-repeat right 5px;">
+		
+			<div style="width:540px;">
+			
+				<p class="salutation" style="font-weight:bold;">
+					Hi,<span id="mailUserName">${customerName}</span>：
+				</p>
+				<p>我们从ParkManager上发现有您的新消息，请您及时查看处理，点击 <a href="#" title="">这里</a> 获取更多信息 谢谢！</p>
+					
+				
+            <table border="1" width="100%" cellpadding="5" cellspacing="0" style="border-collapse:collapse; font-size:12px;border:1px solid #aaa;">
+                	<tr>
+                    	<td colspan="4" align="left" style="border:1px solid #aaa;"><strong>主题：</strong>${subject}</td>
+                      <td align="left" style="border:1px solid #aaa;"><strong>消息类型：</strong>${msgType}</td>
+                    </tr>
+                    <tr>
+                    	<td colspan="2" align="left" style="border:1px solid #aaa;"><strong>受理人：</strong>${receiver}</td>
+                        <td colspan="2" align="left" style="border:1px solid #aaa;"><strong>报送人：</strong>${sender}</td>
+                        <td align="left" style="border:1px solid #aaa;"><strong>链接地址：</strong><a href="${url}">查看</a></td>
+                    </tr>
+                    <tr>
+                    	<td colspan="5" align="left" height="50" valign="top" style="border:1px solid #aaa;">${content}</td>
+                    </tr>
+                </table>
+			</div>	
+
+			<div class="mmsgLetterInscribe" style="padding:40px 0 0; overflow:hidden; zoom:1; text-align:center;" >
+            	<span style=""><a href="${msgLink}">${msgLink}</a></span>
+            </div>			
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:osgi="http://www.springframework.org/schema/osgi"
+  xmlns:beans="http://www.springframework.org/schema/beans"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                      http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi-1.2.xsd">
+                      
+	<osgi:reference id="extensionRegistry" interface="org.eclipse.core.runtime.IExtensionRegistry"></osgi:reference>
+	<bean id="coreWorkbenchTipExtensions" name="coreWorkbenchTipExtensions" class="com.wiiy.core.extensions.CoreWorkbenchTipExtensions">
+		<property name="registry" ref="extensionRegistry"></property>
+	</bean>       
+	<bean id="resourceExtensions" name="resourceExtensions" class="com.wiiy.core.extensions.ResourceExtensions">
+		<property name="registry" ref="extensionRegistry"></property>
+	</bean>       
+	<bean id="operationLogPubServiceImpl" class="com.wiiy.core.external.service.impl.OperationLogPubServiceImpl">
+		<property name="operationLogService" ref="operationLogService"></property>
+	</bean>
+	<osgi:service id="operationLogPubService" ref="operationLogPubServiceImpl" interface="com.wiiy.external.service.OperationLogPubService"/>
+	<osgi:service id="roleAuthorityRefService" ref="roleAuthorityRefServiceImpl" interface="com.wiiy.core.service.export.RoleAuthorityRefService"/>
+	
+	<bean id="fkServiceImpl" class="com.wiiy.core.service.impl.FKServiceImpl"></bean>
+	<osgi:service id="fkService" ref="fkServiceImpl" interface="com.wiiy.core.service.export.FKService"/>
+	
+	<bean id="httpSessionServiceImpl" class="com.wiiy.core.service.impl.HttpSessionServiceImpl"></bean>
+	<osgi:service id="httpSessionService" ref="httpSessionServiceImpl" interface="com.wiiy.core.service.export.HttpSessionService"/>
+	
+	<bean id="remindEmailServiceImpl" class="com.wiiy.core.service.impl.RemindEmailServiceImpl"></bean>
+	<osgi:service id="remindEmailService" ref="remindEmailServiceImpl" interface="com.wiiy.core.service.export.RemindEmailService"/>
+	
+    <bean id="moduleServiceImpl" class="com.wiiy.core.service.impl.ModuleServiceImpl"></bean>
+ 	<osgi:service id="moduleService" ref="moduleServiceImpl" interface="com.wiiy.core.service.export.ModuleService"/>
+
+	<bean id="dataDictInitServiceImpl" class="com.wiiy.core.service.impl.DataDictInitServiceImpl">
+		<property name="dataDictService" ref="dataDictService"></property>
+	</bean>
+ 	<osgi:service id="dataDictInitService" ref="dataDictInitServiceImpl" interface="com.wiiy.core.service.export.DataDictInitService"/>
+ 	
+    <bean id="resourcesServiceImpl" class="com.wiiy.core.service.impl.ResourcesServiceImpl"></bean>
+ 	<osgi:service id="resourcesService" ref="resourcesServiceImpl" interface="com.wiiy.core.service.export.ResourcesService"/>
+	
+ 	<osgi:service id="osgiUserService" ref="userService" interface="com.wiiy.core.service.export.OsgiUserService"/>
+ 	<osgi:service id="appConfigRegisterService" ref="appConfigService" interface="com.wiiy.core.service.export.AppConfigRegisterService"/>
+ 	
+ 	<bean id="userPubServiceImpl" class="com.wiiy.core.external.service.impl.UserPubServiceImpl">
+ 		<property name="userDao" ref="userDao"></property>
+ 	</bean>
+ 	<osgi:service id="userPubService" ref="userPubServiceImpl" interface="com.wiiy.core.external.service.UserPubService"/>
+ 	
+ 	<bean id="orgPubServiceImpl" class="com.wiiy.core.external.service.impl.OrgPubServiceImpl">
+ 		<property name="orgDao" ref="orgDao"></property>
+ 	</bean>
+ 	<osgi:service id="orgPubService" ref="orgPubServiceImpl" interface="com.wiiy.core.external.service.OrgPubService"/>
+ 	
+ 	
+ 	<bean id="sysEmailPubServiceImpl" class="com.wiiy.core.external.service.impl.SysEmailPubServiceImpl"></bean>
+	<osgi:service id="emailPubService" ref="sysEmailPubServiceImpl" interface="com.wiiy.external.service.SysEmailSenderPubService"/>
+	
+	
+	<osgi:service id="approvalServiceExport" ref="approvalService" interface="com.wiiy.core.service.export.ApprovalService"/>
+	<osgi:service id="countersignServiceExport" ref="countersignService" interface="com.wiiy.core.service.export.CountersignService"/>
+</beans>

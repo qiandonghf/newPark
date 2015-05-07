@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.wiiy.crm.entity.DataProperty">
+        <meta attribute="class-description">数据项(数据上报)</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.TreeEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+        <property name="parentId" type="java.lang.Long" not-null="true">
+			<column name="parent_id">
+				<comment>父节点外键</comment>
+			</column>
+		</property>
+		<property name="parentIds" type="java.lang.String" not-null="true">
+			<column name="parent_ids">
+				<comment>根目录开始的所有父节点</comment>
+			</column>
+		</property>
+		<many-to-one name="parentProperty" class="com.wiiy.crm.entity.DataProperty" foreign-key="fk_dataProperty_parent" insert="false" update="false" fetch="join" lazy="false">
+			<column name="parent_id">
+				<comment>上级</comment>
+			</column>
+		</many-to-one>
+		<property name="leaf" type="java.lang.Boolean" not-null="true">
+			<column name="leaf" sql-type="integer">
+				<comment>叶子节点</comment>
+			</column>
+		</property>
+		<property name="level" type="java.lang.Integer" not-null="true">
+			<column name="level">
+				<comment>级别</comment>
+			</column>
+		</property>
+		<property name="order" type="java.lang.Integer" not-null="true">
+			<column name="`order`">
+				<comment>排序</comment>
+			</column>
+		</property>
+        <property name="name" type="java.lang.String" not-null="true">
+            <column name="name" length="50">
+                <comment>名称</comment>
+            </column>
+        </property>
+        <property name="dataType">
+			<column name="data_type" sql-type="varchar(50)">
+				<comment>数据类型</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.crm.preferences.enums.DataTypeEnum</param>
+				<param name="type">12</param>
+			</type>		
+		</property>
+        <property name="dataTypeExt" type="java.lang.String">
+            <column name="data_type_ext" length="512">
+            	<comment>数据类型扩展(JSON)</comment>
+            </column>
+        </property>
+        
+        <property name="unit" type="java.lang.String">
+            <column name="unit" length="50">
+            	<comment>单位</comment>
+            </column>
+        </property>
+        <property name="note" type="java.lang.String">
+            <column name="note" length="512">
+            	<comment>填报说明</comment>
+            </column>
+        </property>
+        
+        <property name="fixed">
+			<column name="fixed" sql-type="varchar(50)">
+				<comment>是否系统预设,不能删除系统预设的数据项</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>		
+		</property>
+        
+        
+        <property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+    </class>
+</hibernate-mapping>

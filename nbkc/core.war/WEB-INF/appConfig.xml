@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appConfig>
+
+    <config key="emailConfig" label="邮箱设置">
+        <parameter key="username" label="用户名" value="mn19920602@sina.com" render="text"/>
+        <parameter key="password" label="密码" value="Mn2zml1314o" render="text"/>
+        <parameter key="emailPop3Host" label="Imap服务器" value="imap.sina.com" render="text"/>
+        <parameter key="emailSmtpHost" label="Smtp服务器" value="smtp.sina.com" render="text"/>
+    </config>
+    <config key="motto" label="格言警句">
+		<parameter key="allMotto" label="所有的格言警句" value="好好努力~多看书，少玩游戏~喵了个咪的，好好工作" render="textarea">
+		</parameter>
+		<parameter key="mottoTips" label="格言录入TIPS" value="格言之间以~作为分隔符" render="text">
+		</parameter>
+	</config>
+	<config key="cardGroupName" label="名片组名称">
+        <parameter key="name" label="名称" value="三略" render="text"/>
+    </config>
+    <config key="dbBackupConfig" label="数据库备份设置">
+        <parameter key="time" label="时间" value="23" render="text"/>
+    </config>
+    <config key="companyName" label="机构名称">
+        <parameter key="name" label="名称" value="三略科技" render="text"/>
+    </config>
+    <config key="incubatorName" label="孵化器名称">
+      <parameter key="name" label="名称" value="宁波市市局" render="text"/>
+    </config>
+    <config key="contactWay" label="联系方式">
+		<parameter key="allTelephoneNumber" label="所有的联系方式" value="辅导服务部：br87904996" render="textarea">
+		</parameter>
+	</config>
+	<config key="dataDictConfig" label="数据字典设置">
+        <parameter key="dataDict" label="初始化数据字典" value="inactive" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+    </config>
+	<config key="menuFlat" label="菜单聚合">
+        <parameter key="flat" label="开启菜单聚合" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+    </config>
+    <config key="msgLink" label="提醒邮件连接">
+    	<parameter key="name" label="链接" value="www.wiiy.cn" render="text"/>
+    </config>
+    <config key="msgLogo" label="提醒邮件LOGO">
+    	<parameter key="name" label="图片路径" value="logo_mail.gif" render="text"/>
+    </config>
+</appConfig>

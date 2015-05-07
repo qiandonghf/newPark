@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appConfig>
+
+    <config key="copyright" label="版权信息 ">
+        <parameter key="str" label="版权信息" value="Copyright ©2015 www.huaye.com | TEL:0571-85613587" render="text"/>
+    </config>
+   
+</appConfig>

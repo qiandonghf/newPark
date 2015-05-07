@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.oa.entity.FixedAssets">
+    	<meta attribute="class-description">固定资产</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.TreeEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="java.lang.String">
+			<column name="name" not-null="true" length="255" unique-key="true">
+				<comment>名称</comment>
+			</column>
+		</property>
+		<property name="typeId" type="java.lang.String" not-null="true">
+			<column name="type_id" not-null="true">
+				<comment>资产类别外键</comment>
+			</column>
+		</property>
+		<many-to-one name="type" class="com.wiiy.core.entity.DataDict" foreign-key="fk_fixedAssets_type" insert="false" update="false" fetch="join">
+			<column name="type_id" not-null="true">
+				<comment>资产类别</comment>
+			</column>
+		</many-to-one>
+		<property name="dealDate" type="java.util.Date">
+			<column name="deal_date" not-null="true">
+				<comment>置办日期</comment>
+			</column>
+		</property>
+		<property name="orgId" type="java.lang.Long">
+			<column name="org_id">
+				<comment>所属部门外键</comment>
+			</column>
+		</property>
+		<many-to-one name="org" class="com.wiiy.core.entity.Org" foreign-key="fk_fixedAssets_org" insert="false" update="false" fetch="join">
+			<column name="org_id">
+				<comment>所属部门</comment>
+			</column>
+		</many-to-one>
+		<property name="user" type="java.lang.String">
+			<column name="user" not-null="true">
+				<comment>使用人</comment>
+			</column>
+		</property>
+		<property name="custodian" type="java.lang.String">
+			<column name="custodian" not-null="true">
+				<comment>保管人</comment>
+			</column>
+		</property>
+		<property name="status">
+			<column name="status" sql-type="varchar(50)">
+				<comment>状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.oa.preferences.enums.FixedAssetsStatusEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+		
+		
+		<property name="depreciation">
+        	<column name="depreciation">
+				<comment>折旧类型</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.oa.preferences.enums.DepreciationEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="cycle">
+        	<column name="cycle">
+				<comment>折旧周期类型</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.oa.preferences.enums.DepreciationCycleEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="residualValueRate" type="java.lang.Double">
+			<column name="residual_value_rate">
+				<comment>预计净残值率</comment>
+			</column>
+		</property>
+		
+		<property name="cycleAmount" type="java.lang.Double">
+			<column name="cycle_amount">
+				<comment>折旧周期</comment>
+			</column>
+		</property>
+		<property name="startDate" type="java.util.Date">
+			<column name="start_date">
+				<comment>开始折旧日期</comment>
+			</column>
+		</property>
+		<property name="lifeTime" type="java.lang.Double">
+			<column name="life_time">
+				<comment>预计使用寿命</comment>
+			</column>
+		</property>
+		<property name="originalValue" type="java.lang.Double">
+			<column name="original_value">
+				<comment>原资产值</comment>
+			</column>
+		</property>
+		<property name="newValue" type="java.lang.Double">
+			<column name="new_value">
+				<comment>现资产值</comment>
+			</column>
+		</property>
+		<property name="spec" type="java.lang.String">
+			<column name="spec">
+				<comment>规格型号</comment>
+			</column>
+		</property>
+		<property name="factory" type="java.lang.String">
+			<column name="factory">
+				<comment>厂商</comment>
+			</column>
+		</property>
+		<property name="buyDate" type="java.util.Date">
+			<column name="buy_date">
+				<comment>采购日期</comment>
+			</column>
+		</property>
+		
+		<property name="memo" type="java.lang.String">
+			<column name="memo"  length="512">
+				<comment>备注</comment>
+			</column>
+		</property>
+		
+		
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

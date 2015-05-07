@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.pb.entity.GardenApply">
+    	<meta attribute="class-description">苗圃申请</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="projectName" type="java.lang.String" not-null="true" length="255">
+			<column name="project_name">
+				<comment>项目名称</comment>
+			</column>
+		</property>
+		<property name="projectSource" not-null="true">
+			<column name="project_source">
+				<comment>项目来源</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.pb.preferences.enums.GardenProjectSourceEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="sourceDetail" type="java.lang.String" length="255">
+			<column name="source_detail">
+				<comment>项目具体来源</comment>
+			</column>
+		</property>
+		
+		<property name="projectType" not-null="true">
+			<column name="project_type">
+				<comment>项目类型</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.pb.preferences.enums.GardenProjectTypeEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="projectTypeDetail" type="java.lang.String" length="255">
+			<column name="project_type_detail">
+				<comment>项目具体类型</comment>
+			</column>
+		</property>
+		<property name="leaderName" type="java.lang.String">
+			<column name="leader_name">
+				<comment>负责人姓名</comment>
+			</column>
+		</property>
+		<property name="leaderMobile" type="java.lang.String">
+			<column name="leader_mobile">
+				<comment>负责人手机</comment>
+			</column>
+		</property>
+		<property name="leaderEmail" type="java.lang.String">
+			<column name="leader_email">
+				<comment>负责人Email</comment>
+			</column>
+		</property>
+		<property name="leaderQQ" type="java.lang.String">
+			<column name="leader_qq">
+				<comment>负责人QQ</comment>
+			</column>
+		</property>
+		<property name="leaderSchool" type="java.lang.String">
+			<column name="leader_school">
+				<comment>负责人学校</comment>
+			</column>
+		</property>
+		<property name="leaderCollege" type="java.lang.String">
+			<column name="leader_college">
+				<comment>院系年级</comment>
+			</column>
+		</property>
+		<property name="leaderPhone" type="java.lang.String">
+			<column name="leader_phone">
+				<comment>负责人紧急联系方式</comment>
+			</column>
+		</property>
+		<property name="introduction" type="java.lang.String">
+			<column name="introduction" sql-type="text">
+				<comment>项目简介</comment>
+			</column>
+		</property>
+		
+		<property name="competition" type="java.lang.String">
+			<column name="competition">
+				<comment>比赛</comment>
+			</column>
+		</property>
+		<property name="reward" type="java.lang.String">
+			<column name="reward">
+				<comment>奖励专利</comment>
+			</column>
+		</property>
+		<property name="teacher" type="java.lang.String">
+			<column name="teacher">
+				<comment>指导老师</comment>
+			</column>
+		</property>
+		<property name="memberName1" type="java.lang.String">
+			<column name="member_name1">
+				<comment>项目成员姓名1</comment>
+			</column>
+		</property>
+		<property name="memberName2" type="java.lang.String">
+			<column name="member_name2">
+				<comment>项目成员姓名2</comment>
+			</column>
+		</property>
+		<property name="memberName3" type="java.lang.String">
+			<column name="member_name3">
+				<comment>项目成员姓名3</comment>
+			</column>
+		</property>
+		<property name="memberName4" type="java.lang.String">
+			<column name="member_name4">
+				<comment>项目成员姓名4</comment>
+			</column>
+		</property>
+		<property name="memberName5" type="java.lang.String">
+			<column name="member_name5">
+				<comment>项目成员姓名5</comment>
+			</column>
+		</property>
+		
+		<property name="memberMajor1" type="java.lang.String">
+			<column name="member_major1">
+				<comment>项目成员专业1</comment>
+			</column>
+		</property>
+		<property name="memberMajor2" type="java.lang.String">
+			<column name="member_major2">
+				<comment>项目成员专业2</comment>
+			</column>
+		</property>
+		<property name="memberMajor3" type="java.lang.String">
+			<column name="member_major3">
+				<comment>项目成员专业3</comment>
+			</column>
+		</property>
+		<property name="memberMajor4" type="java.lang.String">
+			<column name="member_major4">
+				<comment>项目成员专业4</comment>
+			</column>
+		</property>
+		<property name="memberMajor5" type="java.lang.String">
+			<column name="member_major5">
+				<comment>项目成员专业5</comment>
+			</column>
+		</property>
+		
+		<property name="memberPhone1" type="java.lang.String">
+			<column name="member_phone1">
+				<comment>项目成员联系方式1</comment>
+			</column>
+		</property>
+		<property name="memberPhone2" type="java.lang.String">
+			<column name="member_phone2">
+				<comment>项目成员联系方式2</comment>
+			</column>
+		</property>
+		<property name="memberPhone3" type="java.lang.String">
+			<column name="member_phone3">
+				<comment>项目成员联系方式3</comment>
+			</column>
+		</property>
+		<property name="memberPhone4" type="java.lang.String">
+			<column name="member_phone4">
+				<comment>项目成员联系方式4</comment>
+			</column>
+		</property>
+		<property name="memberPhone5" type="java.lang.String">
+			<column name="member_phone5">
+				<comment>项目成员联系方式5</comment>
+			</column>
+		</property>
+		
+		<property name="memberRole1" type="java.lang.String">
+			<column name="member_role1">
+				<comment>项目成员职能1</comment>
+			</column>
+		</property>
+		<property name="memberRole2" type="java.lang.String">
+			<column name="member_role2">
+				<comment>项目成员职能2</comment>
+			</column>
+		</property>
+		<property name="memberRole3" type="java.lang.String">
+			<column name="member_role3">
+				<comment>项目成员职能3</comment>
+			</column>
+		</property>
+		<property name="memberRole4" type="java.lang.String">
+			<column name="member_role4">
+				<comment>项目成员职能4</comment>
+			</column>
+		</property>
+		<property name="memberRole5" type="java.lang.String">
+			<column name="member_role5">
+				<comment>项目成员职能5</comment>
+			</column>
+		</property>
+		
+		<property name="tableCnt" type="java.lang.Integer">
+			<column name="table_cnt">
+				<comment>需要工位数</comment>
+			</column>
+		</property>
+		
+		<property name="applyer" type="java.lang.String">
+			<column name="applyer">
+				<comment>申请人</comment>
+			</column>
+		</property>
+		<property name="applyTime" type="java.util.Date">
+			<column name="apply_time">
+				<comment>申请时间</comment>
+			</column>
+		</property>
+		<property name="financing">
+			<column name="financing" sql-type="varchar(50)">
+				<comment>是否融资</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+		<property name="pub">
+			<column name="pub" sql-type="varchar(50)">
+				<comment>是否发布到网站</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+		<property name="photo" type="java.lang.String">
+			<column name="photo">
+				<comment>团队图片</comment>
+			</column>
+		</property>
+		<property name="oldName" type="java.lang.String">
+			<column name="old_name">
+				<comment>团队图片原始名称</comment>
+			</column>
+		</property>
+		<property name="tableInfo" type="java.lang.String">
+			<column name="table_info">
+				<comment>入驻工位信息</comment>
+			</column>
+		</property>
+		
+		<property name="applySource" not-null="true">
+			<column name="apply_source">
+				<comment>信息来源</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.pb.preferences.enums.GardenApplySourceEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		
+		<property name="projectState" not-null="true">
+			<column name="project_state">
+				<comment>项目状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.pb.preferences.enums.GardenProjectStateEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		
+		<property name="applyDirection" not-null="true">
+			<column name="apply_direction">
+				<comment>项目去向</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.pb.preferences.enums.GardenApplyDirectionEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		
+		<property name="applyState" not-null="true">
+			<column name="apply_state">
+				<comment>申请状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.pb.preferences.enums.GardenApplyStateEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		
+		
+		
+		
+		
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

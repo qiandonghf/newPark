@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+ 
+    <class name="com.wiiy.crm.entity.SubjectRent">
+        <meta attribute="class-description">租赁合同标的</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="contractId" type="java.lang.Long"  not-null="true">
+			<column name="contract_id">
+				<comment>合同外键</comment>
+			</column>
+		</property>
+        <many-to-one name="contract" class="com.wiiy.crm.entity.Contract" foreign-key="fk_SubjectRent_contract" insert="false" update="false" fetch="join">
+            <column name="contract_id" not-null="true">
+                <comment>合同</comment>
+            </column>
+        </many-to-one>
+		
+        <property name="roomId" type="java.lang.Long" not-null="true">
+			<column name="room_id">
+				<comment>房间外键</comment>
+			</column>
+		</property>
+        <many-to-one name="room" class="com.wiiy.pb.entity.Room" foreign-key="fk_SubjectRent_room" insert="false" update="false" fetch="join">
+            <column name="room_id" not-null="true">
+                <comment>房间</comment>
+            </column>
+        </many-to-one>
+        <property name="roomName" type="java.lang.String" length="255">
+			<column name="room_name">
+				<comment>地址描述 如XX楼XX房间(程序自动填充)</comment>
+			</column>
+		</property>
+        <property name="roomArea" type="java.lang.Double" length="255">
+			<column name="room_area" precision="10" scale="2">
+				<comment>房间面积</comment>
+			</column>
+		</property>
+        <property name="rentPrice" type="java.lang.Double" length="255">
+			<column name="rent_price">
+				<comment>租金单价</comment>
+			</column>
+		</property>
+        <property name="rentPriceUnit">
+			<column name="rent_price_unit">
+				<comment>租金单价单位</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.crm.preferences.enums.PriceUnitEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+        <property name="managePrice" type="java.lang.Double" length="255">
+			<column name="manage_price">
+				<comment>物管单价</comment>
+			</column>
+		</property>
+        <property name="managePriceUnit">
+			<column name="manage_price_unit">
+				<comment>物管单价单位</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.crm.preferences.enums.PriceUnitEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+        <property name="startDate" type="java.util.Date">
+			<column name="start_date" length="19">
+				<comment>租用开始时间</comment>
+			</column>
+		</property>
+		<property name="endDate" type="java.util.Date">
+			<column name="end_date" length="19">
+				<comment>租用结束时间</comment>
+			</column>
+		</property>
+        <property name="rebate">
+			<column name="rebate" sql-type="varchar(50)">
+				<comment>是否优惠</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>		
+		</property>
+		<property name="rebateRuleId" type="java.lang.String">
+			<column name="rebate_rule" length="19">
+				<comment>优惠规则外键</comment>
+			</column>
+		</property>
+        <many-to-one name="rebateRule" class="com.wiiy.core.entity.DataDict" foreign-key="fk_subjectRent_datadict_rebateRule" insert="false" update="false" fetch="join">
+			<column name="rebate_rule" >
+				<comment>优惠规则</comment>
+			</column>
+		</many-to-one>
+		<property name="memo" type="java.lang.String" length="1024">
+            <column name="memo" sql-type="text">
+                <comment>备注</comment>
+            </column>
+        </property>
+		
+		
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+    </class>
+</hibernate-mapping>

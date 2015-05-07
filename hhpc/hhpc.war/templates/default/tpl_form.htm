@@ -1,0 +1,47 @@
+<!-start->
+<form method="post" action="index.php" name="form">
+  <table width="100%" border="0" cellspacing="1" cellpadding="3">
+<!-start->
+
+<!-input->
+<tr> 
+      <td width="130" align="right">{#title#}:</td>
+      <td> 
+        <input type="text" name="{#fieldname#}" size="{#size#}" value="{#fieldvalue#}" class="input">
+        {#mustfill#} {#intro#}  </td>
+    </tr>
+<!-input->
+
+<!-textarea->
+    <tr> 
+      <td width="130" align="right">{#title#}:</td>
+      <td> 
+        <textarea name="{#fieldname#}" cols="{#size#}" rows="5" class="textarea">{#fieldvalue#}</textarea>
+        {#mustfill#} {#intro#}  </td>
+    </tr>
+
+<!-textarea->
+
+<!-list->
+    <tr> 
+      <td width="130" align="right">{#title#}:</td>
+      <td> 
+        <select name="{#fieldname#}" >
+		{#list#}
+        </select>
+        {#mustfill#} {#intro#} </td>
+    </tr>
+
+<!-list->
+
+<!-end->
+    <tr> 
+      <td width="130" align="right">&nbsp;</td>
+      <td>
+        <input type="submit" name="Submit" value="{#lanSubmit#}" class="button">
+        <input type='hidden' name='step' value='send'>
+      </td>
+    </tr>
+  </table>
+</form>
+<!-end->

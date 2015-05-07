@@ -1,0 +1,57 @@
+/* CSS Document */
+.taskbg{ background:url(../images/workbg.gif)}
+.taskcontent{ border-right:1px solid #d2d2d2; background:#fff;}
+.tasktab{padding-top:10px;}
+.tasktab ul li{ margin-bottom:5px; cursor:pointer;}
+.tasktab .livisited{ padding:10px 0; background:url(../images/oaworkbg.gif) repeat-y; text-align:center; width:27px; border:1px solid #d2d2d2; font-weight:bold; position:relative; left:-1px; z-index:99999; border-left:none; color:#666;}
+.tasktab .livisited a:link,.tasktab .livisited a:visited,.tasktab .livisited a:hover{ color:#666; text-decoration:none;}
+.tasktab .lilink{ padding:10px 0; background:url(../images/ovworkbg1.gif) repeat-y; text-align:center; width:24px; border:1px solid #d2d2d2;   z-index:99999; border-left:none; color:#999;}
+.tasktab .lilink a:link,.tasktab .lilink a:visited,.tasktab .lilink a:hover{ color:#999; text-decoration:none}
+.tasksidebar{ width:350px; border-right:1px solid #ddd;}
+.task_qiucknav{ background:#f5f5f5; border-bottom:1px solid #ddd; height:25px; line-height:25px; padding-left:5px; position:relative;}
+.task_qiucknav ul li{ float:left; margin-right:5px; padding:0 5px;}
+.tasklink{border-left:1px #f5f5f5; border-right:1px solid #f5f5f5;}
+.tasklink a:link,.tasklink a:visited,.tasklink a:hover{ color:#333; text-decoration:none;}
+.taskactive{ border-left:1px solid #ddd; border-right:1px solid #ddd; position:relative; background:#e4f3ff;}
+.taskactive a:link,.taskactive a:visited,.taskactive a:hover{ color:#333; text-decoration:none;}
+.taskactive_arrow{ background:url(../images/arrow.png) no-repeat; width:9px; height:6px; position:absolute; top:25px; left:40px; display:inline-block;}
+.todowork{ padding:15px 10px 10px 10px;}
+.task_title{ height:27px; text-align:left; border-bottom:1px solid #999;}
+.todowork ul li{ height:25px; line-height:25px; border-bottom:1px dotted #ddd; color:#333; font-family:simsun;}
+.todowork ul li span{ float:right; padding-right:5px;}
+.todowork ul li a:link,.todowork ul li a:visited{ color:#333; text-decoration:none;}
+.todowork ul li a:hover{ color:#333; text-decoration:none;} 
+.todowork ul li em{ color:#999; font-style:normal; padding-left:5px;}
+.sendWork{ padding:10px 10px 0px 10px;}
+.sendWorklist{ overflow-X:hidden; overflow-y:auto;}
+.sendWorklist ul li{ line-height:25px; border-bottom:1px solid #ddd; color:#333; font-family:simsun; position:relative; vertical-align:middle}
+.lifinsh{ position:relative; top:3px;padding-left:3px;}
+.sendWorklist .arrow{ float:right; padding-right:5px; position:relative; top:6px;}
+.sendWorklist ul li a:link,.sendWorklist ul li a:visited{ color:#333; text-decoration:none;}
+.sendWorklist ul li a:hover{ color:#333; text-decoration:none;} 
+.sendWorklist ul li em{ color:#999; font-style:normal; padding-left:5px;}
+.sendchild{ background:#f5fcff}
+.sendchild dl dd{ padding-left:20px; height:25px; line-height:25px; border-top:1px solid #f2f2f2;}
+.sendchild .finsh{ float:right; padding-right:5px; vertical-align:middle; color:#999;}
+.sendchild .finsh img{ position:relative; top:2px;}
+.sendchild .userico{ padding-right:3px; position:relative; top:1px;}
+.tasklist{ padding:10px 10px 5px 10px; width:auto;}
+.tasklisttitle{ height:38px; line-height:38px; border-bottom:1px solid #ddd;}
+.tasksearch{height:19px;line-height:19px; widht:255px; padding-right:8px; float:right; margin-top:8px; }
+.taskinput{ height:17px; line-height:17px; border:1px solid #ddd; color:#999; width:100px; padding-left:2px;}
+.taskbtn{ background:url(../images/tasksearchbtn.png) no-repeat; width:19px; height:19px; border:none;}
+.taskcontet{ overflow-x:hidden; overflow-y:auto}
+.taskcontet ul li{ border-bottom:1px solid #ddd; line-height:20px;}
+.taskgray{ color:#999;}
+.taskgraypr{ color:#999; padding-right:10px; text-align:right;}
+.taskfnormal{ color:#333;padding-right:10px; text-align:right;}
+.taskfred{ color:#f00;padding-right:10px; text-align:right;}
+.scroll{ BACKGROUND-COLOR: transparent; scrollbar-highlight-color:#FFFFFF; scrollbar-3dlight-color:#83bbd9; scrollbar-face-color:#e6eff6; scrollbar-shadow-color:#83bbd9; scrollbar-darkshadow-color:#FFFFFF; scrollbar-track-color:#FFFFFF; scrollbar-arrow-color:#9bb1d0;}
+.taskimg{ padding:10px;}
+.tasktable{ margin:10px; border-top:1px solid #ddd; border-left:1px solid #ddd;}
+.tasktableth{ background:#f2f2f2; border-bottom:1px solid #ddd; border-right:1px solid #ddd; height:24px; line-height:24px; text-align:center; color:#333;}
+.tasktabletd{ border-bottom:1px solid #ddd; border-right:1px solid #ddd; height:24px; line-height:24px; text-align:center; color:#666;}
+.tasktabletdred{ border-bottom:1px solid #ddd; border-right:1px solid #ddd; height:24px; line-height:24px; text-align:center; color:#f00;}
+.task_add{ background:url(../images/taskadd.png) no-repeat; border:none; width:89px; height:27px; cursor:pointer;}
+.task_add_over{ background:url(../images/taskaddover.png) no-repeat; border:none; width:89px; height:27px; cursor:pointer;}
+.trover{ background:#f4f4f4; cursor:pointer;} 

@@ -1,0 +1,47 @@
+<!-menu-> 
+<table width=160 cellspacing=1 cellpadding=1 align=center>
+  <tr> 
+    <td  height=5 colspan="2" align=center></td>
+  </tr>
+  <form method=post action={#RP#}admin.php>
+    <tr> 
+      <td  height=25 width=43% align=right > {#lanMemberUser#}:</td>
+      <td height=25 width=57%> 
+        <input type=text name=muser  maxlength=20 class=input style="width:100px">
+      </td>
+    </tr>
+    <tr> 
+      <td height=25 width=43%  align=right  > {#lanMemberPass#}:</td>
+      <td height=25 width=57% > 
+        <input type=password name=mpass  style="width:100px" maxlength=20 class=input>
+      </td>
+    </tr>
+    <tr> 
+      <td height=5 align="right" colspan="2"></td>
+    
+    <tr> 
+      <td height=26 align="right">&nbsp; </td>
+      <td height=26 valign="top"> 
+        <input type="submit" name="Submit" value="{#lanLoginButton#}" class="button">
+        <input type="button" name="Submit2" value="{#lanRegister#}" class="button" onClick="window.location='{#RP#}reg.php'">
+      </td>
+    <tr> 
+      <td height=30 colspan=2 align=center  class=left><img src="images/mail.gif" width="14" height="13" border="0"> 
+        <a href="{#RP#}lostpass.php" >{#lanResetNTC#}
+        </a></td>
+    </tr>
+  </form>
+</table>
+<!-menu->
+
+<!-menunow->
+<table width=160 cellspacing=1 cellpadding=4 align=center height="100">
+  <tr> 
+    <td  height=5 colspan="2" align=center >{#user#} 
+      {#lanLoninNTC#}<br>
+      <br>
+       <a href={#RP#}member.php>{#lanMemberCenter#}</a> <a href={#RP#}logout.php>{#lanMemberExit#}</a></td>
+  </tr>
+</table>
+<!-menunow->
+

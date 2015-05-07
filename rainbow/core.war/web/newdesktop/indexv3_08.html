@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--<base href="file://e:\hzsl\"/>-->
+<base href="https://58.215.78.148:8443/svn/parkmanager/trunk/parkmanager.mockup.war/"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>园区动力-园区宝</title>
+<link href="core/common/style/index.css" rel="stylesheet" type="text/css" />
+<link href="parkmanager.oa_new/style/index.css" rel="stylesheet" type="text/css" />
+<link href="core/common/floatbox/floatbox.css" rel="stylesheet" type="text/css" />
+<link href="core/common/style/tab.css" rel="stylesheet" type="text/css" />
+<link href="core/common/style/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="core/common/js/jquery.js"></script>
+<script type="text/javascript" src="core/common/js/menu.js"></script>
+<script type="text/javascript" src="core/common/floatbox/floatbox.js"></script>
+<script type="text/javascript" src="core/common/js/tab.js"></script>
+<script type="text/javascript" src="core/common/js/tools.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#nav li").each(function(index){
+		$("#nav li").eq(index).click(function(){
+			$("#nav li").removeClass("nav2").addClass("nav1");
+			$("#nav li").eq(index).removeClass("nav1").addClass("nav2")
+		});
+	});
+		
+});
+</script>
+<script type="text/javascript"> 
+<!--tab滚动开始-->
+
+var a=15;
+var b=0;
+$(document).ready(function(){
+  function scrollClick(expression){
+	
+	var width		= $("#tab_menu").width(),
+		width2		= $("#tabdiv").width();
+		
+		if (width+30<=width2){
+			return false	
+		}else{		
+		a = expression			
+			$("#tab_menu").animate({left:a+"px"},"slow");
+		}
+	//alert (a);
+}
+  //$("#tab_menu").width($(".tabdiv").width()-40);
+  $(".leftframediv").click(function(){
+		if(a <15){
+  			scrollClick(a+100);
+		}
+  });
+
+  $(".rightramediv").click(function(){
+		if(a+$("#tab_menu").width()>$("#tabdiv").width()){
+  			scrollClick(a-100);
+		}
+  });
+  
+    $("#navlist3 li").each(function(index){
+  	$("#navlist3 li").eq(index).click(function(){
+		$(".menu").css({display:"none"});
+		$("#navlist3 li em").removeClass("b1").addClass("b");
+		$("#navlist3 li em").eq(index).removeClass("b").addClass("b1");
+		$(".menu").eq(index).css({display:"block"});
+	});
+  });
+
+  $(".rightarrow").click(function(){
+  //alert(123);
+  b=b-28;
+  $(".centerconlist").animate({left:b+"px"},"slow");
+  });
+  $(".leftarrow").click(function(){
+  b=b+28;
+  $(".centerconlist").animate({left:b+"px"},"slow");
+  });
+});
+<!--tab滚动结束-->
+var tab=null;
+$( function() {
+	  tab = new TabView( {
+		containerId :'tab_menu',
+		pageid :'page',
+		cid :'tab_po',
+		position :"top"
+	});
+	tab.add( {
+		id :'tabIndex0',
+		title :"机构设置",
+		url :"core/web/right.html",
+		isClosed :true
+	});
+});
+
+
+$(document).ready(function() {
+            $("#navlist dd a").each(function(index) {
+                $(this).click(
+                        function() {
+							tab.add({
+								id:"tabIndex"+index,
+								url: $(this).attr("href"),
+								title: $(this).text(),
+								isClosed :true
+							});
+							return false;
+                        })
+            })
+        });
+function getOpener() {
+            var tabSize = top.tab.size();
+            var framesSize = top.frames.length;
+            if (framesSize - tabSize > 1) {
+                return top.frames[framesSize - 2];
+            } else {
+                return top.frames[top.tab.currentIndex()];
+            }
+        }
+
+
+function useredit(){
+tab.add( {
+		id :'tabIndex001',
+		title :"账户设置",
+		url :"core/web/core_user_edit.html",
+		isClosed :true
+	});
+}
+function fastbtn(){
+tab.add( {
+		id :'tabIndex002',
+		title :"快速按钮",
+		url :"core/web/core_user_edit.html",
+		isClosed :true
+	});
+}
+function searchs(){
+tab.add( {
+		id :'tabIndex003',
+		title :"搜索",
+		url :"core/web/search.html",
+		isClosed :true
+	});
+}
+$(window).resize(function(){
+						  //alert(3);
+	selheight();
+	
+	// document.frames("FrameID").document.body.scrollHeight;
+	
+});
+</script>
+</head>
+<!--<body mousedown-1066583751="function(k){try{fb.BK=k.clientX;fb.BL=k.clientY;fb.BJ=k.target;fb.I(function(){try{fb.BK=fb.BL=fb.BJ=c}catch(l){}},250)}catch(k){}}" onmousedown-1066583751="function(s){if(!s){var i=h[fb.UJ];s=i&&i[fb.UP]&&i[fb.UP].event}if(s&&!s.target){s.target=s.srcElement}try{if(h&&h[o]){return h[o](s)}}catch(r){}}">-->
+<body>
+<!--header-->
+<div id="header" class="top "> 
+  <!--topnav-->
+  <div id="topnav">
+    <div class="leftnav"> <span class="span1"><a href="#">园区导航</a></span> <span class="username">管理员 [<a href="#">userName@163.com</a>]</span> <span class="toplink"><a href="#">首页</a>|</span> <span class="setup"><a href="javascript:void(0);" onclick="parent.window.frames['iframemain'].useredit()">账户设置</a></span> </div>
+    <div class="rightnav"><a href="#">关于</a>|<a href="javascript:void(0)" onclick="fbStart('修改密码','core/web/core_pwd_edit.html',350,150);">修改密码</a>|<a href="javascript:void(0)" onclick="fblockScreen('锁屏','core/web/lockScreen.html',350,215);">锁屏</a>|<a href="javascript:void(0)">退出</a></div>
+  </div>
+  <!--//topnav--> 
+  <!--headerdown-->
+  <div id="headerdown"> 
+    <!--logo-->
+    <div id="logo2"><img src="parkmanager.oa_new/images/logo_yuanqu.png" height="60" /></div>
+    <!--//logo--> 
+    <!--nav-->
+    <div id="nav_new">
+      <ul id="mini_nav">
+        <li class="nav1"><a href="parkmanager.oa_new/indexv2_xinxi.html" title="信息"></a></li>
+        <li class="nav2"><a href="parkmanager.oa_new/workmanage/indexv2_workReport.html" title="汇报"></a></li>
+        <li class="nav3"><a href="parkmanager.oa_new/indexv2_liucheng.html" title="流程"></a></li>
+        <li class="nav4"><a href="parkmanager.oa_new/indexv2_01.html" title="工作"></a></li>
+        <li class="nav5"><a href="parkmanager.oa_new/document/personaldocuments_list.html" title="文档"></a></li>
+        <li class="nav6"><a href="parkmanager.oa_new/communication/write_list.html" title="邮件"></a></li>
+        <li class="nav7"><a href="#" title="考勤"></a></li>
+        <li class="nav8"><a href="#" title="搜索"></a></li>
+      </ul>
+      <div class="hackbox"></div>
+    </div>
+    <!--//nav--> 
+    <!--rightpic-->
+    <div id="rightpic">
+      <div class="time"> 
+        <script language=JavaScript>
+
+today=new Date();
+
+function initArray(){
+
+this.length=initArray.arguments.length
+
+for(var i=0;i<this.length;i++)
+
+this[i+1]=initArray.arguments[i] }
+
+var d=new initArray(
+
+" 星期日",
+
+" 星期一",
+
+" 星期二",
+
+" 星期三",
+
+" 星期四",
+
+" 星期五",
+
+" 星期六");
+
+document.write(
+
+"<font color=#7f7f7f style='font-size:9pt;font-family: 宋体'> ",
+
+today.getYear(),"年",
+
+today.getMonth()+1,"月",
+
+today.getDate(),"日",
+
+d[today.getDay()+1],
+
+"</font>" );
+
+</script> 
+      </div>
+      <ul id="rightpics">
+        <li class="pic1"><a href="#" title="主页"></a></li>
+        <li class="pic2"><a href="#" title="刷新"></a></li>
+        <li class="pic3"><a href="#" title="帮助"></a></li>
+        <li class="pic4"><a href="#" title="锁定"></a></li>
+      </ul>
+    </div>
+    <!--rightpic--> 
+  </div>
+  <!--//headerdown--> 
+</div>
+<!--//header-->
+
+<div id="contant2">
+  <div id="sub2" style="display:block;"> 
+    <!--subnav-->
+    <div id="subnav2"> 
+      <!--topico-->
+      <div id="topico">
+        <ul>
+          <li> <span class="ico1" onmousemove="this.className='ico1over'" onmouseout="this.className='ico1'"></span><span class="ico2" onmousemove="this.className='ico2over'" onmouseout="this.className='ico2'"></span><span class="ico3" onmousemove="this.className='ico3over'" onmouseout="this.className='ico3'"></span><span class="ico4" onmousemove="this.className='ico4over'" onmouseout="this.className='ico4'"></span><span class="ico5" onmousemove="this.className='ico5over'" onmouseout="this.className='ico5'"></span><span class="ico6" onmousemove="this.className='ico6over'" onmouseout="this.className='ico6'"></span><span class="ico8" onmousemove="this.className='ico8over'" onmouseout="this.className='ico8'" onclick="layermenu()"></span> </li>
+        </ul>
+      </div>
+      <!--//topico-->
+      
+      <div id="navlist003">
+        <ul>
+          <li><a href="parkmanager.oa_new/indexv3_01.html"><img src="parkmanager.oa_new/images/nav3_01.png" width="68" height="74" /></a></li>
+          <li><a href="parkmanager.oa_new/indexv3_02.html" ><img src="parkmanager.oa_new/images/nav3_02.png" width="68" height="74" /></a></li>
+          <li><a  href="parkmanager.oa_new/indexv3_03.html" ><img src="parkmanager.oa_new/images/nav3_03.png" width="68" height="74" /></a></li>
+          <li><a href="parkmanager.oa_new/indexv3_04.html"><img src="parkmanager.oa_new/images/nav3_04.png" width="68" height="74" /></a></li>
+          <li><a href="parkmanager.oa_new/indexv3_05.html"><img src="parkmanager.oa_new/images/nav3_05.png" width="68" height="74" /></a></li>
+          <li><a href="parkmanager.oa_new/indexv3_06.html"><img src="parkmanager.oa_new/images/nav3_06.png" width="68" height="74" /></a></li>
+          <li><a href="parkmanager.oa_new/indexv3_07.html"><img src="parkmanager.oa_new/images/nav3_07.png" width="68" height="74" /></a></li>
+          <li class="on"><a href="parkmanager.oa_new/indexv3_08.html"><img src="parkmanager.oa_new/images/nav3_08.png" width="68" height="74" /></a></li>
+            <li><a href="parkmanager.oa_new/indexv3_09.html"><img src="parkmanager.oa_new/images/nav3_09.png" width="68" height="74" /></a></li>
+            <li><a href="parkmanager.oa_new/indexv3_10.html"><img src="parkmanager.oa_new/images/nav3_10.png" width="68" height="74" /></a></li>
+            <li><a href="parkmanager.oa_new/indexv3_11.html"><img src="parkmanager.oa_new/images/nav3_11.png" width="68" height="74" /></a></li>
+        </ul>
+      </div>
+      
+      <!--<div id="navlist3">
+				<ul>
+					<li class="li1 on" id="menulist" ><em id="em1" class="b1"></em><a href="javascript:void(0)">主园区</a>
+						<div class="menu" id="div1">
+						<dl>
+							<dd><a href="parkmanager.oa_new/indexv3_01.html"><img src="parkmanager.oa_new/images/nav3_01.png" width="68" height="74" /></a></dd>
+							<dd><a href="parkmanager.oa_new/indexv3_02.html" ><img src="parkmanager.oa_new/images/nav3_02.png" width="68" height="74" /></a></dd>
+							<dd><a  href="parkmanager.oa_new/indexv3_03.html" ><img src="parkmanager.oa_new/images/nav3_03.png" width="68" height="74" /></a></dd>
+							<dd><a href="parkmanager.oa_new/indexv3_04.html"><img src="parkmanager.oa_new/images/nav3_04.png" width="68" height="74" /></a></dd>
+							<dd><a href="parkmanager.oa_new/indexv3_05.html"><img src="parkmanager.oa_new/images/nav3_05.png" width="68" height="74" /></a></dd>
+							<dd><a href="parkmanager.oa_new/indexv3_06.html"><img src="parkmanager.oa_new/images/nav3_06.png" width="68" height="74" /></a></dd>
+							<dd><a href="parkmanager.oa_new/indexv3_07.html"><img src="parkmanager.oa_new/images/nav3_07.png" width="68" height="74" /></a></dd>
+							<dd class="on"><a href="parkmanager.oa_new/indexv3_08.html"><img src="parkmanager.oa_new/images/nav3_08.png" width="68" height="74" /></a> </dd>
+							<dd><a href="parkmanager.oa_new/indexv3_09.html"><img src="parkmanager.oa_new/images/nav3_09.png" width="68" height="74" /></a> </dd>
+							<dd><a href="parkmanager.oa_new/indexv3_10.html"><img src="parkmanager.oa_new/images/nav3_10.png" width="68" height="74" /></a> </dd>
+							<dd><a href="parkmanager.oa_new/indexv3_11.html"><img src="parkmanager.oa_new/images/nav3_11.png" width="68" height="74" /></a> </dd>
+						</dl>
+						</div>
+					</li>
+					<li class="li1" id="menulist" ><em id="em2" class="b"></em><a href="javascript:void(0)">园区A</a>
+						<div class="menu" id="div2" style="display:none">
+						<dl>
+							<dd class="on"><a href="#"><img src="parkmanager.oa_new/images/nav3_01.png" width="68" height="74" /></a></dd>
+							<dd><a href="#"><img src="parkmanager.oa_new/images/nav3_02.png" width="68" height="74" /></a></dd>
+							<dd><a href="#"><img src="parkmanager.oa_new/images/nav3_03.png" width="68" height="74" /></a></dd>
+							<dd><a href="#"><img src="parkmanager.oa_new/images/nav3_04.png" width="68" height="74" /></a></dd>
+							<dd><a href="#"><img src="parkmanager.oa_new/images/nav3_05.png" width="68" height="74" /></a></dd>
+							<dd><a href="#"><img src="parkmanager.oa_new/images/nav3_06.png" width="68" height="74" /></a></dd>
+							<dd><a href="#"><img src="parkmanager.oa_new/images/nav3_07.png" width="68" height="74" /></a></dd>
+						</dl>
+						</div>
+					</li>
+					<li class="li1" id="menulist" ><em id="em3" class="b"></em><a href="javascript:void(0)">园区B</a>
+					
+					<div class="menu" id="div3" style="display:none">
+						<dl>
+							<dd><a href="#"><img src="parkmanager.oa_new/images/nav3_01.png" width="68" height="74" /></a></dd>
+							<dd><a href="#"><img src="parkmanager.oa_new/images/nav3_02.png" width="68" height="74" /></a></dd>
+							<dd class="on"><a href="#"><img src="parkmanager.oa_new/images/nav3_03.png" width="68" height="74" /></a></dd>
+							<dd><a href="#"><img src="parkmanager.oa_new/images/nav3_04.png" width="68" height="74" /></a></dd>
+							<dd><a href="#"><img src="parkmanager.oa_new/images/nav3_05.png" width="68" height="74" /></a></dd>
+							<dd><a href="#"><img src="parkmanager.oa_new/images/nav3_06.png" width="68" height="74" /></a></dd>
+							<dd><a href="#"><img sc="parkmanager.oa_new/images/nav3_07.png" width="68" height="74" /></a></dd>
+						</dl>
+						</dl>
+					  </div>
+					</li>
+				</ul>
+			</div>-->
+           
+      
+      <!--navlist--> 
+      <!--<div id="navlist03">
+            <ul>
+            <li class="on"><a href="#">园区A</a></li>
+            <li><a href="#">园区B</a></li>
+            </ul>
+            </div>--> 
+      <!--//navlist--> 
+    </div>
+    <!--//subnav--> 
+    <!--sildebottom-->
+    <div  class="sildebottom2">
+      <div class="leftarrow"><!--<img src="core/common/images/indexarrowleft.png" />--></div>
+      <div class="centercon">
+        <div class="centerconlist2">
+          <ul>
+            <li> <a href="parkmanager.oa_new/indexv1_01.html"><img title="园区动力" src="parkmanager.oa_new/images/dongli_ico.png" /></a> </li>
+            <li><a href="parkmanager.oa_new/indexv2_01.html"><img title="任务分配" src="parkmanager.oa_new/images/renwu_ico.png" /></a></li>
+            <li class="current"><a href="parkmanager.oa_new/indexv3_01.html"><img title="业务功能" src="parkmanager.oa_new/images/yewsu_ico.png" /></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="rightarrow"><!--<img src="core/common/images/indexarrowright.png" />--></div>
+    </div>
+    <!--//sildebottom--> 
+  </div>
+  <div id="subscroll"><img src="core/common/images/scrollleft.gif" width="7" height="45" id="disbtn" onclick="displays();" /></div>
+  <div id="news_contenter" class="main" style=" overflow:scroll;padding:30px 50px; "> 
+    <!-- <iframe name="maincontent_frame"  width="90%" height="100%" src="parkmanager.oa_new/v3_xsgl.html" scrolling="auto" style="padding:50px;overflow:scroll;"  marginwidth="0" marginheight="0" frameborder="0"></iframe>-->
+    
+    <div class="toptitle">
+      <p> <strong>园区宝</strong><br />
+        <span>这里是总园区的园区宝，这里是总园区的园区宝，这里是总园区的园区宝，这里是总园区的园区宝，这里是总园区的园区宝，这里是总园区的园区宝，这里是总园区的园区宝，这里是总园区的园区宝，这里是总园区的园区宝，这里是总园区的园区宝， </span></p>
+    </div>
+    <div class="maincontent">
+   <!----左侧内容开始------->
+      <div class="mainleft">
+        <div class="mainnewslist">
+          <h3 class="title bg0801"> 内容管理 </h3>
+          <p class="toptext"> 这里是内容管理的一段文字介绍，文字介绍稍后提供，这里是内容管理的一段文字介绍，文字介绍稍后提供，这里是内容管理的一段文字</p>
+          <ul>
+            <li class="main2">
+              <p class="text"> <strong><a href="#" class="blue">园区资料</a></strong> <span></span></p>
+              <p class="text"> <strong><a href="#" class="blue">活动管理</a></strong> <span></span></p>
+              <p class="text"> <strong><a href="#" class="blue">资讯管理</a></strong> <span></span></p>
+              <p class="text"> <strong><a href="#" class="blue">物业管理</a></strong> <span><a href="#" class="huise"></a> </span></p>
+              <p class="text"> <strong><a href="#" class="blue">园区交通</a></strong> <span></span></p>
+              <p class="text"> <strong><a href="#" class="blue">电话本</a></strong> <span></span></p>
+            </li>
+          </ul>
+        </div>
+        <div class="mainnewslist">
+          <h3 class="title bg0802"> 招商管理 </h3>
+          <p class="toptext"> 这里是招商管理的一段文字介绍，文字介绍稍后提供，这里是招商管理的一段文字介绍，文字介绍稍后提供，这里是招商管理的一段文字</p>
+          <ul>
+            <li class="main2">
+              <p class="text"> <strong><a href="#" class="blue">项目线索</a></strong> <span><a href="#" class="huise on">新增(<font>2</font>)</a> </span></p>
+            </li>
+          </ul>
+        </div>
+      </div>      
+   <!----左侧内容结束------->
+   <!----右侧内容开始------->
+      <div class="mainright">
+        <div class="mainnewslist">
+          <h3 class="title bg0803"> 服务管理 </h3>
+          <p class="toptext"> 这里是服务管理的一段文字介绍，文字介绍稍后提供，这里是销售机会的一段文字介绍，文字介绍稍后提供，这里是销售机会的一段文字</p>
+          <ul>
+            <li class="main2">
+              <p class="text"> <strong><a href="#" class="blue">机构管理</a></strong> <span><a href="#" class="underline huise"></a></span></p>
+              <p class="text"> <strong class=" num"><a href="#" class="blue">贷款服务</a>(<font>5</font>)<a href="#" class="blue">会计服务</a>(<font>5</font>)<a href="#" class="blue">后勤服务</a>(<font>5</font>) <a href="#" class="blue">服务类型</a>(<font>5</font>)</strong> <span class=" w120th"><a href="#" class="blue">投资服务</a> <a href="#" class="blue">法律服务(<font>2</font>)</a> <a href="#" class="blue">税务服务</a> <a href="#" class="blue">人力资源(<font>2</font>)</a> <a href="#" class="blue">项目申报</a> <a href="#" class="blue">营销服务(<font>2</font>)</a></span></p>
+              <p class="text"> <strong><a href="#" class="blue">统计</a></strong> <span><a href="#" class="huise"></a></span></p>
+            </li>
+          </ul>
+        </div>
+        <div class="mainnewslist">
+          <h3 class="title bg0804"> 系统管理 </h3>
+          <p class="toptext"> 这里客户管理的一段文字介绍，文字介绍稍后提供，这里是销售机会的一段文字介绍，文字介绍稍后提供，这里是销售机会的一段文字</p>
+          <ul>
+            <li class="main2">              
+              <p class="text"> <strong><a href="#" class="blue">用户中心</a></strong> <span class=" nolink">最近15天，新注册用户<font>7</font>人</span></p>
+              <p class="text"> <strong><a href="#" class="blue">运营统计</a></strong> <span><a href="#" class="underline huise on"></a></span></p>
+            </li>
+          </ul>
+        </div>        
+      </div>
+      
+   <!----右侧内容结束------->
+    </div>
+  </div>
+</div>
+<div id="footer" class="bottom">Copyright ©2010 www.complay.com  |   Tel: 0571-88881234</div>
+</body>
+</html>

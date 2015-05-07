@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.crm.entity.ContractExpireApproval">
+    	<meta attribute="class-description">合同到期审批单</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="contractId" type="java.lang.Long" not-null="true">
+			<column name="contract_id">
+				<comment>合同外键</comment>
+			</column>
+		</property>
+		<many-to-one name="contract" class="com.wiiy.crm.entity.Contract" foreign-key="fk_ContractExpireApproval_contract" insert="false" update="false" fetch="join">
+            <column name="contract_id" not-null="true">
+                <comment>合同</comment>
+            </column>
+        </many-to-one>
+		<property name="businessmanSuggestion" type="java.lang.String">
+            <column name="businessman_suggestion">
+                <comment>招商人员意见</comment>
+            </column>
+        </property>
+		<property name="gcbApprovalId" type="java.lang.Long">
+            <column name="gcb_approvalId">
+                <comment>工程部审核ID</comment>
+            </column>
+        </property>
+		<many-to-one name="gcb" class="com.wiiy.core.entity.Approval" foreign-key="fk_contractExpire_approval_gcb" insert="false" update="false" fetch="join">
+        	<column name="gcb_approvalId">
+        		<comment>工程部审核</comment>
+        	</column>
+        </many-to-one>
+		<property name="cwzjApprovalId" type="java.lang.Long">
+            <column name="cwzj_approvalId">
+                <comment>财务总监审核ID</comment>
+            </column>
+        </property>
+		<many-to-one name="cwzjApproval" class="com.wiiy.core.entity.Approval" foreign-key="fk_contractExpire_approval_cwzj" insert="false" update="false" fetch="join">
+        	<column name="cwzj_approvalId">
+        		<comment>财务总监审核</comment>
+        	</column>
+        </many-to-one>
+        <property name="zjlApprovalId" type="java.lang.Long">
+            <column name="zjl_approvalId">
+                <comment>总经理审批ID</comment>
+            </column>
+        </property>
+        <many-to-one name="zjlApproval" class="com.wiiy.core.entity.Approval" foreign-key="fk_contractExpire_approval_zjl" insert="false" update="false" fetch="join">
+        	<column name="zjl_approvalId">
+        		<comment>总经理审批</comment>
+        	</column>
+        </many-to-one>
+        <property name="cwbApprovalId" type="java.lang.Long">
+            <column name="cwb_approvalId">
+                <comment>财务部结算ID</comment>
+            </column>
+        </property>
+        <many-to-one name="cwbApproval" class="com.wiiy.core.entity.Approval" foreign-key="fk_contractExpire_approval_cwb" insert="false" update="false" fetch="join">
+        	<column name="cwb_approvalId">
+        		<comment>财务部结算</comment>
+        	</column>
+        </many-to-one>
+        <property name="khApprovalId" type="java.lang.Long">
+            <column name="kh_approvalId">
+                <comment>客户确认ID</comment>
+            </column>
+        </property>
+		<many-to-one name="kh" class="com.wiiy.core.entity.Approval" foreign-key="fk_contractExpire_approval_kh" insert="false" update="false" fetch="join">
+        	<column name="kh_approvalId">
+        		<comment>客户确认</comment>
+        	</column>
+        </many-to-one>
+        <property name="countersignStatus">
+			<column name="countersign_status">
+				<comment>会签状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.core.preferences.enums.CountersignOpenEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+        <set name="atts" cascade="all-delete-orphan" lazy="false">
+        	<comment>附件</comment>
+            <key>
+                <column name="contractExpireApproval_id"></column>
+            </key>
+            <one-to-many class="com.wiiy.crm.entity.ContractExpireApprovalAtt" />
+        </set>
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

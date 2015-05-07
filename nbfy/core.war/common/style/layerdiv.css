@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* CSS Document */
+
+.mloading{position:fixed; left:48%; top:48%; z-index:99999;}
+.mloading img{ vertical-align:middle;}
+
+
+body,div,ul,li,h1,h2,h3,h4,h5,h6,form,pre,input,textarea,td,th,dd,dl,dt,hr,p{ margin:0; padding:0;}
+img{ border:none; cursor:pointer;}
+body{background:#eeeeee;}
+body,botton,input,select,textarea{ font:12px/1.5 tahoma,Helvetica, Arial, sans-serif,"";margin:0; padding:0;}
+li,dd dt{ list-style:none;}
+.hackbox{ clear:both;}
+.tdinput{ position:relative; top:3px; +top:0px; margin-right:2px;}
+
+.basediv{  border:1px solid #c3c3c3; margin:4px;background:#fff;}
+.basecontact{ margin:4px; background:#fff;}
+.layertitle{height:22px; border-bottom:1px solid #c9c9c9; line-height:22px; padding-left:10px; font-weight:bold; background:url(../images/bg.png) 0px -548px;}
+.divlays{ padding:2px;}
+.touxian{ padding:1px ; border:1px solid #c3c3c3; margin:8px 5px 0;}
+.touxiantd{ padding-left:18px; height:25px; line-height:25px;}
+.touxiantd img{ vertical-align:middle; padding-right:2px;}
+.touxiantd a:link,.touxiantd  a:visited{ color:#000; text-decoration:none}
+.touxiantd a:hover{ color:#000; text-decoration:underline;} 
+/*ɫ*/
+.roleleft{ width:258px!important; width:264px; margin:10px 0px 2px 2px; border:1px solid #c3c3c3; float:left; height:auto; position:relative; padding:15px 2px 2px 2px; display:inline;}
+.roletitle{ width:70px; background:#fff; position:absolute; top:-10px; left:20px; height:25px; line-height:25px; text-align:center; }
+.rolelist{ padding-top:5px; overflow-y:scroll; height:155px;}
+.rolelist ul li{ color:#666; height:22px; line-height:22px;}
+.rolelist ul li a:link,.rolelist ul li a:visited{ display:block; text-decoration:none; padding-left:9px; color:#666;}
+.rolelist ul li a:hover{ display:block; text-decoration:none; background:#f2f2f2; color:#666;}
+.rolelist ul li .bgli{ background:#f2f2f2;}
+.rolelist .bgli1{ background:#7f7f7f; color:#fff; padding-left:9px;}
+.rolebtn{ width:25px; float:left; height:120px; text-align:center; padding-top:75px;}
+.rolebtn img{ margin-bottom:5px; cursor:pointer; border:none;}
+/*//ɫ*/
+.page{ height:25px; line-height:25px; border-top:1px solid #ccc; background:#fbfbfb; padding-right:5px; padding-left:5px; overflow:hidden;}
+.floatrightdiv{ width:100px; float:left; padding-left:8px;}
+.page ul li{ width:190px; float:right;}
+.page ul li span{ margin-right:10px; float:left;}
+.page .first{ width:13px; height:13px; background:url(../images/fiest.gif) no-repeat; display:inline-block; cursor:pointer; float:left; margin-top:5px;}
+.page .first{ display:block;}
+.page .first:hover{ background:url(../images/fiestover.gif) no-repeat;}
+.page .pre{ width:13px; height:13px; background:url(../images/pre.gif) no-repeat; display:inline-block; cursor:pointer; float:left; margin-top:5px;}
+.page .pre{ display:block;}
+.page .pre:hover{ background:url(../images/preover.gif) no-repeat;}
+
+.page .next{ width:13px; height:13px; background:url(../images/next.gif) no-repeat; display:inline-block; cursor:pointer; float:left; margin-top:5px;}
+.page .next{ display:block;}
+.page .next:hover{ background:url(../images/nextover.gif) no-repeat;}
+.page .last{ width:13px; height:13px; background:url(../images/last.gif) no-repeat; display:inline-block; cursor:pointer; float:left; margin-top:5px;}
+.page .last{ display:block;}
+.page .last:hover{ background:url(../images/lastover.gif) no-repeat;}
+/*listdiv*/
+.listdiv{ height:300px;}
+.tablediv{ height:22px; line-height:22px; margin:4px 4px 0px 4px;}
+.tablediv ul li { margin-right:5px; display:inline; float:left; cursor:pointer;}
+.tabledivli{ padding:0px 8px;  background:url(../images/bg.png) 0px -602px; text-align:center;border:1px solid #ccc; border-bottom:none;}
+.tabledivli1{ padding:0px 8px;  background:url(../images/bg.png) 0px -631px; text-align:center;border:1px solid #ccc; border-bottom:none; font-weight:bold;}
+/*ѡû*/
+.userleft{ width:150px; border-right:solid 1px #c3c3c3; float:left; height:354px;}
+.userleftcontact{ width:140px; border:solid 1px #c3c3c3; float:left; height:344px; margin:5px 0px 5px 5px; display:inline;}
+.userleft ul li{ line-height:25px; cursor:pointer;}
+.userli{background:url(../images/uerdivbg.gif) repeat-x; line-height:25px; border-bottom:1px solid #c3c3c3;}
+.userli .b{ width:13px; height:13px; background:url(../images/bg.png) -4px -142px no-repeat; display:inline-block;float:right; padding-right:5px; margin-top:7px;}
+.userli .b1{ width:13px; height:13px; background:url(../images/bg.png) -28px -142px; display:inline-block;float:right; padding-right:5px; margin-top:7px;}
+.userli a:link,.userli a:visited,.userli a:hover{ color:#333; padding-left:10px; text-decoration:none;}
+.userdiv{ height:226px;}
+.menuli{line-height:25px;font-weight:normal; }
+.menuli a:link,.menuli a:visited{ color:#000; text-decoration:none; display:block;}
+.menuli a:hover{ color:#000; text-decoration:none; background:#f7f7f7; display:block;}
+.spanico{ float:left; padding-left:15px; display:inline-block; height:20px;}
+.userright{ width:352px; float:right; margin-left:4px; display:inline; border-left:solid 1px #c3c3c3;height:354px;}
+.userrightcontact{ width:347px; float:right; display:inline; border:solid 1px #c3c3c3;height:344px; margin:5px 5px 5px 0px;}
+.userrightdiv{ height:273px;}
+.userrightdivC{ height:253px;}
+
+.userlefts{ width:150px; border-right:solid 1px #c3c3c3; float:left; height:359px;}
+.userrights{ width:350px; float:right; margin-left:6px; display:inline; border-left:solid 1px #c3c3c3;height:359px;}
+.userrightdivs{ height:328px;}
+/*ѡû*/
+/*ˮ*/
+.waterleft{ width:143px; border:solid 1px #c3c3c3; float:left; height:350px;margin:5px 2px 5px 5px;}
+.waterleft ul li{ line-height:25px; cursor:pointer;}
+.waterright{ width:347px; float:right; margin-left:6px; display:inline; border:solid 1px #c3c3c3;height:350px; margin:5px 5px 5px 0;}
+.meter_redcord{ text-align:center; font-size:14px; font-weight:bold;height:30px; line-height:30px;}
+.meter_redcord span{ float:right; color:#666; padding-right:10px; font-weight:normal; font-size:12px; position:relative; top:6px;}
+.meter_title{ font-size:14px; border-bottom:1px solid #ccc; height:30px; line-height:30px; text-align:center; font-weight:bold;}
+.meter_redcordinput{ width:65px; padding-left:2px; border:1px solid #ccc; height:20px; line-height:20px;}
+/*շѱ׼бʽ*/
+.userleftcharges{ width:143px; border:solid 1px #c3c3c3; float:left; height:334px; margin:5px 2px 5px 5px; display:inline;}
+.userrightcharges{ width:347px; float:right; display:inline; border:solid 1px #c3c3c3;height:334px; margin:5px 5px 5px 0;}
+/*OA*/
+.documenttype{ border:solid 1px #c3c3c3;height:344px; margin:5px;}
+.msgpage{height:22px; line-height:22px; background:#ff8a00; text-align:center; padding:0px 5px; color:#fff; position:fixed; left:40%; top:30%; z-index:99999;}
+.loadpage{height:22px; line-height:22px; text-align:center; background:#fff; border:1px solid #f5f5f5; color:#666; padding:0px 5px; position:fixed; left:40%; top:30%; z-index:99999;}
+.loadpage img{ vertical-align:middle; padding-right:5px;}
+.oatableAdd{ border-top:1px solid #c3c3c3; border-left:1px solid #c3c3c3;}
+.oatabletdleft{ border-bottom:1px solid #c3c3c3; border-right:1px solid #c3c3c3; height:25px; line-height:25px; text-align:right; width:100px; color:#333;}
+.oatabletdright{ border-bottom:1px solid #c3c3c3; border-right:1px solid #c3c3c3; height:25px; line-height:25px; text-align:left; padding-left:5px;}

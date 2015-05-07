@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+.tablediv{ margin:0 auto; width:930px;}
+.tabletitle{ font-size:16px;  height:40px; line-height:40px; text-align:center; font-weight:bold;}
+.tabletitle span{ font-size:12px; float:right; font-weight:normal; padding-right:5px; position:relative; top:10px;}
+.table{ width:930px; border-left:1px solid #000; border-top:1px solid #000; font-size:12px;}
+.table td{ text-align:center;border-right:1px solid #000; border-bottom:1px solid #000;}
+.tablefooter{ font-size:12px; padding-left:5px; height:25px; line-height:25px;}
+.tablefooter  span{ font-size:12px; float:right; padding-right:5px;}

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="root" location="10,10" size="170,70" />
+  <package name="oa" location="0,0" size="0,0">
+    <action name="task" location="0,0" size="0,0">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="task_list.jsp" />
+      </result>
+      <result name="add">
+        <resourceEdge source="add" routing="0" target="task_add.jsp" />
+      </result>
+      <result name="edit">
+        <resourceEdge source="edit" routing="0" target="task_eidt.jsp" />
+      </result>
+      <result name="view">
+        <resourceEdge source="view" routing="0" target="task_view.jsp" />
+      </result>
+    </action>
+    <action name="taskAtt" location="0,0" size="0,0" />
+    <action name="taskDepartConfig" location="0,0" size="0,0" />
+    <action name="taskDepart" location="0,0" size="0,0" />
+    <action name="taskProject" location="0,0" size="0,0" />
+    <action name="docShare" location="0,0" size="0,0">
+      <result name="addFolder">
+        <resourceEdge source="addFolder" routing="0" target="share_folder_add.jsp" />
+      </result>
+      <result name="editFolder">
+        <resourceEdge source="editFolder" routing="0" target="folder_edit.jsp" />
+      </result>
+      <result name="LoadListByFolderId">
+        <resourceEdge source="LoadListByFolderId" routing="0" target="share_document_list_by_folderId.jsp" />
+      </result>
+      <result name="move">
+        <resourceEdge source="move" routing="0" target="folder_list.jsp" />
+      </result>
+    </action>
+    <action name="docPublic" location="0,0" size="0,0">
+      <result name="addFolder">
+        <resourceEdge source="addFolder" routing="0" target="public_folder_add.jsp" />
+      </result>
+      <result name="editFolder">
+        <resourceEdge source="editFolder" routing="0" target="folder_edit.jsp" />
+      </result>
+      <result name="LoadListByFolderId">
+        <resourceEdge source="LoadListByFolderId" routing="0" target="public_document_list_by_folderId.jsp" />
+      </result>
+      <result name="LoadServiceListByFolderId">
+        <resourceEdge source="LoadServiceListByFolderId" routing="0" target="public_service_document_list_by_folderId.jsp" />
+      </result>
+      <result name="move">
+        <resourceEdge source="move" routing="0" target="folder_list.jsp" />
+      </result>
+    </action>
+    <action name="document" location="0,0" size="0,0">
+      <result name="addFolder">
+        <resourceEdge source="addFolder" routing="0" target="folder_add.jsp" />
+      </result>
+      <result name="move">
+        <resourceEdge source="move" routing="0" target="folder_list.jsp" />
+      </result>
+      <result name="editFolder">
+        <resourceEdge source="editFolder" routing="0" target="folder_edit.jsp" />
+      </result>
+      <result name="LoadListByFolderId">
+        <resourceEdge source="LoadListByFolderId" routing="0" target="document_list_by_folderId.jsp" />
+      </result>
+      <result name="edit">
+        <resourceEdge source="edit" routing="0" target="personaldocuments_edit.jsp" />
+      </result>
+    </action>
+    <action name="supply" location="0,0" size="0,0">
+      <result name="add">
+        <resourceEdge source="add" routing="0" target="OfficeSupplies_add.jsp" />
+      </result>
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="OfficeSupplies_list.jsp" />
+      </result>
+      <result name="edit">
+        <resourceEdge source="edit" routing="0" target="OfficeSupplies_edit.jsp" />
+      </result>
+      <result name="view">
+        <resourceEdge source="view" routing="0" target="OfficeSupplies_list.jsp" />
+      </result>
+      <result name="select">
+        <resourceEdge source="select" routing="0" target="Supply_selector.jsp" />
+      </result>
+    </action>
+    <action name="supplyCategory" location="0,0" size="0,0">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="SupplyCategory_list.jsp" />
+      </result>
+      <result name="add">
+        <resourceEdge source="add" routing="0" target="SupplyCategory_add.jsp" />
+      </result>
+      <result name="edit">
+        <resourceEdge source="edit" routing="0" target="SupplyCategory_edit.jsp" />
+      </result>
+    </action>
+    <action name="supplyStockIn" location="0,0" size="0,0">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="Office_supplies_storage_list.jsp" />
+      </result>
+      <result name="edit">
+        <resourceEdge source="edit" routing="0" target="Office_supplies_storage_edit.jsp" />
+      </result>
+    </action>
+    <action name="card" location="0,0" size="0,0">
+      <result name="addCard">
+        <resourceEdge source="addCard" routing="0" target="contacts_add.jsp" />
+      </result>
+      <result name="view">
+        <resourceEdge source="view" routing="0" target="contact_view.jsp" />
+      </result>
+      <result name="edit">
+        <resourceEdge source="edit" routing="0" target="contact_edit.jsp" />
+      </result>
+      <result name="copyCard">
+        <resourceEdge source="copyCard" routing="0" target="contact_copy.jsp" />
+      </result>
+      <result name="moveCard">
+        <resourceEdge source="moveCard" routing="0" target="contact_move.jsp" />
+      </result>
+    </action>
+    <action name="cardCategory" location="0,0" size="0,0">
+      <result name="addCategory">
+        <resourceEdge source="addCategory" routing="0" target="contacts_category_add.jsp" />
+      </result>
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="contacts_list.jsp" />
+      </result>
+      <result name="addCard">
+        <resourceEdge source="addCard" routing="0" target="contacts_add.jsp" />
+      </result>
+      <result name="edit">
+        <resourceEdge source="edit" routing="0" target="contacts_category_edit.jsp" />
+      </result>
+    </action>
+    <action name="schedule" location="0,0" size="0,0">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="schedule_list.jsp" />
+      </result>
+      <result name="edit">
+        <resourceEdge source="edit" routing="0" target="schedule_edit.jsp" />
+      </result>
+      <result name="view">
+        <resourceEdge source="view" routing="0" target="schedule_view.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="personaldocuments_list.jsp" path="/web/document/personaldocuments_list.jsp" location="0,0" size="0,0" />
+  <webResource name="personaldocuments_edit.jsp" path="/web/document/personaldocuments_edit.jsp" location="0,0" size="0,0" />
+  <webResource name="share_document_list.jsp" path="/web/document/share_document_list.jsp" location="0,0" size="0,0" />
+  <webResource name="task_list.jsp" path="/web/task/task_list.jsp" location="0,0" size="0,0" />
+  <webResource name="task_eidt.jsp" path="/web/task/task_eidt.jsp" location="0,0" size="0,0" />
+  <webResource name="task_view.jsp" path="/web/task/task_view.jsp" location="0,0" size="0,0" />
+  <webResource name="share_folder_add.jsp" path="/web/document/share_folder_add.jsp" location="0,0" size="0,0" />
+  <webResource name="folder_edit.jsp" path="/web/document/folder_edit.jsp" location="0,0" size="0,0" />
+  <webResource name="share_document_list_by_folderId.jsp" path="/web/document/share_document_list_by_folderId.jsp" location="0,0" size="0,0" />
+  <webResource name="folder_list.jsp" path="/web/document/folder_list.jsp" location="0,0" size="0,0" />
+  <webResource name="public_folder_add.jsp" path="/web/document/public_folder_add.jsp" location="0,0" size="0,0" />
+  <webResource name="public_document_list_by_folderId.jsp" path="/web/document/public_document_list_by_folderId.jsp" location="0,0" size="0,0" />
+  <webResource name="public_service_document_list_by_folderId.jsp" path="/web/document/public_service_document_list_by_folderId.jsp" location="0,0" size="0,0" />
+  <webResource name="folder_add.jsp" path="/web/document/folder_add.jsp" location="0,0" size="0,0" />
+  <webResource name="document_list_by_folderId.jsp" path="/web/document/document_list_by_folderId.jsp" location="0,0" size="0,0" />
+  <webResource name="OfficeSupplies_add.jsp" path="/web/chiefadmin/OfficeSupplies_add.jsp" location="0,0" size="0,0" />
+  <webResource name="OfficeSupplies_list.jsp" path="/web/chiefadmin/OfficeSupplies_list.jsp" location="0,0" size="0,0" />
+  <webResource name="OfficeSupplies_edit.jsp" path="/web/chiefadmin/OfficeSupplies_edit.jsp" location="0,0" size="0,0" />
+  <webResource name="Supply_selector.jsp" path="/web/chiefadmin/Supply_selector.jsp" location="0,0" size="0,0" />
+  <webResource name="SupplyCategory_list.jsp" path="/web/chiefadmin/SupplyCategory_list.jsp" location="0,0" size="0,0" />
+  <webResource name="SupplyCategory_add.jsp" path="/web/chiefadmin/SupplyCategory_add.jsp" location="0,0" size="0,0" />
+  <webResource name="SupplyCategory_edit.jsp" path="/web/chiefadmin/SupplyCategory_edit.jsp" location="0,0" size="0,0" />
+  <webResource name="Office_supplies_storage_list.jsp" path="/web/chiefadmin/Office_supplies_storage_list.jsp" location="0,0" size="0,0" />
+  <webResource name="Office_supplies_storage_edit.jsp" path="/web/chiefadmin/Office_supplies_storage_edit.jsp" location="0,0" size="0,0" />
+  <webResource name="contacts_add.jsp" path="/web/communication/contacts_add.jsp" location="0,0" size="0,0" />
+  <webResource name="contact_view.jsp" path="/web/communication/contact_view.jsp" location="0,0" size="0,0" />
+  <webResource name="contact_edit.jsp" path="/web/communication/contact_edit.jsp" location="0,0" size="0,0" />
+  <webResource name="contact_copy.jsp" path="/web/communication/contact_copy.jsp" location="0,0" size="0,0" />
+  <webResource name="contact_move.jsp" path="/web/communication/contact_move.jsp" location="0,0" size="0,0" />
+  <webResource name="contacts_category_add.jsp" path="/web/communication/contacts_category_add.jsp" location="0,0" size="0,0" />
+  <webResource name="contacts_list.jsp" path="/web/communication/contacts_list.jsp" location="0,0" size="0,0" />
+  <webResource name="contacts_category_edit.jsp" path="/web/communication/contacts_category_edit.jsp" location="0,0" size="0,0" />
+  <webResource name="task_add.jsp" path="/web/task/task_add.jsp" location="0,0" size="0,0" />
+  <webResource name="schedule_list.jsp" path="/web/workmanage/schedule_list.jsp" location="0,0" size="0,0" />
+  <webResource name="schedule_edit.jsp" path="/web/workmanage/schedule_edit.jsp" location="0,0" size="0,0" />
+  <webResource name="schedule_view.jsp" path="/web/workmanage/schedule_view.jsp" location="0,0" size="0,0" />
+  <extendsEdge source="oa" target="root" routing="0" />
+</Struts2Diagram>
+

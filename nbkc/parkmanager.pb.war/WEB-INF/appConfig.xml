@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appConfig>
+    <config key="generalConfig" label="通用">
+        <parameter key="roomMode" label="房间模式" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="pageSize" label="每页显示记录数" value="10" render="radio">
+        	<option value="10" label="10"/>
+        	<option value="20" label="20"/>
+        	<option value="30" label="30"/>
+        </parameter>
+    </config>
+	<!-- <config key="incubatorName" label="孵化器名称">
+      <parameter key="name" label="名称" value="宁波市市局" render="text"/>
+    </config> -->
+    <config key="fafafaConfig" label="短信设置">
+        <parameter key="fafaNumber" label="短信数量" value="10, 20" render="checkbox">
+        	<option value="10" label="10"/>
+        	<option value="20" label="20"/>
+        	<option value="30" label="30"/>
+        </parameter>
+    </config>
+
+    <config key="copyrightConfig" label="版权设置">
+        <parameter key="smNumber" label="短信数量" value="10000" render="text"/>
+    </config>
+    <config key="rentContractAuthor" label="租赁合同审批人">
+        <parameter key="author" label="admin" value="1" render="select_user"/>
+    </config>
+    <config key="contractDueRemindDays" label="合同到期提醒提前天数">
+        <parameter key="day" label="天数" value="15" render="text"/>
+    </config>
+    <config key="billCheckoutDay" label="出账提前天数">
+        <parameter key="day" label="天数" value="7" render="text"/>
+    </config>
+    <config key="meterPlanPayDay" label="水电计划付费时间">
+        <parameter key="day" label="天数" value="7" render="text"/>
+    </config>
+    
+    <config key="billCheckoutForecastDay" label="出帐检测天数">
+        <parameter key="rent" label="物业租金" value="30" render="text"/>
+        <parameter key="deposit" label="押金" value="30" render="text"/>
+        <parameter key="facility" label="自定义费用" value="30" render="text"/>
+    </config>
+    
+    <config key="contractExpireApprovalRemind" label="合同到期审批提醒">
+    	<parameter key="email" label="邮件" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="sms" label="短信" value="inactive" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="smsModule" label="短信模版" value="ParkManager提醒您有新消息：合同到期审批（${contractExpireApproval}）,请您登录系统及时查看处理，谢谢。【三略科技】" render="textarea"/>
+    </config>
+    <config key="contractReviewRemind" label="合同会签审核提醒">
+    	<parameter key="email" label="邮件" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="sms" label="短信" value="inactive" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="smsModule" label="短信模版" value="ParkManager提醒您有新消息：合同会签审核（${contractReview}）,请您登录系统及时查看处理，谢谢。【三略科技】" render="textarea"/>
+    </config>
+    <config key="investmentProcessRemind" label="入驻企业流程联系单审批提醒">
+    	<parameter key="email" label="邮件" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="sms" label="短信" value="inactive" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="smsModule" label="短信模版" value="ParkManager提醒您有新消息：入驻企业流程联系单审批（${investmentProcess}）,请您登录系统及时查看处理，谢谢。【三略科技】" render="textarea"/>
+    </config>
+    <config key="investmentApplyRemind" label="招商报送审批提醒">
+    	<parameter key="email" label="邮件" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="sms" label="短信" value="inactive" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <!-- <parameter key="email" label="邮件" value="尊敬的${approver}，您有新的招商项目需要审批，&lt;a href='${url}'&gt;请点击这里&lt;/a&gt;" render="text"/> -->
+        <parameter key="smsModule" label="短信模版" value="ParkManager提醒您有新消息：项目审批（${investment}）,请您登录系统及时查看处理，谢谢。【三略科技】" render="textarea"/>
+    </config>
+    <config key="investmentSubmitSettledRemind" label="招商项目提交入住提醒">
+    	<parameter key="email" label="邮件" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="sms" label="短信" value="inactive" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="smsModule" label="短信模版" value="ParkManager提醒您有新消息：入驻提醒（${investment}）,请您登录系统及时查看处理，谢谢。【三略科技】" render="textarea"/>
+    </config>
+    
+    <config key="investmentOpenRemind" label="招商项目完成提醒">
+        <parameter key="email" label="邮件" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="sms" label="短信" value="inactive" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="smsModule" label="短信模版" value="尊敬的${companyName}企业：我们已经完成您的入驻申请，欢迎加入浙江大学科技园宁波分园，我们将为您的企业提供竭诚服务，同您的企业一同成长。【三略科技】" render="textarea"/>
+    </config>
+    
+	<config key="dataReportRemind" label="企业数据填报发布提醒">
+		<parameter key="email" label="邮件" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="sms" label="短信" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="smsModule" label="短信模版" value="尊敬的${companyName}企业：为配合中心对我市科技企业发展整体情况调查与分析，请积极配合填报数据（${dataReportName}），谢谢。【三略科技】" render="textarea"/>
+    </config>
+    
+	<config key="dataReportDunningRemind" label="企业数据填报催交提醒">
+        <parameter key="sms" label="短信" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="smsModule" label="短信模版" value="尊敬的${companyName}企业：为配合中心对我市科技企业发展整体情况调查与分析，请积极配合填报数据（${dataReportName}），谢谢。【三略科技】" render="textarea"/>
+    </config>
+    
+	<config key="customerServiceRemind" label="客户服务联系单移交提醒">
+		<parameter key="email" label="邮件" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="sms" label="短信" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="smsModule" label="短信模版" value="ParkManager提醒您有新消息：客户服务联系单移交（${customerServiceName}）,请您登录系统及时查看处理，谢谢。【三略科技】" render="textarea"/>
+    </config>
+    
+	<config key="propertyRemind" label="物业保修单递交提醒">
+		<parameter key="email" label="邮件" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="sms" label="短信" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="smsModule" label="短信模版" value="ParkManager提醒您有新消息：报修提醒（${companyName}）,请您登录系统及时查看处理，谢谢。【三略科技】" render="textarea"/>
+    </config>
+    
+	<config key="propertyContect" label="物业部门负责人">
+		<parameter key="name" label="负责人" value="15" render="select_user"/>
+    </config>
+    
+    <config key="billCheckoutSms" label="账单催缴短信模板">
+        <parameter key="content" label="内容" value="尊敬的客户您好，。${customerName}。${total}。" render="text"/>
+    </config>
+    <config key="billInform" label="账单通知短信模板">
+        <parameter key="in" label="缴费通知" value="尊敬的${customerName}：您有${billTotal}笔费用（${billTypes}）已到期，总计${total}元，请您及时到指定地点办理，谢谢您对我们工作的支持。如有疑问，致电xxxxxxx。【三略科技】" render="textarea"/>
+        <parameter key="out" label="退款通知" value="尊敬的${customerName}：您有${billTotal}笔费用（${billTypes}）退收，总计${total}元，请您及时到指定地点办理，谢谢您对我们工作的支持。如有疑问，致电xxxxxxx。【三略科技】" render="textarea"/>
+    </config>
+    <config key="businessmanSuggestion" label="招商部意见模板">
+        <parameter key="content" label="内容" value="${contract.name}因业务发展需要搬离我园区。原租赁房屋为${roomName}，面积${area}平方米。租赁期限为${year}（自${startDate}--${endDate}），根据合同建议：" render="textarea"/> 
+    </config>
+
+    <config key="investmentApprovalUser" label="招商项目审批人">
+        <parameter key="department" label="投资促进部" value="1" render="select_user"/>
+        <parameter key="chief" label="分管主任" value="1" render="select_user"/>
+        <parameter key="office" label="主任办公室" value="1" render="select_user"/>
+    </config>
+    
+	<config key="contractRemind" label="合同审批提醒">
+		<parameter key="email" label="邮件" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="sms" label="短信" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="smsModule" label="短信模版" value="ParkManager提醒您有新消息：合同审批提醒（${companyName}）,请您登录系统及时查看处理，谢谢。【三略科技】" render="textarea"/>
+    </config>
+    <config key="Writor" label="审批人">
+        <parameter key="billPlan" label="资金计划" value="1" render="select_user"/>
+        <parameter key="billArrear" label="欠费预警" value="1" render="select_user"/>
+        <parameter key="facilityOrder" label="公共设施" value="1" render="select_user"/>
+    </config>
+	
+	<config key="cardGroupName" label="名片组名称">
+        <parameter key="name" label="客户" value="客户" render="text"/>
+    </config>
+	
+	<config key="billInfo" label="企业-账单信息">
+		<parameter key="name" label="账单信息" value="&lt;p&gt;　　您有${customerToPayCount }笔款项未支付请您在收到缴费通知后请及时到指定银行缴纳款项，再凭银行回单到中心企业部开具发票。&lt;/p&gt;
+
+&lt;p&gt;中心全称：宁波科创中心&lt;br /&gt;
+&amp;nbsp;&lt;/p&gt;
+" render="ckedit"/>
+	</config>
+
+	<config key="propertyFix" label="企业-物业报修">
+		<parameter key="name" label="物业报修" value="&lt;p&gt;　　您可以通过报修请求将报修问题反映给中心，如物业报修、网络维护、空调维修等。中心将会第一时间与您取得联系，做到实时跟踪并及时解决您的报修请求。&lt;/p&gt;
+
+&lt;p&gt;您可以通过电话方式联系我们：&lt;/p&gt;
+
+&lt;p&gt;物业部：87905450&lt;/p&gt;
+" render="ckedit"/>
+	</config>
+
+	<config key="dataReport" label="企业-数据报送">
+		<parameter key="name" label="数据报送" value="&lt;p&gt;为配合中心主管部门做好我市科技企业发展整体情况调查与分析，按照主管部门要求，中心定期发布科技企业情况调查表，望各单位积极配合填报数据。&lt;/p&gt;
+
+&lt;p&gt;咨询电话：87904996&lt;/p&gt;
+" render="ckedit"/>
+	</config>
+	
+	<config key="facilityInfo" label="企业-公共设施">
+		<parameter key="name" label="公共设施" value="&lt;p&gt;　　中心提供公共设施的免费试用与租用服务，你可以通过查看公共设施了解其当前使用状况，也可以通过在线或电话方式预约使用中心公共设施。&lt;/p&gt;
+
+&lt;p&gt;预约电话：87905450&lt;/p&gt;
+" render="ckedit"/>
+	</config>
+	
+</appConfig>

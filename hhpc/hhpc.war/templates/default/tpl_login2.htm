@@ -1,0 +1,25 @@
+<!-menu-> 
+<table width=480 border="0" align=left cellpadding=0 cellspacing=0>
+  <form method=post action={#RP#}admin.php>
+    <tr> 
+      <td  height=25 width=56 align=right > {#lanMemberUser#}£º</td>
+      <td height=25 width=60> 
+        <input type=text name=muser  maxlength=20 class=input2 style="width:60px">
+      </td>
+      <td width=50>{#lanMemberPass#}£º</td>
+      <td width=60><input type=password name=mpass  style="width:60px" maxlength=20 class=input2></td>
+      <td width=238><input type="submit" name="Submit" value="{#lanLoginButton#}" class="button2">
+      <input type="button" name="Submit2" value="{#lanRegister#}" class="button2" onClick="window.location='{#RP#}reg.php'">&nbsp;<a href="{#RP#}lostpass.php" >{#lanResetNTC#}</a></td>
+    </tr>
+  </form>
+</table>
+<!-menu->
+
+<!-menunow->
+<table width=450 border="0" align=left cellpadding=0 cellspacing=0>
+  <tr> 
+    <td  height=5 colspan="2" align=left >{#user#}, {#lanLoninNTC#}&nbsp;<a href={#RP#}logout.php>{#lanMemberExit#}</a></td>
+  </tr>
+</table>
+<!-menunow->
+

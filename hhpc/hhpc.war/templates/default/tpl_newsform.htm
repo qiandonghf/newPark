@@ -1,0 +1,68 @@
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" height="30">
+                      <tr> 
+                        <td  width="10" align="center" class="regtitle0"></td>
+                        
+                  
+    <td class="regtitle">{#lanNewsPub#}</td>
+                      </tr>
+                    </table>
+              <table width="100%" border="0" cellspacing="1" cellpadding="8">
+                <tr> 
+                  
+    <td> 
+      <table width="100%" border="0" cellspacing="1" cellpadding="3">
+             
+      <form method="post" action="member_fabu.php" enctype="multipart/form-data">
+               <tr >
+                        <td width="110" align="center" height="24">{#lanNewsCata#}:</td>
+                        <td height="22"  style="color:#666666">
+                          <select name="catid" style="width:399px" {#dis#}>
+							{#catlist#}
+                          </select>
+                        </td>
+                      </tr>
+					  
+                      <tr > 
+                        <td width="110" align="center" height="24">{#lanArticalTitle#}:</td>
+                        <td height="22"  style="color:#666666"> 
+                          <input type="text" name="title"  class=input  value="{#title#}" style="width:399px">
+                        </td>
+                      </tr>
+					  
+					    <tr > 
+                        <td width="110" align="center" height="24">{#lanUploadImage#}:</td>
+                        <td height="22"  style="color:#666666"> 
+                         <input type="file" name="jpg" class=input style='WIDTH: 399;font-size:12px;'>
+                        </td>
+                      </tr>
+					  
+                      <tr > 
+                        <td width="110" align="center">{#lanNewsCon#}:</td>
+                        <td height="22" style="color:#666666"> 
+                          <textarea name="body" class="textarea" style="width:399px" rows="15" >{#body#}</textarea>
+                        </td>
+                      </tr>
+                      <tr > 
+                        <td width="110" align="center" >{#lanNewsAuthor#}:</td>
+                        <td  style="color:#666666" > 
+                          <input type="text" name="author"  class=input  value="{#author#}" style="width:399px">
+                        </td>
+                      </tr>
+                      <tr > 
+                        <td width="110" align="center" >{#lanNewsSource#}:</td>
+                        <td  style="color:#666666" > 
+                          <input type="text" name="source"  class=input  value="{#source#}" style="width:399px">
+                        </td>
+                      </tr>
+                      <tr > 
+                        <td width="110" align="center" >&nbsp;</td>
+                        <td  style="color:#666666" > 
+                          <input type="submit" name="Submit2" value="{#lanSubmit#}" class="button">
+                          
+            <input type="hidden" name="step" value="{#step#}">
+            </td>
+                      </tr></form>
+                    </table>
+                  </td>
+                </tr>
+              </table>

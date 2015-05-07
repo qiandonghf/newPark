@@ -1,0 +1,104 @@
+@charset "utf-8";
+/* CSS Document */
+.oaworkbg{ background:#fff url(../images/tablebg.jpg) repeat-x; overflow-y:auto; width:100%;}
+.oaworkright{ border-left:1px solid #d2d2d2; padding-top:10px;}
+.oaworkright ul li{ margin-bottom:5px; cursor:pointer;}
+.oaworkright .livisited{ padding:10px 0; background:url(../images/oaworkbg.gif) repeat-y; text-align:center; width:27px; border:1px solid #d2d2d2; font-weight:bold; position:relative; left:-1px; z-index:99999; border-left:none; color:#666;}
+.oaworkright .lilink{ padding:10px 0; background:url(../images/ovworkbg1.gif) repeat-y; text-align:center; width:24px; border:1px solid #d2d2d2;   z-index:99999; border-left:none; color:#999;}
+.oaworkright ul li a:link,.oaworkright ul li a:visited{ color:#666; text-decoration:none;}
+.oaworkright ul li a:hover{ color:#666; text-decoration:none;}
+.fast{ padding:5px;}
+.btnlist{ padding-bottom:5px; }
+.btnlist h1{ border-bottom:1px solid #d2d2d2; font-size:12px; padding-left:5px; height:25px; line-height:25px;}
+.btnlist ul li{ float:left; padding:10px; text-align:center; color:#666;}
+.btnlist ul li p{ color:#666; text-align:center; padding-top:2px;}
+.btnlist ul li a:link,.btnlist ul li a:visited{ color:#666; text-decoration:none;}
+.btnlist ul li a:hover{ color:#666; text-decoration:underline;}
+.workdiv{ padding:5px;}
+.workheader{ height:79px; border-bottom:1px solid #ccc; font-family:Arial, Helvetica, sans-serif;}
+.headerbase{  height:79px; }
+.headerbaseTime{ width:100px; color:#666; float:left;}
+.headerbaseTime h3{ font-size:40px; font-family:Arial, Helvetica, sans-serif; height:35px; position:relative; top:-10px;}
+.headerbaseTime ul li{ font-size:12px;}
+
+
+.headerbasetext{ color:#666; padding:7px 10px 3px 15px; overflow:hidden; zoom:1; height:20px;}
+
+
+.headerbasetext .spanarrow{ padding-left:2px;width:7px; height:10px; background:url(../../../core/common/images/arrow.png) center no-repeat; display:inline-block;}
+
+.user_info { float:left;}
+.user_info p { font-weight:bold; line-height:normal; font-size:14px; color:#333; float:left;width:130px;}
+.user_info a { text-decoration:none;}
+.user_minute { float:right; color:#999;}
+
+.user_time { padding-left:60px; color:#333;}
+
+.user_task { height:18px; padding-left:60px; padding-top:8px; color:#333;}
+.user_task ul { overflow:hidden; height:18px; zoom:1;}
+.user_task ul li { padding-right:20px; float:left; height:18px; line-height:normal;}
+.user_task ul li img { vertical-align:-3px; margin-right:3px;}
+.user_task ul li a { font-weight:bold; margin-left:2px; text-decoration:none;}
+
+
+.oacontent{ width:100%; padding-top:10px;}
+.oatdcellspacing{ padding-right:10px;}
+.oatdcellspacingright{ padding-right:5px;}
+.oatask{ width:100%; border:1px solid #dbdbdb; margin-bottom:5px;}
+.oatitle{ background:url(../images/oaworkbg.jpg) repeat-x; height:28px; line-height:28px; padding:0 10px; color:#316301; font-weight:bold;}
+.oatitle span{ float:right; vertical-align:middle; position:relative; top:5px; cursor:pointer;}
+.oatasklist{ padding:5px;}
+.oatasklist ul li{ color:#333; line-height:25px; height:25px;}
+.oatasklist ul li img{ padding-right:5px;}
+.oatasklist ul li span{ float:right; color:#666;}
+.oatasklist .spanimg{ position:relative; top:5px;}
+.oatasklist .spangray{ color:#666; font-style:normal; padding-left:5px;}
+.oatasklist ul li a:link,.oatasklist ul li a:visited{ color:#333; text-decoration:none;}
+.oatasklist ul li a:hover{ color:#999; text-decoration:none;}
+.oafontred{ color:#f00; font-style:normal;}
+.oafontgray{ color:#666; font-style:normal;}
+.oaimg{ padding:5px; text-align:center;}
+.oawordtd{ border-bottom:1px solid #dbdbdb;border-left:1px solid #dbdbdb; height:25px; line-height:25px; text-align:center; color:#333;}
+.oawordtdleft{ border-bottom:1px solid #dbdbdb; height:25px; line-height:25px; text-align:center; color:#333;}
+.oaimgtd100{ line-height:25px; text-align:right; width:80px;}
+.oaimgtda{ color:#333; text-align:left; line-height:22px;}
+.oaimgtda a:link,.oaimgtda a:visited{ color:#333; text-decoration:none; padding-right:5px; display:inline-block;}
+.oaimgtda a:hover{ color:#666; text-decoration:none;}
+.oaworklist{ position:absolute; top:28px; left:180px; border-right:2px solid #dbe8f2; border-bottom:2px solid #dbe8f2;  width:90px; background:#fff;}
+.oaworklistcon{padding:2px 0; border:1px solid #9cb8cc}
+.oaworklistcon ul li{ height:24px; line-height:24px;}
+.oaworklistcon ul li a:link,.oaworklistcon ul li a:visited{ color:#333; text-decoration: none; display:block;}
+.oaworklistcon ul li a:hover{ background:#5d99ce; color:#fff; text-decoration:none;}
+.oanews{ padding:10px;}
+.oaleft{ width:350px; float:left;}
+.oaleft h1{ color:#316301; font-size:14px; border-bottom:2px solid #ddd; height:25px; line-height:25px; font-family:simsun,Arial, Helvetica, sans-serif;}
+.em{ font-size:14px; border-bottom:2px #f60 solid; position:relative; font-style:normal;height:25px; line-height:25px; width:80px; display:inline-block;}
+.oaleft h1 span{ color:#999; font-size:12px; font-weight:normal; float:right;}\
+.oaleftul{ padding-top:10px;}
+.oaleft ul li{ height:20px; line-height:20px; font-family:simsun,Arial, Helvetica, sans-serif;}
+.oaleft ul li span{ float:right; padding-right:2px; color:#999;}
+.oaleft ul li a:link,.oaleft ul li a:visited{ color:#333; text-decoration:none; padding-left:2px;}
+.oaleft ul li a:hover{ color:#f60; text-decoration:none;}
+.oaleftyellow{ color:#f60; font-style:normal;}
+.oaright{ width:500px; float:left; padding-left:20px;}
+.oaright h1{ color:#316301; font-size:14px; border-bottom:2px solid #ddd; height:25px; line-height:25px; font-family:simsun,Arial, Helvetica, sans-serif;}
+.oaright h1 span{ color:#999; font-size:12px; font-weight:normal; float:right;}
+.newcon{ height:122px; padding:10px 0px 0 9px; border-bottom:1px dotted #ddd;}
+.newcon img{ float:left; padding:1px; border:1px solid #ddd; margin-right:5px;}
+.newcon h3{ color:#333; font-size:14px; height:25px; line-height:25px;}
+.newcon p{ color:#666; line-height:22px;}
+.newcon p a:link,.newcon p a:visited{ color:#f60; text-decoration:none;}
+.newcon p a:hover{ color:#f60; text-decoration:none;}
+.oanewlist{ padding:5px;}
+.oanewlist .newlistspan{ color:#666; font-style:normal; padding-left:5px;}
+.oanewlist ul li{ color:#333; line-height:20px; height:20px; font-family:simsun,Arial, Helvetica, sans-serif;}
+.oanewlist ul li img{ padding-right:5px;}
+.oanewlist ul li span{ float:right; color:#666;}
+.oanewlist ul li a:link,.oanewlist ul li a:visited{ color:#333; text-decoration:none;}
+.oanewlist ul li a:hover{ color:#f60; text-decoration:none;}
+.newview{ width:760px; border:1px solid #ddd; background:#f5f5f5; margin:15px auto; padding:10px;}
+.newview h1{ font-size:16px; text-align:center; height:30px; line-height:30px; border-bottom: 1px solid #cfcfcf; padding-top:20px; padding-bottom:8px;}
+.newview h2{ color:#999; padding-top:5px; font-size:12px; text-align:center; font-weight:normal; height:25px; line-height:25px;}
+.newview ul li{ line-height:25px; font-size:14px; padding:10px;}
+.newview img{ display:block; margin:auto; padding:10px 0;}
+.oaworknews{overflow-y:auto; width:100%;}

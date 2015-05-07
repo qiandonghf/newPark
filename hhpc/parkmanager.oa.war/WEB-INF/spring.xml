@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:osgi="http://www.springframework.org/schema/osgi"
+  xmlns:beans="http://www.springframework.org/schema/beans"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                      http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi-1.2.xsd">
+                      
+	
+	<bean id="cardPubServiceImpl" class="com.wiiy.oa.external.service.impl.CardPubServiceImpl">
+		<property name="cardDao" ref="cardDao"></property>
+	</bean>
+	<osgi:service id="cardPubService" ref="cardPubServiceImpl" interface="com.wiiy.external.service.CardPubService"/>
+	<bean id="smsPubServiceImpl" class="com.wiiy.oa.external.service.impl.SMSPubServiceImpl">
+		<property name="smsDao" ref="smsDao"></property>
+	</bean>
+	<osgi:service id="smsPubService" ref="smsPubServiceImpl" interface="com.wiiy.external.service.SMSPubService"/>
+	
+	<bean id="smsStatisticalServiceImpl" class="com.wiiy.oa.external.service.impl.SmsStatisticalServiceImpl">
+		<property name="smsDao" ref="smsDao"></property>
+		<property name="smsReceiverDao" ref="smsReceiverDao"></property>
+	</bean>
+	<osgi:service id="smsStatisticalService" ref="smsStatisticalServiceImpl" interface="com.wiiy.core.external.service.SmsStatisticalService"/>
+	
+	<bean id="gtasksServiceImpl" class="com.wiiy.oa.external.service.impl.GtasksServiceImpl">
+		<property name="taskDao" ref="taskDao"></property>
+	</bean>
+	<osgi:service id="gtasksService" ref="gtasksServiceImpl" interface="com.wiiy.external.service.GtasksService"/>
+	
+</beans>

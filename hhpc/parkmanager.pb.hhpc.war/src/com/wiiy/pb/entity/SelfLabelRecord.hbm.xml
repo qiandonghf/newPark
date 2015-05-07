@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.pb.entity.SelfLabelRecord">
+    	<meta attribute="class-description">自用表抄表记录</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<many-to-one name="selfMeterLabel" class="com.wiiy.pb.entity.SelfMeterLabel" foreign-key="fk_SelfLabelRecord_selfMeterLabel" fetch="join" insert="false" update="false">
+            <column name="label_id">
+                <comment>自用表抄表</comment>
+            </column>
+        </many-to-one>
+        <property name="labelId" type="java.lang.Long">
+            <column name="label_id">
+                <comment>自用表抄表外键</comment>
+            </column>
+        </property>
+        
+        <property name="meterId" type="java.lang.Long">
+            <column name="meter_id">
+                <comment>水电表id</comment>
+            </column>
+        </property>
+        <property name="meterOrderNo" type="java.lang.String">
+			<column name="meter_orderNo" length="50">
+				<comment>表编号</comment>
+			</column>
+		</property>
+		<property name="buildingName" type="java.lang.String" length="100">
+			<column name="building_name">
+				<comment>楼宇名称</comment>
+			</column>
+		</property>
+		
+        <property name="meterType">
+			<column name="meter_type" sql-type="varchar(50)">
+				<comment>表类型</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.pb.preferences.enums.MeterTypeEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+        <property name="meterFactor" type="java.lang.Integer">
+			<column name="meter_factor">
+				<comment>表倍数</comment>
+			</column>
+		</property>
+        
+        <property name="preReading" type="java.lang.Double">
+			<column name="pre_reading">
+				<comment>上期读数</comment>
+			</column>
+		</property>
+		<property name="preDate" type="java.util.Date">
+			<column name="pre_date" length="19">
+				<comment>上期抄表日期</comment>
+			</column>
+		</property>
+        <property name="curReading" type="java.lang.Double">
+			<column name="cur_reading">
+				<comment>本期读数</comment>
+			</column>
+		</property>
+		<property name="amount" type="java.lang.Double">
+			<column name="amount">
+				<comment>走字数</comment>
+			</column>
+		</property>
+		<property name="syAmount" type="java.lang.Double">
+			<column name="sy_amount">
+				<comment>实用读数</comment>
+			</column>
+		</property>
+		<property name="fdAmount" type="java.lang.Double">
+			<column name="fd_amount">
+				<comment>峰电</comment>
+			</column>
+		</property>
+		<property name="gdAmount" type="java.lang.Double">
+			<column name="gd_amount">
+				<comment>谷电</comment>
+			</column>
+		</property>
+		<property name="jdAmount" type="java.lang.Double">
+			<column name="jd_amount">
+				<comment>尖电</comment>
+			</column>
+		</property>
+		<property name="hdAmount" type="java.lang.Double">
+			<column name="hd_amount">
+				<comment>耗电</comment>
+			</column>
+		</property>
+		<property name="totalAmount" type="java.lang.Double">
+			<column name="total_amount">
+				<comment>合计</comment>
+			</column>
+		</property>
+		<property name="curDate" type="java.util.Date">
+			<column name="cur_date" >
+				<comment>本期抄表日期</comment>
+			</column>
+		</property>
+		<property name="buildingId" type="java.lang.Long">
+            <column name="building_id">
+                <comment>楼宇id</comment>
+            </column>
+        </property>
+		<property name="memo" type="java.lang.String">
+        	<column name="memo" length="512">
+				<comment>备注</comment>
+			</column>
+		</property>
+		<property name="checkOut">
+			<column name="check_out" sql-type="varchar(50)">
+				<comment>是否出账</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.pb.preferences.enums.MeterRecordStatusEnum</param>
+				<param name="type">12</param>
+			</type>	
+		</property>
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

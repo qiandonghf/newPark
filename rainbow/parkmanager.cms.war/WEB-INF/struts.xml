@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="root" extends="json-default" namespace="/">
+		<result-types><!-- 定义json类型 --> 
+		    <result-type name="json1" class="com.wiiy.json.JsonResult" />
+		</result-types> 
+		<global-results>
+			<result name="json" type="json1">
+				<param name="enumAsBean">true</param>
+				<param name="ignoreHierarchy">false</param>
+			</result>
+			<result name="rvalue" type="json1">
+				<param name="root">result.value</param>
+				<param name="enumAsBean">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="excludeNullProperties">true</param>
+			</result>
+			<result name="login">/web/login.jsp</result>
+		</global-results>
+	</package>
+	<package name="cms" namespace="/" extends="root">
+		<action name="links" class="linksAction">
+			<result name="show">/web/system/links_list.jsp</result>
+			<result name="edit">/web/system/links_list_edit.jsp</result>
+			<result name="view">/web/system/links_list_view.jsp</result>
+		</action>
+		
+		<action name="article" class="articleAction">
+			<result name="edit">/web/content/content_edit.jsp</result>
+			<result name="view">/web/content/content_view.jsp</result>
+			<result name="topicView">/web/content/topicContent_view.jsp</result>
+			<result name="topicEdit">/web/content/topicContent_edit.jsp</result>
+			<result name="listAll">/web/desktop/worknews.jsp</result>
+			<result name="insideArticleList">/web/desktop/insideArticle.jsp</result>
+			<result name="deskTopView">/web/desktop/news_view.jsp</result>
+			<result name="web">/web/content/recycling.jsp</result>
+			<result name="export" type="stream"> 
+				<param name="inputName">inputStream</param> 
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		
+		<action name="articleType" class="articleTypeAction">
+			<result name="add">/web/content/catalog_main_add.jsp</result>
+			<result name="edit">/web/content/catalog_main_edit.jsp</result>
+			<result name="view">/web/content/catalog_main_view.jsp</result>
+			<result name="web">/web/content/catlog_list.jsp</result>
+			<result name="listArticle">/web/content/content_list.jsp</result>
+			<result name="listTopic">/web/content/topic_list.jsp</result>
+			<result name="listSingle">/web/content/single_list.jsp</result>
+		</action>
+		
+		<action name="articleComment" class="articleCommentAction">
+		</action>
+		
+		<action name="contactInfo" class="contactInfoAction">
+			<result name="show">/web/system/contact.jsp</result>
+		</action>
+		
+		<action name="param" class="paramAction">
+			<result name="view">/web/system/param_view.jsp</result>
+			<result name="add">/web/system/param_add.jsp</result>
+			<result name="edit">/web/system/param_edit.jsp</result>
+			<result name="web">/web/system/links.jsp</result>
+			<result name="resource">/web/system/resource.jsp</result>
+			<result name="floatingWindow">/web/system/floatingWindow.jsp</result>
+		</action>
+		
+		<action name="waterMark" class="waterMarkAction">
+			<result name="show">/web/system/sys_info_mark.jsp</result>
+			<result name="save">/web/system/sys_info_mark.jsp</result>
+			<result name="getImg" type="stream"> 
+				<param name="contentType">image/jpeg</param> 
+				<param name="inputName">inputStream</param> 
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		
+		<action name="resource" class="resourceAction">
+			<result name="edit">/web/system/resource_list_edit.jsp</result>
+			<result name="view">/web/system/resource_list_view.jsp</result>
+			<result name="add">/web/system/resource_list_add.jsp</result>
+		</action>
+		
+		<action name="webInfoConfig" class="webInfoConfigAction">
+			<result name="webInfoList">/web/desktop/webInfo_list.jsp</result>
+		</action>
+		<action name="mail" class="mailAction">
+		</action>
+		<action name="advicement" class="advicementAction">
+			<result name="view">/web/system/advicement_view.jsp</result>
+		</action>
+		<action name="federation" class="federationAction">
+			<result name="view">/web/service/federation_view.jsp</result>
+			<result name="edit">/web/service/federation_edit.jsp</result>
+		</action>
+		<action name="platform" class="platformAction">
+			<result name="view">/web/service/platform_view.jsp</result>
+			<result name="edit">/web/service/platform_edit.jsp</result>
+		</action>
+		<action name="receipt" class="receiptAction">
+			<result name="view">/web/system/receipt_view.jsp</result>
+		</action>
+		<action name="receiptAtt" class="receiptAttAction">
+		</action>
+		<!-- 浮窗管理功能 -->
+		<action name="floatingWindow" class="floatingWindowAction">
+			<result name="add">/web/system/floatingWindow_list_add.jsp</result>
+			<result name="view">/web/system/floatingWindow_list_view.jsp</result>
+			<result name="edit">/web/system/floatingWindow_list_edit.jsp</result>
+		</action>
+		
+		<!-- 文章抓取功能 -->
+		
+		<action name="webInfo" class="webInfoAction">
+			<result name="edit">/web/news/webInfo_edit.jsp</result>
+			<result name="add">/web/news/webInfo_add.jsp</result>
+			<result name="view">/web/news/webInfo_view.jsp</result>
+		</action>		
+		
+		<action name="column" class="columnAction">
+		   <result name="view">/web/news/webInfo_view.jsp</result>
+		   <result name="smsPage">/web/news/webInfo_list.jsp</result>
+		   <result name="update">/web/news/channel_edit.jsp</result>
+		</action>		
+		<action name="rss" class="webContentAction" >
+		</action>
+		
+		<action name="docShare" class="docShareAction">
+			<result name="addFolder">/web/document/share_folder_add.jsp</result>
+			<result name="editFolder">/web/document/folder_edit.jsp</result>
+			<result name="move">/web/document/folder_list.jsp</result>
+		</action>
+		<action name="docPublic" class="docPublicAction">
+			<result name="addFolder">/web/document/public_folder_add.jsp</result>
+			<result name="editFolder">/web/document/folder_edit.jsp</result>
+			<result name="LoadServiceListByFolderId">/web/document/public_service_document_list_by_folderId.jsp</result>
+			<result name="move">/web/document/folder_list.jsp</result>
+		</action>
+		<action name="document" class="documentAction">
+			<result name="addFolder">/web/document/folder_add.jsp</result>
+			<result name="move">/web/document/folder_list.jsp</result>
+			<result name="editFolder">/web/document/folder_edit.jsp</result>
+			<result name="edit">/web/document/personaldocuments_edit.jsp</result>
+		</action>
+		
+		<action name="webContentConfig" class="webContentConfigAction">
+		</action>
+	</package>
+</struts>

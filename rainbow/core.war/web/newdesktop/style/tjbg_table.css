@@ -1,0 +1,42 @@
+.companydiv{ width:770px; margin:0 auto; font-size:12px;}
+.companydivtitle{ font-size:26px; text-align:center; line-height:70px; }
+.companydivtitle2{ font-size:14px; text-align:left; line-height:30px; margin-left:240px; }
+.companydivtitle3{ font-size:20px; text-align:center; margin:20px 0;padding-bottom:20px; border-bottom:1px solid #333; }
+.companydivtitle4{ font-size:20px; text-align:left; margin:20px 0;padding-top:20px; border-top:1px solid #333; }
+.companydivtitle span{ float:right; width:180px; display:inline-block; font-size:12px; text-align:left; line-height:20px;}
+.companydivlist{line-height:30px; clear:both; }
+.companytable2{ font-size:14px; line-height:22px;}
+.companytable2 .th{ font-size:12px; height:17px; line-height:17px; border-bottom:1px solid #CCC; border-right:1px solid #ccc; text-a2lign:center; font-weight:bold;}
+.companytable2 .tdleft{height:17px; line-height:17px;font-size:16px; padding-left:8px; font-weight:bold;}
+.companytable2 .tdRight{height:17px; line-height:17px;  }
+.companytable2 .tdRight strong{ font-size:16px;  font-weight:bold;}
+.companytable2 .tdRight p{line-height:22px; }
+.companytable2 .p1{margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #333; }
+.companytable2 .p1 em{ color:#F30; }
+.pinput{ width:118px; height:16px; line-height:16px; border:none; background:#d9f5ff; text-align:center; color:#333;}
+.savebtn{ background:url(../images/save.gif) no-repeat; width:75px; height:22px; border:none; cursor:pointer;}
+.cancelbtn{ background:url(../images/cancel.gif) no-repeat; width:75px; height:22px; border:none;cursor:pointer;}
+.buttondiv{ text-align:left; height:24px; width:100%; text-align:center;}
+.inputborderback{ width:95%; border:none; border-bottom:1px solid #333;  height:16px; vertical-align:middle; line-height:16px; padding-left:5px; font-size:12px;}
+.explain{ width:770px; line-height:25px; margin:0 auto; font-size:12px; padding-top:15px;}
+.pinputs{ width:98%; height:48px; line-height:16px; border:none; background:#d9f5ff; padding-left:2px; color:#333;}
+
+
+
+.emaildown h1 {
+font-size: 14px;
+height: 25px;
+line-height: 25px;
+}
+.downlist{ padding-bottom:5px; padding-top:5px; font-size:12px;}
+.downlist img{ float:left; padding-right:5px; position:relative; top:2px;}
+.downlist ul {margin:0;}
+.downlist ul li{ height:16px; list-style:none;}
+.downlist ul li span{ color:#999;}
+.downlist ul li a:link,.downlist ul li a:visited,.downlist ul li a:hover{ color:#1f699d; padding-right:10px; text-decoration:underline;}
+.downlistleft{ padding-bottom:5px; padding-top:5px; width:210px; float:left;}
+.downlistleft img{ float:left; padding-right:5px; position:relative; top:2px;}
+.downlistleft ul li{ height:16px; list-style:none;}
+.downlistleft ul li span{ color:#999;}
+.downlistleft ul li a:link,.downlistleft ul li a:visited,.downlistleft ul li a:hover{ color:#1f699d; padding-right:10px; text-decoration:underline;}
+.psred{ color:#f00; font-style:normal; padding-right:2px; font-family:Arial, Helvetica, sans-serif;}

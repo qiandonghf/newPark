@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.wiiy.crm.entity.ContractReview">
+        <meta attribute="class-description">合同会签审核单</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+        <property name="contractId" type="java.lang.Long" not-null="true">
+			<column name="contract_id">
+				<comment>合同外键</comment>
+			</column>
+		</property>
+		<many-to-one name="contract" class="com.wiiy.crm.entity.Contract" foreign-key="fk_ContractReview_contract" insert="false" update="false" fetch="join">
+            <column name="contract_id" not-null="true">
+                <comment>合同</comment>
+            </column>
+        </many-to-one>
+        <property name="contractNo" type="java.lang.String">
+			<column name="contractNo" length="50">
+				<comment>合同编号</comment>
+			</column>
+		</property>
+		<property name="date" type="java.util.Date">
+			<column name="date" length="19">
+				<comment>日期</comment>
+			</column>
+		</property>
+        <property name="department" type="java.lang.String">
+			<column name="department">
+				<comment>部门</comment>
+			</column>
+		</property>
+		<property name="spId" type="java.lang.Long">
+            <column name="spId">
+                <comment>审批ID</comment>
+            </column>
+        </property>
+		<many-to-one name="sp" class="com.wiiy.core.entity.Approval" foreign-key="fk_ContractReview_sp" insert="false" update="false" fetch="join">
+        	<column name="spId">
+        		<comment>审批</comment>
+        	</column>
+        </many-to-one>
+        <property name="shId" type="java.lang.Long">
+            <column name="shId">
+                <comment>审核ID</comment>
+            </column>
+        </property>
+		<many-to-one name="sh" class="com.wiiy.core.entity.Approval" foreign-key="fk_ContractReview_sh" insert="false" update="false" fetch="join">
+        	<column name="shId">
+        		<comment>审核</comment>
+        	</column>
+        </many-to-one>
+        <property name="hqId" type="java.lang.Long">
+            <column name="hqId">
+                <comment>会签ID</comment>
+            </column>
+        </property>
+		<many-to-one name="hq" class="com.wiiy.core.entity.Approval" foreign-key="fk_ContractReview_hq" insert="false" update="false" fetch="join">
+        	<column name="hqId">
+        		<comment>会签</comment>
+        	</column>
+        </many-to-one>
+        <property name="jbId" type="java.lang.Long">
+            <column name="jbId">
+                <comment>经办ID</comment>
+            </column>
+        </property>
+		<many-to-one name="jb" class="com.wiiy.core.entity.Approval" foreign-key="fk_ContractReview_jb" insert="false" update="false" fetch="join">
+        	<column name="jbId">
+        		<comment>经办</comment>
+        	</column>
+        </many-to-one>
+        <property name="countersignStatus">
+			<column name="countersign_status">
+				<comment>会签状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.core.preferences.enums.CountersignOpenEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+        <set name="atts" cascade="all-delete-orphan" lazy="false">
+        	<comment>附件</comment>
+            <key>
+                <column name="contractReview_id"></column>
+            </key>
+            <one-to-many class="com.wiiy.crm.entity.ContractReviewAtt" />
+        </set>
+        <property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+    </class>
+</hibernate-mapping>

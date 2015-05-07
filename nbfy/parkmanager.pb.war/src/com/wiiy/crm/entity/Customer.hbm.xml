@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.crm.entity.Customer">
+    	<meta attribute="class-description">企业</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		
+		<one-to-one name="customerInfo" class="com.wiiy.crm.entity.CustomerInfo">
+        	<meta attribute="class-description">详细信息</meta> 
+        </one-to-one>
+		<one-to-one name="incubationInfo" class="com.wiiy.crm.entity.IncubationInfo">
+        	<meta attribute="class-description">孵化信息</meta> 
+        </one-to-one>
+		<set name="labelRefs" cascade="all-delete-orphan" lazy="false">
+			<key>
+				<column name="customer_id">
+					<comment>标签信息</comment>
+				</column>
+			</key>
+			<one-to-many class="com.wiiy.crm.entity.CustomerLabelRef"/>
+		</set>
+		
+        <property name="name" type="java.lang.String" unique-key="true" not-null="true">
+        	<column name="name">
+        		<comment>企业名称</comment>
+        	</column>
+        </property>
+        <property name="parkTime" type="java.util.Date">
+        	<column name="park_time">
+        		<comment>入园时间</comment>
+        	</column>
+        </property>
+        <property name="shortName" type="java.lang.String" unique-key="true" not-null="true">
+        	<column name="short_name">
+        		<comment>简称</comment>
+        	</column>
+        </property>
+        <property name="code" type="java.lang.String"  >
+        	<column name="code" unique-key="true"  not-null="true">
+        		<comment>企业编码</comment>
+        	</column>
+        </property>
+        <property name="userId" type="java.lang.Long">
+        	<column name="user_id">
+        		<comment>账号ID</comment>
+        	</column>
+        </property>
+         <property name="hostId" type="java.lang.Long">
+        	<column name="host_id">
+        		<comment>跟踪人ID</comment>
+        	</column>
+        </property>
+        <property name="hostName" type="java.lang.String">
+        	<column name="host_name">
+        		<comment>跟踪人</comment>
+        	</column>
+        </property>
+        <property name="importId" type="java.lang.Long">
+        	<column name="import_id">
+        		<comment>引进人ID</comment>
+        	</column>
+        </property>
+        <property name="importName" type="java.lang.String">
+        	<column name="import_name">
+        		<comment>引进人</comment>
+        	</column>
+        </property>
+       
+		<property name="parkStatus">
+			<column name="park_status">
+				<comment>入驻状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.crm.preferences.enums.ParkStatusEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		
+		<property name="time" type="java.util.Date">
+			<column name="time">
+				<comment>状态变更时间</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="technic" class="com.wiiy.core.entity.DataDict" foreign-key="fk_customer_datadict_technic" insert="false" update="false" fetch="join">
+			<column name="technic_id">
+				<comment>技术领域实体</comment>
+			</column>
+		</many-to-one>
+		<property name="technicId" type="java.lang.String">
+			<column name="technic_id">
+				<comment>技术领域外键</comment>
+			</column>
+		</property>
+        
+        <many-to-one name="source" class="com.wiiy.core.entity.DataDict" foreign-key="fk_customer_datadict_source" insert="false" update="false" fetch="join">
+			<column name="source_id">
+				<comment>企业来源实体</comment>
+			</column>
+		</many-to-one>
+		<property name="sourceId" type="java.lang.String">
+			<column name="source_id">
+				<comment>企业来源外键</comment>
+			</column>
+		</property>
+		
+        <many-to-one name="enterpriseType" class="com.wiiy.core.entity.DataDict" foreign-key="fk_customer_datadict_enterpriseType" insert="false" update="false" fetch="join">
+			<column name="enterpriseType_id">
+				<comment>创业者归属实体</comment>
+			</column>
+		</many-to-one>
+		<property name="enterpriseTypeId" type="java.lang.String">
+			<column name="enterpriseType_id">
+				<comment>创业者归属外键</comment>
+			</column>
+		</property>
+        
+        <property name="incubated">
+			<column name="incubated" sql-type="varchar(50)">
+				<comment>是否孵化企业</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>		
+		</property>
+		<property name="type">
+        	<column name="type">
+				<comment>企业类型</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.crm.preferences.enums.CustomerTypeEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		
+		<many-to-one name="investment" class="com.wiiy.crm.entity.Investment" unique="true" foreign-key="fk_customer_investment" insert="false" update="false" fetch="join">
+			<column name="investment_id">
+				<comment>招商项目实体</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="investmentId" type="java.lang.Long">
+			<column name="investment_id">
+				<comment>招商项目外键</comment>
+			</column>
+		</property>
+		
+		<property name="reportType">
+        	<column name="report_type">
+				<comment>上报类型</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.crm.preferences.enums.CustomerRouteTypeEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		
+		<property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

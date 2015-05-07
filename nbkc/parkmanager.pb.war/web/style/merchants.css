@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+.apptableTitle{ text-align:center; font-size:16px; line-height:30px; height:30px; font-weight:bold;  padding:10px 0;}
+.apptableHead{ font-size:12px; font-weight:bold; line-height:25px; height:25px; padding:0 10px;}
+.apptableHead span{ float:right; padding-left:5px;}
+.apptable{ border-left:1px solid #ddd; border-top:1px solid #ddd;}
+.apptable .tdleft{ border-right:1px solid #ddd; border-bottom:1px solid #ddd; height:25px; line-height:px; padding-left:5px; color:#666; background:#f2f2f2; text-align:center; padding-right:5px; width:100px;}
+.apptable .tdleftw{ border-right:1px solid #ddd; border-bottom:1px solid #ddd; height:25px; line-height:px; padding-left:5px; color:#666; background:#f2f2f2; }
+.apptable .tdleftbg{ border-right:1px solid #ddd; border-bottom:1px solid #ddd; height:25px; line-height:px; padding-left:5px; color:#666; text-align:left;}
+.apptable .apptdcenter{color:#666; padding:0 1px; border-right:1px solid #ddd; border-bottom:1px solid #ddd; height:25px; line-height:20px; padding:0 2px; text-align:center; background:#f2f2f2;}
+.apptable .apptdcenterwhite{color:#666; padding:0 1px; border-right:1px solid #ddd; border-bottom:1px solid #ddd; height:25px; line-height:20px; padding:0 2px; text-align:center; }
+
+.tdinput{ width:98%; height:20px; line-height:20px; border:1px solid #ddd; padding-left:2px;}
+.appinput170{ width:170px; padding-left:1px; height:20px; line-height:20px; border:1px solid #fff; margin-left:5px;}
+.appinput60{ width:58px; padding-left:1px; height:20px; line-height:20px; border:1px solid #fff; margin-left:5px;}
+.appinput100{ width:100px; padding-left:1px; height:20px; line-height:20px; border:1px solid #fff;}
+.appinputauto{ width:98%; padding-left:1px; height:20px; line-height:20px; border:1px solid #fff;}
+.appinput40{ width:38px; padding-left:1px; height:20px; line-height:20px; border:1px solid #fff; margin-left:5px;}
+
+.apptextareaauto{width:98%; padding-left:2px; line-height:20px; border:1px solid #fff; }
+.merchantsTtitle{ margin:0 6px; padding-left:5px; border-bottom:1px solid #ccc; font-weight:bold; font-size:14px;}
+.merchantsTtitle ul li{ height:25px;line-height:25px;display:block;overflow:hidden;}
+.merchantsTtitle span{ color:#1F699D; font-size:12px; padding-left:5px; font-weight:normal;float: left;}
+.merchantsTtitle span a:link,.merchantsTtitle span a:visited{ color:#1F699D; text-decoration:none;}
+.merchantsTtitle span a:hover{ color:#1F699D; text-decoration:none;}
+.merchantsTtitle em{font-weight:bold; font-size:14px;font-style: normal;float: left; padding-right:8px;}
+.merchantsTtitle .con{ font-size:12px; color:#999; font-weight:normal;}

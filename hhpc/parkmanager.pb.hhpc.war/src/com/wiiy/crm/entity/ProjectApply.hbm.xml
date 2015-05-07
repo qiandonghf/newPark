@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.wiiy.crm.entity.ProjectApply">
+        <meta attribute="class-description">项目申报</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+       <property name="customerId" type="java.lang.Long"  not-null="true">
+			<column name="customer_id">
+				<comment>企业外键</comment>
+			</column>
+		</property>
+        <many-to-one name="customer" class="com.wiiy.crm.entity.Customer" foreign-key="fk_productapply_customer_costomer" insert="false" update="false" fetch="join">
+            <column name="customer_id" not-null="true">
+                <comment>企业</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="applyType" class="com.wiiy.core.entity.DataDict" foreign-key="fk_productapply_datadict_applyType" insert="false" update="false" fetch="join">
+			<column name="apply_type_id" >
+				<comment>申报类型</comment>
+			</column>
+		</many-to-one>
+		<property name="applyTypeId" type="java.lang.String" not-null="true">
+			<column name="apply_type_id">
+				<comment>申报类型外键</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="product" class="com.wiiy.crm.entity.Product" foreign-key="fk_productapply_product_product" insert="false" update="false" fetch="join">
+			<column name="product_id" >
+				<comment>产品</comment>
+			</column>
+		</many-to-one>
+		<property name="productId" type="java.lang.Long" not-null="true">
+			<column name="product_id">
+				<comment>产品外键</comment>
+			</column>
+		</property>
+        
+        <property name="name" type="java.lang.String">
+            <column name="name" not-null="true" >
+            <comment>项目名称</comment>
+            </column>
+        </property>
+         <property name="productCode" type="java.lang.String">
+            <column name="product_code" >
+            <comment>项目编号</comment>
+            </column>
+        </property>
+        <property name="applyYear" type="java.lang.Integer">
+            <column name="apply_year" not-null="true">
+                <comment>申报年度</comment>
+            </column>
+        </property>
+        <property name="applyState" not-null="true">
+			<column name="apply_state">
+				<comment>申报状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.crm.preferences.enums.ProjectApplyStatusEnum</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+        <property name="checkTime" type="java.util.Date">
+			<column name="check_time">
+				<comment>验收时间</comment>
+			</column>
+		</property>
+        <property name="amount" type="java.lang.Double">
+            <column name="amount" precision="15">
+                <comment>申报金额</comment>
+            </column>
+        </property>
+        <property name="realAmount" type="java.lang.Double">
+            <column name="real_amount" >
+            	<comment>实际获得金额</comment>
+            </column>
+        </property>
+        <property name="memo" type="java.lang.String" length="65535">
+            <column name="memo" sql-type="text">
+                <comment>备注</comment>
+            </column>
+        </property>
+        <property name="checked">
+			<column name="checked" sql-type="varchar(50)">
+				<comment>是否验收</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>		
+		</property>
+		<property name="pub">
+			<column name="pub" sql-type="varchar(50)">
+				<comment>是否发布到网站</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>		
+		</property>
+        
+        <property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+    </class>
+</hibernate-mapping>

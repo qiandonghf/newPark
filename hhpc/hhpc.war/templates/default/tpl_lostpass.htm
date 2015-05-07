@@ -1,0 +1,29 @@
+ 
+<form method=post action=lostpass.php>
+  <br>
+  <table width="380" border="0" cellspacing="0" cellpadding="5" align="center" class="table">
+    <tr align="center" > 
+      <td  height="28" class=title>{#lanLPTitle#}</td>
+    </tr>
+    <tr> 
+      <td class=con style="padding:15px" > 
+        <div><li>{#lanLP1#}</li>
+             <li>{#lanLP2#}</li>
+             
+          <li>{#lanLP3#}
+          </li>
+          </div><br>
+          <div> 
+            &nbsp;&nbsp;{#lanMemberUser#}: 
+              
+          <input type=text name=username size=8 class="input">
+              &nbsp; {#lanNewPass#}: 
+              
+          <input type=password name=newpass size=8  class="input">
+              <input type=submit name=Submit value="{#lanSubmit#}" class="button">&nbsp;
+              <input type=hidden name=step value='2'>
+            </div>
+      </td>
+    </tr>
+  </table>
+</form>

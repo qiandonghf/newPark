@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appConfig>
+	<!-- 邮件提醒ip -->
+	<config key="ip" label="服务器地址">
+        <parameter key="value" label="地址" value="127.0.0.1:90" render="text"/>
+    </config>
+    
+	<config key="SmsSign" label="短信署名">
+        <parameter key="name" label="署名" value="[浙大科技园宁波分园]" render="text"/>
+    </config>
+    
+	<config key="NoticeSign" label="公告发布者">
+        <parameter key="name" label="名称" value="浙大科技园宁波分园" render="text"/>
+    </config>
+	<!-- <config key="incubatorName" label="孵化器名称">
+      <parameter key="name" label="名称" value="宁波市市局" render="text"/>
+    </config> -->
+	<config key="center" label="Center">
+        <parameter key="name" label="审批人/负责人" value="1" render="select_user"/>
+    </config>
+    
+    <config key="msgSet" label="消息设置">
+        <parameter key="email" label="邮件提醒" value="inactive" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="sms" label="短信提醒" value="inactive" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+    </config>
+    
+    <config key="scheduleRemind" label="日程提醒">
+  	 	<parameter key="email" label="邮件" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="sms" label="短信" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="smsModule" label="短信模版" value="ParkManager提醒您有新消息：日程提醒（${title}）,请您登录系统及时查看处理，谢谢。【浙大科技园宁波分园】" render="textarea"/>
+    </config>
+    
+    <config key="taskSendRemind" label="工作派送提醒">
+  	 	<parameter key="email" label="邮件" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="sms" label="短信" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="smsModule" label="短信模版" value="ParkManager提醒您有新消息：工作派送提醒（${title}）,请您登录系统及时查看处理，谢谢。【浙大科技园宁波分园】" render="textarea"/>
+    </config>
+    
+    <config key="taskMoveRemind" label="工作移交提醒">
+  	 	<parameter key="email" label="邮件" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="sms" label="短信" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="smsModule" label="短信模版" value="ParkManager提醒您有新消息：工作移交提醒（${title}）,请您登录系统及时查看处理，谢谢。【浙大科技园宁波分园】" render="textarea"/>
+    </config>
+    
+    <config key="taskTimeOutRemind" label="工作逾期提醒">
+  	 	<parameter key="email" label="邮件" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="sms" label="短信" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="smsModule" label="短信模版" value="ParkManager提醒您有新消息：工作逾期提醒（${title}）,请您登录系统及时查看处理，谢谢。【浙大科技园宁波分园】" render="textarea"/>
+    </config>
+    
+    
+   <!--  <config key="docShareRemind" label="文档共享提醒信息模版">
+    	<parameter key="in" label="内部共享" value="${customerName}共享了${document}给部门，&lt;a href='${url}'&gt;请点击这里&lt;/a&gt;" render="text"/>
+    	<parameter key="out" label="外部共享" value="${customerName}共享了${document}给企业，&lt;a href='${url}'&gt;请点击这里&lt;/a&gt;" render="text"/>
+    </config> -->
+    
+    <config key="sealApplyRemind" label="用印申请审批提醒">
+    	<parameter key="email" label="邮件" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="sms" label="短信" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="smsModule" label="短信模版" value="尊敬的${approver}；${applicant}向您申请【${project}】项目" render="textarea"/>
+    </config>
+
+    <!-- <config key="sealApprovalRemind" label="用印申请审批完成提醒信息模版">
+        <parameter key="email" label="邮件" value="尊敬的${applicant}；您申请的【${project}】项目已审批，&lt;a href='${url}'&gt;请点击这里&lt;/a&gt;" render="text"/>
+        <parameter key="sms" label="短信" value="尊敬的${applicant}；您申请的【${project}】项目已审批" render="text"/>
+    </config>
+ -->
+    <config key="leaveApplyRemind" label="请假申请审批提醒">
+    	<parameter key="email" label="邮件" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="sms" label="短信" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="smsModule" label="短信模版" value="尊敬的${approver}；${applicant}向您请假" render="text"/>
+    </config>
+    
+    <config key="staffContractRemind" label="员工合同到期提醒">
+    	<parameter key="email" label="邮件" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="sms" label="短信" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="smsModule" label="短信模版" value="ParkManager提醒您有新消息：员工合同到期提醒（${title}）,请您及时查看处理，谢谢。【浙大科技园宁波分园】" render="textarea"/>
+    </config>
+  <!--   <config key="leaveApprovalRemind" label="请假登记审批完成信息模版">
+        <parameter key="email" label="邮件" value="尊敬的${applicant}；您的请假单已审批，&lt;a href='${url}'&gt;请点击这里&lt;/a&gt;" render="text"/>
+        <parameter key="sms" label="短信" value="尊敬的${applicant}；您的请假单已审批" render="text"/>
+    </config>
+     -->
+     <!-- <config key="supplyApplyRemind" label="办公用品申请提醒信息模版">
+     	<parameter key="email" label="邮件" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="sms" label="短信" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="smsModule" label="短信模版" value="尊敬的${approver}；${applicant}向您申请办公用品" render="textarea"/>
+    </config> -->
+   <!--  <config key="supplyApprovalRemind" label="办公用品申请审批完成提醒信息模版">
+        <parameter key="email" label="邮件" value="尊敬的${applicant}；您申请的办公用品已审批，&lt;a href='${url}'&gt;请点击这里&lt;/a&gt;" render="text"/>
+        <parameter key="sms" label="短信" value="尊敬的${applicant}；您申请的办公用品已审批" render="text"/>
+    </config> -->
+    
+    <!-- <config key="carApplyRemind" label="车辆申请提醒信息模版">
+   	 	<parameter key="email" label="邮件" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="sms" label="短信" value="active" render="radio">
+        	<option value="active" label="开启"/>
+        	<option value="inactive" label="关闭"/>
+        </parameter>
+        <parameter key="smsModule" label="短信模版" value="尊敬的${approver}；${applicant}向您提交了车辆管理申请" render="text"/>
+    </config> -->
+    <!-- <config key="carApprovalRemind" label="车辆申请审批完成提醒信息模版">
+        <parameter key="email" label="邮件" value="尊敬的${applicant}；您的车辆管理申请已审批，&lt;a href='${url}'&gt;请点击这里&lt;/a&gt;" render="text"/>
+        <parameter key="sms" label="短信" value="尊敬的${applicant}；您的车辆管理申请已审批" render="text"/>
+    </config> -->
+</appConfig>

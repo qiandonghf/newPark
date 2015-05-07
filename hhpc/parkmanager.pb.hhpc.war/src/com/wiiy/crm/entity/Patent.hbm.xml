@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.wiiy.crm.entity.Patent">
+        <meta attribute="class-description">知识产权(专利)</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+        <property name="customerId" type="java.lang.Long"  not-null="true">
+			<column name="customer_id">
+				<comment>企业外键</comment>
+			</column>
+		</property>
+        <many-to-one name="customer" class="com.wiiy.crm.entity.Customer" foreign-key="fk_patent_customer_customer" insert="false" update="false" fetch="join">
+            <column name="customer_id" not-null="true">
+                <comment>企业</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="type" class="com.wiiy.core.entity.DataDict" foreign-key="fk_patent_datadict_type" insert="false" update="false" fetch="join">
+			<column name="type_id" >
+				<comment>专利类型</comment>
+			</column>
+		</many-to-one>
+		<property name="typeId" type="java.lang.String">
+			<column name="type_id">
+				<comment>专利类型外键</comment>
+			</column>
+		</property>
+        
+        <property name="name" type="java.lang.String" not-null="true">
+            <column name="name" length="50">
+                <comment>专利名称</comment>
+            </column>
+        </property>
+        <property name="appler" type="java.lang.String">
+            <column name="appler">
+                <comment>申请人</comment>
+            </column>
+        </property>
+        <property name="applyTime" type="java.util.Date">
+            <column name="apply_time">
+                <comment>申请时间</comment>
+            </column>
+        </property>
+        <property name="serialNo" type="java.lang.String">
+            <column name="serial_no">
+                <comment>专利号</comment>
+            </column>
+        </property>
+        <many-to-one name="source" class="com.wiiy.core.entity.DataDict" foreign-key="fk_patent_datadict_source" insert="false" update="false" fetch="join">
+			<column name="source_id" >
+				<comment>专利来源</comment>
+			</column>
+		</many-to-one>
+		<property name="sourceId" type="java.lang.String">
+			<column name="source_id">
+				<comment>专利来源外键</comment>
+			</column>
+		</property>
+		 <property name="sourceFrom">
+			<column name="source_from" sql-type="varchar(50)">
+				<comment>专利来源(国内/外)</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.crm.preferences.enums.PatentSourceEnum</param>
+				<param name="type">12</param>
+			</type>		
+		</property>
+		<many-to-one name="state" class="com.wiiy.core.entity.DataDict" foreign-key="fk_patent_datadict_state" insert="false" update="false" fetch="join">
+			<column name="state_id" >
+				<comment>专利状态</comment>
+			</column>
+		</many-to-one>
+		<property name="stateId" type="java.lang.String" not-null="true">
+			<column name="state_id">
+				<comment>专利状态外键</comment>
+			</column>
+		</property>
+        
+        
+        <property name="buyTime" type="java.util.Date">
+            <column name="buy_time">
+                <comment>购买时间</comment>
+            </column>
+        </property>
+        <property name="expireTime" type="java.util.Date">
+            <column name="expire_time">
+                <comment>失效时间</comment>
+            </column>
+        </property>
+        <property name="summery" type="java.lang.String" length="512">
+            <column name="summery" sql-type="text">
+                <comment>摘要</comment>
+            </column>
+        </property>
+        
+        <property name="pub">
+			<column name="pub" sql-type="varchar(50)">
+				<comment>是否发布到网站</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.BooleanEnum</param>
+				<param name="type">12</param>
+			</type>		
+		</property>
+        
+        <property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+    </class>
+</hibernate-mapping>

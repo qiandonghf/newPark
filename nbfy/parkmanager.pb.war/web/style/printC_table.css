@@ -1,0 +1,21 @@
+.companydiv{ width:770px; margin:0 auto;}
+.companydivtitle{ font-size:16px; text-align:center; line-height:70px;}
+.companydivtitle span{ float:right; width:180px; display:inline-block; font-size:12px; text-align:left; line-height:20px;}
+.companydivlist{line-height:30px; clear:both; font-size:12px; padding:0 5px;}
+.companytable{ border-left:1px solid #ccc; border-top:1px solid #ccc;}
+.companytable .th{ font-size:12px; height:17px; line-height:17px; border-bottom:1px solid #CCC; border-right:1px solid #ccc; text-align:center; font-weight:bold;}
+.companytable  .tdleft{height:17px; line-height:17px;border-bottom:1px solid #CCC; border-right:1px solid #ccc; font-size:12px; padding-left:8px;}
+.companytable  .tdcenter{height:17px; line-height:17px; text-align:center; font-size:12px;border-bottom:1px solid #CCC; border-right:1px solid #ccc;}
+.pinput{ width:118px; height:16px; line-height:16px; border:none; background:#d9f5ff; text-align:center; color:#333;}
+.savebtn{ background:url(../images/save.gif) no-repeat; width:75px; height:22px; border:none;}
+.cancelbtn{ background:url(../images/cancel.gif) no-repeat; width:75px; height:22px; border:none;cursor:pointer;}
+.buttondiv{ text-align:left; height:24px; width:100%; text-align:center;}
+.psviewbtn{ background:url(../images/appbtn.gif) no-repeat;  width:75px; height:22px; border:none; padding:0 0 0 20px; cursor:pointer;}
+.receivable { background:url(../images/receivableBtn.gif) no-repeat; width:75px; height:22px;border:none; padding:0 0 0 20px; cursor:pointer;}
+.flLt { float:left;}
+.flRt { float:right;}
+.clear { overflow:hidden; zoom:1;}
+
+.pitTable { background:#ccc; font-size:12px;}
+
+.pitTable td,.pitTable th { background:#fff; padding:0 5px;}

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wiiy.crm.entity.InvestmentRegInfo">
+    	<meta attribute="class-description">招商项目注册信息</meta> 
+    	<meta attribute="extends">com.wiiy.commons.entity.BaseEntity</meta>
+		<id name="id" unsaved-value="-1" type="java.lang.Long">
+			<generator class="foreign">
+                <param name="property">investment</param>
+            </generator>
+		</id>
+		<one-to-one name="investment" class="com.wiiy.crm.entity.Investment" foreign-key="fk_InvestmentRegInfo_investment" constrained="true" cascade="all" fetch="join">
+        	<meta attribute="class-description">招商项目</meta> 
+        </one-to-one>
+        
+        
+        <property name="regTime" type="java.util.Date">
+        	<column name="reg_time">
+        		<comment>注册时间</comment>
+        	</column>
+        </property>
+        
+        <many-to-one name="regType" class="com.wiiy.core.entity.DataDict" foreign-key="fk_InvestmentRegInfo_datadict_regType" insert="false" update="false" fetch="join">
+			<column name="reg_type_id">
+				<comment>注册类型实体</comment>
+			</column>
+		</many-to-one>
+        <property name="regTypeId" type="java.lang.String">
+        	<column name="reg_type_id">
+        		<comment>注册类型外键</comment>
+        	</column>
+        </property>
+        <property name="regCapital" type="java.math.BigDecimal">
+        	<column name="reg_capital">
+        		<comment>注册资本</comment>
+        	</column>
+        </property>
+        
+        <many-to-one name="currencyType" class="com.wiiy.core.entity.DataDict" foreign-key="fk_InvestmentRegInfo_datadict_currencyType" insert="false" update="false" fetch="join">
+			<column name="currency_type_id">
+				<comment>币种实体</comment>
+			</column>
+		</many-to-one>
+        <property name="currencyTypeId" type="java.lang.String">
+        	<column name="currency_type_id">
+        		<comment>币种外键</comment>
+        	</column>
+        </property>
+        
+        <property name="organizationNumber" type="java.lang.String">
+        	<column name="organization_number">
+        		<comment>组织机构代码</comment>
+        	</column>
+        </property>
+        <property name="businessNumber" type="java.lang.String">
+        	<column name="business_number">
+        		<comment>工商注册号</comment>
+        	</column>
+        </property>
+        <property name="taxNumber" type="java.lang.String">
+        	<column name="tax_number">
+        		<comment>税务登记证</comment>
+        	</column>
+        </property>
+        <property name="legalPerson" type="java.lang.String">
+        	<column name="legal_person">
+        		<comment>法定代表人</comment>
+        	</column>
+        </property>
+        
+        <many-to-one name="documentType" class="com.wiiy.core.entity.DataDict" foreign-key="fk_InvestmentRegInfo_datadict_documentType" insert="false" update="false" fetch="join">
+			<column name="document_type_id">
+				<comment>证件类型实体</comment>
+			</column>
+		</many-to-one>
+        <property name="documentTypeId" type="java.lang.String">
+        	<column name="document_type_id">
+        		<comment>证件类型外键</comment>
+        	</column>
+        </property>
+        
+        <property name="documentNumber" type="java.lang.String">
+        	<column name="document_number">
+        		<comment>证件号</comment>
+        	</column>
+        </property>
+        <property name="regMail" type="java.lang.String" length="255">
+        	<column name="reg_mail">
+        		<comment>注册EMAIL</comment>
+        	</column>
+        </property>
+        <property name="cellphone" type="java.lang.String">
+        	<column name="cellphone">
+        		<comment>移动电话</comment>
+        	</column>
+        </property>
+        <property name="regAddress" type="java.lang.String" length="255">
+        	<column name="reg_address">
+        		<comment>注册地址</comment>
+        	</column>
+        </property>
+        <property name="businessScope" type="java.lang.String">
+        	<column name="business_scope" sql-type="text">
+        		<comment>经营范围</comment>
+        	</column>
+        </property>
+        <property name="businessExpireDate" type="java.util.Date">
+        	<column name="business_expire_date">
+        		<comment>营业截至日期</comment>
+        	</column>
+        </property>
+        <property name="entityStatus">
+        	<column name="entity_status">
+				<comment>实体状态</comment>
+			</column>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wiiy.commons.preferences.enums.EntityStatus</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="create_time">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="creator" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="creatorId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="creator_id">
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<meta attribute="gen-property">false</meta>
+			<column name="modify_time">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="modifier" type="java.lang.String" length="100">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier">
+				<comment>修改人姓名</comment>
+			</column>
+		</property>
+		<property name="modifierId" type="java.lang.Long">
+			<meta attribute="gen-property">false</meta>
+			<column name="modifier_id">
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

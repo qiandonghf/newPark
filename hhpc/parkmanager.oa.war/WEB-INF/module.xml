@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+<module idSpace="4" name="办公管理系统" order="10" icon="/core/common/images/oa_icon.png">
+	<menu id="30000" name="日程任务" order="1">
+		<menu id="33000" name="工作汇报" order="1" icon="/parkmanager.oa/web/images/oaico/task_03_min.png">
+			<menu id="33100" name="我的汇报" order="1" icon="/parkmanager.oa/web/images/oaico/task_13_min.png" uris="/parkmanager.oa/workReport!list.action /parkmanager.oa/workReport!configWeekReport.action
+				 /parkmanager.oa/workReport!addByMonth.action /parkmanager.oa/workReport!addByWeek.action /parkmanager.oa/workReport!editByWeek.action /parkmanager.oa/workReport!editByMonth.action 
+				 /parkmanager.oa/workReport!viewByReportId.action /parkmanager.oa/workReport!myWorkReportList.action">
+				<operation id="33101" name="写周报" uris="/parkmanager.oa/workReport!addWeekReport.action /parkmanager.oa/workReport!save.action /parkmanager.oa/workReport!loadTaskForWeekReport.action" icon="/core/common/images/weekly.png"/>
+				<operation id="33102" name="编辑周报" uris="/parkmanager.oa/workReport!editByWeek.action /parkmanager.oa/workReport!update.action" icon="/core/common/images/wrokedit.png"/>
+				<operation id="33103" name="查看周报" uris="/parkmanager.oa/workReport!viewByWeek.action" icon=""/>
+				<operation id="33104" name="写月报" uris="/parkmanager.oa/workReport!addMonthReport.action /parkmanager.oa/workReport!save.action /parkmanager.oa/workReport!loadTaskForMonthReport.action" icon="/core/common/images/month.png"/>
+				<operation id="33105" name="编辑月报" uris="/parkmanager.oa/workReport!editByMonth.action /parkmanager.oa/workReport!update.action" icon="/core/common/images/wrokedit.png"/>
+				<operation id="33106" name="查看月报" uris="/parkmanager.oa/workReport!viewByMonth.action" icon=""/> 
+				<operation id="33107" name="设置报送人" uris="/core/user!select2.action /parkmanager.oa/workReportConfig!configReporter.action /core/user!list.action" icon="/core/common/images/set.png"/>
+				<operation id="33108" name="写日报" uris="/parkmanager.oa/workDayReport!addDayReport.action /parkmanager.oa/workDayReport!save.action" icon="/core/common/images/set.png"/>
+				<operation id="33109" name="编辑日报" uris="/parkmanager.oa/workDayReport!editDay.action /parkmanager.oa/workDayReport!update.action" icon="/core/common/images/set.png"/>
+				<operation id="33110" name="查看日报" uris="/parkmanager.oa/workDayReport!viewByDay.action" icon="/core/common/images/set.png"/>
+			</menu>
+			<menu id="33200" name="个人工作汇总" order="2" icon="/parkmanager.oa/web/images/oaico/task_23_min.png" uris="/parkmanager.oa/workReport!workCountList.action">
+				<operation id="33201" name="查看周报汇总" uris="/parkmanager.oa/workReport!workCountList.action" icon="/core/common/images/weeklycount.png"/>
+				<operation id="33202" name="查看周报" uris="/parkmanager.oa/workReport!viewByWeek.action" icon="/core/common/images/rightgreen.png"/>
+				<operation id="33203" name="查看月报汇总" uris="/parkmanager.oa/workReport!workMonthCountList.action" icon="/core/common/images/monthcount.png"/>
+				<operation id="33204" name="查看月报" uris="/parkmanager.oa/workReport!viewByMonth.action" icon="/core/common/images/rightgreen.png"/> 
+				<operation id="33205" name="查看日报汇总" uris="/parkmanager.oa/workDayReport!dayCountList.action" icon="/core/common/images/rightgreen.png"/> 
+				<operation id="33206" name="查看日报" uris="/parkmanager.oa/workReport!viewByMonth.action" icon="/core/common/images/rightgreen.png"/> 
+				<operation id="33207" name="导出" uris="/parkmanager.oa/workReport!selectPersonReport.action  /parkmanager.oa/workReport!loadWeekByYear.action /parkmanager.oa/workReport!personExport.action" icon="/core/common/images/rightgreen.png"/> 
+			</menu>
+			<menu id="33300" name="部门工作汇总" order="3" icon="/parkmanager.oa/web/images/departmentalSummary_min.png" uris="/parkmanager.oa/workReport!depWeekCountList.action">
+				<operation id="33301" name="查看部门日报汇总" uris="/parkmanager.oa/workDayReport!depCountList.action"/>
+				<operation id="33302" name="查看部门日报" uris="/parkmanager.oa/workDayReport!viewDepWork.action"/>
+				<operation id="33303" name="查看部门周报汇总" uris="/parkmanager.oa/workReport!depWeekCountList.action"/>
+				<operation id="33304" name="查看部门周报" uris="/parkmanager.oa/workReport!viewDepWeek.action"/>
+				<operation id="33305" name="查看部门月报汇总" uris="/parkmanager.oa/workReport!depMonthCountList.action"/>
+				<operation id="33306" name="查看部门月报" uris="/parkmanager.oa/workReport!viewDepMonth.action"/>
+				<operation id="33307" name="导出" uris="/parkmanager.oa/workReport!selectDepReport.action /parkmanager.oa/workReport!loadWeekByYear.action /parkmanager.oa/workReport!depExport.action /parkmanager.oa/workReport!orgList.action /core/org!treeOrgs.action"/>
+			</menu>
+		</menu>
+		<menu id="31000" name="任务分配" order="2" icon="/parkmanager.oa/web/images/oaico/task_01_min.png" uris="/parkmanager.oa/web/task2/task_list1.jsp /parkmanager.oa/task!myPendingTaskCount.action">
+			<operation id="31001" name="我的工作" uris="/parkmanager.oa/task!myWorkList.action /parkmanager.oa/task!finish.action /parkmanager.oa/task!myFinish2.action /parkmanager.oa/task!searchMyTask.action /parkmanager.oa/task!taskXML.action /parkmanager.oa/web/task2/task_send.jsp"/>
+			<operation id="31002" name="新建任务" uris="/parkmanager.oa/task!add.action /parkmanager.oa/task!save.action /core/core/user!select2.action /core/core/user!select.action /parkmanager.oa/taskAtt!saveToSession.action /parkmanager.oa/web/ckeditor/uploader/browse.jsp /parkmanager.oa/web/ckeditor/uploader/upload.jsp"/>
+			<operation id="31003" name="签收" uris="/parkmanager.oa/task!signed.action /parkmanager.oa/web/task/taskAppoint_edit_endTime.jsp /parkmanager.oa/task!updateEndTime.action"/>
+			<operation id="31004" name="编辑" uris="/parkmanager.oa/task!edit.action /parkmanager.oa/task!update.action /parkmanager.oa/taskAtt!save.action /parkmanager.oa/task!taskMove.action"/>
+			<operation id="31005" name="查看" uris="/parkmanager.oa/task!view.action /parkmanager.oa/task!list.action /parkmanager.oa/taskLog!list.action /parkmanager.oa/taskLog!view.action /parkmanager.oa/taskLog!edit.action /parkmanager.oa/taskLog!update.action /parkmanager.oa/taskLog!delete.action /parkmanager.oa/web/task/taskLog_add.jsp 
+			 /parkmanager.oa/taskLog!save.action /parkmanager.oa/task!finished.action /parkmanager.oa/task!aborted.action /parkmanager.oa/task!refused.action /parkmanager.oa/taskLog!list2.action /parkmanager.oa/task!viewFinishWork.action"/>
+			<operation id="31006" name="删除" uris="/parkmanager.oa/task!delete.action"/>
+			<operation id="31007" name="优先级" uris="/parkmanager.oa/task!high.action /parkmanager.oa/task!middle.action  /parkmanager.oa/task!low.action"/>
+			<operation id="31008" name="设置进度" uris="/parkmanager.oa/task!progress.action /parkmanager.oa/task!taskSend.action"/>
+			<operation id="31009" name="中止任务" uris="/parkmanager.oa/task!aborted.action"/>
+			<operation id="31010" name="任务延期" uris="/parkmanager.oa/web/task/task_edit_endTime.jsp /parkmanager.oa/task!updateEndTime.action"/>
+			<operation id="31011" name="设置部门" uris="/parkmanager.oa/taskDepart!select.action /parkmanager.oa/task!setDepart.action /parkmanager.oa/taskDepart!list2.action"/>
+			<operation id="31012" name="设置项目" uris="/parkmanager.oa/taskProject!select.action /parkmanager.oa/task!setProject.action"/>
+			<operation id="31013" name="工作派送" uris="/parkmanager.oa/task!taskSend.action /core/core/user!select2.action"/>
+			<operation id="31014" name="工作转交" uris="/parkmanager.oa/task!taskMove.action /core/core/user!select.action"/>
+			<operation id="31015" name="派出工作" uris="/parkmanager.oa/task!mySendTaskList.action"/>
+			<operation id="31016" name="未签收的工作" uris="/parkmanager.oa/task!myPendingList.action"/>
+			<operation id="31017" name="待办的工作" uris="/parkmanager.oa/task!mySignTaskList.action"/>
+			<operation id="31020" name="部门工作" uris="/parkmanager.oa/web/task2/task_dep.jsp /parkmanager.oa/task!depList.action /parkmanager.oa/task!viewDepart.action /parkmanager.oa/task!searchDepartTask.action 
+			 /parkmanager.oa/task!departXML.action /parkmanager.oa/web/task/task_dep_list.jsp /parkmanager.oa/taskDepart!list.action"/>
+			<operation id="31021" name="新建部门" uris="/parkmanager.oa/web/task/taskDepart_add.jsp /parkmanager.oa/taskDepart!save.action"/>
+			<operation id="31022" name="编辑部门" uris="/parkmanager.oa/taskDepart!edit.action /parkmanager.oa/taskDepart!update.action"/>
+			<operation id="31023" name="删除部门" uris="/parkmanager.oa/taskDepart!delete.action"/>
+			<operation id="31030" name="项目工作" uris="/parkmanager.oa/web/task2/task_project.jsp /parkmanager.oa/task!projectList.action /parkmanager.oa/task!viewProject.action 
+			 /parkmanager.oa/task!projectXML.action /parkmanager.oa/web/task/task_project_list.jsp /parkmanager.oa/taskProject!list.action /parkmanager.oa/taskProject!openProject.action /parkmanager.oa/taskProject!closeProject.action"/>
+			<operation id="31031" name="新建项目" uris="/parkmanager.oa/web/task/taskProject_add.jsp /parkmanager.oa/taskProject!save.action"/>
+			<operation id="31032" name="编辑项目" uris="/parkmanager.oa/taskProject!edit.action /parkmanager.oa/taskProject!update.action"/>
+			<operation id="31033" name="删除项目" uris="/parkmanager.oa/taskProject!delete.action"/>
+			<operation id="31040" name="员工工作" uris="/parkmanager.oa/task!employeeList.action /parkmanager.oa/task!viewEmployee.action"/>
+		</menu>	
+		<menu id="32000" name="日程管理" order="3" icon="/parkmanager.oa/web/images/oaico/task_02_min.png " uris="/parkmanager.oa/schedule!list.action">
+			<operation id="32001" name="新建" uris="/parkmanager.oa/web/workmanage/schedule_add.jsp /parkmanager.oa/schedule!save.action" icon="/core/common/images/emailadd.gif"/>
+            <operation id="32002" name="日历" uris="/parkmanager.oa/schedule!list.action" icon="/core/common/images/viewdata.gif"/>
+            <operation id="32003" name="提醒" uris="/parkmanager.oa/schedule!remind.action" icon="/core/common/images/viewdata.gif"/>
+            <operation id="32004" name="编辑" uris="/parkmanager.oa/schedule!edit.action /parkmanager.oa/schedule!update.action" icon=""/>
+            <operation id="32005" name="删除" uris="/parkmanager.oa/schedule!delete.action" icon=""/>
+            <operation id="32006" name="查看" uris="/parkmanager.oa/schedule!view.action" icon=""/>
+            <operation id="32007" name="工作台日程" uris="/parkmanager.oa/schedule!workBenchSchedule.action" icon=""/>
+		</menu>
+	</menu>
+	
+	<menu id="40000" name="行政管理" order="2">
+		<menu id="41000" name="办公用品" order="1" icon="/parkmanager.oa/web/images/oaico/ad_01_min.png">
+			<menu id="41100" name="办公用品管理" order="1" uris="/parkmanager.oa/supply!list.action /parkmanager.oa/supply!listAll.action /parkmanager.oa/supplyCategory!treeList.action
+				 /parkmanager.oa/supply!loadSupplyByCategoryId.action" icon="/parkmanager.oa/web/images/oaico/ad_11_min.png">
+				<operation id="41112" name="列表显示" uris="/parkmanager.oa/supply!list.action /parkmanager.oa/supply!listAll.action /parkmanager.oa/supplyCategory!treeList.action
+				 /parkmanager.oa/supply!loadSupplyByCategoryId.action"/>
+				<operation id="41101" name="添加类型" uris="/parkmanager.oa/web/chiefadmin/SupplyCategory_add.jsp /parkmanager.oa/supplyCategory!save.action" icon=""/>
+				<operation id="41102" name="类型重命名" uris="/parkmanager.oa/supplyCategory!edit.action /parkmanager.oa/supplyCategory!update.action" icon=""/>
+				<operation id="41103" name="类型删除" uris="/parkmanager.oa/supplyCategory!delete.action" icon=""/>
+				<operation id="41104" name="新建办公用品" uris="/parkmanager.oa/supply!add.action /parkmanager.oa/supply!save.action /parkmanager.oa/web/chiefadmin/supplyCategory_select.jsp" icon="/core/common/images/emailadd.gif"/>
+				<operation id="41105" name="编辑办公用品" uris="/parkmanager.oa/supply!edit.action /parkmanager.oa/supply!update.action" icon="/core/common/images/edit.gif"/>
+				<operation id="41106" name="删除办公用品" uris="/parkmanager.oa/supply!delete.action" icon="/core/common/images/del.gif"/>
+				<operation id="41107" name="导出" uris="/parkmanager.oa/supply!export.action" icon=""/>
+				<operation id="41108" name="查看出入库明细" uris="/parkmanager.oa/supply!check.action /parkmanager.oa/web/chiefadmin/OfficeSupply_view.jsp" icon="core/common/images/viewbtn.gif"/>
+				<operation id="41109" name="查看入库明细" uris="/parkmanager.oa/supply!inList.action" icon=""/>
+				<operation id="41110" name="查看出库明细" uris="/parkmanager.oa/supply!outList.action" icon=""/>
+				<operation id="41111" name="添加分类型" uris="/parkmanager.oa/supplyCategory!addSupplyCategoryByParentId.action" icon=""/>
+			</menu>
+			<menu id="41200" name="办公用品入库" order="2" uris="/parkmanager.oa/web/chiefadmin/Office_supplies_storage_list.jsp /parkmanager.oa/supplyStockIn!listAll.action" icon="/parkmanager.oa/web/images/oaico/ad_21_min.png">
+				<operation id="41206" name="列表显示" uris="/parkmanager.oa/web/chiefadmin/Office_supplies_storage_list.jsp /parkmanager.oa/supplyStockIn!listAll.action"/>
+				<operation id="41201" name="新建" uris="/parkmanager.oa/web/chiefadmin/Office_supplies_storage_add.jsp /parkmanager.oa/supply!select.action /parkmanager.oa/supplyStockIn!save.action /parkmanager.oa/supply!listAll.action /parkmanager.oa/supply!loadSupplyByCategoryId.action" icon="/core/common/images/emailadd.gif"/>
+				<operation id="41202" name="编辑" uris="/parkmanager.oa/supplyStockIn!edit.action /parkmanager.oa/supplyStockIn!update.action /parkmanager.oa/supply!select.action /parkmanager.oa/supply!listAll.action /parkmanager.oa/supply!loadSupplyByCategoryId.action" icon="/core/common/images/edit.gif"/>
+				<operation id="41203" name="删除" uris="/parkmanager.oa/supplyStockIn!delete.action" icon="/core/common/images/del.gif"/>
+				<operation id="41204" name="导出" uris="/parkmanager.oa/supplyStockIn!export.action" icon=""/>
+				<operation id="41205" name="查看" uris="/parkmanager.oa/supplyStockIn!view.action"/>
+			</menu>
+			<menu id="41300" name="办公用品申请" order="3" uris="/parkmanager.oa/web/chiefadmin/Office_supplies_sq.jsp /parkmanager.oa/supplyApply!listAll.action" icon="/parkmanager.oa/web/images/oaico/ad_31_min.png">
+				<operation id="41301" name="新建" uris="/parkmanager.oa/web/chiefadmin/Office_supplies_sq_add.jsp /parkmanager.oa/supply!select.action /core/user!select2.action /parkmanager.oa/supplyApply!save.action"  icon="/core/common/images/emailadd.gif"/>
+				<operation id="41302" name="编辑" uris="/parkmanager.oa/supplyApply!edit.action /parkmanager.oa/supplyApply!update.action" icon="/core/common/images/edit.gif"/>
+				<operation id="41303" name="删除" uris="/parkmanager.oa/supplyApply!delete.action" icon="/core/common/images/del.gif"/>
+				<operation id="41304" name="查看" uris="/parkmanager.oa/supplyApply!view.action"/>
+				<operation id="41305" name="列表显示" uris="/parkmanager.oa/web/chiefadmin/Office_supplies_sq.jsp /parkmanager.oa/supplyApply!listAll.action"/>
+				<operation id="41306" name="导出" uris="/parkmanager.oa/supplyApply!export.action" icon=""/>
+			</menu>
+			<menu id="41400" name="办公用品采购申请" order="4" uris="/parkmanager.oa/web/chiefadmin/Office_supplies_purchase.jsp /parkmanager.oa/supplyPurchaseApply!listAll.action" icon="/parkmanager.oa/web/images/office_suppies_min.png">
+				<operation id="41401" name="新建" uris="/parkmanager.oa/web/chiefadmin/Office_supplies_purchase_add.jsp /parkmanager.oa/supply!select.action /parkmanager.oa/supplyPurchaseApply!save.action"  icon="/core/common/images/emailadd.gif"/>
+				<operation id="41402" name="编辑" uris="/parkmanager.oa/supplyPurchaseApply!edit.action /parkmanager.oa/supplyPurchaseApply!update.action" icon="/core/common/images/edit.gif"/>
+				<operation id="41403" name="删除" uris="/parkmanager.oa/supplyPurchaseApply!delete.action" icon="/core/common/images/del.gif"/>
+				<operation id="41404" name="查看" uris="/parkmanager.oa/supplyPurchaseApply!view.action"/>
+				<operation id="41405" name="列表显示" uris="/parkmanager.oa/web/chiefadmin/Office_supplies_purchase.jsp /parkmanager.oa/supplyPurchaseApply!listAll.action"/>
+				<operation id="41406" name="导出" uris="/parkmanager.oa/supplyPurchaseApply!export.action" icon=""/>
+			</menu>
+			
+		</menu>
+		<!-- <menu id="42000" name="车辆管理" order="2" icon="/parkmanager.oa/web/images/oa046.png">
+			<menu id="42100" name="车辆管理" order="1" uris="/parkmanager.oa/web/chiefadmin/Vehicle_list.jsp /parkmanager.oa/car!list.action" icon="/parkmanager.oa/web/images/oa046.png">
+				<operation id="42101" name="新建" uris="/parkmanager.oa/web/chiefadmin/Vehicle_add.jsp /parkmanager.oa/car!save.action /parkmanager.oa/car!upload.action" icon="/core/common/images/emailadd.gif"/>
+				<operation id="42102" name="编辑" uris="/parkmanager.oa/car!edit.action /parkmanager.oa/car!update.action /parkmanager.oa/car!upload.action" icon="/core/common/images/edit.gif"/>
+				<operation id="42103" name="删除" uris="/parkmanager.oa/car!delete.action" icon="/core/common/images/del.gif"/>
+				<operation id="42104" name="查看" uris="/parkmanager.oa/car!view.action" icon="/core/common/images/viewbtn.gif"/>
+			</menu>
+			<menu id="42200" name="车辆维修管理" order="2" uris="/parkmanager.oa/web/chiefadmin/Vehicle_maintenance_list.jsp /parkmanager.oa/carFix!list.action" icon="/parkmanager.oa/web/images/oa047.png">
+				<operation id="42201" name="新建" uris="/parkmanager.oa/web/chiefadmin/Vehicle_maintenance_add.jsp /parkmanager.oa/car!carSelect.action /parkmanager.oa/carFix!save.action" icon="/core/common/images/emailadd.gif"/>
+				<operation id="42202" name="编辑" uris="/parkmanager.oa/carFix!edit.action /parkmanager.oa/carFix!update.action" icon="/core/common/images/edit.gif"/>
+				<operation id="42203" name="删除" uris="/parkmanager.oa/carFix!delete.action" icon="/core/common/images/del.gif"/>
+				<operation id="42204" name="查看" uris="/parkmanager.oa/carFix!view.action" icon="/core/common/images/viewbtn.gif"/>
+			</menu>
+			<menu id="42300" name="车辆申请管理" order="3" uris="/parkmanager.oa/web/chiefadmin/Vehicle_applications_list.jsp /parkmanager.oa/carApply!list.action" icon="/parkmanager.oa/web/images/oa048.png">
+				<operation id="42301" name="新建" uris="/parkmanager.oa/web/chiefadmin/Vehicle_applications_add.jsp /parkmanager.oa/car!carSelect.action /core/user!select2.action /parkmanager.oa/carApply!save.action" icon="/core/common/images/emailadd.gif"/>
+				<operation id="42302" name="编辑" uris="/parkmanager.oa/carApply!edit.action /parkmanager.oa/carApply!update.action" icon="/core/common/images/edit.gif"/>
+				<operation id="42303" name="删除" uris="/parkmanager.oa/carApply!delete.action" icon="/core/common/images/del.gif"/>
+				<operation id="42304" name="查看" uris="/parkmanager.oa/carApply!view.action" icon="/core/common/images/viewbtn.gif"/>
+				<operation id="42305" name="提交申请" uris="/parkmanager.oa/carApply!approve.action /core/user!select.action" icon="/core/common/images/users.png"/>
+				<operation id="42306" name="审批" uris="/parkmanager.oa/carApply!approveCarApply.action" icon="/core/common/images/users.png"/>
+			</menu>
+		</menu> -->
+		<menu id="43000" name="固定资产" order="3" icon="/parkmanager.oa/web/images/oaico/ad_07_min.png">
+			<menu id="43100" name="固定资产管理" order="1" uris="/parkmanager.oa/fixedAssets!fixedAssetsTree.action /parkmanager.oa/fixedAssets!list.action /parkmanager.oa/fixedAssets!loadTreeById.action /parkmanager.oa/fixedAssets!loadTreeByTypeId.action" icon="/parkmanager.oa/web/images/oaico/ad_17_min.png">
+				<operation id="43101" name="新建" uris="/parkmanager.oa/fixedAssets!addFixedAssets.action /core/org!select.action /parkmanager.oa/fixedAssets!save.action" icon="/core/common/images/emailadd.gif"></operation>
+				<operation id="43102" name="删除" uris="/parkmanager.oa/fixedAssets!delete.action" icon="/core/common/images/emaildel.png"></operation>
+				<operation id="43103" name="编辑" uris="/parkmanager.oa/fixedAssets!edit.action /parkmanager.oa/fixedAssets!update.action" icon="/core/common/images/edit.gif"></operation>
+				<operation id="43104" name="查看" uris="/parkmanager.oa/fixedAssets!view.action" icon="/core/common/images/viewbtn.gif"></operation>
+				<operation id="43105" name="固定资产折算" uris="/parkmanager.oa/fixedAssets!convert.action" icon="/core/common/images/converted.png"></operation>
+				<operation id="43106" name="导出" uris="/parkmanager.oa/fixedAssets!export.action" icon=""/>
+				<operation id="43107" name="列表显示" uris="/parkmanager.oa/fixedAssets!fixedAssetsTree.action /parkmanager.oa/fixedAssets!list.action /parkmanager.oa/fixedAssets!loadTreeById.action /parkmanager.oa/fixedAssets!loadTreeByTypeId.action"/>
+			</menu>
+			<menu id="43200" name="报废资产管理" order="2" uris="/parkmanager.oa/web/chiefadmin/assetRetirement_list.jsp /parkmanager.oa/fixedAssets!list2.action" icon="/parkmanager.oa/web/images/oaico/ad_27_min.png">
+				<operation id="43201" name="删除" uris="/parkmanager.oa/assetsDepreciation!delete.action" icon="/core/common/images/emaildel.png"></operation>
+				<operation id="43202" name="导出" uris="/parkmanager.oa/supplyApply!export.action" icon=""/>
+				<operation id="43203" name="查看" uris="/parkmanager.oa/fixedAssets!view.action"></operation>
+				<operation id="43204" name="列表显示" uris="/parkmanager.oa/web/chiefadmin/assetRetirement_list.jsp /parkmanager.oa/fixedAssets!list2.action"></operation>
+			</menu>
+		</menu>
+		<menu id="44000" name="外出请假" order="4" uris="" icon="/parkmanager.oa/web/images/oaico/ad_03_min.png">
+			<menu id="44100" name="请假登记" order="1" uris="/parkmanager.oa/web/personnel/leaveout_list.jsp /parkmanager.oa/leaveRegister!list.action /parkmanager.oa/leaveApproval!list.action" icon="/parkmanager.oa/web/images/oaico/ad_13_min.png">
+				<operation id="44101" name="新建" uris="/parkmanager.oa/leaveRegister!add.action /parkmanager.oa/leaveRegister!save.action" icon="/core/common/images/emailadd.gif"></operation>
+				<operation id="44102" name="编辑" uris="/parkmanager.oa/leaveRegister!edit.action /parkmanager.oa/leaveRegister!update.action" icon="/core/common/images/edit.gif"></operation>
+				<operation id="44103" name="查看" uris="/parkmanager.oa/leaveRegister!view.action" icon=""></operation>
+				<operation id="44104" name="删除" uris="/parkmanager.oa/leaveRegister!delete.action /parkmanager.oa/leaveRegister!deleteAll.action" icon="/core/common/images/emaildel.png"></operation>
+				<operation id="44105" name="列表显示" uris="/parkmanager.oa/web/personnel/leaveout_list.jsp /parkmanager.oa/leaveRegister!list.action /parkmanager.oa/leaveApproval!list.action"></operation>
+				<!-- <operation id="44106" name="审核" uris="" icon="/core/common/images/profile.gif"></operation> -->
+				<operation id="44107" name="导出" uris="/parkmanager.oa/leaveRegister!export.action" icon="/core/common/images/profile.gif"></operation>
+			</menu>
+			<!-- <menu id="44200" name="请假审批" order="2" uris="/parkmanager.oa/web/personnel/leaveApproval_list.jsp /parkmanager.oa/leaveApproval!listById.action" icon="/parkmanager.oa/web/images/oa042.png">
+				<operation id="44201" name="审批" uris="/parkmanager.oa/leaveApproval!edit.action /parkmanager.oa/leaveApproval!update.action" icon=""></operation>
+				<operation id="44202" name="删除" uris="/parkmanager.oa/leaveApproval!delete.action" icon="/core/common/images/emaildel.png"></operation>
+			</menu> -->
+			<menu id="44300" name="外出登记" order="3" uris="/parkmanager.oa/web/personnel/outregister_list.jsp /parkmanager.oa/outRegister!list.action" icon="/parkmanager.oa/web/images/oaico/ad_23_min.png">
+				<operation id="44301" name="新建" uris="/parkmanager.oa/web/personnel/outregister_add.jsp /parkmanager.oa/outRegister!save.action" icon="/core/common/images/emailadd.gif"></operation>
+				<operation id="44302" name="编辑" uris="/parkmanager.oa/outRegister!edit.action /parkmanager.oa/outRegister!update.action" icon="/core/common/images/edit.gif"></operation>
+				<operation id="44303" name="删除" uris="/parkmanager.oa/outRegister!delete.action" icon="/core/common/images/emailadd.gif"></operation>
+				<operation id="44304" name="查看" uris="/parkmanager.oa/outRegister!view.action"></operation>
+				<operation id="44305" name="列表显示" uris="/parkmanager.oa/web/personnel/outregister_list.jsp /parkmanager.oa/outRegister!list.action"></operation>
+			</menu>
+		</menu>
+		<menu id="47000" name="值班情况登记表" order="7" uris="/parkmanager.oa/web/chiefadmin/duty_list.jsp /parkmanager.oa/duty!list.action" icon="/parkmanager.oa/web/images/oaico/ad_03_min.png">
+			<operation id="47101" name="新建" uris="/parkmanager.oa/duty!add.action /parkmanager.oa/web/chiefadmin/duty_add.jsp /parkmanager.oa/duty!save.action" icon="/core/common/images/emailadd.gif"></operation>
+			<operation id="47102" name="编辑" uris="/parkmanager.oa/duty!edit.action /parkmanager.oa/duty!update.action" icon="/core/common/images/edit.gif"></operation>
+			<operation id="47103" name="删除" uris="/parkmanager.oa/duty!delete.action" icon="/core/common/images/emaildel.png"></operation>
+			<operation id="47105" name="查看" uris="/parkmanager.oa/duty!view.action"></operation>
+			<operation id="47104" name="导出" uris="/parkmanager.oa/duty!export.action" icon="/core/common/images/profile.gif"></operation>
+			<operation id="47106" name="列表显示" uris="/parkmanager.oa/web/chiefadmin/duty_list.jsp /parkmanager.oa/duty!list.action"></operation>
+		</menu>
+		<!-- <menu id="45000" name="用印管理" order="5" icon="/parkmanager.oa/web/images/oa044.png">
+			<menu id="45100" name="用印申请" order="1" uris="/parkmanager.oa/web/personnel/sealApply_list.jsp /parkmanager.oa/sealApply!list.action" icon="/parkmanager.oa/web/images/oa044.png">
+				<operation id="45101" name="新建" uris="/parkmanager.oa/web/personnel/sealApply_add.jsp /parkmanager.oa/sealApply!save.action /parkmanager.oa/sealApply!configApproval.action"/>
+				<operation id="45102" name="编辑" uris="/parkmanager.oa/sealApply!edit.action /parkmanager.oa/sealApply!update.action"/>
+				<operation id="45103" name="删除" uris="/parkmanager.oa/sealApply!delete.action"/>
+				<operation id="45104" name="查看" uris="/parkmanager.oa/sealApply!view.action"/>
+				<operation id="45105" name="审核" uris="/parkmanager.oa/web/personnel/sealApply_audit.jsp"/>
+			</menu>
+			<menu id="45200" name="用印审批" order="2" uris="/parkmanager.oa/web/personnel/sealApproval_list.jsp /parkmanager.oa/sealApproval!list.action" icon="/parkmanager.oa/web/images/oa044.png">
+				<operation id="45201" name="新建" uris="/parkmanager.oa/web/personnel/sealApproval_add.jsp /parkmanager.oa/sealApproval!save.action /parkmanager.oa/sealApproval!configApproval.action"/>
+				<operation id="45202" name="编辑" uris="/parkmanager.oa/sealApproval!edit.action /parkmanager.oa/sealApproval!update.action"/>
+				<operation id="45203" name="删除" uris="/parkmanager.oa/sealApproval!delete.action"/>
+			</menu>
+		</menu> -->
+	</menu>	
+	
+	<menu id="50000" name="人事管理" order="3">
+		<menu id="51000" name="考勤设置" order="1" icon="/parkmanager.oa/web/images/oaico/aff_01_min.png">
+			<menu id="51200" name="班次定义" order="2" uris="/parkmanager.oa/web/personnel/frequency_list.jsp /parkmanager.oa/workClass!list.action" icon="/parkmanager.oa/web/images/oaico/aff_21_min.png">
+				<operation id="51201" name="新建" uris="/parkmanager.oa/web/personnel/frequency_add.jsp /parkmanager.oa/workClass!save.action" icon="/core/common/images/emailadd.gif"></operation>
+				<operation id="51202" name="删除" uris="/parkmanager.oa/workClass!delete.action" icon="/core/common/images/emaildel.png"></operation>
+				<operation id="51203" name="编辑" uris="/parkmanager.oa/workClass!edit.action /parkmanager.oa/workClass!update.action" icon="/core/common/images/edit.gif"></operation>
+				<operation id="51204" name="查看" uris="/parkmanager.oa/workClass!view.action"></operation>
+				<operation id="51205" name="列表显示" uris="/parkmanager.oa/web/personnel/frequency_list.jsp /parkmanager.oa/workClass!list.action"></operation>
+			</menu>
+			<menu id="51300" name="班制定义" order="3" uris="/parkmanager.oa/web/personnel/shifts_list.jsp /parkmanager.oa/workSchedule!list.action" icon="/parkmanager.oa/web/images/oaico/aff_31_min.png">
+				<operation id="51301" name="新建" uris="/parkmanager.oa/web/personnel/shifts_add.jsp /parkmanager.oa/workSchedule!save.action  /parkmanager.oa/web/personnel/shifts_selected.jsp" icon="/core/common/images/emailadd.gif"></operation>
+				<operation id="51302" name="删除" uris="/parkmanager.oa/workSchedule!delete.action" icon="/core/common/images/emaildel.png"></operation>
+				<operation id="51303" name="编辑" uris="/parkmanager.oa/workSchedule!edit.action /parkmanager.oa/workSchedule!update.action /parkmanager.oa/web/personnel/shifts_selected.jsp" icon="/core/common/images/edit.gif"></operation>
+				<operation id="51304" name="查看" uris="/parkmanager.oa/workSchedule!view.action"></operation>
+				<operation id="51305" name="列表显示" uris="/parkmanager.oa/web/personnel/shifts_list.jsp /parkmanager.oa/workSchedule!list.action"></operation>
+			</menu>
+			<menu id="51400" name="排班管理" order="4" uris="/parkmanager.oa/workArrange!workArrangeList.action" icon="/parkmanager.oa/web/images/oaico/aff_41_min.png">
+				<operation id="51401" name="新建" uris="/parkmanager.oa/workArrange!add.action /parkmanager.oa/workArrange!save.action" icon="/core/common/images/emailadd.gif"></operation>
+				<operation id="51402" name="删除" uris="/parkmanager.oa/workArrange!delete.action" icon="/core/common/images/emaildel.png"></operation>
+				<operation id="51403" name="编辑" uris="/parkmanager.oa/workArrange!edit.action /parkmanager.oa/workArrange!update.action" icon="/core/common/images/edit.gif"></operation>
+				<operation id="51404" name="查询" uris="/parkmanager.oa/workArrange!list.action" icon="/core/common/images/edit.gif"></operation>
+				<operation id="51405" name="查看" uris="/parkmanager.oa/workArrange!view.action"></operation>
+				<operation id="51406" name="列表显示" uris="/parkmanager.oa/workArrange!workArrangeList.action"></operation>
+			</menu>
+		</menu>
+		<menu id="52000" name="考勤管理" order="2" icon="/parkmanager.oa/web/images/oaico/aff_02_min.png">
+			<menu id="52100" name="考勤信息" order="1" uris="/parkmanager.oa/web/personnel/attendance_list.jsp /parkmanager.oa/userSign!list.action /parkmanager.oa/userSign!showWeekDay.action" icon="/parkmanager.oa/web/images/oaico/aff_12_min.png">
+				<operation id="52101" name="补签" uris="/parkmanager.oa/userSign!add.action /parkmanager.oa/userSign!save.action" icon="/core/common/images/emailadd.gif"></operation>
+				<operation id="52102" name="删除" uris="/parkmanager.oa/userSign!delete.action" icon="/core/common/images/emaildel.png"></operation>
+				<operation id="52103" name="编辑" uris="/parkmanager.oa/userSign!edit.action /parkmanager.oa/userSign!update.action" icon="/core/common/images/edit.gif"></operation>
+				<operation id="52104" name="查看" uris="/parkmanager.oa/userSign!view.action"></operation>
+				<operation id="52105" name="列表显示" uris="/parkmanager.oa/web/personnel/attendance_list.jsp /parkmanager.oa/userSign!list.action /parkmanager.oa/userSign!showWeekDay.action"></operation>
+			</menu>
+			<menu id="52200" name="考勤统计" order="2" uris="/parkmanager.oa/userSign!viewSignInfo.action" icon="/parkmanager.oa/web/images/oaico/aff_22_min.png">
+			</menu>
+		</menu>
+		<menu id="53000" name="人力资源" order="3" icon="/parkmanager.oa/web/images/oa026.png">
+			<menu id="53100" name="职位管理" order="1" uris="/parkmanager.oa/web/personnel/job_list.jsp /parkmanager.oa/position!list.action" icon="/parkmanager.oa/web/images/oaico/aff_13_min.png">
+				<operation id="53101" name="新建" uris="/parkmanager.oa/position!add.action /parkmanager.oa/position!save.action" icon="/core/common/images/emailadd.gif"></operation>
+				<operation id="53102" name="删除" uris="/parkmanager.oa/position!delete.action" icon="/core/common/images/emaildel.png"></operation>
+				<operation id="53103" name="编辑" uris="/parkmanager.oa/position!edit.action /parkmanager.oa/position!update.action" icon="/core/common/images/edit.gif"></operation>							
+				<operation id="53104" name="查看" uris="/parkmanager.oa/position!view.action"></operation>							
+				<operation id="53105" name="列表显示" uris="/parkmanager.oa/web/personnel/job_list.jsp /parkmanager.oa/position!list.action"></operation>							
+			</menu>
+			<menu id="53200" name="在职人员档案管理" order="2" uris="/parkmanager.oa/archives!listIn.action  /parkmanager.oa/archives!list.action" icon="/parkmanager.oa/web/images/oaico/aff_23_min.png">
+				<operation id="53201" name="新建" uris="/parkmanager.oa/archives!add.action /parkmanager.oa/archives!show.action /parkmanager.oa/archives!save.action" icon="/core/common/images/emailadd.gif"></operation>
+				<operation id="53202" name="删除" uris="/parkmanager.oa/archives!delete.action" icon="/core/common/images/emaildel.png"></operation>
+				<operation id="53203" name="编辑" uris="/parkmanager.oa/archives!edit.action /parkmanager.oa/archives!update.action" icon="/core/common/images/edit.gif"></operation>				
+				<operation id="53204" name="导出" uris="/parkmanager.oa/archives!export.action" icon="/core/common/images/profile.gif"/>
+				<operation id="53205" name="查看" uris="/parkmanager.oa/archives!view.action"/>
+				<operation id="53206" name="列表显示" uris="/parkmanager.oa/archives!listIn.action  /parkmanager.oa/archives!list.action"/>
+			</menu>
+			<menu id="53300" name="离职人员档案管理" order="3" uris="/parkmanager.oa/archives!listOut.action  /parkmanager.oa/archives!list.action" icon="/parkmanager.oa/web/images/outgoingStaff_min.png">
+				<operation id="53301" name="新建" uris="/parkmanager.oa/archives!addOut.action /parkmanager.oa/archives!show.action /parkmanager.oa/archives!save.action " icon="/core/common/images/emailadd.gif"></operation>
+				<operation id="53302" name="删除" uris="/parkmanager.oa/archives!deleteOut.action" icon="/core/common/images/emaildel.png"></operation>
+				<operation id="53303" name="编辑" uris="/parkmanager.oa/archives!editOut.action /parkmanager.oa/archives!update.action" icon="/core/common/images/edit.gif"></operation>						
+				<operation id="53304" name="导出" uris="/parkmanager.oa/archives!export.action" icon="/core/common/images/profile.gif"/>
+				<operation id="53305" name="查看" uris="/parkmanager.oa/archives!viewOut.action"/>
+				<operation id="53306" name="列表显示" uris="/parkmanager.oa/archives!listOut.action  /parkmanager.oa/archives!list.action"/>
+			</menu>
+		</menu>
+		<!-- <menu id="54000" name="薪酬管理" order="4" icon="/parkmanager.oa/web/images/oa029.png">
+			<menu id="54100" name="薪酬项目" order="1" uris="/parkmanager.oa/web/personnel/newpay.jsp /parkmanager.oa/salaryItem!list.action" icon="/parkmanager.oa/web/images/oa030.png">
+				<operation id="54101" name="新建" uris="/parkmanager.oa/web/personnel/newpay_add.jsp /parkmanager.oa/salaryItem!save.action" icon="/core/common/images/emailadd.gif"></operation>
+				<operation id="54102" name="删除" uris="/parkmanager.oa/salaryItem!delete.action" icon="/core/common/images/emaildel.png"></operation>
+				<operation id="54103" name="编辑" uris="/parkmanager.oa/salaryItem!edit.action /parkmanager.oa/salaryItem!update.action" icon="/core/common/images/edit.gif"></operation>							
+			</menu>
+			<menu id="54200" name="标准制定" order="2" uris="/parkmanager.oa/web/personnel/standards_list.jsp /parkmanager.oa/salaryDefine!list.action" icon="/parkmanager.oa/web/images/oa031.png">
+				<operation id="54201" name="新建" uris="/parkmanager.oa/web/personnel/standards_add.jsp /parkmanager.oa/salaryDefineCfg!list.action /parkmanager.oa/salaryDefine!generateCode.action /parkmanager.oa/salaryDefine!save.action /parkmanager.oa/salaryDefine!config.action /parkmanager.oa/salaryDefineCfg!save2.action" icon="/core/common/images/emailadd.gif"></operation>
+				<operation id="54202" name="删除" uris="/parkmanager.oa/salaryDefine!delete.action /parkmanager.oa/salaryDefineCfg!delete.action" icon="/core/common/images/emaildel.png"></operation>
+				<operation id="54203" name="编辑" uris="/parkmanager.oa/salaryDefine!edit.action /parkmanager.oa/salaryDefine!update.action /parkmanager.oa/salaryDefineCfg!edit.action /parkmanager.oa/salaryDefineCfg!update.action" icon="/core/common/images/edit.gif"></operation>									
+			</menu>
+			<menu id="54300" name="发放登记" order="3" uris="" icon="/parkmanager.oa/web/images/oa032.png"></menu>
+			<menu id="54400" name="发放审核" order="4" uris="" icon="/parkmanager.oa/web/images/oa033.png"></menu>
+		</menu> -->
+	</menu>
+	<menu id="10000" name="文档管理" order="4">
+        <menu id="11000" name="个人文档" order="1" uris="/parkmanager.oa/web/document/personaldocuments_list.jsp /parkmanager.oa/web/document/document_index.jsp /parkmanager.oa/document!list.action /parkmanager.oa/document!loadDocByParentId.action" icon="/parkmanager.oa/web/images/oaico/doc_01_min.png">
+        	<operation id="11001" name="添加文档" uris="/parkmanager.oa/web/document/personaldocuments_add.jsp /parkmanager.oa/document!save.action /core/upload.action" icon="/core/common/images/emailadd.gif"/>
+        	<operation id="11002" name="编辑" uris="/parkmanager.oa/document!edit.action  /parkmanager.oa/document!update.action" icon="/core/common/images/edit.gif"/>
+        	<operation id="11003" name="内部共享" uris="/parkmanager.oa/web/document/shareIn.jsp /parkmanager.oa/document!shareDoc.action /parkmanager.oa/document!shareIn.action" icon="/core/common/images/usersadd.gif"/>
+        	<operation id="11004" name="外部共享" uris="/parkmanager.oa/web/document/shareOut.jsp /parkmanager.oa/document!publicDoc.action /parkmanager.oa/document!shareOut.action" icon="/core/common/images/userswarp.png"/>
+        	<operation id="11005" name="删除" uris="/parkmanager.oa/document!delete.action" icon="/core/common/images/del.gif"/>
+        	<operation id="11006" name="移动" uris="/parkmanager.oa/document!move.action /parkmanager.oa/document!moveDoc.action" icon=""/>
+        	<operation id="11007" name="新建文件夹" uris="/parkmanager.oa/web/document/folder_add.jsp /parkmanager.oa/document!addFolder.action /parkmanager.oa/document!saveFolder.action" icon=""/>
+        	<operation id="11008" name="重命名" uris="/parkmanager.oa/document!updateFolder.action" icon=""/>
+        </menu>
+		<menu id="12000" name="共享文档" order="2" uris="/parkmanager.oa/web/document/share_document_list.jsp /parkmanager.oa/web/document/share_document_index.jsp /parkmanager.oa/docShare!list.action /parkmanager.oa/docShare!loadDocByParentId.action" icon="/parkmanager.oa/web/images/oaico/doc_02_min.png">
+			<operation id="12001" name="新建文件夹" uris="/parkmanager.oa/web/document/share_folder_add.jsp /parkmanager.oa/docShare!addFolder.action /parkmanager.oa/docShare!save.action" icon=""/>
+			<operation id="12002" name="重命名" uris="/parkmanager.oa/docShare!edit.action /parkmanager.oa/docShare!update.action"/>
+			<operation id="12003" name="删除" uris="/parkmanager.oa/docShare!delete.action"/>
+			<operation id="12004" name="移动" uris="/parkmanager.oa/docShare!move.action"/>
+			<operation id="12005" name="取消共享" uris="/parkmanager.oa/docShare!shareDel.action"/>
+		</menu>
+		<menu id="13000" name="企业文档" order="3" uris="/parkmanager.oa/web/document/public_document_list.jsp /parkmanager.oa/web/document/public_document_index.jsp /parkmanager.oa/docPublic!list.action /parkmanager.oa/docPublic!loadDocByParentId.action" icon="/parkmanager.oa/web/images/oaico/doc_03_min.png">
+			<operation id="13001" name="新建文件夹" uris="/parkmanager.oa/web/document/public_folder_add.jsp /parkmanager.oa/docPublic!addFolder.action /parkmanager.oa/docPublic!save.action"/>
+			<operation id="13002" name="重命名" uris="/parkmanager.oa/docPublic!edit.action /parkmanager.oa/docPublic!update.action"/>
+			<operation id="13003" name="删除" uris="/parkmanager.oa/docPublic!delete.action"/>
+			<operation id="13004" name="移动" uris="/parkmanager.oa/docPublic!move.action"/>
+			<operation id="13005" name=" 取消企业公共文档" uris="/parkmanager.oa/docPublic!publicDel.action"/>
+			
+		</menu>
+    </menu>
+
+	<menu id="20000" name="通讯管理" order="5">
+		<menu id="21000" name="名片夹" order="1" icon="/parkmanager.oa/web/images/oaico/msg_01_min.png" uris="/parkmanager.oa/cardCategory!list.action /parkmanager.oa/card!loadMyCard.action /parkmanager.oa/card!cmCard.action 
+				/parkmanager.oa/card!loadCardByCategoryId.action /parkmanager.oa/web/communication/search_list.jsp">
+			<operation id="21001" name="添加名片分组" uris="/parkmanager.oa/web/communication/contacts_category_add.jsp /parkmanager.oa/cardCategory!save.action" icon=""/>	
+			<operation id="21002" name="重命名名片夹" uris="/parkmanager.oa/cardCategory!edit.action /parkmanager.oa/cardCategory!update.action" icon=""/>	
+			<operation id="21003" name="删除名片夹" uris="/parkmanager.oa/cardCategory!delete.action" icon=""/>	
+			<operation id="21004" name="新建名片" uris="/parkmanager.oa/web/communication/contact_addNewCard.jsp /parkmanager.oa/card!save.action /parkmanager.oa/card!loadMyLabel.action" icon="/core/common/images/emailadd.gif"/>	
+			<operation id="21005" name="编辑名片" uris="/parkmanager.oa/card!edit.action /parkmanager.oa/card!update.action /parkmanager.oa/card!loadMyLabel.action" icon="/core/common/images/edit.gif"/>	
+			<operation id="21006" name="删除名片" uris="/parkmanager.oa/card!delete.action" icon="/core/common/images/del.gif"/>	
+			<operation id="21007" name="查看名片" uris="/parkmanager.oa/card!view.action" icon="/core/common/images/viewbtn.gif"/>
+			<operation id="21008" name="复制名片" uris="/parkmanager.oa/web/communication/contact_copy.jsp /parkmanager.oa/card!copyCard.action /parkmanager.oa/card!copyMove.action" icon="/core/common/images/copy.gif"/>
+			<operation id="21009" name="移动名片" uris="/parkmanager.oa/web/communication/contact_move.jsp /parkmanager.oa/card!moveCard.action /parkmanager.oa/card!copyMove.action" icon="/core/common/images/move.png"/>	
+			<operation id="21010" name="添加分组内名片夹" uris=" /parkmanager.oa/cardCategory!addCardCategoryByParentId.action" icon="/core/common/images/move.png"/>	
+			<!-- <operation id="21010" name="群发邮件" uris="" icon="/core/common/images/emailhf.gif"/>	 -->
+		</menu>
+		<menu id="22000" name="短信管理" order="2" icon="/parkmanager.oa/web/images/oa016.png" uris="">
+			<menu id="22100" name="发送短信" order="3" uris="/parkmanager.oa/sms!smsPage.action /parkmanager.oa/card!CardSearchByName.action /parkmanager.oa/card!smsCard.action /parkmanager.oa/card!selectedCard.action /parkmanager.oa/sms!list.action /parkmanager.oa/smsTemplate!loadSmsTemplate.action /parkmanager.oa/card!selectedCard.action"  icon="/parkmanager.oa/web/images/oaico/msg_03_min.png" >
+				<operation id="22101" name="发送" uris="/parkmanager.oa/smsReceiver!saveSms.action" icon="/core/common/images/sms.png"/>
+	            <operation id="22102" name="删除" uris="/parkmanager.oa/sms!delete.action" icon="/core/common/images/del.gif"/>
+			</menu>
+			<menu id="22200" name="短信模板" order="4" icon="/parkmanager.oa/web/images/oaico/msg_04_min.png" uris="/parkmanager.oa/web/communication/sms_template.jsp /parkmanager.oa/smsTemplate!list.action">
+				<operation id="22201" name="新建" uris="/parkmanager.oa/web/communication/sms_template_add.jsp /parkmanager.oa/smsTemplate!save.action" icon="/core/common/images/emailadd.gif"/>
+				<operation id="22202" name="编辑" uris="/parkmanager.oa/smsTemplate!edit.action /parkmanager.oa/smsTemplate!update.action" icon="/core/common/images/edit.gif"/>
+				<operation id="22203" name="删除" uris="/parkmanager.oa/smsTemplate!delete.action" icon="/core/common/images/emaildel.png"/>				
+				<operation id="22204" name="查看" uris="/parkmanager.oa/smsTemplate!view.action"/>				
+				<operation id="22205" name="列表显示" uris="/parkmanager.oa/web/communication/sms_template.jsp /parkmanager.oa/smsTemplate!list.action"/>				
+			</menu>
+		</menu>
+		<menu id="23000" name="邮件管理" order="5" icon="/parkmanager.oa/web/images/oaico/msg_02_min.png" uris="">
+			<menu id="23100" name="收件箱" order="6" uris="/parkmanager.oa/mail!list.action /parkmanager.oa/mail!mail.action " icon="/parkmanager.oa/web/images/oaico/msg_12_min.png">
+				<operation id="23101" name="新建" uris="/parkmanager.oa/card!selectCard.action /parkmanager.oa/card!loadMyCard.action /core/upload.action /parkmanager.oa/mail!sendMail.action /parkmanager.oa/web/content/ckeditor/uploader/browse.jsp /parkmanager.oa/web/content/ckeditor/uploader/upload.jsp /parkmanager.oa/mail!send.action"/>
+				<operation id="23102" name="删除" uris="/parkmanager.oa/mail!delete.action "/>
+				<operation id="23103" name="答复" uris="/parkmanager.oa/mail!replay.action "/>
+				<operation id="23104" name="附件下载" uris="/parkmanager.oa/mail!downloadAttachment.action "/>
+				<operation id="23105" name="存草稿" uris="/parkmanager.oa/mail!saveInDraft.action "/>
+				<operation id="23106" name="查询邮件" uris="/parkmanager.oa/web/communication/mail_search.jsp /parkmanager.oa/mail!searchMail.action "/>
+	        </menu>
+			<menu id="23200" name="发件箱" order="7" uris="/parkmanager.oa/mail!sendList.action /parkmanager.oa/mail!mail.action"  icon="/parkmanager.oa/web/images/oaico/msg_22_min.png">
+				<operation id="23201" name="新建" uris="/parkmanager.oa/card!selectCard.action /parkmanager.oa/card!loadMyCard.action /core/upload.action /parkmanager.oa/mail!sendMail.action /parkmanager.oa/mail!send.action"/>
+				<operation id="23202" name="删除" uris="/parkmanager.oa/mail!delete.action "/>
+				<operation id="23203" name="转发" uris="/parkmanager.oa/mail!mailRelay.action "/>
+				<operation id="23204" name="附件下载" uris="/parkmanager.oa/mail!downloadAttachment.action "/>
+			</menu>
+			<menu id="23300" name="草稿箱" order="7" uris="/parkmanager.oa/mail!draftList.action /parkmanager.oa/mail!mail.action"  icon="/parkmanager.oa/web/images/oaico/msg_32_min.png">
+				<operation id="23301" name="发送" uris="/parkmanager.oa/card!selectCard.action /parkmanager.oa/card!loadMyCard.action /core/upload.action /parkmanager.oa/mail!sendMail.action /parkmanager.oa/mail!send.action"/>
+				<operation id="23302" name="删除" uris="/parkmanager.oa/mail!delete.action "/>
+				<operation id="23303" name="转发" uris="/parkmanager.oa/mail!mailRelay.action "/>
+				<operation id="23304" name="附件下载" uris="/parkmanager.oa/mail!downloadAttachment.action "/>
+			</menu>
+		</menu>
+	</menu>
+	<menu id="60000" name="会务管理" order="6">
+		<menu id="61000" name="会议纪要" order="1" uris="/parkmanager.oa/web/chiefadmin/meeting_list.jsp /parkmanager.oa/meeting!list.action /parkmanager.oa/meetingAtt!list.action" icon="/parkmanager.oa/web/images/meeting_min.png">
+			<operation id="61001" name="新建" uris="/parkmanager.oa/web/chiefadmin/meeting_add.jsp /parkmanager.oa/meetingAtt!save.action"/>
+			<operation id="61002" name="编辑" uris="/parkmanager.oa/meeting!edit.action /parkmanager.oa/meeting!update.action"/>
+			<operation id="61003" name="删除" uris="/parkmanager.oa/meeting!delete.action /parkmanager.oa/meetingAtt!delete.action"/>
+			<operation id="61004" name="查看" uris="/parkmanager.oa/meeting!view.action"/>
+			<operation id="61005" name="列表显示" uris="/parkmanager.oa/web/chiefadmin/meeting_list.jsp /parkmanager.oa/meeting!list.action /parkmanager.oa/meetingAtt!list.action"/>
+		</menu>
+		<menu id="62000" name="会议室借用记录" order="2" uris="/parkmanager.oa/web/chiefadmin/officeBorrow_list.jsp /parkmanager.oa/meetingRoomRent!list.action" icon="/parkmanager.oa/web/images/officeBorrow_min.png">
+			<operation id="62001" name="新建" uris="/parkmanager.oa/web/chiefadmin/OfficeBorrow_add.jsp /parkmanager.oa/meetingRoomRent!save.action"/>
+			<operation id="62002" name="编辑" uris="/parkmanager.oa/meetingRoomRent!edit.action /parkmanager.oa/meetingRoomRent!update.action"/>
+			<operation id="62003" name="删除" uris="/parkmanager.oa/meetingRoomRent!delete.action"/>
+			<operation id="62004" name="导出" uris="/parkmanager.oa/meetingRoomRent!export.action" icon="/core/common/images/profile.gif"/>
+			<operation id="62005" name="查看" uris="/parkmanager.oa/meetingRoomRent!view.action"/>
+			<operation id="62006" name="列表显示" uris="/parkmanager.oa/web/chiefadmin/officeBorrow_list.jsp /parkmanager.oa/meetingRoomRent!list.action"/>
+		</menu>
+	</menu>
+</module>
+</modules>
